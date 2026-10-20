@@ -4,7 +4,7 @@ title: "Publications"
 permalink: /publications/
 hero_tag: "Scholarship & Outputs"
 hero_subtitle: "Refereed journal articles, monographs, book chapters, and working papers."
-description: "Academic publications and scholarly outputs from the Contemporary Korea Studies Lab at NTU Singapore."
+description: "Academic publications and scholarly outputs from the Contemporary Korean Studies Lab at NTU Singapore."
 ---
 
 <div class="kicker-group">
@@ -67,7 +67,7 @@ Scholarly outputs from Lab faculty, visiting scholars, and affiliated researcher
       <span class="pub-badge-year">2026</span>
     </div>
     <h3 class="pub-title">Smart Society, Algorithmic Trust, and Social Presence: Comparative Perspectives from Seoul and Singapore</h3>
-    <p class="pub-authors">Contemporary Korea Studies Lab Working Paper Series, No. 01</p>
+    <p class="pub-authors">Contemporary Korean Studies Lab Working Paper Series, No. 01</p>
     <p class="pub-venue">Wee Kim Wee School of Communication and Information, Nanyang Technological University, Singapore.</p>
     <p class="pub-abstract">
       A comparative working paper exploring public attitudes toward algorithmic governance, AI interfaces, and smart city services in two leading Asian technological economies.
@@ -91,8 +91,8 @@ Scholarly outputs from Lab faculty, visiting scholars, and affiliated researcher
 {% include korean-title-underline.html %}
 
 ### 2026
-- **Lee, Kwan Min**, et al. (2026). *Perspectives on Korean Digital Society and Regional Connectivity.* Contemporary Korea Studies Lab Working Paper Series No. 01, Nanyang Technological University, Singapore.
-- **Contemporary Korea Studies Lab Directorate** (2026). *Contemporary Korea and Southeast Asia in the Platform Era.* Special Issue Prospectus, Wee Kim Wee School of Communication and Information.
+- **Lee, Kwan Min**, et al. (2026). *Perspectives on Korean Digital Society and Regional Connectivity.* Contemporary Korean Studies Lab Working Paper Series No. 01, Nanyang Technological University, Singapore.
+- **Contemporary Korean Studies Lab Directorate** (2026). *Contemporary Korea and Southeast Asia in the Platform Era.* Special Issue Prospectus, Wee Kim Wee School of Communication and Information.
 
 ### 2025
 - **Lee, Kwan Min**, &amp; ICA Research Consortia. (2025). "Human-Technology Interaction and Cultural Transformation in Contemporary East Asia." *Proceedings of the 75th Annual Conference of the International Communication Association (ICA)*, Denver, CO.

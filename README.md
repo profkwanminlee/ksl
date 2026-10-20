@@ -1,4 +1,4 @@
-# Contemporary Korea Studies Lab (KSL)
+# Contemporary Korean Studies Lab (CKSL)
 **Nanyang Technological University, Singapore**
 
 An interdisciplinary research initiative based at Nanyang Technological University, Singapore, advancing scholarship, dialogue, and exchange on contemporary Korea in Singapore and Southeast Asia.

@@ -1,14 +1,14 @@
-title: "Contemporary Korea Studies Lab"
+title: "Contemporary Korean Studies Lab"
 title_separator: "—"
-short_title: "Korea Studies Lab"
-acronym: "KSL"
+short_title: "Korean Studies Lab"
+acronym: "CKSL"
 institution: "Nanyang Technological University, Singapore"
 institution_short: "NTU Singapore"
 tagline: "Advancing the study of contemporary Korea in Singapore and Southeast Asia."
-description: "Contemporary Korea Studies Lab (KSL) is an interdisciplinary research initiative based at Nanyang Technological University, Singapore, supporting research, publications, and public programs on contemporary Korea."
+description: "Contemporary Korean Studies Lab (CKSL) is an interdisciplinary research initiative based at Nanyang Technological University, Singapore, supporting research, publications, and public programs on contemporary Korea."
 
-url: ""
-baseurl: ""
+url: "https://profkwanminlee.github.io"
+baseurl: "/cksl"
 
 markdown: kramdown
 kramdown:

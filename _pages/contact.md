@@ -4,7 +4,7 @@ title: "Contact & Collaboration"
 permalink: /contact/
 hero_tag: "Connect & Engage"
 hero_subtitle: "Institutional address, general enquiries, and collaboration proposals."
-description: "Contact information and collaboration enquiries for the Contemporary Korea Studies Lab at NTU Singapore."
+description: "Contact information and collaboration enquiries for the Contemporary Korean Studies Lab (CKSL) at NTU Singapore."
 ---
 
 <div class="kicker-group">
@@ -15,7 +15,7 @@ description: "Contact information and collaboration enquiries for the Contempora
 ## Contact Information
 {% include korean-title-underline.html %}
 
-The Contemporary Korea Studies Lab is located at the Wee Kim Wee School of Communication and Information at Nanyang Technological University, Singapore.
+The Contemporary Korean Studies Lab is located at the Wee Kim Wee School of Communication and Information at Nanyang Technological University, Singapore.
 
 <div class="contact-grid" style="margin: 24px 0 32px;">
   <div class="contact-card">
@@ -23,7 +23,7 @@ The Contemporary Korea Studies Lab is located at the Wee Kim Wee School of Commu
     <div class="contact-card-body">
       <h3 class="contact-title">Mailing &amp; Physical Address</h3>
       <address class="contact-details">
-        <strong>Contemporary Korea Studies Lab (KSL)</strong><br>
+        <strong>Contemporary Korean Studies Lab (CKSL)</strong><br>
         Wee Kim Wee School of Communication and Information<br>
         Nanyang Technological University, Singapore<br>
         31 Nanyang Link, Singapore 637718<br>
@@ -61,7 +61,7 @@ The Contemporary Korea Studies Lab is located at the Wee Kim Wee School of Commu
 ## Collaboration Proposals
 {% include korean-title-underline.html %}
 
-The Contemporary Korea Studies Lab actively cultivates international and regional partnerships. We warmly welcome proposals from:
+The Contemporary Korean Studies Lab actively cultivates international and regional partnerships. We warmly welcome proposals from:
 
 - **Academic Institutions &amp; University Centers:** Collaborative research projects, joint grant applications, faculty and student exchanges, and co-sponsored seminars or conferences.
 - **Cultural Foundations &amp; Creative Organizations:** Inquiries concerning cultural diplomacy, Korean Wave exhibitions, creative media roundtables, and public dialogues.

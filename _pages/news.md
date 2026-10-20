@@ -4,7 +4,7 @@ title: "News & Opportunities"
 permalink: /news/
 hero_tag: "Updates & Notices"
 hero_subtitle: "Institutional announcements, research milestones, and academic opportunities."
-description: "Latest news, institutional announcements, and academic opportunities at the Contemporary Korea Studies Lab, NTU Singapore."
+description: "Latest news, institutional announcements, and academic opportunities at the Contemporary Korean Studies Lab, NTU Singapore."
 ---
 
 <div class="kicker-group">
@@ -15,7 +15,7 @@ description: "Latest news, institutional announcements, and academic opportuniti
 ## Announcements &amp; Dispatches
 {% include korean-title-underline.html %}
 
-Official announcements, research developments, media appearances, and academic milestones from the Contemporary Korea Studies Lab at Nanyang Technological University, Singapore.
+Official announcements, research developments, media appearances, and academic milestones from the Contemporary Korean Studies Lab at Nanyang Technological University, Singapore.
 
 <div class="news-list" style="margin-top: 24px;">
   <!-- News Item 1 -->
@@ -24,9 +24,9 @@ Official announcements, research developments, media appearances, and academic m
       <span class="news-date">October 2026</span>
       <span class="news-category">Institutional Launch</span>
     </div>
-    <h3 class="news-headline">Contemporary Korea Studies Lab (KSL) Inaugurated at NTU Singapore</h3>
+    <h3 class="news-headline">Contemporary Korean Studies Lab (CKSL) Inaugurated at NTU Singapore</h3>
     <p class="news-summary">
-      The Contemporary Korea Studies Lab has been officially inaugurated at the Wee Kim Wee School of Communication and Information (WKWSCI) at Nanyang Technological University, Singapore. Directed by Prof. Kwan Min Lee, the Korea Foundation Endowed Chair Professor in Contemporary Korean Society and New Media, the Lab establishes a dedicated academic hub for researching contemporary Korea and its growing connections with Singapore and the ASEAN region.
+      The Contemporary Korean Studies Lab has been officially inaugurated at the Wee Kim Wee School of Communication and Information (WKWSCI) at Nanyang Technological University, Singapore. Directed by Prof. Kwan Min Lee, the Korea Foundation Endowed Chair Professor in Contemporary Korean Society and New Media, the Lab establishes a dedicated academic hub for researching contemporary Korea and its growing connections with Singapore and the ASEAN region.
     </p>
   </article>
 
@@ -93,7 +93,7 @@ The Lab periodically offers visiting scholar residencies, postdoctoral research 
         <span class="project-badge" style="margin-bottom: 8px;">Funded Postdoctoral Position</span>
         <h4 class="people-name" style="font-size: 1.2rem;">Postdoctoral Fellow in Korean Digital Society</h4>
         <p class="people-role">Recruitment Cycle 2026</p>
-        <p class="people-affiliation">Contemporary Korea Studies Lab &amp; HAIL, NTU</p>
+        <p class="people-affiliation">Contemporary Korean Studies Lab &amp; <a href="https://profkwanminlee.github.io/hail/" target="_blank" rel="noopener">HAIL</a>, NTU</p>
       </div>
     </div>
     <div class="people-bio">

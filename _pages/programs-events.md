@@ -4,7 +4,7 @@ title: "Programs & Events"
 permalink: /programs-events/
 hero_tag: "Engagement & Dialogue"
 hero_subtitle: "Colloquia, public lectures, workshops, and international symposia."
-description: "Academic conferences, research seminars, and public programs from the Contemporary Korea Studies Lab at NTU Singapore."
+description: "Academic conferences, research seminars, and public programs from the Contemporary Korean Studies Lab at NTU Singapore."
 ---
 
 <div class="kicker-group">
@@ -15,7 +15,7 @@ description: "Academic conferences, research seminars, and public programs from 
 ## Academic Programs &amp; Symposia
 {% include korean-title-underline.html %}
 
-The Contemporary Korea Studies Lab hosts an active schedule of academic programs, international conferences, and public research colloquia. These events connect scholars, graduate students, cultural practitioners, and policymakers to discuss the evolving dynamics of contemporary Korea and its ties with Southeast Asia.
+The Contemporary Korean Studies Lab hosts an active schedule of academic programs, international conferences, and public research colloquia. These events connect scholars, graduate students, cultural practitioners, and policymakers to discuss the evolving dynamics of contemporary Korea and its ties with Southeast Asia.
 
 {% include korean-divider.html %}
 

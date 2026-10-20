@@ -4,7 +4,7 @@ title: "Research Themes & Projects"
 permalink: /research/
 hero_tag: "Inquiry & Initiatives"
 hero_subtitle: "Three core themes framing the study of contemporary Korea and Southeast Asia."
-description: "Research themes, methodologies, and active scholarly initiatives of the Contemporary Korea Studies Lab at NTU Singapore."
+description: "Research themes, methodologies, and active scholarly initiatives of the Contemporary Korean Studies Lab at NTU Singapore."
 ---
 
 <div class="kicker-group">
@@ -15,7 +15,7 @@ description: "Research themes, methodologies, and active scholarly initiatives o
 ## Core Research Themes
 {% include korean-title-underline.html %}
 
-The Contemporary Korea Studies Lab organizes its scholarly inquiry around three core interdisciplinary themes. Rather than treating Korea in isolation, our research investigates the dynamic interactions, technological systems, and transnational flows connecting Korea with Singapore and Southeast Asia.
+The Contemporary Korean Studies Lab organizes its scholarly inquiry around three core interdisciplinary themes. Rather than treating Korea in isolation, our research investigates the dynamic interactions, technological systems, and transnational flows connecting Korea with Singapore and Southeast Asia.
 
 <div class="themes-detailed-list" style="margin-top: 28px;">
   <!-- Theme 1 -->
@@ -113,7 +113,7 @@ The Lab conducts research supported by university competitive funds, internation
       <span class="project-dates">2026 – 2028</span>
     </div>
     <h3 class="project-title">Smart Society, Algorithmic Interfaces, and Cultural Trust</h3>
-    <p class="project-pi"><strong>Lead Researcher:</strong> Prof. Kwan Min Lee | <strong>Collaborating Centres:</strong> HAIL &amp; UX Lab NTU</p>
+    <p class="project-pi"><strong>Lead Researcher:</strong> Prof. Kwan Min Lee | <strong>Collaborating Centres:</strong> <a href="https://profkwanminlee.github.io/hail/" target="_blank" rel="noopener">HAIL</a> &amp; UX Lab NTU</p>
     <p class="project-desc">
       A cross-national comparative study assessing user mental models, trust in automated systems, and behavioral adoption of conversational AI agents and smart interfaces between Seoul and Singapore.
     </p>
@@ -125,7 +125,7 @@ The Lab conducts research supported by university competitive funds, internation
       <span class="project-dates">2026 – Ongoing</span>
     </div>
     <h3 class="project-title">ASEAN-Korea Transnational Knowledge &amp; Policy Network</h3>
-    <p class="project-pi"><strong>Coordinating Lead:</strong> Contemporary Korea Studies Lab Directorate</p>
+    <p class="project-pi"><strong>Coordinating Lead:</strong> Contemporary Korean Studies Lab Directorate</p>
     <p class="project-desc">
       A sustained academic initiative co-convening annual working colloquia, policy research briefings, and visiting scholar exchanges connecting leading Korean studies programs and social science faculties across Southeast Asia.
     </p>

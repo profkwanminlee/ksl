@@ -1,5 +1,5 @@
 /**
- * Contemporary Korea Studies Lab (KSL)
+ * Contemporary Korean Studies Lab (CKSL)
  * Nanyang Technological University, Singapore
  * Accessible Mobile Navigation (Modeled on Prof. Kwan Min Lee's Site) & Smooth Interactions
  */

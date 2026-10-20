@@ -4,7 +4,7 @@ title: "People & Leadership"
 permalink: /people/
 hero_tag: "Faculty & Community"
 hero_subtitle: "The scholars, fellows, and researchers driving Korean studies at NTU."
-description: "Leadership, affiliate faculty, and researchers of the Contemporary Korea Studies Lab at NTU Singapore."
+description: "Leadership, affiliate faculty, and researchers of the Contemporary Korean Studies Lab at NTU Singapore."
 ---
 
 <div class="kicker-group">
@@ -15,19 +15,19 @@ description: "Leadership, affiliate faculty, and researchers of the Contemporary
 ## Leadership
 {% include korean-title-underline.html %}
 
-The Contemporary Korea Studies Lab is directed by the **Korea Foundation Endowed Chair Professor** in Contemporary Korean Society and New Media at Nanyang Technological University, Singapore.
+The Contemporary Korean Studies Lab is directed by the **Korea Foundation Endowed Chair Professor** in Contemporary Korean Society and New Media at Nanyang Technological University, Singapore.
 
 <div class="people-card director-card" style="margin-top: 24px;">
   <div class="people-card-header">
     <div class="people-photo-frame">
-      <img src="{{ '/images/profkwanportrait.jpeg' | relative_url }}" alt="Prof. Kwan Min Lee, Director of Contemporary Korea Studies Lab" class="people-photo">
+      <img src="{{ '/images/profkwanportrait.jpeg' | relative_url }}" alt="Prof. Kwan Min Lee, Director of Contemporary Korean Studies Lab" class="people-photo">
     </div>
     <div class="people-info">
       <div class="people-title-row">
         <h3 class="people-name">Prof. Kwan Min Lee</h3>
         <span class="korean-name">이관민 (李寬敏)</span>
       </div>
-      <p class="people-role">Director, Contemporary Korea Studies Lab</p>
+      <p class="people-role">Director, Contemporary Korean Studies Lab</p>
       <p class="people-title">Korea Foundation Endowed Chair Professor in Contemporary Korean Society &amp; New Media</p>
       <p class="people-affiliation">Wee Kim Wee School of Communication and Information (WKWSCI), NTU Singapore</p>
       <p class="people-subaffiliation">Joint Professor, College of Computing and Data Science &amp; Nanyang Business School</p>
@@ -39,7 +39,7 @@ The Contemporary Korea Studies Lab is directed by the **Korea Foundation Endowed
   </div>
   <div class="people-bio">
     <p>
-      <strong>Kwan Min Lee (Ph.D., Stanford University)</strong> is the inaugural Korea Foundation Endowed Chair Professor at Nanyang Technological University, Singapore. An elected Fellow of the International Communication Association (ICA), Prof. Lee directs the Contemporary Korea Studies Lab (KSL), the Human-AI Interaction Lab (HAIL), and the UX Lab at NTU.
+      <strong>Kwan Min Lee (Ph.D., Stanford University)</strong> is the inaugural Korea Foundation Endowed Chair Professor at Nanyang Technological University, Singapore. An elected Fellow of the International Communication Association (ICA), Prof. Lee directs the Contemporary Korean Studies Lab (CKSL), the <a href="https://profkwanminlee.github.io/hail/" target="_blank" rel="noopener">Human-AI Interaction Lab (HAIL)</a>, and the UX Lab at NTU.
     </p>
     <p>
       Previously, Lee served as Vice President and Director of User Experience (UX) at Samsung Electronics, where he founded Samsung’s Creative Lab (C-Lab) and led UX innovation for the Visual Display Division. Prior to Samsung and NTU, he was a tenured professor at the Annenberg School for Communication at the University of Southern California (USC) and founding director of the Interaction Science Research Center at Sungkyunkwan University (SKKU). His research focuses on the intersection of new media technologies, human-technology interaction, Korean digital innovation, and contemporary cultural diffusion.
