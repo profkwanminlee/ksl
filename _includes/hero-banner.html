@@ -37,23 +37,12 @@
   <!-- Hero Content Layer -->
   <div class="hero-content-layer container">
     <div class="hero-text-block">
-      {% if hero_tag %}
-      <div class="hero-badge">
-        <span class="hero-badge-dot" aria-hidden="true"></span>
-        <span class="hero-badge-text">{{ hero_tag }}</span>
-      </div>
-      {% endif %}
+
 
       <h1 class="hero-title">{{ hero_title }}</h1>
 
-      <!-- Architectural Hanok Roofline Accent SVG Under Headline -->
-      <div class="korean-roof-accent" aria-hidden="true">
-        <svg width="120" height="12" viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 10C24 9.5 45 4 60 4C75 4 96 9.5 118 10" stroke="var(--color-yellow-gold)" stroke-width="1.8" stroke-linecap="round"/>
-          <path d="M48 4H72" stroke="var(--color-red)" stroke-width="2.2" stroke-linecap="round"/>
-          <circle cx="60" cy="4" r="2.2" fill="var(--color-red)"/>
-        </svg>
-      </div>
+      <!-- Architectural Hanok Roof Crest & Maehwa Blossom Ornament Under Headline -->
+      {% include korean-hero-accent.html %}
 
       {% if hero_sub %}
       <p class="hero-subtitle">{{ hero_sub }}</p>

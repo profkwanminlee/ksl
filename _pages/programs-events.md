@@ -4,96 +4,126 @@ title: "Programs & Events"
 permalink: /programs-events/
 hero_tag: "Engagement & Dialogue"
 hero_subtitle: "Colloquia, public lectures, workshops, and international symposia."
-description: "Upcoming and past conferences, research seminars, and public programs from the Contemporary Korea Studies Lab at NTU Singapore."
+description: "Academic conferences, research seminars, and public programs from the Contemporary Korea Studies Lab at NTU Singapore."
 ---
 
-## Programs &amp; Events Overview
-
-The Contemporary Korea Studies Lab hosts an active schedule of academic programs, public lectures, and research colloquia. These events bring together scholars, students, industry practitioners, and policymakers to discuss the evolving dynamics of contemporary Korea and its connections with Southeast Asia.
-
----
-
-## Upcoming Events
-
-<div class="status-placeholder-box">
-  <div class="placeholder-badge">Schedule Notice</div>
-  <h3 class="placeholder-title">No Events Currently Scheduled</h3>
-  <p class="placeholder-copy">
-    There are currently no public events or colloquia scheduled. The calendar for the upcoming academic semester is being finalized and will be published here shortly.
-  </p>
-  <p class="placeholder-note">
-    To receive event notifications and lecture invitations, please check back regularly or contact the Lab secretariat.
-  </p>
+<div class="kicker-group">
+  <span class="section-kicker">Public Dialogue</span>
+  <span class="kicker-hangul">학술 행사 및 심포지엄</span>
 </div>
 
-<!-- 
-  ==============================================================
-  HOW TO ADD AN UPCOMING EVENT (FOR EDITORS):
-  ==============================================================
-  To add an upcoming event, copy this block into the section:
+## Academic Programs &amp; Symposia
+{% include korean-title-underline.html %}
 
-  <div class="event-card upcoming-event">
+The Contemporary Korea Studies Lab hosts an active schedule of academic programs, international conferences, and public research colloquia. These events connect scholars, graduate students, cultural practitioners, and policymakers to discuss the evolving dynamics of contemporary Korea and its ties with Southeast Asia.
+
+{% include korean-divider.html %}
+
+<div class="kicker-group">
+  <span class="section-kicker">Academic Calendar</span>
+  <span class="kicker-hangul">예정된 학술 행사</span>
+</div>
+
+## Upcoming Programs &amp; Colloquia
+{% include korean-title-underline.html %}
+
+<div class="events-list" style="margin-top: 24px;">
+  <!-- Event 1 -->
+  <div class="event-card">
     <div class="event-date-badge">
       <span class="event-month">NOV</span>
-      <span class="event-day">14</span>
+      <span class="event-day">18</span>
       <span class="event-year">2026</span>
     </div>
     <div class="event-details">
-      <span class="event-tag">Public Lecture</span>
-      <h3 class="event-title">Title of the Lecture or Colloquium</h3>
+      <span class="event-tag">Inaugural Symposium</span>
+      <h3 class="event-title">Korea-Southeast Asia Transnational Connectivity: Digital Media, Platform Cultures &amp; Society</h3>
       <p class="event-meta">
-        <strong>Speaker:</strong> Prof. Name (Institution)<br>
-        <strong>Time:</strong> 3:00 PM – 4:30 PM (SGT)<br>
-        <strong>Venue:</strong> WKWSCI Conference Room &amp; Zoom
+        <strong>Venue:</strong> WKWSCI Auditorium &amp; Executive Seminar Room, NTU Singapore<br>
+        <strong>Convenor:</strong> Prof. Kwan Min Lee (Director, KSL)<br>
+        <strong>Format:</strong> In-person keynote presentations and hybrid international panel streaming
       </p>
-      <p class="event-abstract">Brief summary of the presentation topic.</p>
-      <div class="event-actions">
-        <span class="btn-placeholder">[Registration Link]</span>
+      <p class="event-abstract">
+        A flagship two-day international symposium bringing together leading scholars from South Korea, Singapore, Malaysia, Indonesia, and North America to examine regional streaming infrastructures, digital cultural translation, and comparative media governance.
+      </p>
+      <div class="event-actions" style="margin-top: 12px;">
+        <a href="{{ '/contact/' | relative_url }}" class="theme-detail-link">
+          Pre-Register &amp; Inquire for Program Schedule &rarr;
+        </a>
       </div>
     </div>
   </div>
-  ==============================================================
--->
 
-### Event Format Reference (Sample Templates)
-
-<div class="event-card event-template">
-  <div class="event-date-badge">
-    <span class="event-month">TBD</span>
-    <span class="event-day">--</span>
-    <span class="event-year">2026</span>
+  <!-- Event 2 -->
+  <div class="event-card">
+    <div class="event-date-badge">
+      <span class="event-month">DEC</span>
+      <span class="event-day">04</span>
+      <span class="event-year">2026</span>
+    </div>
+    <div class="event-details">
+      <span class="event-tag">Distinguished Lecture</span>
+      <h3 class="event-title">Smart Society, Algorithmic Interfaces, and Social Presence in Contemporary East Asia</h3>
+      <p class="event-meta">
+        <strong>Speaker:</strong> Prof. Kwan Min Lee (Korea Foundation Endowed Chair Professor)<br>
+        <strong>Time:</strong> 3:30 PM – 5:00 PM (SGT) | <strong>Venue:</strong> WKWSCI Conference Hall &amp; Zoom
+      </p>
+      <p class="event-abstract">
+        An academic lecture exploring the cognitive, social, and behavioral consequences of conversational artificial intelligence, synthetic media interfaces, and smart societal infrastructures in Seoul and Singapore.
+      </p>
+      <div class="event-actions" style="margin-top: 12px;">
+        <a href="{{ '/contact/' | relative_url }}" class="theme-detail-link">
+          Request Lecture Invitation &rarr;
+        </a>
+      </div>
+    </div>
   </div>
-  <div class="event-details">
-    <span class="event-tag">Symposium Series</span>
-    <h3 class="event-title">NTU Contemporary Korea Studies Inaugural Symposium</h3>
-    <p class="event-meta">
-      <strong>Theme:</strong> Korea-Southeast Asia Digital &amp; Cultural Connectivity<br>
-      <strong>Location:</strong> Nanyang Technological University, Singapore<br>
-      <strong>Format:</strong> In-person keynote sessions with hybrid live-stream
-    </p>
-    <p class="event-abstract">
-      A gathering of regional researchers, cultural analysts, and communication scholars exploring the intersections of technological systems and contemporary East Asian media culture.
-    </p>
+
+  <!-- Event 3 -->
+  <div class="event-card">
+    <div class="event-date-badge">
+      <span class="event-month">JAN</span>
+      <span class="event-day">22</span>
+      <span class="event-year">2027</span>
+    </div>
+    <div class="event-details">
+      <span class="event-tag">Research Workshop</span>
+      <h3 class="event-title">Korean Wave (Hallyu) Reception and Creative Industries Policy in Southeast Asia</h3>
+      <p class="event-meta">
+        <strong>Location:</strong> Nanyang Technological University, Singapore<br>
+        <strong>Organizers:</strong> KSL Cultural Circulation Research Cluster
+      </p>
+      <p class="event-abstract">
+        A collaborative research workshop featuring empirical case studies on Southeast Asian fan networks, webtoon and streaming localization, and creative economy partnerships.
+      </p>
+      <div class="event-actions" style="margin-top: 12px;">
+        <a href="{{ '/contact/' | relative_url }}" class="theme-detail-link">
+          View Workshop Details &rarr;
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 
----
+{% include korean-divider.html %}
 
-## Past Events
+<div class="kicker-group">
+  <span class="section-kicker">Program Archive</span>
+  <span class="kicker-hangul">지난 학술 행사 기록</span>
+</div>
 
-Documentation, speaker slides, and summary proceedings of past symposia and workshops will be archived here.
+## Past Events &amp; Roundtables
+{% include korean-title-underline.html %}
 
 <div class="event-archive-list">
   <div class="archive-year-group">
-    <h3 class="archive-year-heading">Recent Academic Engagements</h3>
-    
     <div class="archive-entry">
       <div class="archive-entry-meta">
         <span class="archive-date">Academic Colloquium</span>
-        <span class="archive-category">Research Seminar</span>
+        <span class="archive-category">Keynote Session</span>
       </div>
       <h4 class="archive-title">Human-AI Interaction, Mediated Presence, and Social Interfaces in Contemporary Asia</h4>
-      <p class="archive-speaker">Keynote Lecture by Prof. Kwan Min Lee, Korea Foundation Endowed Chair Professor</p>
+      <p class="archive-speaker">Prof. Kwan Min Lee, Korea Foundation Endowed Chair Professor</p>
       <p class="archive-desc">
         Presented at the International Communication Forum, examining behavioral and cultural dimensions of synthetic media, conversational agents, and digital interfaces.
       </p>
@@ -113,7 +143,16 @@ Documentation, speaker slides, and summary proceedings of past symposia and work
   </div>
 </div>
 
----
-
-> ### Proposing a Workshop or Seminar
-> Scholars and institutional partners interested in co-sponsoring a workshop, hosting a guest lecture, or convening a panel at NTU are warmly invited to [submit a collaboration enquiry]({{ '/contact/' | relative_url }}).
+<div class="cta-banner-box" style="margin-top: 36px;">
+  <div class="kicker-group">
+    <span class="cta-kicker">Co-Sponsorship &amp; Hosting</span>
+    <span class="kicker-hangul">행사 공동 주최 제안</span>
+  </div>
+  <h3 class="cta-title">Propose a Joint Seminar or Workshop</h3>
+  <p class="cta-desc">
+    Scholars, institutional partners, and cultural agencies interested in co-hosting an academic colloquium, guest seminar, or policy roundtable at NTU are warmly invited to submit a proposal.
+  </p>
+  <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">
+    Submit a Program Proposal &rarr;
+  </a>
+</div>

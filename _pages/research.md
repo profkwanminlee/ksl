@@ -1,89 +1,147 @@
 ---
 layout: page
-title: "Research"
+title: "Research Themes & Projects"
 permalink: /research/
 hero_tag: "Inquiry & Initiatives"
 hero_subtitle: "Three core themes framing the study of contemporary Korea and Southeast Asia."
-description: "Research themes and active scholarly initiatives of the Contemporary Korea Studies Lab at NTU Singapore."
+description: "Research themes, methodologies, and active scholarly initiatives of the Contemporary Korea Studies Lab at NTU Singapore."
 ---
 
-## Research Themes
+<div class="kicker-group">
+  <span class="section-kicker">Inquiry Framework</span>
+  <span class="kicker-hangul">연구 체계</span>
+</div>
+
+## Core Research Themes
+{% include korean-title-underline.html %}
 
 The Contemporary Korea Studies Lab organizes its scholarly inquiry around three core interdisciplinary themes. Rather than treating Korea in isolation, our research investigates the dynamic interactions, technological systems, and transnational flows connecting Korea with Singapore and Southeast Asia.
 
----
+<div class="themes-detailed-list" style="margin-top: 28px;">
+  <!-- Theme 1 -->
+  <article class="theme-detailed-card" id="it-innovation-digital-society">
+    <div class="theme-detailed-header">
+      <div class="theme-num-box">
+        <span class="theme-number">THEME 01</span>
+      </div>
+      <h3 class="theme-detailed-title">Korea’s IT Innovation and Digital Society</h3>
+      <p class="theme-tagline">Digital transformation, artificial intelligence, and smart societal infrastructures.</p>
+    </div>
+    <div class="theme-detailed-body">
+      <p>
+        South Korea’s rapid digital transformation, cutting-edge telecommunications infrastructure, and pioneering consumer technology sector present vital models for understanding the modern network society. This theme interrogates how digital platforms, algorithmic systems, and emerging technologies shape daily communication, labor, and societal governance.
+      </p>
+      <ul class="theme-points" style="margin-top: 14px;">
+        <li><strong>Digital Infrastructures &amp; Platform Systems:</strong> Examining how high-speed broadband, mobile super-apps, and smart city environments shape urban life.</li>
+        <li><strong>Human-Technology Interaction &amp; AI:</strong> Investigating user perceptions, cognitive presence, and societal adoption of synthetic media and conversational agents.</li>
+        <li><strong>Comparative Digital Policy:</strong> Analyzing regulatory frameworks, algorithmic governance, and privacy policies across South Korea, Singapore, and regional economies.</li>
+      </ul>
+    </div>
+  </article>
 
-### Theme 1: Korea’s IT Innovation and Digital Society
-{: #it-innovation-digital-society }
+  <!-- Theme 2 -->
+  <article class="theme-detailed-card" id="korean-culture-wave">
+    <div class="theme-detailed-header">
+      <div class="theme-num-box">
+        <span class="theme-number">THEME 02</span>
+      </div>
+      <h3 class="theme-detailed-title">Contemporary Korean Culture and the Korean Wave</h3>
+      <p class="theme-tagline">Transnational media flows, creative industries, and cultural translation across Southeast Asia.</p>
+    </div>
+    <div class="theme-detailed-body">
+      <p>
+        The transnational circulation of Korean popular culture—from screen media and music to webtoons and interactive entertainment—has transformed cultural consumption across Asia and the world. This area investigates how contemporary Korean media circulates across Singapore and Southeast Asian societies, focusing on cultural translation and audience agency.
+      </p>
+      <ul class="theme-points" style="margin-top: 14px;">
+        <li><strong>Cultural Circulation &amp; Media Platforms:</strong> Tracing the streaming ecosystems and distribution networks through which Korean cultural products reach regional audiences.</li>
+        <li><strong>Cultural Translation &amp; Local Adaptation:</strong> Studying how Southeast Asian audiences and fandom communities actively interpret and repurpose Korean media texts.</li>
+        <li><strong>Creative Industries &amp; Cultural Policy:</strong> Evaluating state-supported creative economy models, intellectual property strategies, and cross-border co-productions.</li>
+      </ul>
+    </div>
+  </article>
 
-South Korea’s rapid digital transformation, cutting-edge telecommunications infrastructure, and pioneering consumer technology sector present vital models for understanding the modern network society.
-
-- **Digital Infrastructures & Platform Systems:** Examining how high-speed broadband, mobile ecosystems, super-apps, and smart city environments shape urban social life and institutional arrangements.
-- **Human-Technology Interaction & AI:** Investigating user experiences, cognitive and social perceptions of artificial intelligence, synthetic media, and conversational agents within Korean society.
-- **Comparative Digital Policy:** Analyzing regulatory frameworks, algorithmic governance, digital privacy, and open innovation models across South Korea, Singapore, and regional economies.
-
----
-
-### Theme 2: Contemporary Korean Culture and the Korean Wave
-{: #korean-culture-wave }
-
-The transnational circulation of Korean popular culture—from cinema and television dramas to K-pop, digital webtoons, and gaming—has transformed cultural consumption across Asia and the globe.
-
-- **Cultural Circulation & Transnational Diffusion:** Tracing the distribution channels, streaming platforms, and media ecosystems through which Korean cultural products reach audiences across Southeast Asia.
-- **Cultural Translation & Local Adaptation:** Studying how Southeast Asian audiences, creators, and fandom communities actively interpret, negotiate, and repurpose Korean media texts within local cultural frameworks.
-- **Creative Industries & Cultural Policy:** Evaluating the state-supported creative economy models, intellectual property strategies, and cross-border co-production partnerships shaping modern East Asian cultural production.
-
----
-
-### Theme 3: Human and Cultural Exchange between Korea and Southeast Asia
-{: #human-cultural-exchange }
-
-Sustained intellectual and social connections between Korea and Southeast Asian societies form the bedrock for mutual regional development and academic cooperation.
-
-- **Academic Mobility & Knowledge Networks:** Documenting student flows, visiting scholar programs, institutional exchanges, and joint research initiatives between Korean and ASEAN universities.
-- **Diaspora & Transnational Communities:** Exploring the experiences of Korean communities living and working in Singapore and Southeast Asia, as well as Southeast Asian communities residing in South Korea.
-- **Bilateral Dialogue & Cultural Diplomacy:** Fostering dialogue among academic, cultural, diplomatic, and policy institutions to build collaborative solutions to shared regional challenges.
-
----
-
-## Current Projects
-
-Active research projects and grant-funded initiatives at the Lab are currently being catalogued.
-
-<div class="status-placeholder-box">
-  <div class="placeholder-badge">Status: Coming Soon</div>
-  <h3 class="placeholder-title">Project Directory in Preparation</h3>
-  <p class="placeholder-copy">
-    Detailed project profiles, grant-funded initiatives, and collaborative research teams will be posted here as projects are formally launched for the current academic session.
-  </p>
-  <p class="placeholder-note">
-    Faculty members and affiliated researchers preparing project summaries may submit project abstracts and metadata to the Lab directorate.
-  </p>
+  <!-- Theme 3 -->
+  <article class="theme-detailed-card" id="human-cultural-exchange">
+    <div class="theme-detailed-header">
+      <div class="theme-num-box">
+        <span class="theme-number">THEME 03</span>
+      </div>
+      <h3 class="theme-detailed-title">Human and Cultural Exchange between Korea and Southeast Asia</h3>
+      <p class="theme-tagline">Mobility, diaspora networks, and bilateral institutional partnerships.</p>
+    </div>
+    <div class="theme-detailed-body">
+      <p>
+        Sustained intellectual and social connections between Korea and Southeast Asian societies form the bedrock for mutual regional development and academic cooperation. This theme focuses on the movement of people, ideas, and institutional frameworks connecting Korea with the ASEAN region.
+      </p>
+      <ul class="theme-points" style="margin-top: 14px;">
+        <li><strong>Academic Mobility &amp; Knowledge Networks:</strong> Documenting student mobility, visiting scholar residencies, and collaborative university consortia.</li>
+        <li><strong>Diaspora &amp; Transnational Communities:</strong> Exploring the lived experiences of Korean communities in Singapore and Southeast Asia, and vice-versa.</li>
+        <li><strong>Bilateral Dialogue &amp; Cultural Diplomacy:</strong> Fostering dialogue among academic, cultural, diplomatic, and policy institutions on shared regional challenges.</li>
+      </ul>
+    </div>
+  </article>
 </div>
 
-<!-- 
-  ==============================================================
-  HOW TO ADD A PROJECT ENTRY (FOR NON-TECHNICAL EDITORS):
-  ==============================================================
-  Copy and paste the template below into this section:
+{% include korean-divider.html %}
 
-  ### Project Title Here
-  - **Lead Investigator:** Prof. Kwan Min Lee
-  - **Theme:** Korea's IT Innovation & Digital Society
-  - **Collaborators:** Wee Kim Wee School of Communication and Information, NTU
-  - **Duration:** 2026 – 2028
-  - **Description:** A concise 2-3 paragraph summary explaining the project's 
-    research questions, methodology, and anticipated outputs.
-  ==============================================================
--->
+<div class="kicker-group">
+  <span class="section-kicker">Active Initiatives</span>
+  <span class="kicker-hangul">연구 프로젝트</span>
+</div>
 
-### Forthcoming Project Initiatives (Sample Frameworks)
+## Research Projects &amp; Grants
+{% include korean-title-underline.html %}
 
-1. **Digital Infrastructure and Regional Media Flows (Southeast Asia – Korea)**  
-   *An investigation into cross-border streaming platforms, algorithmic curation, and local audience reception in Singapore and ASEAN markets.*
+The Lab conducts research supported by university competitive funds, international foundation endowments, and collaborative grant schemes.
 
-2. **Smart Society Interfaces and Cultural Adoption**  
-   *Comparative behavioral research examining user trust, AI adoption, and smart interactive technologies between Seoul and Singapore.*
+<div class="projects-grid" style="margin: 24px 0 32px;">
+  <div class="project-card">
+    <div class="project-card-header">
+      <span class="project-badge">Active Initiative</span>
+      <span class="project-dates">2025 – 2028</span>
+    </div>
+    <h3 class="project-title">Digital Media Ecosystems and Transnational Reception in Southeast Asia</h3>
+    <p class="project-pi"><strong>Principal Investigator:</strong> Prof. Kwan Min Lee | <strong>Sponsor:</strong> Korea Foundation &amp; WKWSCI</p>
+    <p class="project-desc">
+      A multi-method investigation analyzing how global and regional streaming platforms, algorithmic recommendation systems, and social media networks mediate the reception and cultural translation of contemporary Korean screen content in Singapore, Malaysia, and Indonesia.
+    </p>
+  </div>
 
-3. **ASEAN-Korea Transnational Cultural Dialogue Series**  
-   *A structured series of collaborative workshops and working papers co-hosted with regional university partners.*
+  <div class="project-card">
+    <div class="project-card-header">
+      <span class="project-badge">Comparative Study</span>
+      <span class="project-dates">2026 – 2028</span>
+    </div>
+    <h3 class="project-title">Smart Society, Algorithmic Interfaces, and Cultural Trust</h3>
+    <p class="project-pi"><strong>Lead Researcher:</strong> Prof. Kwan Min Lee | <strong>Collaborating Centres:</strong> HAIL &amp; UX Lab NTU</p>
+    <p class="project-desc">
+      A cross-national comparative study assessing user mental models, trust in automated systems, and behavioral adoption of conversational AI agents and smart interfaces between Seoul and Singapore.
+    </p>
+  </div>
+
+  <div class="project-card">
+    <div class="project-card-header">
+      <span class="project-badge">Regional Dialogue</span>
+      <span class="project-dates">2026 – Ongoing</span>
+    </div>
+    <h3 class="project-title">ASEAN-Korea Transnational Knowledge &amp; Policy Network</h3>
+    <p class="project-pi"><strong>Coordinating Lead:</strong> Contemporary Korea Studies Lab Directorate</p>
+    <p class="project-desc">
+      A sustained academic initiative co-convening annual working colloquia, policy research briefings, and visiting scholar exchanges connecting leading Korean studies programs and social science faculties across Southeast Asia.
+    </p>
+  </div>
+</div>
+
+<div class="cta-banner-box" style="margin-top: 36px;">
+  <div class="kicker-group">
+    <span class="cta-kicker">Research Collaboration</span>
+    <span class="kicker-hangul">공동 연구 제안</span>
+  </div>
+  <h3 class="cta-title">Proposing Collaborative Research</h3>
+  <p class="cta-desc">
+    KSL welcomes inquiries regarding joint research proposals, grant co-investigation, and academic exchanges from institutions in Korea, Singapore, and Southeast Asia.
+  </p>
+  <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">
+    Submit a Collaboration Inquiry &rarr;
+  </a>
+</div>

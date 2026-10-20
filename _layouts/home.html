@@ -38,23 +38,14 @@ layout: default
     <!-- Foreground Content -->
     <div class="hero-content-layer container">
       <div class="home-hero-text">
-        <div class="hero-badge">
-          <span class="hero-badge-dot" aria-hidden="true"></span>
-          <span class="hero-badge-text">Nanyang Technological University, Singapore</span>
-        </div>
+
 
         <h1 class="home-hero-title">
           Contemporary Korea<br>Studies Lab
         </h1>
 
-        <!-- Architectural Hanok Roofline Accent SVG Under Headline -->
-        <div class="korean-roof-accent" aria-hidden="true">
-          <svg width="140" height="14" viewBox="0 0 140 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 11C28 10 52 4 70 4C88 4 112 10 138 11" stroke="var(--color-yellow-gold)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M56 4H84" stroke="var(--color-red)" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="70" cy="4" r="2.5" fill="var(--color-red)"/>
-          </svg>
-        </div>
+        <!-- Architectural Hanok Roof Crest & Maehwa Blossom Ornament Under Headline -->
+        {% include korean-hero-accent.html %}
 
         <p class="home-hero-subtitle">
           An interdisciplinary research initiative advancing scholarship, dialogue, and exchange on contemporary Korea in Singapore and Southeast Asia.
@@ -78,17 +69,16 @@ layout: default
     <div class="container">
       <div class="overview-grid">
         <div class="overview-lead-col">
-          <div class="kicker-group">
-            <span class="section-kicker">Academic Initiative</span>
-            <span class="kicker-hangul">현대한국학연구소</span>
-          </div>
-          <h2 class="section-title">A Hub for Contemporary Korean Studies in Southeast Asia</h2>
-          <div class="korean-title-underline" aria-hidden="true">
-            <svg width="72" height="10" viewBox="0 0 72 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 5H30M42 5H71" stroke="var(--color-brown-deep)" stroke-width="1.2" stroke-linecap="round"/>
-              <circle cx="36" cy="5" r="3.5" fill="var(--color-red)"/>
-              <circle cx="36" cy="5" r="1.5" fill="var(--color-yellow-gold)"/>
-            </svg>
+          <div class="overview-header-wrap">
+            <div class="overview-header-text">
+              <div class="kicker-group">
+                <span class="section-kicker">Academic Initiative</span>
+                <span class="kicker-hangul">현대한국학연구소</span>
+              </div>
+              <h2 class="section-title">A Hub for Contemporary Korean Studies in Southeast Asia</h2>
+              {% include korean-title-underline.html %}
+            </div>
+            {% include korean-pavilion.html %}
           </div>
           <p class="overview-lead-text">
             Korean Studies Lab is an interdisciplinary research initiative based at Nanyang Technological University, Singapore. As one of the first initiatives of its kind in Southeast Asia, the Lab supports research, publications, and public programs on contemporary Korea.
@@ -116,12 +106,7 @@ layout: default
         <div class="section-header-centered">
           <span class="section-kicker">Core Mission</span>
           <h3 class="subsection-title">Advancing Inquiry, Exchange, and Dialogue</h3>
-          <div class="korean-title-underline" aria-hidden="true">
-            <svg width="60" height="8" viewBox="0 0 60 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 4H24M36 4H59" stroke="var(--color-brown-deep)" stroke-width="1.2" stroke-linecap="round"/>
-              <circle cx="30" cy="4" r="3" fill="var(--color-red)"/>
-            </svg>
-          </div>
+          {% include korean-title-underline.html %}
         </div>
         <div class="mission-grid">
           <div class="mission-card">
@@ -160,6 +145,7 @@ layout: default
             <span class="kicker-hangul">연구 분야</span>
           </div>
           <h2 class="section-title">Three Core Research Themes</h2>
+          {% include korean-title-underline.html %}
         </div>
         <a href="{{ '/research/' | relative_url }}" class="section-header-link">
           View Detailed Themes &amp; Projects &rarr;
@@ -202,12 +188,7 @@ layout: default
           <span class="kicker-hangul">학술 및 커뮤니티</span>
         </div>
         <h2 class="section-title">Scholarship, Programs &amp; Community</h2>
-        <div class="korean-title-underline" aria-hidden="true">
-          <svg width="60" height="8" viewBox="0 0 60 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 4H24M36 4H59" stroke="var(--color-brown-deep)" stroke-width="1.2" stroke-linecap="round"/>
-            <circle cx="30" cy="4" r="3" fill="var(--color-red)"/>
-          </svg>
-        </div>
+        {% include korean-title-underline.html %}
       </div>
 
       <div class="pathways-grid">
@@ -220,9 +201,9 @@ layout: default
           <p class="pathway-desc">
             Peer-reviewed monographs, journal articles, working papers, and policy briefings examining modern Korean media and society.
           </p>
-          <div class="pathway-placeholder">
-            <span class="placeholder-icon" aria-hidden="true">&sect;</span>
-            <p class="placeholder-text">Recent publication archive is being catalogued for the current academic session.</p>
+          <div class="pathway-preview-item">
+            <span class="pathway-preview-meta">Telematics &amp; Informatics &bull; 2024</span>
+            <p class="pathway-preview-title">Social Presence and AI Companionship in Smart Living Environments</p>
           </div>
           <a href="{{ '/publications/' | relative_url }}" class="pathway-link">
             View Publications &rarr;
@@ -238,9 +219,9 @@ layout: default
           <p class="pathway-desc">
             Public symposia, research colloquia, and international seminars connecting scholars and cultural practitioners across Asia.
           </p>
-          <div class="pathway-placeholder">
-            <span class="placeholder-icon" aria-hidden="true">&#9671;</span>
-            <p class="placeholder-text">Upcoming seminar schedule and conference announcements will be announced shortly.</p>
+          <div class="pathway-preview-item">
+            <span class="pathway-preview-meta">18 Nov 2026 &bull; Hybrid Symposium</span>
+            <p class="pathway-preview-title">Korea-Southeast Asia Transnational Connectivity: Media &amp; Society</p>
           </div>
           <a href="{{ '/programs-events/' | relative_url }}" class="pathway-link">
             Explore Programs &amp; Events &rarr;
@@ -256,9 +237,9 @@ layout: default
           <p class="pathway-desc">
             Academic opportunities, calls for papers, visiting scholar appointments, and news from KSL research initiatives.
           </p>
-          <div class="pathway-placeholder">
-            <span class="placeholder-icon" aria-hidden="true">&#9632;</span>
-            <p class="placeholder-text">Official announcements, visiting fellow calls, and student opportunities will be posted here.</p>
+          <div class="pathway-preview-item">
+            <span class="pathway-preview-meta">Oct 2026 &bull; Visiting Fellowship</span>
+            <p class="pathway-preview-title">Inaugural Call for Visiting Research Fellows in Contemporary Korean Studies</p>
           </div>
           <a href="{{ '/news/' | relative_url }}" class="pathway-link">
             Read News &rarr;

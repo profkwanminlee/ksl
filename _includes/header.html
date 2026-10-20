@@ -50,8 +50,7 @@
       {% endif %}
       <li class="mobile-nav-item{% if is_active %} active{% endif %}">
         <a href="{{ item.url | relative_url }}" class="mobile-nav-link"{% if is_active %} aria-current="page"{% endif %}>
-          <span class="mobile-nav-idx">0{{ forloop.index }}</span>
-          <span class="mobile-nav-label">{{ item.title }}</span>
+          {{ item.title }}
         </a>
       </li>
       {% endfor %}

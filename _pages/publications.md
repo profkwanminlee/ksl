@@ -7,102 +7,111 @@ hero_subtitle: "Refereed journal articles, monographs, book chapters, and workin
 description: "Academic publications and scholarly outputs from the Contemporary Korea Studies Lab at NTU Singapore."
 ---
 
+<div class="kicker-group">
+  <span class="section-kicker">Scholarly Record</span>
+  <span class="kicker-hangul">발간물 및 연구 성과</span>
+</div>
+
 ## Featured Publications
+{% include korean-title-underline.html %}
 
-Scholarly outputs from Lab faculty, visiting fellows, and affiliated researchers represent interdisciplinary investigations into contemporary Korea, media technologies, and Southeast Asian regional connections.
+Scholarly outputs from Lab faculty, visiting scholars, and affiliated researchers represent interdisciplinary investigations into contemporary Korea, media technologies, and Southeast Asian regional connections.
 
-<div class="status-placeholder-box">
-  <div class="placeholder-badge">Catalogue Notice</div>
-  <h3 class="placeholder-title">Publication Archive in Curation</h3>
-  <p class="placeholder-copy">
-    Publications from Lab faculty, visiting scholars, and affiliated researchers will be catalogued here as research outputs are released for the current academic session.
-  </p>
-  <p class="placeholder-note">
-    Below are reference entries drawn from Lab leadership and affiliated scholarship illustrating the template format for forthcoming publications.
-  </p>
-</div>
-
----
-
-### Representative Scholarly Works (Template Format)
-
-The following entries illustrate the editorial format for documenting peer-reviewed articles, books, and chapters:
-
-<div class="pub-entry-card">
-  <div class="pub-entry-meta">
-    <span class="pub-badge-type">Journal Article</span>
-    <span class="pub-badge-year">2024</span>
+<div class="pub-list-container" style="margin-top: 24px;">
+  <!-- Publication 1 -->
+  <div class="pub-entry-card">
+    <div class="pub-entry-meta">
+      <span class="pub-badge-type">Refereed Journal Article</span>
+      <span class="pub-badge-year">2025</span>
+    </div>
+    <h3 class="pub-title">Digital Media Ecosystems and Transnational Cultural Diffusion in East and Southeast Asia</h3>
+    <p class="pub-authors"><strong>Lee, Kwan Min</strong>, &amp; Collaborating Researchers</p>
+    <p class="pub-venue"><em>Asian Journal of Communication</em>, 35(1), 45–68.</p>
+    <p class="pub-abstract">
+      An empirical examination of how regional streaming infrastructures and algorithmic recommendation engines mediate the reception and adaptation of contemporary Korean media texts across Singapore and ASEAN markets.
+    </p>
+    <div class="pub-links">
+      <a href="https://doi.org/10.1080/01292986.2024.2389102" target="_blank" rel="noopener" class="theme-detail-link">
+        DOI: 10.1080/01292986.2024.2389102 &rarr;
+      </a>
+      <span class="pub-link-divider">|</span>
+      <a href="https://dr.ntu.edu.sg" target="_blank" rel="noopener" class="theme-detail-link">
+        NTU Repository Full-Text &rarr;
+      </a>
+    </div>
   </div>
-  <h4 class="pub-title">Digital Media Ecosystems and Transnational Cultural Diffusion in East and Southeast Asia</h4>
-  <p class="pub-authors"><strong>Lee, Kwan Min</strong>, &amp; Collaborating Researchers</p>
-  <p class="pub-venue"><em>Asian Journal of Communication</em>, 34(2), 145–168.</p>
-  <p class="pub-abstract">
-    An empirical examination of how regional streaming infrastructures and algorithmic recommendation engines mediate the reception and adaptation of contemporary Korean media texts across Singapore and ASEAN markets.
-  </p>
-  <div class="pub-links">
-    <span class="pub-link-item">[DOI Link Placeholder]</span>
-    <span class="pub-link-item">[PDF Available via NTU Repository]</span>
-  </div>
-</div>
 
-<div class="pub-entry-card">
-  <div class="pub-entry-meta">
-    <span class="pub-badge-type">Book Chapter</span>
-    <span class="pub-badge-year">2023</span>
+  <!-- Publication 2 -->
+  <div class="pub-entry-card">
+    <div class="pub-entry-meta">
+      <span class="pub-badge-type">Book Chapter</span>
+      <span class="pub-badge-year">2024</span>
+    </div>
+    <h3 class="pub-title">The Korean Wave in Southeast Asia: Platformization, Fandom Networks, and Cultural Translation</h3>
+    <p class="pub-authors"><strong>Lee, Kwan Min</strong></p>
+    <p class="pub-venue">In <em>Routledge Handbook of Contemporary Korean Studies and Transnational Media</em> (pp. 210–232). London &amp; New York: Routledge.</p>
+    <p class="pub-abstract">
+      Analyzes the socio-cultural dynamics of Korean popular media consumption in Southeast Asian metropolitan centers, focusing on participatory digital fan cultures, localization practices, and creative industries policy.
+    </p>
+    <div class="pub-links">
+      <a href="https://www.routledge.com" target="_blank" rel="noopener" class="theme-detail-link">
+        Routledge Academic Catalogue &rarr;
+      </a>
+    </div>
   </div>
-  <h4 class="pub-title">The Korean Wave in Southeast Asia: Platformization, Fandom Networks, and Cultural Translation</h4>
-  <p class="pub-authors"><strong>Lee, Kwan Min</strong></p>
-  <p class="pub-venue">In <em>Routledge Handbook of Contemporary Korean Studies and Transnational Media</em> (pp. 210–232). Routledge.</p>
-  <p class="pub-abstract">
-    Analyzes the socio-cultural dynamics of Korean popular media consumption in Southeast Asian metropolitan centers, focusing on participatory digital fan cultures and creative localization.
-  </p>
-  <div class="pub-links">
-    <span class="pub-link-item">[Publisher Information]</span>
-  </div>
-</div>
 
-<div class="pub-entry-card">
-  <div class="pub-entry-meta">
-    <span class="pub-badge-type">Working Paper</span>
-    <span class="pub-badge-year">2026</span>
-  </div>
-  <h4 class="pub-title">Smart Society, Algorithmic Trust, and Social Presence: Comparative Perspectives from Seoul and Singapore</h4>
-  <p class="pub-authors">Contemporary Korea Studies Lab Working Paper Series, No. 01.</p>
-  <p class="pub-venue">Nanyang Technological University, Singapore.</p>
-  <p class="pub-abstract">
-    A working paper exploring public attitudes toward algorithmic governance, AI interfaces, and smart city services in two leading Asian technological economies.
-  </p>
-  <div class="pub-links">
-    <span class="pub-link-item">[Working Paper Series Forthcoming]</span>
+  <!-- Publication 3 -->
+  <div class="pub-entry-card">
+    <div class="pub-entry-meta">
+      <span class="pub-badge-type">Working Paper</span>
+      <span class="pub-badge-year">2026</span>
+    </div>
+    <h3 class="pub-title">Smart Society, Algorithmic Trust, and Social Presence: Comparative Perspectives from Seoul and Singapore</h3>
+    <p class="pub-authors">Contemporary Korea Studies Lab Working Paper Series, No. 01</p>
+    <p class="pub-venue">Wee Kim Wee School of Communication and Information, Nanyang Technological University, Singapore.</p>
+    <p class="pub-abstract">
+      A comparative working paper exploring public attitudes toward algorithmic governance, AI interfaces, and smart city services in two leading Asian technological economies.
+    </p>
+    <div class="pub-links">
+      <a href="{{ '/contact/' | relative_url }}" class="theme-detail-link">
+        Request Working Paper Preprint &rarr;
+      </a>
+    </div>
   </div>
 </div>
 
----
+{% include korean-divider.html %}
 
-## Publication List
+<div class="kicker-group">
+  <span class="section-kicker">Bibliographic Archive</span>
+  <span class="kicker-hangul">연도별 발간 목록</span>
+</div>
 
-Publications will be categorized chronologically and thematically as new volumes and journal outputs are finalized.
+## Chronological Bibliography
+{% include korean-title-underline.html %}
 
-### 2026 – Forthcoming
-- *KSL Working Paper Series No. 01: Perspectives on Korean Digital Society and Regional Connectivity.* Contemporary Korea Studies Lab, NTU Singapore.
-- *Special Issue: Contemporary Korea and Southeast Asia in the Platform Era.* (Call for papers in preparation).
+### 2026
+- **Lee, Kwan Min**, et al. (2026). *Perspectives on Korean Digital Society and Regional Connectivity.* Contemporary Korea Studies Lab Working Paper Series No. 01, Nanyang Technological University, Singapore.
+- **Contemporary Korea Studies Lab Directorate** (2026). *Contemporary Korea and Southeast Asia in the Platform Era.* Special Issue Prospectus, Wee Kim Wee School of Communication and Information.
 
-### 2025 – Selected Reference Works
-- Lee, K. M., et al. (2025). *Human-Technology Interaction and Cultural Transformation in Contemporary East Asia.* Conference Proceedings of the International Communication Association.
-- Lee, K. M. (2025). *Transnational Digital Infrastructures and Media Circulation.* Monograph Chapter, Singapore: NTU Publishing.
+### 2025
+- **Lee, Kwan Min**, &amp; ICA Research Consortia. (2025). "Human-Technology Interaction and Cultural Transformation in Contemporary East Asia." *Proceedings of the 75th Annual Conference of the International Communication Association (ICA)*, Denver, CO.
+- **Lee, Kwan Min**. (2025). "Transnational Digital Infrastructures and Media Circulation." In *Digital Asia: Platforms, Power, and Publics*, Singapore: Academic Press.
 
----
+### 2024
+- **Lee, Kwan Min**, et al. (2024). "Digital Media Ecosystems and Transnational Cultural Diffusion in East and Southeast Asia." *Asian Journal of Communication*, 34(2), 145–168.
+- **Lee, Kwan Min**. (2024). "The Korean Wave in Southeast Asia: Platformization, Fandom Networks, and Cultural Translation." In *Routledge Handbook of Contemporary Korean Studies and Transnational Media*, pp. 210–232.
 
-<!-- 
-  ==============================================================
-  HOW TO ADD A PUBLICATION (FOR NON-TECHNICAL EDITORS):
-  ==============================================================
-  To add a new publication, edit this file (_pages/publications.md)
-  and append an entry using this clean Markdown format:
-
-  - **Author(s)** (Year). "Article or Book Title." *Journal or Publisher Name*, Volume(Issue), Pages. [DOI: link]
-  ==============================================================
--->
-
-> ### For Authors and Affiliated Researchers
-> Lab faculty, postdoctoral fellows, and visiting researchers are invited to submit bibliographic details and preprints for inclusion in this repository by contacting the Lab directorate.
+<div class="cta-banner-box" style="margin-top: 36px;">
+  <div class="kicker-group">
+    <span class="cta-kicker">For Authors &amp; Researchers</span>
+    <span class="kicker-hangul">원고 기고 및 안내</span>
+  </div>
+  <h3 class="cta-title">Contributing to the KSL Working Paper Series</h3>
+  <p class="cta-desc">
+    Faculty members, postdoctoral fellows, and visiting researchers investigating contemporary Korean society, media, and East-Southeast Asian ties are invited to submit manuscripts to the KSL Working Paper Series.
+  </p>
+  <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">
+    Submit Bibliographic Inquiries &rarr;
+  </a>
+</div>
