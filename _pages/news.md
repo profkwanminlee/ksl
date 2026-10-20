@@ -4,7 +4,6 @@ title: "News"
 permalink: /news/
 hero_tag: "Updates & Notices"
 hero_subtitle: "Institutional announcements, research milestones, and academic opportunities."
-hero_crop: "80% 25%"
 description: "Latest news, institutional announcements, and academic opportunities at the Contemporary Korea Studies Lab, NTU Singapore."
 ---
 

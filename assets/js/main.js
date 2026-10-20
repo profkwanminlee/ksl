@@ -1,118 +1,102 @@
 /**
  * Contemporary Korea Studies Lab (KSL)
  * Nanyang Technological University, Singapore
- * Accessible Mobile Navigation & Clamped Parallax Scroll Script
+ * Accessible Mobile Navigation (Modeled on Prof. Kwan Min Lee's Site) & Smooth Interactions
  */
 
 (function () {
   'use strict';
 
   // 1. Accessibility & Motion Preference Checks
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // 2. Mobile Navigation Drawer Handling
-  const mobileToggleBtn = document.getElementById('mobileNavToggle');
-  const mobileNavMenu = document.getElementById('mobileNavMenu');
-  const mobileNavClose = document.getElementById('mobileNavClose');
-  const mobileNavBackdrop = document.getElementById('mobileNavBackdrop');
+  // 2. Mobile Navigation Overlay Handling (Identical to profkwanminlee.github.io)
+  var mobileNavToggle = document.getElementById('mobileNavToggle');
+  var mobileNavOverlay = document.getElementById('mobileNavOverlay');
 
-  function openMobileNav() {
-    if (!mobileNavMenu || !mobileNavBackdrop) return;
-    mobileNavMenu.classList.add('open');
-    mobileNavBackdrop.classList.add('open');
-    mobileNavMenu.setAttribute('aria-hidden', 'false');
-    if (mobileToggleBtn) {
-      mobileToggleBtn.setAttribute('aria-expanded', 'true');
-    }
-    document.body.style.overflow = 'hidden';
-
-    // Focus on close button
-    if (mobileNavClose) {
-      mobileNavClose.focus();
-    }
-  }
-
-  function closeMobileNav() {
-    if (!mobileNavMenu || !mobileNavBackdrop) return;
-    mobileNavMenu.classList.remove('open');
-    mobileNavBackdrop.classList.remove('open');
-    mobileNavMenu.setAttribute('aria-hidden', 'true');
-    if (mobileToggleBtn) {
-      mobileToggleBtn.setAttribute('aria-expanded', 'false');
-      mobileToggleBtn.focus();
-    }
-    document.body.style.overflow = '';
-  }
-
-  if (mobileToggleBtn) {
-    mobileToggleBtn.addEventListener('click', function (e) {
+  if (mobileNavToggle && mobileNavOverlay) {
+    mobileNavToggle.addEventListener('click', function (e) {
       e.preventDefault();
-      const isOpen = mobileNavMenu && mobileNavMenu.classList.contains('open');
+      var isOpen = mobileNavOverlay.classList.contains('is-active');
       if (isOpen) {
         closeMobileNav();
       } else {
         openMobileNav();
       }
     });
-  }
 
-  if (mobileNavClose) {
-    mobileNavClose.addEventListener('click', function (e) {
-      e.preventDefault();
-      closeMobileNav();
-    });
-  }
-
-  if (mobileNavBackdrop) {
-    mobileNavBackdrop.addEventListener('click', function () {
-      closeMobileNav();
-    });
-  }
-
-  // Keyboard accessibility: ESC key closes mobile menu
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && mobileNavMenu && mobileNavMenu.classList.contains('open')) {
-      closeMobileNav();
+    function openMobileNav() {
+      mobileNavOverlay.classList.add('is-active');
+      mobileNavToggle.classList.add('is-open');
+      mobileNavOverlay.setAttribute('aria-hidden', 'false');
+      mobileNavToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
     }
-  });
 
-  // 3. Clamped Subtle Parallax Fallback for Browsers lacking CSS Scroll-Driven Animations
-  const supportsScrollDriven = window.CSS && CSS.supports && CSS.supports('(animation-timeline: view()) and (animation-range: entry)');
+    function closeMobileNav() {
+      mobileNavOverlay.classList.remove('is-active');
+      mobileNavToggle.classList.remove('is-open');
+      mobileNavOverlay.setAttribute('aria-hidden', 'true');
+      mobileNavToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    // Close on clicking any link inside
+    var mobileLinks = mobileNavOverlay.querySelectorAll('a');
+    mobileLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        closeMobileNav();
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobileNavOverlay.classList.contains('is-active')) {
+        closeMobileNav();
+        mobileNavToggle.focus();
+      }
+    });
+
+    // Reset on window resize above mobile breakpoint
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 860 && mobileNavOverlay.classList.contains('is-active')) {
+        closeMobileNav();
+      }
+    }, { passive: true });
+  }
+
+  // 3. Subtle Clamped Scroll Parallax (Gentle velocity, strictly non-intrusive)
+  var supportsScrollDriven = window.CSS && CSS.supports && CSS.supports('(animation-timeline: view()) and (animation-range: entry)');
 
   if (!supportsScrollDriven && !prefersReducedMotion) {
-    const parallaxWrappers = document.querySelectorAll('.parallax-wrapper');
+    var parallaxWrappers = document.querySelectorAll('.parallax-wrapper');
 
     if (parallaxWrappers.length > 0) {
-      let isTicking = false;
+      var isTicking = false;
 
       function updateParallax() {
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-        const windowHeight = window.innerHeight;
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        var windowHeight = window.innerHeight;
 
         parallaxWrappers.forEach(function (wrapper) {
-          const rect = wrapper.getBoundingClientRect();
-          const wrapperTop = rect.top + scrollY;
-          const wrapperHeight = rect.height;
+          var rect = wrapper.getBoundingClientRect();
+          var wrapperTop = rect.top + scrollY;
+          var wrapperHeight = rect.height;
 
-          // Check if wrapper is in or near viewport
           if (scrollY + windowHeight > wrapperTop && scrollY < wrapperTop + wrapperHeight) {
-            // Normalized scroll offset (-1 to 1)
-            const progress = (scrollY - wrapperTop) / (wrapperHeight + windowHeight);
-            
-            const bgLayer = wrapper.querySelector('.hero-bg-layer');
-            const latticeLayer = wrapper.querySelector('.hero-lattice-layer');
+            var progress = (scrollY - wrapperTop) / (wrapperHeight + windowHeight);
+            var bgLayer = wrapper.querySelector('.hero-bg-layer');
+            var latticeLayer = wrapper.querySelector('.hero-lattice-layer');
 
             if (bgLayer) {
-              const bgSpeed = parseFloat(bgLayer.getAttribute('data-speed')) || 0.2;
-              // Clamp translation between -35px and +35px
-              const clampedBg = Math.max(-35, Math.min(35, progress * 100 * bgSpeed));
+              var bgSpeed = parseFloat(bgLayer.getAttribute('data-speed')) || 0.15;
+              var clampedBg = Math.max(-25, Math.min(25, progress * 80 * bgSpeed));
               bgLayer.style.transform = 'translate3d(0, ' + clampedBg.toFixed(1) + 'px, 0)';
             }
 
             if (latticeLayer) {
-              const latSpeed = parseFloat(latticeLayer.getAttribute('data-speed')) || -0.12;
-              // Counter movement clamped between -20px and +20px
-              const clampedLat = Math.max(-20, Math.min(20, progress * 100 * latSpeed));
+              var latSpeed = parseFloat(latticeLayer.getAttribute('data-speed')) || -0.08;
+              var clampedLat = Math.max(-15, Math.min(15, progress * 80 * latSpeed));
               latticeLayer.style.transform = 'translate3d(0, ' + clampedLat.toFixed(1) + 'px, 0)';
             }
           }
@@ -128,7 +112,6 @@
         }
       }, { passive: true });
 
-      // Run once on load
       updateParallax();
     }
   }

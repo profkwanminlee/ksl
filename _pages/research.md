@@ -4,7 +4,6 @@ title: "Research"
 permalink: /research/
 hero_tag: "Inquiry & Initiatives"
 hero_subtitle: "Three core themes framing the study of contemporary Korea and Southeast Asia."
-hero_crop: "70% 35%"
 description: "Research themes and active scholarly initiatives of the Contemporary Korea Studies Lab at NTU Singapore."
 ---
 

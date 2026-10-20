@@ -4,7 +4,6 @@ title: "Contact"
 permalink: /contact/
 hero_tag: "Connect & Engage"
 hero_subtitle: "Institutional address, general enquiries, and collaboration proposals."
-hero_crop: "center 50%"
 description: "Contact information and collaboration enquiries for the Contemporary Korea Studies Lab at NTU Singapore."
 ---
 

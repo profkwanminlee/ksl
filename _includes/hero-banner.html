@@ -1,64 +1,62 @@
-{% assign crop_pos = page.hero_crop | default: 'center 30%' %}
-{% assign hero_tag = page.hero_tag | default: site.institution_short %}
+{% assign hero_tag = page.hero_tag | default: site.short_title %}
 {% assign hero_title = page.title | default: site.title %}
 {% assign hero_sub = page.hero_subtitle | default: page.description %}
 
 <section class="page-hero parallax-wrapper" aria-label="{{ hero_title }}">
-  <!-- Parallax Layer 1: Supplied Korea Image with Page-specific Crop -->
-  <div class="hero-layer hero-bg-layer" data-speed="0.25">
+  <!-- Parallax Layer 1: Supplied Korea Image with Stable, Consistent Framing -->
+  <div class="hero-layer hero-bg-layer" data-speed="0.15">
     <img 
       src="{{ '/images/korea1.jpg' | relative_url }}" 
-      alt="Contemporary Korea Studies Lab architectural and cultural landscape banner" 
+      alt="Contemporary Korea Studies Lab architectural landscape banner" 
       class="hero-img" 
-      style="object-position: {{ crop_pos }};"
+      style="object-position: center 32%;"
       fetchpriority="high"
       loading="eager"
       onerror="this.classList.add('img-error');"
     >
   </div>
 
-  <!-- Parallax Layer 2: Restrained Korean Window Lattice (Changhosal) Geometry Watermark -->
-  <div class="hero-layer hero-lattice-layer" data-speed="-0.15" aria-hidden="true">
+  <!-- Parallax Layer 2: Subtle Traditional Korean Window Lattice (Changhosal) Geometry -->
+  <div class="hero-layer hero-lattice-layer" data-speed="-0.08" aria-hidden="true">
     <svg class="lattice-pattern-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <pattern id="koreanLatticePattern" width="60" height="60" patternUnits="userSpaceOnUse">
-          <!-- Geometric Korean Traditional Window Lattice Line Grid -->
-          <rect x="0" y="0" width="60" height="60" fill="none" stroke="rgba(212, 163, 70, 0.12)" stroke-width="1"/>
-          <path d="M0 30H60 M30 0V60" stroke="rgba(212, 163, 70, 0.08)" stroke-width="0.8"/>
-          <rect x="15" y="15" width="30" height="30" fill="none" stroke="rgba(166, 43, 43, 0.12)" stroke-width="0.8"/>
-          <circle cx="30" cy="30" r="4" fill="none" stroke="rgba(212, 163, 70, 0.18)" stroke-width="0.8"/>
+        <pattern id="pageLatticePattern" width="60" height="60" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="60" height="60" fill="none" stroke="rgba(224, 169, 56, 0.10)" stroke-width="0.8"/>
+          <path d="M0 30H60 M30 0V60" stroke="rgba(224, 169, 56, 0.06)" stroke-width="0.6"/>
+          <rect x="15" y="15" width="30" height="30" fill="none" stroke="rgba(166, 43, 43, 0.08)" stroke-width="0.7"/>
+          <circle cx="30" cy="30" r="3" fill="none" stroke="rgba(78, 52, 46, 0.12)" stroke-width="0.7"/>
         </pattern>
       </defs>
-      <rect width="100%" height="100%" fill="url(#koreanLatticePattern)"/>
+      <rect width="100%" height="100%" fill="url(#pageLatticePattern)"/>
     </svg>
   </div>
 
-  <!-- Hero Gradient & Ink Scrim for Optimal Contrast -->
+  <!-- Solid Non-Gloss Scrim for Pristine Contrast -->
   <div class="hero-scrim" aria-hidden="true"></div>
 
-  <!-- Hero Content Layer (Foreground) -->
+  <!-- Hero Content Layer -->
   <div class="hero-content-layer container">
     <div class="hero-text-block">
       {% if hero_tag %}
       <div class="hero-badge">
-        <span class="hero-badge-marker" aria-hidden="true"></span>
+        <span class="hero-badge-dot" aria-hidden="true"></span>
         <span class="hero-badge-text">{{ hero_tag }}</span>
       </div>
       {% endif %}
 
       <h1 class="hero-title">{{ hero_title }}</h1>
 
+      <!-- Architectural Hanok Roofline Accent SVG Under Headline -->
+      <div class="korean-roof-accent" aria-hidden="true">
+        <svg width="120" height="12" viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 10C24 9.5 45 4 60 4C75 4 96 9.5 118 10" stroke="var(--color-yellow-gold)" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M48 4H72" stroke="var(--color-red)" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="60" cy="4" r="2.2" fill="var(--color-red)"/>
+        </svg>
+      </div>
+
       {% if hero_sub %}
       <p class="hero-subtitle">{{ hero_sub }}</p>
-      {% endif %}
-
-      {% if page.hero_cta %}
-      <div class="hero-actions">
-        <a href="{{ page.hero_cta_url | relative_url }}" class="btn btn-primary">
-          {{ page.hero_cta_text }}
-          <span class="btn-arrow" aria-hidden="true">&rarr;</span>
-        </a>
-      </div>
       {% endif %}
     </div>
   </div>

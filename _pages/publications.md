@@ -4,7 +4,6 @@ title: "Publications"
 permalink: /publications/
 hero_tag: "Scholarship & Outputs"
 hero_subtitle: "Refereed journal articles, monographs, book chapters, and working papers."
-hero_crop: "center 60%"
 description: "Academic publications and scholarly outputs from the Contemporary Korea Studies Lab at NTU Singapore."
 ---
 

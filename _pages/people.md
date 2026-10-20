@@ -4,7 +4,6 @@ title: "People"
 permalink: /people/
 hero_tag: "Faculty & Community"
 hero_subtitle: "The scholars, fellows, and researchers driving Korean studies at NTU."
-hero_crop: "30% 40%"
 description: "Leadership, affiliate faculty, and researchers of the Contemporary Korea Studies Lab at NTU Singapore."
 ---
 
@@ -14,15 +13,22 @@ The Contemporary Korea Studies Lab is directed by the **Korea Foundation Endowed
 
 <div class="people-card director-card">
   <div class="people-card-header">
-    <div class="people-avatar-placeholder" aria-hidden="true">
-      <span class="avatar-initials">KML</span>
+    <div class="people-photo-frame">
+      <img src="{{ '/images/profkwanportrait.jpeg' | relative_url }}" alt="Prof. Kwan Min Lee" class="people-photo">
     </div>
     <div class="people-info">
-      <h3 class="people-name">Prof. Kwan Min Lee <span class="korean-name">(이관민)</span></h3>
+      <div class="people-title-row">
+        <h3 class="people-name">Prof. Kwan Min Lee</h3>
+        <span class="korean-name">이관민 (李寬敏)</span>
+      </div>
       <p class="people-role">Director, Contemporary Korea Studies Lab</p>
-      <p class="people-title">Korea Foundation Endowed Chair Professor in Contemporary Korean Society and New Media</p>
+      <p class="people-title">Korea Foundation Endowed Chair Professor in Contemporary Korean Society &amp; New Media</p>
       <p class="people-affiliation">Wee Kim Wee School of Communication and Information (WKWSCI), NTU Singapore</p>
       <p class="people-subaffiliation">Joint Professor, College of Computing and Data Science &amp; Nanyang Business School</p>
+      <p class="people-email-row">
+        <span class="email-label">Email:</span> 
+        <a href="mailto:kwanminlee@ntu.edu.sg" class="people-email-link">kwanminlee@ntu.edu.sg</a>
+      </p>
     </div>
   </div>
   <div class="people-bio">
@@ -33,8 +39,12 @@ The Contemporary Korea Studies Lab is directed by the **Korea Foundation Endowed
       Previously, Lee served as Vice President and Director of User Experience (UX) at Samsung Electronics, where he founded Samsung’s Creative Lab (C-Lab) and led UX innovation for the Visual Display Division. Prior to Samsung and NTU, he was a tenured professor at the Annenberg School for Communication at the University of Southern California (USC) and founding director of the Interaction Science Research Center at Sungkyunkwan University (SKKU). His research focuses on the intersection of new media technologies, human-technology interaction, Korean digital innovation, and contemporary cultural diffusion.
     </p>
     <div class="people-links">
-      <span class="link-label">Academic Profile:</span>
-      <a href="https://dr.ntu.edu.sg/entities/person/Lee-Kwan-Min" target="_blank" rel="noopener">NTU Faculty Directory &rarr;</a>
+      <a href="https://dr.ntu.edu.sg/entities/person/Lee-Kwan-Min" target="_blank" rel="noopener" class="faculty-link">
+        View NTU Academic Profile &rarr;
+      </a>
+      <a href="https://profkwanminlee.github.io" target="_blank" rel="noopener" class="faculty-link">
+        Academic Website &rarr;
+      </a>
     </div>
   </div>
 </div>
@@ -64,7 +74,7 @@ The Lab draws on multidisciplinary expertise across NTU’s schools, institutes,
 
   <div class="people-card">
     <div class="people-card-header">
-      <div class="people-avatar-placeholder"><span class="avatar-initials">AB</span></div>
+      <div class="people-avatar-placeholder"><span class="avatar-initials">AF</span></div>
       <div class="people-info">
         <h3 class="people-name">Faculty Name</h3>
         <p class="people-role">Affiliate Faculty</p>

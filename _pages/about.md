@@ -4,7 +4,6 @@ title: "About"
 permalink: /about/
 hero_tag: "Institutional Profile"
 hero_subtitle: "An interdisciplinary research initiative based at Nanyang Technological University, Singapore."
-hero_crop: "center 20%"
 description: "Overview, mission, and research focus of the Contemporary Korea Studies Lab (KSL) at Nanyang Technological University, Singapore."
 ---
 

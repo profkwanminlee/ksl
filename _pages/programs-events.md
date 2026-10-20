@@ -4,7 +4,6 @@ title: "Programs & Events"
 permalink: /programs-events/
 hero_tag: "Engagement & Dialogue"
 hero_subtitle: "Colloquia, public lectures, workshops, and international symposia."
-hero_crop: "50% 75%"
 description: "Upcoming and past conferences, research seminars, and public programs from the Contemporary Korea Studies Lab at NTU Singapore."
 ---
 
