@@ -1,0 +1,18 @@
+# Main Navigation Links for Contemporary Korea Studies Lab (KSL)
+# Order: About, Research, Publications, People, Programs & Events, News, Contact
+
+main:
+  - title: "About"
+    url: "/about/"
+  - title: "Research"
+    url: "/research/"
+  - title: "Publications"
+    url: "/publications/"
+  - title: "People"
+    url: "/people/"
+  - title: "Programs & Events"
+    url: "/programs-events/"
+  - title: "News"
+    url: "/news/"
+  - title: "Contact"
+    url: "/contact/"

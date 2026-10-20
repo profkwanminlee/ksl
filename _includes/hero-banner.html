@@ -1,0 +1,65 @@
+{% assign crop_pos = page.hero_crop | default: 'center 30%' %}
+{% assign hero_tag = page.hero_tag | default: site.institution_short %}
+{% assign hero_title = page.title | default: site.title %}
+{% assign hero_sub = page.hero_subtitle | default: page.description %}
+
+<section class="page-hero parallax-wrapper" aria-label="{{ hero_title }}">
+  <!-- Parallax Layer 1: Supplied Korea Image with Page-specific Crop -->
+  <div class="hero-layer hero-bg-layer" data-speed="0.25">
+    <img 
+      src="{{ '/images/korea1.jpg' | relative_url }}" 
+      alt="Contemporary Korea Studies Lab architectural and cultural landscape banner" 
+      class="hero-img" 
+      style="object-position: {{ crop_pos }};"
+      fetchpriority="high"
+      loading="eager"
+      onerror="this.classList.add('img-error');"
+    >
+  </div>
+
+  <!-- Parallax Layer 2: Restrained Korean Window Lattice (Changhosal) Geometry Watermark -->
+  <div class="hero-layer hero-lattice-layer" data-speed="-0.15" aria-hidden="true">
+    <svg class="lattice-pattern-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="koreanLatticePattern" width="60" height="60" patternUnits="userSpaceOnUse">
+          <!-- Geometric Korean Traditional Window Lattice Line Grid -->
+          <rect x="0" y="0" width="60" height="60" fill="none" stroke="rgba(212, 163, 70, 0.12)" stroke-width="1"/>
+          <path d="M0 30H60 M30 0V60" stroke="rgba(212, 163, 70, 0.08)" stroke-width="0.8"/>
+          <rect x="15" y="15" width="30" height="30" fill="none" stroke="rgba(166, 43, 43, 0.12)" stroke-width="0.8"/>
+          <circle cx="30" cy="30" r="4" fill="none" stroke="rgba(212, 163, 70, 0.18)" stroke-width="0.8"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#koreanLatticePattern)"/>
+    </svg>
+  </div>
+
+  <!-- Hero Gradient & Ink Scrim for Optimal Contrast -->
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <!-- Hero Content Layer (Foreground) -->
+  <div class="hero-content-layer container">
+    <div class="hero-text-block">
+      {% if hero_tag %}
+      <div class="hero-badge">
+        <span class="hero-badge-marker" aria-hidden="true"></span>
+        <span class="hero-badge-text">{{ hero_tag }}</span>
+      </div>
+      {% endif %}
+
+      <h1 class="hero-title">{{ hero_title }}</h1>
+
+      {% if hero_sub %}
+      <p class="hero-subtitle">{{ hero_sub }}</p>
+      {% endif %}
+
+      {% if page.hero_cta %}
+      <div class="hero-actions">
+        <a href="{{ page.hero_cta_url | relative_url }}" class="btn btn-primary">
+          {{ page.hero_cta_text }}
+          <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

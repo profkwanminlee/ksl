@@ -1,0 +1,74 @@
+<header class="site-header" role="banner">
+  <div class="header-inner container">
+    <!-- Brand / Wordmark Linking to Homepage -->
+    <a href="{{ '/' | relative_url }}" class="site-brand" id="brandHomeLink" aria-label="Contemporary Korea Studies Lab Home">
+      <div class="brand-monogram" aria-hidden="true">
+        <span class="monogram-text">KSL</span>
+      </div>
+      <div class="brand-text">
+        <span class="brand-title">Contemporary Korea Studies Lab</span>
+        <span class="brand-subtitle">Nanyang Technological University, Singapore</span>
+      </div>
+    </a>
+
+    <!-- Primary Navigation Bar (Desktop) -->
+    <nav class="site-nav" role="navigation" aria-label="Main Navigation">
+      <ul class="nav-links">
+        {% for item in site.data.navigation.main %}
+        {% assign is_active = false %}
+        {% if page.url == item.url %}
+          {% assign is_active = true %}
+        {% elsif item.url != '/' and page.url contains item.url %}
+          {% assign is_active = true %}
+        {% endif %}
+        <li class="nav-item{% if is_active %} active{% endif %}">
+          <a href="{{ item.url | relative_url }}" class="nav-link"{% if is_active %} aria-current="page"{% endif %}>
+            {{ item.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobileNavToggle" class="mobile-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNavMenu">
+        <span class="toggle-icon-box" aria-hidden="true">
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+        </span>
+        <span class="toggle-label">Menu</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobileNavMenu" class="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-inner container">
+      <div class="mobile-nav-header">
+        <span class="mobile-nav-title">Menu</span>
+        <button id="mobileNavClose" class="mobile-nav-close" aria-label="Close navigation menu">&times;</button>
+      </div>
+      <ul class="mobile-nav-links">
+        {% for item in site.data.navigation.main %}
+        {% assign is_active = false %}
+        {% if page.url == item.url %}
+          {% assign is_active = true %}
+        {% elsif item.url != '/' and page.url contains item.url %}
+          {% assign is_active = true %}
+        {% endif %}
+        <li class="mobile-nav-item{% if is_active %} active{% endif %}">
+          <a href="{{ item.url | relative_url }}" class="mobile-nav-link"{% if is_active %} aria-current="page"{% endif %}>
+            <span class="mobile-nav-num">0{{ forloop.index }}</span>
+            <span class="mobile-nav-text">{{ item.title }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <div class="mobile-nav-footer">
+        <p class="mobile-nav-inst">Nanyang Technological University, Singapore</p>
+        <p class="mobile-nav-tagline">Advancing research on contemporary Korea in Southeast Asia.</p>
+      </div>
+    </div>
+  </div>
+  <div id="mobileNavBackdrop" class="mobile-nav-backdrop" aria-hidden="true"></div>
+</header>

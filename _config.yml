@@ -1,0 +1,30 @@
+title: "Contemporary Korea Studies Lab"
+title_separator: "—"
+short_title: "Korea Studies Lab"
+acronym: "KSL"
+institution: "Nanyang Technological University, Singapore"
+institution_short: "NTU Singapore"
+tagline: "Advancing the study of contemporary Korea in Singapore and Southeast Asia."
+description: "Contemporary Korea Studies Lab (KSL) is an interdisciplinary research initiative based at Nanyang Technological University, Singapore, supporting research, publications, and public programs on contemporary Korea."
+
+url: ""
+baseurl: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+include:
+  - _pages
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+
+permalink: /:title/

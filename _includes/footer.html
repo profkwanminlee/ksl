@@ -1,0 +1,76 @@
+<footer class="site-footer" role="contentinfo">
+  <!-- Accent Border with Korean Dancheong Vermilion -->
+  <div class="footer-top-rule" aria-hidden="true"></div>
+
+  <div class="footer-main container">
+    <div class="footer-grid">
+      <!-- Col 1: Identity & Mission -->
+      <div class="footer-col footer-col-about">
+        <div class="footer-brand">
+          <span class="footer-monogram" aria-hidden="true">KSL</span>
+          <div>
+            <h2 class="footer-title">Contemporary Korea Studies Lab</h2>
+            <p class="footer-institution">Nanyang Technological University, Singapore</p>
+          </div>
+        </div>
+        <p class="footer-mission">
+          An interdisciplinary research initiative supporting scholarship, publications, and public programs on contemporary Korea and its connections with Singapore and Southeast Asia.
+        </p>
+        <div class="footer-kf-tag">
+          <span class="kf-badge">Wee Kim Wee School of Communication and Information</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links -->
+      <div class="footer-col footer-col-nav">
+        <h3 class="footer-heading">Navigation</h3>
+        <ul class="footer-links">
+          {% for item in site.data.navigation.main %}
+          <li>
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Col 3: Research Focus Areas -->
+      <div class="footer-col footer-col-research">
+        <h3 class="footer-heading">Research Themes</h3>
+        <ul class="footer-links footer-themes">
+          <li><a href="{{ '/research/#it-innovation-digital-society' | relative_url }}">IT Innovation &amp; Digital Society</a></li>
+          <li><a href="{{ '/research/#korean-culture-wave' | relative_url }}">Contemporary Culture &amp; Hallyu</a></li>
+          <li><a href="{{ '/research/#human-cultural-exchange' | relative_url }}">Human &amp; Cultural Exchange</a></li>
+        </ul>
+        <div class="footer-collab-cta">
+          <h4 class="collab-heading">Collaboration</h4>
+          <p class="collab-text">We welcome academic, cultural, and policy partnership enquiries across Asia.</p>
+          <a href="{{ '/contact/' | relative_url }}" class="collab-link">Explore Partnerships &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Col 4: Institutional Location -->
+      <div class="footer-col footer-col-contact">
+        <h3 class="footer-heading">Location &amp; Inquiries</h3>
+        <address class="footer-address">
+          <strong>Nanyang Technological University</strong><br>
+          Wee Kim Wee School of Communication and Information<br>
+          31 Nanyang Link<br>
+          Singapore 637718<br>
+          <span class="footer-contact-link"><a href="{{ '/contact/' | relative_url }}">Contact &amp; Enquiry Details &rarr;</a></span>
+        </address>
+      </div>
+    </div>
+
+    <!-- Bottom Colophon -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <p class="footer-copy">
+          &copy; {{ site.time | date: '%Y' }} Contemporary Korea Studies Lab, Nanyang Technological University, Singapore. All rights reserved.
+        </p>
+        <p class="footer-note">
+          Built with Jekyll for GitHub Pages. Editor-friendly Markdown structure.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
