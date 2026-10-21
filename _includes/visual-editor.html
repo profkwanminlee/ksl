@@ -25,7 +25,7 @@
       <span class="ribbon-brand-mark">CKSL</span>
       <span class="ribbon-brand-title">Studio</span>
       <span class="ribbon-page-badge" id="cksl-current-page-tag">{{ page.title | default: "Home" }}</span>
-      <span class="ribbon-draft-pill" id="cksl-draft-session-badge">Draft Session Active</span>
+      <span class="ribbon-draft-dot" id="cksl-draft-session-badge" title="Draft Session Active (Main is safe)"></span>
     </div>
 
     <!-- Ribbon Tabs -->
@@ -170,24 +170,38 @@
       </div>
     </div>
 
-    <!-- Shelf 3: Heritage Motifs Palette -->
+    <!-- Shelf 3: Heritage Motifs (Active On This Page + Insert Catalog) -->
     <div class="cksl-shelf-pane" id="pane-motifs">
+      <!-- Tool Group 1: Placed Motifs Currently on this Page -->
+      <div class="cksl-tool-group" style="flex: 1; max-width: 580px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+          <label class="cksl-tool-label">Motifs on This Page (<span id="cksl-ribbon-motifs-count">0</span>)</label>
+          <span style="font-size: 0.7rem; color: #9CA3AF;">Click to Select, Replace or Delete</span>
+        </div>
+        <div id="cksl-ribbon-page-motifs" class="cksl-ribbon-motifs-reel">
+          <!-- Populated dynamically via JS with Roof, Pavilion, Divider, etc. -->
+        </div>
+      </div>
+
+      <div class="cksl-tool-separator"></div>
+
+      <!-- Tool Group 2: Insert Heritage Motifs Catalog -->
       <div class="cksl-tool-group">
-        <label class="cksl-tool-label">Quick Insert Korean Vector Motifs (from v1.png &amp; v2.png)</label>
-        <div class="cksl-btn-row" style="flex-wrap: wrap; gap: 6px;">
+        <label class="cksl-tool-label">+ Insert Authentic Vector Motif (13 SVGs)</label>
+        <div class="cksl-btn-row" style="flex-wrap: wrap; gap: 4px; max-width: 620px;">
           <button type="button" class="cksl-shelf-btn" data-insert-motif="maehwa_blossom">Plum Blossom</button>
           <button type="button" class="cksl-shelf-btn" data-insert-motif="flower_divider">Divider</button>
-          <button type="button" class="cksl-shelf-btn" data-insert-motif="hanok_roof">Hanok Eaves</button>
-          <button type="button" class="cksl-shelf-btn" data-insert-motif="title_underline">Title Underline</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="hanok_roof">Hanok Roof</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="title_underline">Underline</button>
           <button type="button" class="cksl-shelf-btn" data-insert-motif="cloud_unmun">Cloud Scroll</button>
           <button type="button" class="cksl-shelf-btn" data-insert-motif="cloud_bars">Cloud Bars</button>
-          <button type="button" class="cksl-shelf-btn" data-insert-motif="palace_lantern">Silk Lantern</button>
-          <button type="button" class="cksl-shelf-btn" data-insert-motif="korean_fan">Folding Fan</button>
-          <button type="button" class="cksl-shelf-btn" data-insert-motif="seigaiha_wave">Wave Medallion</button>
-          <button type="button" class="cksl-shelf-btn" data-insert-motif="shippo_lattice">Lattice Medallion</button>
-          <button type="button" class="cksl-shelf-btn" data-insert-motif="pavilion">Palace Pavilion</button>
-          <button type="button" class="cksl-shelf-btn" data-insert-motif="dancheong_corner">Corner Fret</button>
-          <button type="button" class="cksl-shelf-btn" data-insert-motif="korean_seal">Scholar Seal</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="palace_lantern">Lantern</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="korean_fan">Fan</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="seigaiha_wave">Wave</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="shippo_lattice">Lattice</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="pavilion">Pavilion House</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="dancheong_corner">Corner</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="korean_seal">Seal Stamp</button>
         </div>
       </div>
     </div>
@@ -814,6 +828,138 @@
     <div class="cksl-modal-footer">
       <button type="button" class="btn btn-secondary cksl-modal-close">Cancel</button>
       <button type="button" class="btn btn-primary" id="cksl-btn-confirm-create-page">Create Page File</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Replace Motif with 13 Authentic Joseon SVGs -->
+<div class="cksl-modal-overlay" id="cksl-modal-replace-motif" role="dialog" aria-modal="true" aria-labelledby="replace-motif-title">
+  <div class="cksl-modal-card" style="max-width: 760px;">
+    <div class="cksl-modal-header">
+      <h3 class="cksl-modal-title" id="replace-motif-title">Replace Korean Heritage Motif</h3>
+      <button type="button" class="cksl-modal-close" aria-label="Close modal">✕</button>
+    </div>
+    <div class="cksl-modal-body">
+      <p style="font-size: 0.85rem; color: #474D54; margin: 0 0 16px;">
+        Click any authentic Joseon vector ornament below to instantly swap it in-place:
+      </p>
+      <div class="cksl-motifs-catalog-grid" id="cksl-replace-motif-grid">
+        <div class="cksl-motif-option-card" data-replace-motif="maehwa_blossom">
+          <div class="motif-preview">{% include korean-motifs-library.html motif="maehwa_blossom" width="40px" %}</div>
+          <strong>Maehwa Plum Blossom</strong>
+          <span>5-Petal radiating blossom &amp; stamens</span>
+        </div>
+        <div class="cksl-motif-option-card" data-replace-motif="flower_divider">
+          <div class="motif-preview">{% include korean-motifs-library.html motif="flower_divider" %}</div>
+          <strong>Plum Blossom Divider</strong>
+          <span>Blossom with vine runners &amp; lines</span>
+        </div>
+        <div class="cksl-motif-option-card" data-replace-motif="hanok_roof">
+          <div class="motif-preview">{% include korean-motifs-library.html motif="hanok_roof" width="130px" %}</div>
+          <strong>Hanok Cheoma Eaves</strong>
+          <span>Curved architectural roofline</span>
+        </div>
+        <div class="cksl-motif-option-card" data-replace-motif="title_underline">
+          <div class="motif-preview">{% include korean-motifs-library.html motif="title_underline" %}</div>
+          <strong>Dancheong Underline</strong>
+          <span>Tapered vermilion line &amp; blossom</span>
+        </div>
+        <div class="cksl-motif-option-card" data-replace-motif="cloud_unmun">
+          <div class="motif-preview">{% include korean-motifs-library.html motif="cloud_unmun" width="80px" %}</div>
+          <strong>Auspicious Cloud (Unmun)</strong>
+          <span>Traditional Joseon cloud scroll</span>
+        </div>
+        <div class="cksl-motif-option-card" data-replace-motif="cloud_bars">
+          <div class="motif-preview">{% include korean-motifs-library.html motif="cloud_bars" width="80px" %}</div>
+          <strong>Horizontal Cloud Bars</strong>
+          <span>Floating palace fog band</span>
+        </div>
+        <div class="cksl-motif-option-card" data-replace-motif="palace_lantern">
+          <div class="motif-preview">{% include korean-motifs-library.html motif="palace_lantern" width="36px" %}</div>
+          <strong>Palace Silk Lantern</strong>
+          <span>Hexagonal silk lantern with tassels</span>
+        </div>
+        <div class="cksl-motif-option-card" data-replace-motif="korean_fan">
+          <div class="motif-preview">{% include korean-motifs-library.html motif="korean_fan" %}</div>
+          <strong>Korean Folding Fan</strong>
+          <span>Buchae with hanging Norigae tassel</span>
+        </div>
+        <div class="cksl-motif-option-card" data-replace-motif="seigaiha_wave">
+          <div class="motif-preview">{% include korean-motifs-library.html motif="seigaiha_wave" width="48px" %}</div>
+          <strong>Wave Medallion</strong>
+          <span>Concentric waves circle</span>
+        </div>
+        <div class="cksl-motif-option-card" data-replace-motif="shippo_lattice">
+          <div class="motif-preview">{% include korean-motifs-library.html motif="shippo_lattice" width="48px" %}</div>
+          <strong>Shippo Lattice</strong>
+          <span>Overlapping circles medallion</span>
+        </div>
+        <div class="cksl-motif-option-card" data-replace-motif="pavilion">
+          <div class="motif-preview">{% include korean-motifs-library.html motif="pavilion" %}</div>
+          <strong>Hanok Palace Pavilion</strong>
+          <span>Joseon timber pavilion house</span>
+        </div>
+        <div class="cksl-motif-option-card" data-replace-motif="dancheong_corner">
+          <div class="motif-preview">{% include korean-motifs-library.html motif="dancheong_corner" %}</div>
+          <strong>Corner Fret Bracket</strong>
+          <span>Architectural Dancheong corner</span>
+        </div>
+        <div class="cksl-motif-option-card" data-replace-motif="korean_seal">
+          <div class="motif-preview">{% include korean-motifs-library.html motif="korean_seal" %}</div>
+          <strong>Scholar Stamp Seal</strong>
+          <span>Cinnabar square border seal</span>
+        </div>
+      </div>
+    </div>
+    <div class="cksl-modal-footer">
+      <button type="button" class="btn btn-secondary cksl-modal-close">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Replace Image / Photo -->
+<div class="cksl-modal-overlay" id="cksl-modal-replace-image" role="dialog" aria-modal="true" aria-labelledby="replace-img-title">
+  <div class="cksl-modal-card" style="max-width: 720px;">
+    <div class="cksl-modal-header">
+      <h3 class="cksl-modal-title" id="replace-img-title">Replace Image</h3>
+      <button type="button" class="cksl-modal-close" aria-label="Close modal">✕</button>
+    </div>
+    <div class="cksl-modal-body">
+      <div style="margin-bottom: 16px;">
+        <label style="display: block; font-size: 0.82rem; font-weight: 700; margin-bottom: 6px;">Image URL</label>
+        <div style="display: flex; gap: 8px;">
+          <input type="text" id="cksl-replace-img-url-input" class="cksl-input-text" placeholder="https://... or /images/korea1.jpg">
+          <button type="button" class="btn btn-primary" id="cksl-btn-confirm-replace-img">Apply URL</button>
+        </div>
+      </div>
+      <div style="margin-bottom: 18px;">
+        <label style="display: block; font-size: 0.82rem; font-weight: 700; margin-bottom: 6px;">Or Choose from Korean Photo Library</label>
+        <div class="cksl-landscapes-grid">
+          <div class="cksl-landscape-card" data-img-src="/images/korea1.jpg">
+            <img src="{{ '/images/korea1.jpg' | relative_url }}" alt="Hanok Tile Eaves">
+            <div class="landscape-card-info"><strong>Hanok Tile Architecture</strong></div>
+          </div>
+          <div class="cksl-landscape-card" data-img-src="/images/korea2.jpg">
+            <img src="{{ '/images/korea2.jpg' | relative_url }}" alt="Palace Courtyard">
+            <div class="landscape-card-info"><strong>Palace Courtyard</strong></div>
+          </div>
+          <div class="cksl-landscape-card" data-img-src="/images/landscapes/gyeongbokgung.jpg">
+            <img src="{{ '/images/landscapes/gyeongbokgung.jpg' | relative_url }}" alt="Gyeongbokgung">
+            <div class="landscape-card-info"><strong>Gyeongbokgung Pavilion</strong></div>
+          </div>
+          <div class="cksl-landscape-card" data-img-src="/images/landscapes/bukhansan.jpg">
+            <img src="{{ '/images/landscapes/bukhansan.jpg' | relative_url }}" alt="Bukhansan">
+            <div class="landscape-card-info"><strong>Bukhansan Peaks</strong></div>
+          </div>
+          <div class="cksl-landscape-card" data-img-src="/images/landscapes/bukchon_hanok.jpg">
+            <img src="{{ '/images/landscapes/bukchon_hanok.jpg' | relative_url }}" alt="Bukchon Hanok">
+            <div class="landscape-card-info"><strong>Bukchon Village</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cksl-modal-footer">
+      <button type="button" class="btn btn-secondary cksl-modal-close">Cancel</button>
     </div>
   </div>
 </div>

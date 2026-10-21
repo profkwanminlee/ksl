@@ -321,6 +321,9 @@
     setupModals();
     setupHeroChanger();
     setupBoxHotkeys();
+    setupReplaceMotifModal();
+    setupReplaceImageModal();
+    setupDragAndDrop();
     checkBridgeStatus();
   }
 
@@ -341,6 +344,8 @@
     updateLayoutVariables();
     makeContentEditable();
     buildSidebarOutline();
+    scanPageMotifs();
+    setupDragAndDrop();
     localStorage.setItem('cksl_editor_active', 'true');
 
     // Initialize git draft staging session
@@ -409,13 +414,14 @@
   function updateDraftBadge(branch, isDraft) {
     const badge = document.getElementById('cksl-draft-session-badge');
     if (badge) {
+      badge.className = 'ribbon-draft-dot';
+      badge.innerHTML = '';
       if (isDraft) {
-        badge.innerHTML = `<span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:#10B981; margin-right:6px;"></span>Draft Session (${branch}) &mdash; Main is safe`;
-        badge.style.background = 'rgba(16, 185, 129, 0.15)';
-        badge.style.color = '#34D399';
-        badge.style.borderColor = 'rgba(16, 185, 129, 0.35)';
+        badge.style.background = '#10B981';
+        badge.title = `Draft Session (${branch}) — Main is safe`;
       } else {
-        badge.innerHTML = `Branch: ${branch}`;
+        badge.style.background = '#9CA3AF';
+        badge.title = `Branch: ${branch}`;
       }
     }
   }
@@ -1080,7 +1086,9 @@
 
       const item = document.createElement('div');
       item.className = 'cksl-tree-item';
+      item.setAttribute('draggable', 'true');
       item.innerHTML = `
+        <span class="cksl-tree-grip" title="Drag to reorder" style="cursor: grab; color: #6B7280; margin-right: 4px; user-select: none;">⠿</span>
         <span class="cksl-tree-item-title">${idx + 1}. ${title}</span>
         <div class="cksl-tree-item-actions">
           <button type="button" class="cksl-tree-action-btn" data-act="up" title="Move Up">▲</button>
@@ -1089,8 +1097,51 @@
         </div>
       `;
 
+      item.addEventListener('dragstart', (e) => {
+        draggedTreeItem = item;
+        draggedTreeSec = sec;
+        item.classList.add('cksl-sidebar-dragging');
+        e.dataTransfer.setData('text/plain', 'tree');
+      });
+      item.addEventListener('dragend', () => {
+        item.classList.remove('cksl-sidebar-dragging');
+        document.querySelectorAll('.cksl-tree-item').forEach(it => it.classList.remove('cksl-drop-target-above', 'cksl-drop-target-below'));
+        draggedTreeItem = null;
+        draggedTreeSec = null;
+      });
+      item.addEventListener('dragover', (e) => {
+        if (!draggedTreeItem || draggedTreeItem === item) return;
+        e.preventDefault();
+        const rect = item.getBoundingClientRect();
+        if (e.clientY < rect.top + rect.height / 2) {
+          item.classList.add('cksl-drop-target-above');
+          item.classList.remove('cksl-drop-target-below');
+        } else {
+          item.classList.add('cksl-drop-target-below');
+          item.classList.remove('cksl-drop-target-above');
+        }
+      });
+      item.addEventListener('dragleave', () => {
+        item.classList.remove('cksl-drop-target-above', 'cksl-drop-target-below');
+      });
+      item.addEventListener('drop', (e) => {
+        if (!draggedTreeItem || draggedTreeItem === item) return;
+        e.preventDefault();
+        const isAbove = item.classList.contains('cksl-drop-target-above');
+        item.classList.remove('cksl-drop-target-above', 'cksl-drop-target-below');
+        if (isAbove) {
+          sec.parentNode.insertBefore(draggedTreeSec, sec);
+        } else {
+          sec.parentNode.insertBefore(draggedTreeSec, sec.nextSibling);
+        }
+        buildSidebarOutline();
+        scanPageMotifs();
+        selectBox(draggedTreeSec);
+        showNotification('Section reordered');
+      });
+
       item.addEventListener('click', (e) => {
-        if (e.target.closest('.cksl-tree-action-btn')) return;
+        if (e.target.closest('.cksl-tree-action-btn') || e.target.closest('.cksl-tree-grip')) return;
         document.querySelectorAll('.cksl-tree-item').forEach(it => it.classList.remove('selected'));
         item.classList.add('selected');
         sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1117,11 +1168,10 @@
 
       item.querySelector('[data-act="del"]').addEventListener('click', (e) => {
         e.stopPropagation();
-        if (confirm(`Delete "${title}"?`)) {
-          sec.remove();
-          buildSidebarOutline();
-          hideInspector();
-        }
+        sec.remove();
+        buildSidebarOutline();
+        hideInspector();
+        showNotification('Section removed');
       });
 
       list.appendChild(item);
@@ -1131,26 +1181,39 @@
     scanPageMotifs();
   }
 
-  // Scan and populate the Motifs On This Page list in the sidebar
+  let currentReplacingMotifEl = null;
+  let currentReplacingImgEl = null;
+
+  // Scan and populate the Motifs On This Page list in BOTH sidebar and top ribbon
   function scanPageMotifs() {
-    const container = document.getElementById('cksl-page-motifs-list');
-    const countBadge = document.getElementById('cksl-page-motifs-count');
-    if (!container) return;
+    const sidebarContainer = document.getElementById('cksl-page-motifs-list');
+    const sidebarCountBadge = document.getElementById('cksl-page-motifs-count');
+    const ribbonContainer = document.getElementById('cksl-ribbon-page-motifs');
+    const ribbonCountBadge = document.getElementById('cksl-ribbon-motifs-count');
 
     const motifEls = Array.from(document.querySelectorAll('#cksl-page-frame .korean-roof-accent, #cksl-page-frame .korean-divider, #cksl-page-frame .korean-title-underline, #cksl-page-frame .korean-pavilion-badge, #cksl-page-frame .korean-motif-render, #cksl-page-frame .cksl-motif-widget, #cksl-page-frame [data-cksl-motif], #cksl-page-frame [data-motif]'));
 
-    if (countBadge) {
-      countBadge.textContent = `${motifEls.length} placed`;
-    }
+    if (sidebarCountBadge) sidebarCountBadge.textContent = `${motifEls.length} placed`;
+    if (ribbonCountBadge) ribbonCountBadge.textContent = `${motifEls.length} placed`;
 
-    container.innerHTML = '';
+    if (sidebarContainer) sidebarContainer.innerHTML = '';
+    if (ribbonContainer) ribbonContainer.innerHTML = '';
 
     if (motifEls.length === 0) {
-      container.innerHTML = `
-        <div style="font-size: 0.78rem; color: #9CA3AF; padding: 12px 6px; text-align: center;">
-          No motifs placed yet.<br>Click "+ Add" below to insert one.
-        </div>
-      `;
+      if (sidebarContainer) {
+        sidebarContainer.innerHTML = `
+          <div style="font-size: 0.78rem; color: #9CA3AF; padding: 12px 6px; text-align: center;">
+            No motifs placed yet.<br>Click "+ Add" below to insert one.
+          </div>
+        `;
+      }
+      if (ribbonContainer) {
+        ribbonContainer.innerHTML = `
+          <div style="font-size: 0.74rem; color: #9CA3AF; padding: 12px 14px; white-space: nowrap;">
+            No motifs placed on this page. Pick an authentic Joseon motif from the catalog to insert.
+          </div>
+        `;
+      }
       return;
     }
 
@@ -1158,7 +1221,7 @@
       el.setAttribute('data-cksl-box', 'motif');
       if (!el.id) el.id = `cksl-motif-el-${idx + 1}`;
 
-      let name = 'Korean Motif';
+      let name = 'Heritage Motif';
       const cls = (typeof el.className === 'string' ? el.className : (el.className?.baseVal || el.getAttribute('class') || '')).toLowerCase();
       const dataMotif = el.getAttribute('data-motif') || el.getAttribute('data-cksl-motif');
 
@@ -1171,7 +1234,7 @@
       } else if (cls.includes('underline')) {
         name = 'Title Underline';
       } else if (cls.includes('pavilion')) {
-        name = 'Palace Pavilion';
+        name = 'Palace Pavilion House';
       } else if (cls.includes('blossom') || cls.includes('maehwa')) {
         name = 'Plum Blossom';
       } else if (cls.includes('fan')) {
@@ -1190,66 +1253,214 @@
         name = 'Corner Fret';
       }
 
-      const row = document.createElement('div');
-      row.className = 'cksl-page-motif-row';
-      row.innerHTML = `
-        <div class="cksl-page-motif-meta" title="Click to jump to motif on canvas">
-          <span class="cksl-page-motif-thumb">
-            <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" style="color: var(--color-red, #A62B2B);">
-              <circle cx="10" cy="10" r="7"/>
+      // 1. Sidebar List Row
+      if (sidebarContainer) {
+        const row = document.createElement('div');
+        row.className = 'cksl-page-motif-row';
+        row.innerHTML = `
+          <div class="cksl-page-motif-meta" title="Click to jump to motif on canvas">
+            <span class="cksl-page-motif-thumb">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" style="color: var(--color-red, #A62B2B);">
+                <circle cx="10" cy="10" r="7"/>
+              </svg>
+            </span>
+            <span class="cksl-page-motif-name">${name}</span>
+          </div>
+          <div class="cksl-page-motif-actions">
+            <button type="button" class="cksl-motif-act-btn" data-act="jump" title="Select motif">Jump</button>
+            <button type="button" class="cksl-motif-act-btn" data-act="replace" title="Replace with another motif" style="color: var(--color-yellow-gold, #E5B842); font-weight:700;">⇄</button>
+            <button type="button" class="cksl-motif-act-btn cksl-motif-act-del" data-act="del" title="Delete motif">✕</button>
+          </div>
+        `;
+
+        row.querySelector('.cksl-page-motif-meta').addEventListener('click', () => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          selectBox(el);
+        });
+        row.querySelector('[data-act="jump"]').addEventListener('click', () => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          selectBox(el);
+        });
+        row.querySelector('[data-act="replace"]').addEventListener('click', (e) => {
+          e.stopPropagation();
+          openReplaceMotifModal(el);
+        });
+        row.querySelector('[data-act="del"]').addEventListener('click', (e) => {
+          e.stopPropagation();
+          deleteMotif(el);
+        });
+        sidebarContainer.appendChild(row);
+      }
+
+      // 2. Ribbon Shelf Motifs Reel
+      if (ribbonContainer) {
+        const card = document.createElement('div');
+        card.className = 'cksl-ribbon-motif-card';
+        card.innerHTML = `
+          <div class="cksl-ribbon-motif-thumb">
+            <svg viewBox="0 0 24 24" fill="none" width="18" height="18" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v10M7 12h10"/>
             </svg>
-          </span>
-          <span class="cksl-page-motif-name">${name}</span>
+          </div>
+          <div class="cksl-ribbon-motif-meta">
+            <span class="cksl-ribbon-motif-name" title="${name}">${name}</span>
+            <div class="cksl-ribbon-motif-actions">
+              <button type="button" class="cksl-ribbon-motif-btn" data-act="jump" title="Jump &amp; select">Select</button>
+              <button type="button" class="cksl-ribbon-motif-btn cksl-motif-rep-btn" data-act="replace" title="Replace motif" style="color: var(--color-yellow-gold, #E5B842); font-weight: 700;">⇄ Replace</button>
+              <button type="button" class="cksl-ribbon-motif-btn cksl-motif-del-btn" data-act="del" title="Delete motif" style="color: #F87171;">✕</button>
+            </div>
+          </div>
+        `;
+
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('button')) return;
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          selectBox(el);
+        });
+        card.querySelector('[data-act="jump"]').addEventListener('click', (e) => {
+          e.stopPropagation();
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          selectBox(el);
+        });
+        card.querySelector('[data-act="replace"]').addEventListener('click', (e) => {
+          e.stopPropagation();
+          openReplaceMotifModal(el);
+        });
+        card.querySelector('[data-act="del"]').addEventListener('click', (e) => {
+          e.stopPropagation();
+          deleteMotif(el);
+        });
+        ribbonContainer.appendChild(card);
+      }
+    });
+  }
+
+  function openReplaceMotifModal(el) {
+    currentReplacingMotifEl = el;
+    openModal('cksl-modal-replace-motif');
+  }
+
+  function deleteMotif(el) {
+    if (!el) return;
+    el.style.transition = 'all 0.18s ease-out';
+    el.style.opacity = '0';
+    el.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      el.remove();
+      if (activeBox === el) {
+        activeBox = null;
+        hideInspector();
+      }
+      scanPageMotifs();
+      buildSidebarOutline();
+      showNotification('Heritage motif removed');
+    }, 120);
+  }
+
+  function replaceMotif(targetEl, newKey) {
+    const motifsMap = typeof MOTIF_SVGS !== 'undefined' ? MOTIF_SVGS : {};
+    const newSvg = motifsMap[newKey] || motifsMap.maehwa_blossom || '<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="#A62B2B"/></svg>';
+
+    if (!targetEl) return;
+
+    if (targetEl.classList.contains('cksl-motif-widget') && targetEl.querySelector('.cksl-motif-body')) {
+      targetEl.querySelector('.cksl-motif-body').innerHTML = newSvg;
+      targetEl.setAttribute('data-motif', newKey);
+      targetEl.setAttribute('data-cksl-motif', newKey);
+    } else {
+      const widget = document.createElement('div');
+      widget.className = 'cksl-motif-widget korean-motif-render block-section';
+      widget.setAttribute('data-motif', newKey);
+      widget.setAttribute('data-cksl-motif', newKey);
+      widget.setAttribute('data-cksl-box', 'motif');
+      widget.setAttribute('tabindex', '0');
+      widget.style.textAlign = 'center';
+      widget.style.width = '100%';
+      widget.innerHTML = `
+        <div class="cksl-motif-toolbar">
+          <button type="button" class="cksl-motif-btn" data-mact="up" title="Move Up">▲</button>
+          <button type="button" class="cksl-motif-btn" data-mact="down" title="Move Down">▼</button>
+          <button type="button" class="cksl-motif-btn" data-mact="scale-minus" title="Smaller">-</button>
+          <button type="button" class="cksl-motif-btn" data-mact="scale-plus" title="Larger">+</button>
+          <input type="color" class="cksl-motif-color" value="#A62B2B" title="Change Color">
+          <button type="button" class="cksl-motif-btn" data-mact="replace" style="color:var(--color-yellow-gold,#E5B842);font-weight:700;" title="Replace Motif">⇄</button>
+          <button type="button" class="cksl-motif-btn" data-mact="clone" title="Duplicate">⧉</button>
+          <button type="button" class="cksl-motif-btn cksl-motif-del" data-mact="del" title="Delete">✕</button>
         </div>
-        <div class="cksl-page-motif-actions">
-          <button type="button" class="cksl-motif-act-btn" data-act="jump" title="Scroll to &amp; select">Jump</button>
-          <button type="button" class="cksl-motif-act-btn" data-act="up" title="Move up">▲</button>
-          <button type="button" class="cksl-motif-act-btn" data-act="down" title="Move down">▼</button>
-          <button type="button" class="cksl-motif-act-btn cksl-motif-act-del" data-act="del" title="Delete motif">✕</button>
+        <div class="cksl-motif-body" style="display: inline-block;">
+          ${newSvg}
         </div>
       `;
+      bindMotifWidgetEvents(widget);
+      if (targetEl.parentNode) {
+        targetEl.parentNode.replaceChild(widget, targetEl);
+        targetEl = widget;
+      }
+    }
 
-      row.querySelector('.cksl-page-motif-meta').addEventListener('click', () => {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        selectBox(el);
-      });
-      row.querySelector('[data-act="jump"]').addEventListener('click', () => {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        selectBox(el);
-      });
+    closeModal('cksl-modal-replace-motif');
+    currentReplacingMotifEl = null;
+    scanPageMotifs();
+    buildSidebarOutline();
+    selectBox(targetEl);
+    showNotification(`Replaced with ${newKey.replace(/_/g, ' ')}`);
+  }
 
-      row.querySelector('[data-act="up"]').addEventListener('click', (e) => {
-        e.stopPropagation();
-        const prev = el.previousElementSibling;
-        if (prev) {
-          el.parentNode.insertBefore(el, prev);
-          scanPageMotifs();
-          selectBox(el);
+  function setupReplaceMotifModal() {
+    const modal = document.getElementById('cksl-modal-replace-motif');
+    if (!modal) return;
+    modal.querySelectorAll('.cksl-motif-option-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const motifKey = card.getAttribute('data-replace-motif');
+        if (currentReplacingMotifEl && motifKey) {
+          replaceMotif(currentReplacingMotifEl, motifKey);
         }
       });
-
-      row.querySelector('[data-act="down"]').addEventListener('click', (e) => {
-        e.stopPropagation();
-        const next = el.nextElementSibling;
-        if (next) {
-          el.parentNode.insertBefore(next, el);
-          scanPageMotifs();
-          selectBox(el);
-        }
-      });
-
-      row.querySelector('[data-act="del"]').addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (confirm(`Remove this ${name} motif?`)) {
-          el.remove();
-          hideInspector();
-          activeBox = null;
-          scanPageMotifs();
-        }
-      });
-
-      container.appendChild(row);
     });
+  }
+
+  function openReplaceImageModal(el) {
+    currentReplacingImgEl = el;
+    const urlInput = document.getElementById('cksl-replace-img-url-input');
+    if (urlInput && el) {
+      urlInput.value = el.getAttribute('src') || '';
+    }
+    openModal('cksl-modal-replace-image');
+  }
+
+  function replaceImageSource(imgEl, newSrc) {
+    if (!imgEl || !newSrc) return;
+    imgEl.src = newSrc;
+    closeModal('cksl-modal-replace-image');
+    currentReplacingImgEl = null;
+    showNotification('Image updated');
+    positionInspector(imgEl);
+  }
+
+  function setupReplaceImageModal() {
+    const modal = document.getElementById('cksl-modal-replace-image');
+    if (!modal) return;
+
+    modal.querySelectorAll('.cksl-landscape-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const src = card.getAttribute('data-img-src');
+        if (currentReplacingImgEl && src) {
+          replaceImageSource(currentReplacingImgEl, src);
+        }
+      });
+    });
+
+    const applyBtn = document.getElementById('cksl-btn-confirm-replace-img');
+    const urlInput = document.getElementById('cksl-replace-img-url-input');
+    if (applyBtn && urlInput) {
+      applyBtn.addEventListener('click', () => {
+        const val = urlInput.value.trim();
+        if (val && currentReplacingImgEl) {
+          replaceImageSource(currentReplacingImgEl, val);
+        }
+      });
+    }
   }
 
   // 6. Figma / Canva Card & Box Controls (Selection, Resize Handles, Duplicate, Copy/Paste)
@@ -1278,25 +1489,29 @@
                     box.hasAttribute('data-cksl-motif') || 
                     box.hasAttribute('data-motif') || 
                     box.getAttribute('data-cksl-box') === 'motif';
+    const isImg = (box.tagName.toLowerCase() === 'img') || box.classList.contains('hero-img') || box.hasAttribute('data-cksl-image');
 
     if (isNavbar) typeName = 'NAVBAR';
     else if (isMotif) typeName = 'HERITAGE MOTIF';
+    else if (isImg) typeName = 'IMAGE / PHOTO';
     else if (box.classList.contains('project-card') || box.classList.contains('mission-card') || box.classList.contains('overview-lead-box') || box.classList.contains('callout-box') || box.classList.contains('cta-banner-box')) typeName = 'CARD';
     else if (box.tagName.toLowerCase() === 'section' || box.classList.contains('block-section')) typeName = 'SECTION';
 
-    const tag = document.createElement('div');
-    tag.className = 'cksl-box-type-tag';
-    tag.textContent = typeName;
-    box.appendChild(tag);
+    if (box.tagName.toLowerCase() !== 'img') {
+      const tag = document.createElement('div');
+      tag.className = 'cksl-box-type-tag';
+      tag.textContent = typeName;
+      box.appendChild(tag);
 
-    // Multi-directional Figma resize handles
-    ['nw', 'ne', 'sw', 'se', 'e', 's'].forEach(dir => {
-      const handle = document.createElement('div');
-      handle.className = `cksl-resize-handle cksl-handle-${dir}`;
-      handle.setAttribute('data-dir', dir);
-      box.appendChild(handle);
-      setupResizeHandle(handle, box, dir);
-    });
+      // Multi-directional Figma resize handles
+      ['nw', 'ne', 'sw', 'se', 'e', 's'].forEach(dir => {
+        const handle = document.createElement('div');
+        handle.className = `cksl-resize-handle cksl-handle-${dir}`;
+        handle.setAttribute('data-dir', dir);
+        box.appendChild(handle);
+        setupResizeHandle(handle, box, dir);
+      });
+    }
 
     renderInspectorForBox(box);
   }
@@ -1429,12 +1644,17 @@
 
   function deleteBox(box) {
     if (!box) return;
-    if (confirm('Delete this card / box?')) {
+    box.style.transition = 'all 0.18s ease-out';
+    box.style.opacity = '0';
+    box.style.transform = 'scale(0.96)';
+    setTimeout(() => {
       box.remove();
       hideInspector();
       buildSidebarOutline();
+      scanPageMotifs();
       activeBox = null;
-    }
+      showNotification('Element removed');
+    }, 120);
   }
 
   // 7. Interactive Motifs (Draggable, Resizable, Colorable, Duplicable)
@@ -1828,6 +2048,49 @@
     document.querySelectorAll('.cksl-modal-overlay').forEach(m => m.classList.remove('open'));
   }
 
+  function showNotification(msg, type = 'info') {
+    let toast = document.getElementById('cksl-editor-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'cksl-editor-toast';
+      toast.style.cssText = `
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: #1C1E22;
+        color: #FAF8F5;
+        border: 1px solid rgba(229, 184, 66, 0.4);
+        border-radius: 8px;
+        padding: 10px 18px;
+        font-size: 0.82rem;
+        font-weight: 500;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        z-index: 100000;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.22s ease-out;
+        opacity: 0;
+        transform: translateY(12px);
+        pointer-events: none;
+      `;
+      document.body.appendChild(toast);
+    }
+
+    toast.innerHTML = `
+      <span style="color: var(--color-yellow-gold, #E5B842); font-size: 1.1rem; line-height: 1;">✦</span>
+      <span>${msg}</span>
+    `;
+    toast.style.opacity = '1';
+    toast.style.transform = 'translateY(0)';
+
+    if (toast._timer) clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(12px)';
+    }, 2400);
+  }
+
   // 12. Floating Context Inspector (Figma-Style Box Controls)
   function setupInspector() {
     const handle = document.getElementById('cksl-inspector-handle');
@@ -1908,6 +2171,7 @@
     if (isMotif) {
       typeBadge.textContent = 'Heritage Motif';
       container.innerHTML = `
+        <button type="button" class="inspector-btn" data-mact="replace" style="color: var(--color-yellow-gold, #E5B842); font-weight: 700;" title="Replace this motif with another">⇄ Replace</button>
         <span class="inspector-label">Size:</span>
         <div class="inspector-btn-group">
           <button type="button" class="inspector-btn" data-mact="scale-minus" title="Smaller">-</button>
@@ -1941,7 +2205,9 @@
           const act = btn.getAttribute('data-mact');
           const svgEl = box.querySelector('svg');
 
-          if (act === 'up') {
+          if (act === 'replace') {
+            openReplaceMotifModal(box);
+          } else if (act === 'up') {
             const prev = box.previousElementSibling;
             if (prev) {
               box.parentNode.insertBefore(box, prev);
@@ -1973,13 +2239,73 @@
             duplicateBox(box);
             scanPageMotifs();
           } else if (act === 'del') {
-            if (confirm('Delete this Korean heritage motif?')) {
-              box.remove();
-              hideInspector();
-              activeBox = null;
-              scanPageMotifs();
-            }
+            deleteMotif(box);
           }
+        });
+      });
+
+      positionInspector(box);
+      return;
+    }
+
+    const isImage = (box.tagName.toLowerCase() === 'img') || box.classList.contains('hero-img') || box.hasAttribute('data-cksl-image') || box.tagName.toLowerCase() === 'figure' || !!box.querySelector('img');
+
+    if (isImage) {
+      const targetImg = box.tagName.toLowerCase() === 'img' ? box : (box.querySelector('img') || box);
+      typeBadge.textContent = 'Image / Photo';
+      container.innerHTML = `
+        <button type="button" class="inspector-btn" id="cksl-insp-img-replace" style="color: var(--color-yellow-gold, #E5B842); font-weight: 700;">⇄ Replace Photo</button>
+        <span class="inspector-label">Width:</span>
+        <div class="inspector-btn-group">
+          <button type="button" class="inspector-btn" data-iact="w-25">25%</button>
+          <button type="button" class="inspector-btn" data-iact="w-50">50%</button>
+          <button type="button" class="inspector-btn" data-iact="w-75">75%</button>
+          <button type="button" class="inspector-btn" data-iact="w-100">100%</button>
+        </div>
+        <span class="inspector-label">Corners:</span>
+        <div class="inspector-btn-group">
+          <button type="button" class="inspector-btn" data-iact="r-0" title="Sharp 0px">▢</button>
+          <button type="button" class="inspector-btn" data-iact="r-8" title="Rounded 8px">▢</button>
+          <button type="button" class="inspector-btn" data-iact="r-24" title="Curved 24px">▢</button>
+          <button type="button" class="inspector-btn" data-iact="r-circle" title="Circle">◯</button>
+        </div>
+        <div class="inspector-btn-group">
+          <button type="button" class="inspector-btn" data-iact="up" title="Move Up">▲</button>
+          <button type="button" class="inspector-btn" data-iact="down" title="Move Down">▼</button>
+          <button type="button" class="inspector-btn" data-iact="del" title="Delete Image" style="color: #EF4444;">✕</button>
+        </div>
+      `;
+
+      container.querySelector('#cksl-insp-img-replace').addEventListener('click', (e) => {
+        e.stopPropagation();
+        openReplaceImageModal(targetImg);
+      });
+
+      container.querySelectorAll('[data-iact]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const act = btn.getAttribute('data-iact');
+
+          if (act === 'w-25') { targetImg.style.width = '25%'; targetImg.style.maxWidth = '25%'; }
+          else if (act === 'w-50') { targetImg.style.width = '50%'; targetImg.style.maxWidth = '50%'; }
+          else if (act === 'w-75') { targetImg.style.width = '75%'; targetImg.style.maxWidth = '75%'; }
+          else if (act === 'w-100') { targetImg.style.width = '100%'; targetImg.style.maxWidth = '100%'; }
+          else if (act === 'r-0') { targetImg.style.borderRadius = '0px'; }
+          else if (act === 'r-8') { targetImg.style.borderRadius = '8px'; }
+          else if (act === 'r-24') { targetImg.style.borderRadius = '24px'; }
+          else if (act === 'r-circle') { targetImg.style.borderRadius = '50%'; }
+          else if (act === 'up') {
+            const p = box.previousElementSibling;
+            if (p) box.parentNode.insertBefore(box, p);
+            buildSidebarOutline();
+          } else if (act === 'down') {
+            const n = box.nextElementSibling;
+            if (n) box.parentNode.insertBefore(n, box);
+            buildSidebarOutline();
+          } else if (act === 'del') {
+            deleteBox(box);
+          }
+          positionInspector(box);
         });
       });
 
@@ -2122,6 +2448,8 @@
     frame.querySelectorAll('.cksl-motif-widget').forEach(widget => {
       bindMotifWidgetEvents(widget);
     });
+
+    setupDragAndDrop();
   }
 
   function removeContentEditable() {
@@ -2139,10 +2467,100 @@
       return;
     }
 
-    const box = e.target.closest('.navbar, .korean-motif-render, .korean-roof-accent, .korean-pavilion-badge, .korean-title-underline, .korean-divider, [data-cksl-motif], [data-motif], [data-cksl-box], .project-card, .mission-card, .overview-lead-box, .callout-box, .cta-banner-box, .block-section, .cksl-motif-widget, figure, .event-card, .person-card, .publication-item');
+    const box = e.target.closest('.navbar, .korean-motif-render, .korean-roof-accent, .korean-pavilion-badge, .korean-title-underline, .korean-divider, [data-cksl-motif], [data-motif], [data-cksl-box], .project-card, .mission-card, .overview-lead-box, .callout-box, .cta-banner-box, .block-section, .cksl-motif-widget, img, [data-cksl-image], .hero-img, figure, .event-card, .person-card, .publication-item');
     if (box) {
       selectBox(box);
     }
+  }
+
+  let draggedCanvasEl = null;
+
+  function setupDragAndDrop() {
+    const frame = document.getElementById('cksl-page-frame');
+    if (!frame) return;
+
+    const candidateSelectors = [
+      '.project-card', '.mission-card', '.overview-lead-box',
+      '.block-section', 'section.section', '[data-cksl-block]',
+      '.cksl-motif-widget', '.korean-roof-accent', '.korean-pavilion-badge', '.korean-divider'
+    ];
+
+    frame.querySelectorAll(candidateSelectors.join(', ')).forEach(box => {
+      if (box.closest('#cksl-ribbon') || box.closest('#cksl-sidebar') || box.closest('#cksl-floating-inspector')) return;
+
+      if (!box.querySelector(':scope > .cksl-drag-handle') && box.tagName.toLowerCase() !== 'img') {
+        const handle = document.createElement('div');
+        handle.className = 'cksl-drag-handle';
+        handle.innerHTML = '⠿';
+        handle.title = 'Drag to reorder';
+        box.prepend(handle);
+
+        handle.addEventListener('mousedown', (e) => {
+          e.stopPropagation();
+          box.setAttribute('draggable', 'true');
+        });
+        handle.addEventListener('mouseup', () => {
+          box.removeAttribute('draggable');
+        });
+      }
+
+      box.addEventListener('dragstart', (e) => {
+        if (!box.hasAttribute('draggable')) {
+          e.preventDefault();
+          return;
+        }
+        draggedCanvasEl = box;
+        box.classList.add('cksl-is-dragging');
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/plain', box.id || 'canvas-box');
+      });
+
+      box.addEventListener('dragend', () => {
+        box.classList.remove('cksl-is-dragging');
+        box.removeAttribute('draggable');
+        document.querySelectorAll('.cksl-drop-target-above, .cksl-drop-target-below').forEach(el => {
+          el.classList.remove('cksl-drop-target-above', 'cksl-drop-target-below');
+        });
+        draggedCanvasEl = null;
+      });
+
+      box.addEventListener('dragover', (e) => {
+        if (!draggedCanvasEl || draggedCanvasEl === box) return;
+        if (draggedCanvasEl.parentNode === box.parentNode || box.closest('main') === draggedCanvasEl.closest('main')) {
+          e.preventDefault();
+          e.stopPropagation();
+          const rect = box.getBoundingClientRect();
+          if (e.clientY < rect.top + rect.height / 2) {
+            box.classList.add('cksl-drop-target-above');
+            box.classList.remove('cksl-drop-target-below');
+          } else {
+            box.classList.add('cksl-drop-target-below');
+            box.classList.remove('cksl-drop-target-above');
+          }
+        }
+      });
+
+      box.addEventListener('dragleave', () => {
+        box.classList.remove('cksl-drop-target-above', 'cksl-drop-target-below');
+      });
+
+      box.addEventListener('drop', (e) => {
+        if (!draggedCanvasEl || draggedCanvasEl === box) return;
+        e.preventDefault();
+        e.stopPropagation();
+        const isAbove = box.classList.contains('cksl-drop-target-above');
+        box.classList.remove('cksl-drop-target-above', 'cksl-drop-target-below');
+        if (isAbove) {
+          box.parentNode.insertBefore(draggedCanvasEl, box);
+        } else {
+          box.parentNode.insertBefore(draggedCanvasEl, box.nextSibling);
+        }
+        scanPageMotifs();
+        buildSidebarOutline();
+        selectBox(draggedCanvasEl);
+        showNotification('Item reordered');
+      });
+    });
   }
 
   // 14. Standard Block Inserter
