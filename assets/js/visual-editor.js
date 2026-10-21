@@ -325,6 +325,7 @@
     setupReplaceImageModal();
     setupDragAndDrop();
     checkBridgeStatus();
+    window.addEventListener('resize', fitCanvasToScreen);
   }
 
   // 1. Enable / Disable Editor
@@ -381,6 +382,8 @@
     const sidebarW = isSidebarCollapsed ? '0px' : '260px';
     root.style.setProperty('--cksl-ribbon-height', ribbonH);
     root.style.setProperty('--cksl-sidebar-width', sidebarW);
+    // Refit canvas dynamically when sidebar or ribbon geometry changes
+    requestAnimationFrame(fitCanvasToScreen);
   }
 
   // 2. Draft Session Staging Architecture (Isolates edits on temp draft-session branch)
@@ -909,12 +912,20 @@
       });
     }
 
-    // Device View Buttons
+    // Device View Buttons (top quick toggle + shelf 6 buttons)
     document.querySelectorAll('.cksl-device-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const dev = btn.getAttribute('data-device');
         setDeviceMode(dev);
-        document.querySelectorAll('.cksl-device-btn').forEach(b => b.classList.remove('active'));
+      });
+    });
+
+    // Canvas Scaling & Zoom Buttons (Shelf 6)
+    document.querySelectorAll('.cksl-zoom-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const zoomVal = btn.getAttribute('data-zoom');
+        setCanvasZoom(zoomVal);
+        document.querySelectorAll('.cksl-zoom-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
       });
     });
@@ -983,11 +994,79 @@
     updateLayoutVariables();
   }
 
+  let canvasZoomSetting = 'fit';
+
   function setDeviceMode(mode) {
-    currentDevice = mode;
+    currentDevice = mode || 'desktop';
     const viewport = document.getElementById('cksl-canvas-viewport');
-    if (!viewport) return;
-    viewport.className = `device-${mode}`;
+    const pageFrame = document.getElementById('cksl-page-frame');
+    if (!viewport || !pageFrame) return;
+
+    // Synchronize all device toggle buttons
+    document.querySelectorAll('.cksl-device-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-device') === currentDevice);
+    });
+
+    viewport.className = `device-${currentDevice}`;
+
+    // Hide any open floating context inspector
+    if (typeof hideInspector === 'function') hideInspector();
+    const selToolbar = document.getElementById('cksl-text-selection-toolbar');
+    if (selToolbar) selToolbar.style.display = 'none';
+
+    // Auto-fit or zoom the canvas
+    fitCanvasToScreen();
+
+    // Scroll viewport cleanly to top
+    viewport.scrollTop = 0;
+  }
+
+  function setCanvasZoom(zoom) {
+    canvasZoomSetting = zoom;
+    fitCanvasToScreen();
+  }
+
+  function fitCanvasToScreen() {
+    const viewport = document.getElementById('cksl-canvas-viewport');
+    const pageFrame = document.getElementById('cksl-page-frame');
+    if (!viewport || !pageFrame) return;
+
+    if (currentDevice === 'desktop') {
+      pageFrame.style.zoom = '1';
+      pageFrame.style.transform = '';
+      return;
+    }
+
+    if (canvasZoomSetting !== 'fit') {
+      const numZoom = parseFloat(canvasZoomSetting) || 1;
+      pageFrame.style.zoom = String(numZoom);
+      if (window.getComputedStyle(pageFrame).zoom === '1' && numZoom !== 1) {
+        pageFrame.style.transform = `scale(${numZoom})`;
+        pageFrame.style.transformOrigin = 'top center';
+      } else {
+        pageFrame.style.transform = '';
+      }
+      return;
+    }
+
+    // Auto-Fit mode: calculate scale factor based on available viewport width
+    const targetWidth = (currentDevice === 'laptop') ? 1024 : 390;
+    const padding = (currentDevice === 'laptop') ? 56 : 36;
+    const availableWidth = viewport.clientWidth - padding;
+
+    if (availableWidth > 0 && availableWidth < targetWidth) {
+      const scale = Math.min(1, Math.max(0.35, +(availableWidth / targetWidth).toFixed(4)));
+      pageFrame.style.zoom = String(scale);
+      if (window.getComputedStyle(pageFrame).zoom === '1' && scale < 0.99) {
+        pageFrame.style.transform = `scale(${scale})`;
+        pageFrame.style.transformOrigin = 'top center';
+      } else {
+        pageFrame.style.transform = '';
+      }
+    } else {
+      pageFrame.style.zoom = '1';
+      pageFrame.style.transform = '';
+    }
   }
 
   // 5. Left Sidebar (Multi-Tab: Sections, Motifs, Pages)
@@ -2669,6 +2748,9 @@
     document.documentElement.style.fontSize = size;
     if (save) localStorage.setItem('cksl_font_size', size);
   }
+
+  // Expose CKSL_EDITOR API on window for external control & testing
+  window.CKSL_EDITOR = { setDeviceMode, fitCanvasToScreen, setCanvasZoom, enableEditor, disableEditor };
 
   // Auto-init on DOMContentLoaded
   if (document.readyState === 'loading') {

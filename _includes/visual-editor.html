@@ -5,7 +5,7 @@
      authentic Korean landscape gallery, and draft session staging.
      ============================================================================== -->
 
-<link rel="stylesheet" href="{{ '/assets/css/visual-editor.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/visual-editor.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 <!-- Discreet Floating Launcher (Bottom Right) -->
 <button type="button" id="cksl-editor-launcher" aria-label="Open Site Editor">
@@ -26,6 +26,28 @@
       <span class="ribbon-brand-title">Studio</span>
       <span class="ribbon-page-badge" id="cksl-current-page-tag">{{ page.title | default: "Home" }}</span>
       <span class="ribbon-draft-dot" id="cksl-draft-session-badge" title="Draft Session Active (Main is safe)"></span>
+    </div>
+
+    <!-- Quick Device Canvas Toggle in Top Bar (Canva/Figma/Webflow style) -->
+    <div class="cksl-ribbon-quick-devices" role="group" aria-label="Device Canvas Mode">
+      <button type="button" class="cksl-quick-dev-btn cksl-device-btn active" data-device="desktop" title="Desktop View (100%)">
+        <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13">
+          <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm2 0v8h10V5H5z" clip-rule="evenodd"/>
+        </svg>
+        <span>Desktop</span>
+      </button>
+      <button type="button" class="cksl-quick-dev-btn cksl-device-btn" data-device="laptop" title="Laptop View (1024px)">
+        <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13">
+          <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v9a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 1v7h10V5H5zm-3 10a1 1 0 011-1h14a1 1 0 011 1v1a1 1 0 01-1 1H3a1 1 0 01-1-1v-1z" clip-rule="evenodd"/>
+        </svg>
+        <span>Laptop</span>
+      </button>
+      <button type="button" class="cksl-quick-dev-btn cksl-device-btn" data-device="phone" title="Mobile Phone View (390px)">
+        <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13">
+          <path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+        </svg>
+        <span>Phone</span>
+      </button>
     </div>
 
     <!-- Ribbon Tabs -->
@@ -296,7 +318,27 @@
             <span>Laptop (1024px)</span>
           </button>
           <button type="button" class="cksl-shelf-btn cksl-device-btn" data-device="phone">
-            <span>Phone (375px)</span>
+            <span>Phone (390px)</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="cksl-tool-separator"></div>
+
+      <div class="cksl-tool-group">
+        <label class="cksl-tool-label">Canvas Scaling &amp; Zoom</label>
+        <div class="cksl-btn-row">
+          <button type="button" class="cksl-shelf-btn cksl-zoom-btn active" data-zoom="fit" title="Automatically scale canvas to fit viewport without horizontal clipping">
+            <span>Auto-Fit</span>
+          </button>
+          <button type="button" class="cksl-shelf-btn cksl-zoom-btn" data-zoom="1.0" title="Render canvas at 100% native pixels">
+            <span>100%</span>
+          </button>
+          <button type="button" class="cksl-shelf-btn cksl-zoom-btn" data-zoom="0.75" title="Scale canvas to 75%">
+            <span>75%</span>
+          </button>
+          <button type="button" class="cksl-shelf-btn cksl-zoom-btn" data-zoom="0.5" title="Scale canvas to 50%">
+            <span>50%</span>
           </button>
         </div>
       </div>
@@ -1000,4 +1042,4 @@
   </div>
 </div>
 
-<script src="{{ '/assets/js/visual-editor.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/visual-editor.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
