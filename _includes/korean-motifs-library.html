@@ -1,110 +1,192 @@
 <!-- ==============================================================================
-     Contemporary Korean Studies Lab (CKSL) — Expanded Korean Heritage SVG Motifs Library
-     11 authentic, responsive vector ornaments customizable by color and scale
+     Contemporary Korean Studies Lab (CKSL) — Authentic Korean Heritage Vector Motifs
+     Meticulously drawn from traditional Joseon architectural patterns, Dancheong,
+     Maehwa plum blossoms, Unmun cloud scrolls, and Hanok timber fretwork.
+     Strictly pure SVG vector graphics — 100% resolution-independent, zero emojis.
      ============================================================================== -->
 
-<!-- Motif 1: Hanok Cheoma Roof Crest -->
-{% if include.motif == 'hanok_roof' %}
-<div class="korean-motif-wrap korean-motif-roof" style="text-align: center; margin: 20px 0;">
-  <svg viewBox="0 0 160 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '140px' }}; height: auto; display: inline-block;">
-    <path d="M4 20C32 10 56 6 80 6C104 6 128 10 156 20" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M20 22C44 14 62 10 80 10C98 10 116 14 140 22" stroke="var(--color-red, #A62B2B)" stroke-width="1.2" stroke-linecap="round" opacity="0.85"/>
-    <circle cx="80" cy="6" r="4.5" fill="var(--color-red, #A62B2B)"/>
-    <circle cx="80" cy="6" r="2" fill="var(--color-yellow-gold, #E5B842)"/>
+<!-- Motif 1: Maehwa Plum Blossom (5-Petal Joseon Blossom with Radiating Pistils & Stamens) -->
+{% if include.motif == 'maehwa_blossom' %}
+<div class="korean-motif-render korean-motif-blossom" style="display: inline-flex; align-items: center; justify-content: center;">
+  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '44px' }}; height: auto;" aria-label="Maehwa Plum Blossom">
+    <!-- 5 Rounded Plum Petals -->
+    <path d="M50 32C42 16 58 8 68 18C76 26 62 38 50 42Z" fill="var(--color-red, #A62B2B)"/>
+    <path d="M62 44C78 36 86 52 76 62C68 70 56 56 52 48Z" fill="var(--color-red, #A62B2B)"/>
+    <path d="M58 56C66 72 50 80 40 70C32 62 46 50 50 48Z" fill="var(--color-red, #A62B2B)"/>
+    <path d="M42 54C26 62 18 46 28 36C36 28 48 42 46 48Z" fill="var(--color-red, #A62B2B)"/>
+    <path d="M44 38C36 22 52 14 62 24C68 30 54 44 48 40Z" fill="var(--color-red, #A62B2B)"/>
+    <!-- Outer Overlapping Petals for Richness -->
+    <circle cx="50" cy="24" r="14" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="74" cy="42" r="14" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="65" cy="72" r="14" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="35" cy="72" r="14" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="26" cy="42" r="14" fill="var(--color-red, #A62B2B)"/>
+    <!-- Center Floral Receptacle -->
+    <circle cx="50" cy="50" r="10" fill="#8E2222"/>
+    <!-- Radiating Stamen Lines & Golden Anther Dots -->
+    <path d="M50 50L50 32M50 50L67 38M50 50L61 65M50 50L39 65M50 50L33 38" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="50" cy="30" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="69" cy="36" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="63" cy="67" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="37" cy="67" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="31" cy="36" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <!-- Core Center Dot -->
+    <circle cx="50" cy="50" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
   </svg>
 </div>
 
-<!-- Motif 2: Maehwa Plum Blossom & Vine Divider -->
+<!-- Motif 2: Maehwa Plum Blossom & Vine Divider (Complete Vector Section Divider) -->
 {% elsif include.motif == 'flower_divider' %}
-<div class="korean-motif-wrap korean-motif-divider" style="display: flex; align-items: center; justify-content: center; gap: 14px; margin: 28px 0;">
-  <span style="flex: 1; max-width: 160px; height: 1.5px; background: linear-gradient(to right, transparent, var(--color-border, #E2DDD6), var(--color-yellow-gold, #E5B842));"></span>
-  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 28px; height: 28px; flex-shrink: 0;">
-    <circle cx="16" cy="7" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.95"/>
-    <circle cx="24.5" cy="13.2" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.95"/>
-    <circle cx="21.3" cy="23.3" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.95"/>
-    <circle cx="10.7" cy="23.3" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.95"/>
-    <circle cx="7.5" cy="13.2" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.95"/>
-    <circle cx="16" cy="16" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+<div class="korean-motif-render korean-motif-divider" style="display: flex; align-items: center; justify-content: center; gap: 16px; margin: 32px 0; width: 100%;">
+  <svg viewBox="0 0 360 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 480px; height: auto;" preserveAspectRatio="xMidYMid meet">
+    <!-- Left Tapered Line & Vegetative Vine Runners -->
+    <line x1="10" y1="18" x2="120" y2="18" stroke="var(--color-border, #E2DDD6)" stroke-width="1.2"/>
+    <path d="M120 18C132 18 138 12 144 14C150 16 156 22 164 18" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="144" cy="13" r="2" fill="var(--color-yellow-gold, #E5B842)"/>
+
+    <!-- Center Maehwa Blossom Medallion -->
+    <g transform="translate(180, 18) scale(0.24) translate(-50, -50)">
+      <circle cx="50" cy="24" r="14" fill="var(--color-red, #A62B2B)"/>
+      <circle cx="74" cy="42" r="14" fill="var(--color-red, #A62B2B)"/>
+      <circle cx="65" cy="72" r="14" fill="var(--color-red, #A62B2B)"/>
+      <circle cx="35" cy="72" r="14" fill="var(--color-red, #A62B2B)"/>
+      <circle cx="26" cy="42" r="14" fill="var(--color-red, #A62B2B)"/>
+      <circle cx="50" cy="50" r="9" fill="#8E2222"/>
+      <path d="M50 50L50 32M50 50L67 38M50 50L61 65M50 50L39 65M50 50L33 38" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="50" cy="30" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="69" cy="36" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="63" cy="67" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="37" cy="67" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="31" cy="36" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="50" cy="50" r="4" fill="var(--color-yellow-gold, #E5B842)"/>
+    </g>
+
+    <!-- Right Tapered Line & Vegetative Vine Runners -->
+    <path d="M196 18C204 22 210 16 216 14C222 12 228 18 240 18" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
+    <circle cx="216" cy="13" r="2" fill="var(--color-yellow-gold, #E5B842)"/>
+    <line x1="240" y1="18" x2="350" y2="18" stroke="var(--color-border, #E2DDD6)" stroke-width="1.2"/>
   </svg>
-  <span style="flex: 1; max-width: 160px; height: 1.5px; background: linear-gradient(to left, transparent, var(--color-border, #E2DDD6), var(--color-yellow-gold, #E5B842));"></span>
 </div>
 
-<!-- Motif 3: Dancheong Title Underline -->
+<!-- Motif 3: Architectural Hanok Cheoma Roof Crest -->
+{% elsif include.motif == 'hanok_roof' %}
+<div class="korean-motif-render korean-motif-roof" style="display: flex; justify-content: center; margin: 20px 0;">
+  <svg viewBox="0 0 240 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '180px' }}; height: auto;">
+    <!-- Flared Cheoma Eave Line (Imperial Gold) -->
+    <path d="M8 26C54 13 86 8 120 8C154 8 186 13 232 26" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="3" stroke-linecap="round"/>
+    <!-- Secondary Dancheong Vermilion Line -->
+    <path d="M24 28C62 17 90 12 120 12C150 12 178 17 216 28" stroke="var(--color-red, #A62B2B)" stroke-width="1.5" stroke-linecap="round" opacity="0.9"/>
+    <!-- Central Ridge Medallion Blossom -->
+    <circle cx="120" cy="8" r="6" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="120" cy="8" r="3" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="120" cy="8" r="1.2" fill="var(--color-brown-deep, #4A2E1B)"/>
+  </svg>
+</div>
+
+<!-- Motif 4: Dancheong Title Underline (Tapered Vermilion with Blossom Node) -->
 {% elsif include.motif == 'title_underline' %}
-<div class="korean-motif-wrap korean-motif-underline" style="display: flex; align-items: center; gap: 10px; margin: 10px 0 16px;">
-  <span style="width: 38px; height: 2.5px; background: linear-gradient(90deg, var(--color-red, #A62B2B), var(--color-yellow-gold, #E5B842)); border-radius: 2px;"></span>
-  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 12px; height: 12px;">
-    <circle cx="8" cy="8" r="4" fill="var(--color-red, #A62B2B)"/>
-    <circle cx="8" cy="8" r="1.5" fill="var(--color-yellow-gold, #E5B842)"/>
-  </svg>
-  <span style="width: 18px; height: 1.5px; background: var(--color-yellow-gold, #E5B842); border-radius: 1px;"></span>
-</div>
-
-<!-- Motif 4: Traditional Korean Hanok Pavilion -->
-{% elsif include.motif == 'pavilion' %}
-<div class="korean-motif-wrap korean-motif-pavilion" style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; background: rgba(166, 43, 43, 0.06); border: 1px solid var(--color-border, #E2DDD6); border-radius: 12px; padding: 10px;">
-  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 44px; height: 44px;">
-    <path d="M4 22C14 16 20 12 24 12C28 12 34 16 44 22" stroke="var(--color-red, #A62B2B)" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M10 21L14 15H34L38 21" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
-    <path d="M15 22V36M33 22V36M21 22V36M27 22V36" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="1.8" stroke-linecap="round"/>
-    <path d="M8 36H40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2.2" stroke-linecap="round"/>
-    <circle cx="24" cy="9" r="2" fill="var(--color-yellow-gold, #E5B842)"/>
+<div class="korean-motif-render korean-motif-underline" style="display: flex; align-items: center; gap: 8px; margin: 8px 0 16px;">
+  <svg viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 110px; height: 12px;">
+    <line x1="0" y1="6" x2="48" y2="6" stroke="var(--color-red, #A62B2B)" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="56" cy="6" r="4.5" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="56" cy="6" r="2" fill="var(--color-yellow-gold, #E5B842)"/>
+    <line x1="64" y1="6" x2="88" y2="6" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="94" cy="6" r="1.5" fill="var(--color-yellow-gold, #E5B842)"/>
   </svg>
 </div>
 
-<!-- Motif 5: Traditional Auspicious Cloud (Unmun - 구름문) -->
+<!-- Motif 5: Auspicious Joseon Cloud Scroll (Unmun - 구름문 from v1.png) -->
 {% elsif include.motif == 'cloud_unmun' %}
-<div class="korean-motif-wrap korean-motif-cloud" style="text-align: center; margin: 18px 0;">
-  <svg viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '90px' }}; height: auto;">
-    <path d="M20 28C14 28 8 24 8 18C8 12 14 8 20 8C22 8 24 9 26 10C28 6 34 3 42 3C50 3 56 7 59 12C62 10 66 9 70 9C78 9 84 14 84 20C84 21 83 22 83 23C87 23 91 26 91 30C91 34 87 37 82 37H20C15 37 11 33 11 28" stroke="var(--color-red, #A62B2B)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <path d="M26 24C30 20 38 18 44 22C48 24 52 24 56 22" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.5" stroke-linecap="round"/>
+<div class="korean-motif-render korean-motif-cloud" style="display: flex; justify-content: center; margin: 18px 0;">
+  <svg viewBox="0 0 180 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '140px' }}; height: auto;">
+    <!-- Multi-tier Cloud Scroll Body -->
+    <path d="M24 38C14 38 6 32 10 22C14 12 28 10 34 16C40 8 56 6 66 14C74 6 90 8 96 16C104 10 118 14 120 24C126 24 132 28 130 34C128 40 120 40 114 40L24 40Z" stroke="var(--color-red, #A62B2B)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Trailing Horizontal Vapor Ribbons -->
+    <line x1="126" y1="26" x2="158" y2="26" stroke="var(--color-red, #A62B2B)" stroke-width="2" stroke-linecap="round"/>
+    <line x1="134" y1="34" x2="168" y2="34" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Floating Vapor Pearls -->
+    <circle cx="174" cy="26" r="2.5" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="178" cy="34" r="3" fill="var(--color-yellow-gold, #E5B842)"/>
+    <!-- Internal Cloud Spiral -->
+    <path d="M38 28C44 24 52 24 58 28" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M74 24C80 20 88 20 94 24" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
   </svg>
 </div>
 
-<!-- Motif 6: Joseon Royal Lotus Medallion (Yeonhwamun - 연화문) -->
-{% elsif include.motif == 'lotus_blossom' %}
-<div class="korean-motif-wrap korean-motif-lotus" style="text-align: center; margin: 20px 0;">
-  <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '54px' }}; height: auto;">
-    <circle cx="30" cy="30" r="27" stroke="var(--color-border, #E2DDD6)" stroke-width="1.2"/>
-    <circle cx="30" cy="30" r="22" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.5" stroke-dasharray="2 3"/>
-    <!-- Lotus Petals -->
-    <path d="M30 12C28 20 30 26 30 30C30 26 32 20 30 12Z" fill="var(--color-red, #A62B2B)"/>
-    <path d="M30 48C28 40 30 34 30 30C30 34 32 40 30 48Z" fill="var(--color-red, #A62B2B)"/>
-    <path d="M12 30C20 28 26 30 30 30C26 30 20 32 12 30Z" fill="var(--color-red, #A62B2B)"/>
-    <path d="M48 30C40 28 34 30 30 30C34 30 40 32 48 30Z" fill="var(--color-red, #A62B2B)"/>
-    <circle cx="30" cy="30" r="4" fill="var(--color-yellow-gold, #E5B842)"/>
+<!-- Motif 6: Traditional Hanok Palace Pavilion (from v2.png) -->
+{% elsif include.motif == 'pavilion' %}
+<div class="korean-motif-render korean-motif-pavilion" style="display: inline-flex; align-items: center; justify-content: center; width: 68px; height: 68px; background: rgba(166, 43, 43, 0.05); border: 1.5px solid var(--color-border, #E2DDD6); border-radius: 12px; padding: 8px;">
+  <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px;">
+    <!-- Flared Pavilion Roof -->
+    <path d="M5 24C16 17 23 13 27 13C31 13 38 17 49 24" stroke="var(--color-red, #A62B2B)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M12 23L16 16H38L42 23" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+    <!-- 4 Main Timber Columns -->
+    <line x1="16" y1="24" x2="16" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2" stroke-linecap="round"/>
+    <line x1="23" y1="24" x2="23" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2" stroke-linecap="round"/>
+    <line x1="31" y1="24" x2="31" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2" stroke-linecap="round"/>
+    <line x1="38" y1="24" x2="38" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Stone Base Plinth -->
+    <line x1="9" y1="40" x2="45" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2.8" stroke-linecap="round"/>
+    <!-- Roof Peak Finial -->
+    <circle cx="27" cy="10" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
   </svg>
 </div>
 
-<!-- Motif 7: Palace Dancheong Corner Bracket (Gwiseong - 귀성) -->
+<!-- Motif 7: Dancheong Corner Fret Bracket (from v1.png top row) -->
 {% elsif include.motif == 'dancheong_corner' %}
-<div class="korean-motif-wrap korean-motif-corner" style="display: inline-block;">
-  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 36px; height: 36px;">
-    <path d="M2 42V6C2 3.8 3.8 2 6 2H42" stroke="var(--color-red, #A62B2B)" stroke-width="3" stroke-linecap="round"/>
-    <path d="M10 38V12C10 10.9 10.9 10 12 10H38" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
-    <circle cx="18" cy="18" r="3.5" fill="var(--color-red, #A62B2B)"/>
+<div class="korean-motif-render korean-motif-corner" style="display: inline-block;">
+  <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 44px; height: 44px;">
+    <!-- Outer Corner Border -->
+    <path d="M3 47V8C3 5.2 5.2 3 8 3H47" stroke="var(--color-red, #A62B2B)" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Interlocking L-Fret Steps -->
+    <path d="M11 43V14C11 12.3 12.3 11 14 11H43" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M19 39V22H36" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" stroke-linecap="round"/>
+    <rect x="22" y="25" width="8" height="8" fill="var(--color-yellow-gold, #E5B842)"/>
   </svg>
 </div>
 
-<!-- Motif 8: Traditional Scholar Red Seal Frame (Dojang / Injang - 도장) -->
+<!-- Motif 8: Traditional Korean Folding Fan (Buchae - 합죽선 from v1.png & v2.png) -->
+{% elsif include.motif == 'korean_fan' %}
+<div class="korean-motif-render korean-motif-fan" style="display: flex; justify-content: center; margin: 18px 0;">
+  <svg viewBox="0 0 90 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 72px; height: auto;">
+    <!-- Arched Fan Body with Radiating Ribs -->
+    <path d="M10 42C18 20 40 10 45 10C50 10 72 20 80 42L45 54L10 42Z" fill="rgba(166, 43, 43, 0.12)" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" stroke-linejoin="round"/>
+    <!-- Bamboo Ribs -->
+    <line x1="45" y1="54" x2="16" y2="38" stroke="var(--color-red, #A62B2B)" stroke-width="1.4"/>
+    <line x1="45" y1="54" x2="28" y2="26" stroke="var(--color-red, #A62B2B)" stroke-width="1.4"/>
+    <line x1="45" y1="54" x2="45" y2="12" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.6"/>
+    <line x1="45" y1="54" x2="62" y2="26" stroke="var(--color-red, #A62B2B)" stroke-width="1.4"/>
+    <line x1="45" y1="54" x2="74" y2="38" stroke="var(--color-red, #A62B2B)" stroke-width="1.4"/>
+    <!-- Pivot Ring & Hanging Norigae Tassel -->
+    <circle cx="45" cy="54" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <line x1="45" y1="57.5" x2="45" y2="68" stroke="var(--color-red, #A62B2B)" stroke-width="1.6" stroke-linecap="round"/>
+  </svg>
+</div>
+
+<!-- Motif 9: Royal Lotus Medallion (Yeonhwamun - 연화문) -->
+{% elsif include.motif == 'lotus_blossom' %}
+<div class="korean-motif-render korean-motif-lotus" style="display: flex; justify-content: center; margin: 18px 0;">
+  <svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 56px; height: 56px;">
+    <!-- Circular Framed Medallion -->
+    <circle cx="35" cy="35" r="32" stroke="var(--color-border, #E2DDD6)" stroke-width="1.5"/>
+    <circle cx="35" cy="35" r="26" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-dasharray="2.5 3"/>
+    <!-- 4 Cardinal Lotus Petals -->
+    <path d="M35 12C32 22 35 29 35 35C35 29 38 22 35 12Z" fill="var(--color-red, #A62B2B)"/>
+    <path d="M35 58C32 48 35 41 35 35C35 41 38 48 35 58Z" fill="var(--color-red, #A62B2B)"/>
+    <path d="M12 35C22 32 29 35 35 35C29 35 22 38 12 35Z" fill="var(--color-red, #A62B2B)"/>
+    <path d="M58 35C48 32 41 35 35 35C41 35 48 38 58 35Z" fill="var(--color-red, #A62B2B)"/>
+    <!-- 4 Diagonal Small Petals -->
+    <circle cx="23" cy="23" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.8"/>
+    <circle cx="47" cy="23" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.8"/>
+    <circle cx="23" cy="47" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.8"/>
+    <circle cx="47" cy="47" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.8"/>
+    <circle cx="35" cy="35" r="5" fill="var(--color-yellow-gold, #E5B842)"/>
+  </svg>
+</div>
+
+<!-- Motif 10: Traditional Scholar Red Seal (Dojang / Injang - 도장) -->
 {% elsif include.motif == 'korean_seal' %}
-<div class="korean-motif-wrap korean-motif-seal" style="display: inline-block; padding: 4px; border: 2px solid var(--color-red, #A62B2B); border-radius: 4px; background: rgba(166, 43, 43, 0.04); font-family: 'Noto Serif KR', serif; font-size: 0.82rem; font-weight: 700; color: var(--color-red, #A62B2B); letter-spacing: 0.08em; text-align: center; line-height: 1.2;">
+<div class="korean-motif-render korean-motif-seal" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 2.5px solid var(--color-red, #A62B2B); border-radius: 4px; background: rgba(166, 43, 43, 0.05); font-family: 'Noto Serif KR', serif; font-size: 0.82rem; font-weight: 700; color: var(--color-red, #A62B2B); letter-spacing: 0.04em; text-align: center; line-height: 1.15; box-shadow: inset 0 0 0 1px rgba(166, 43, 43, 0.2);">
   한국<br>학연
-</div>
-
-<!-- Motif 9: Sam-Taegeuk Triad Harmony (삼태극) -->
-{% elsif include.motif == 'taegeuk_trio' %}
-<div class="korean-motif-wrap korean-motif-taegeuk" style="text-align: center; margin: 18px 0;">
-  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 38px; height: 38px;">
-    <circle cx="24" cy="24" r="22" stroke="var(--color-border, #E2DDD6)" stroke-width="1.5"/>
-    <path d="M24 2C36.15 2 46 11.85 46 24C46 28 43 33 38 33C31 33 28 20 20 20C14 20 10 24 10 28C10 13.64 16.27 2 24 2Z" fill="var(--color-red, #A62B2B)"/>
-    <path d="M46 24C46 36.15 36.15 46 24 46C20 46 15 43 15 38C15 31 28 28 28 20C28 14 24 10 20 10C34.36 10 46 16.27 46 24Z" fill="var(--color-yellow-gold, #E5B842)"/>
-    <path d="M24 46C11.85 46 2 36.15 2 24C2 20 5 15 10 15C17 15 20 28 28 28C34 28 38 24 38 20C38 34.36 31.73 46 24 46Z" fill="var(--color-brown-deep, #4A2E1B)"/>
-  </svg>
-</div>
-
-<!-- Motif 10: Changhosal Window Lattice Grid Overlay -->
-{% elsif include.motif == 'changhosal_lattice' %}
-<div class="korean-motif-wrap korean-motif-lattice" style="width: 100%; height: 48px; border-top: 1px solid var(--color-border, #E2DDD6); border-bottom: 1px solid var(--color-border, #E2DDD6); background: repeating-linear-gradient(90deg, transparent, transparent 38px, rgba(229, 184, 66, 0.15) 38px, rgba(229, 184, 66, 0.15) 40px), repeating-linear-gradient(0deg, transparent, transparent 18px, rgba(166, 43, 43, 0.08) 18px, rgba(166, 43, 43, 0.08) 20px);">
 </div>
 {% endif %}

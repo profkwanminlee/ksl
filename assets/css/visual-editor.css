@@ -864,3 +864,466 @@ body.cksl-editor-active [data-cksl-editable="true"]:hover {
   color: #1E40AF;
   border: 1px solid #BFDBFE;
 }
+
+/* ==============================================================================
+   8. Navbar Behavior in Editor Mode: Sticky below ribbon, inside page frame
+   ============================================================================== */
+body.cksl-editor-active .navbar {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 90 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ==============================================================================
+   9. Word-Style Floating Selection Mini-Toolbar
+   ============================================================================== */
+#cksl-text-selection-toolbar {
+  position: absolute;
+  z-index: 1000002;
+  background: #141517;
+  border: 1px solid #374151;
+  border-top: 2px solid var(--color-red, #A62B2B);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #FAF8F5;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  animation: selectionBubbleIn 0.14s ease-out;
+  pointer-events: auto;
+}
+
+#cksl-text-selection-toolbar.hidden {
+  display: none !important;
+}
+
+@keyframes selectionBubbleIn {
+  from { opacity: 0; transform: translateY(6px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.selection-tool-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FAF8F5;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.12s ease;
+  user-select: none;
+}
+
+.selection-tool-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+}
+
+.selection-tool-btn.active {
+  background: var(--color-red, #A62B2B);
+  border-color: var(--color-red, #A62B2B);
+}
+
+.selection-divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 0 2px;
+}
+
+.selection-select {
+  background: #1F2428;
+  color: #FAF8F5;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  font-size: 0.76rem;
+  padding: 3px 6px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.selection-color-input {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ==============================================================================
+   10. Left Sidebar Multi-Tabs & Panes
+   ============================================================================== */
+.cksl-sidebar-tabs {
+  display: flex;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px;
+  border-radius: 6px;
+}
+
+.cksl-side-tab {
+  background: transparent;
+  border: none;
+  color: #9CA3AF;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.12s ease;
+}
+
+.cksl-side-tab:hover {
+  color: #FFFFFF;
+}
+
+.cksl-side-tab.active {
+  background: var(--color-red, #A62B2B);
+  color: #FFFFFF;
+}
+
+.cksl-side-pane {
+  display: none;
+  flex: 1;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.cksl-side-pane.active {
+  display: flex;
+}
+
+.cksl-sidepane-subhead {
+  padding: 10px 14px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Sidebar Motifs List */
+.cksl-side-motifs-list {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.cksl-side-motif-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cksl-side-motif-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-red, #A62B2B);
+}
+
+.side-motif-svg {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.side-motif-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.side-motif-info strong {
+  display: block;
+  font-size: 0.78rem;
+  color: #FAF8F5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.side-motif-info span {
+  display: block;
+  font-size: 0.68rem;
+  color: #9CA3AF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.side-motif-insert-btn {
+  background: var(--color-red, #A62B2B);
+  color: #FFFFFF;
+  border: none;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.side-motif-insert-btn:hover {
+  background: #8E2222;
+}
+
+/* Sidebar Pages List */
+.cksl-side-pages-list {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+}
+
+.cksl-side-page-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #CBD5E1;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: all 0.15s ease;
+}
+
+.cksl-side-page-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+}
+
+.cksl-side-page-item.active {
+  background: rgba(166, 43, 43, 0.25);
+  border-left: 3px solid var(--color-red, #A62B2B);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.page-item-title {
+  font-weight: 600;
+}
+
+.page-item-path {
+  font-size: 0.7rem;
+  color: #9CA3AF;
+}
+
+/* ==============================================================================
+   11. Interactive Motif Widget
+   ============================================================================== */
+.cksl-motif-widget {
+  position: relative;
+  display: inline-block;
+  margin: 18px 0;
+  padding: 8px;
+  border: 1.5px dashed transparent;
+  border-radius: 6px;
+  transition: border-color 0.15s ease;
+}
+
+body.cksl-editor-active .cksl-motif-widget:hover,
+body.cksl-editor-active .cksl-motif-widget:focus-within,
+body.cksl-editor-active .cksl-motif-widget[data-cksl-selected="true"] {
+  border-color: var(--color-red, #A62B2B);
+}
+
+.cksl-motif-toolbar {
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #141517;
+  border: 1px solid #374151;
+  border-radius: 6px;
+  padding: 3px 6px;
+  display: none;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+body.cksl-editor-active .cksl-motif-widget:hover .cksl-motif-toolbar,
+body.cksl-editor-active .cksl-motif-widget:focus-within .cksl-motif-toolbar,
+body.cksl-editor-active .cksl-motif-widget[data-cksl-selected="true"] .cksl-motif-toolbar {
+  display: flex;
+}
+
+.cksl-motif-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FAF8F5;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cksl-motif-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.cksl-motif-del {
+  color: #F87171 !important;
+}
+
+.cksl-motif-color {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* ==============================================================================
+   12. Header Image Changer Floating Trigger
+   ============================================================================== */
+.cksl-hero-change-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 85;
+  background: rgba(20, 21, 23, 0.88);
+  color: #FFFFFF;
+  border: 1.5px solid var(--color-yellow-gold, #E5B842);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  transition: all 0.18s ease;
+}
+
+body.cksl-editor-active .cksl-hero-change-btn {
+  display: inline-flex;
+}
+
+.cksl-hero-change-btn:hover {
+  background: var(--color-red, #A62B2B);
+  border-color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* ==============================================================================
+   13. Draft Session Ribbon Pill & Navigation Manager Modal
+   ============================================================================== */
+.ribbon-draft-pill {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Navigation Items Manager Modal */
+.cksl-nav-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.cksl-nav-item-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+}
+
+.cksl-nav-input-title {
+  flex: 1;
+  padding: 5px 8px;
+  border: 1px solid #D1D5DB;
+  border-radius: 4px;
+  font-size: 0.82rem;
+}
+
+.cksl-nav-input-url {
+  flex: 1;
+  padding: 5px 8px;
+  border: 1px solid #D1D5DB;
+  border-radius: 4px;
+  font-size: 0.82rem;
+}
+
+.cksl-nav-btn {
+  background: #E5E7EB;
+  border: none;
+  font-size: 0.76rem;
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cksl-nav-btn:hover {
+  background: #D1D5DB;
+}
+
+.cksl-nav-del {
+  color: #DC2626 !important;
+}
+
+/* ==============================================================================
+   14. Figma / Canva Box Controls & Handles
+   ============================================================================== */
+body.cksl-editor-active [data-cksl-box-selected="true"] {
+  outline: 2px solid var(--color-red, #A62B2B) !important;
+  outline-offset: 3px;
+  position: relative;
+}
+
+.cksl-resize-handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #FFFFFF;
+  border: 2px solid var(--color-red, #A62B2B);
+  border-radius: 2px;
+  z-index: 1000;
+}
+
+.cksl-handle-se {
+  right: -5px;
+  bottom: -5px;
+  cursor: nwse-resize;
+}
+

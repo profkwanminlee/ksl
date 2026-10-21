@@ -6,14 +6,19 @@
   <!-- Parallax Layer 1: Supplied Korea Image with Stable, Consistent Framing -->
   <div class="hero-layer hero-bg-layer" data-speed="0.15">
     <img 
-      src="{{ '/images/korea1.jpg' | relative_url }}" 
-      alt="Contemporary Korean Studies Lab architectural landscape banner" 
+      src="{{ page.hero_image | default: '/images/korea1.jpg' | relative_url }}" 
+      alt="{{ hero_title }} banner" 
       class="hero-img" 
-      style="object-position: center 32%;"
+      style="object-position: {{ page.hero_crop | default: 'center 32%' }};"
       fetchpriority="high"
       loading="eager"
       onerror="this.classList.add('img-error');"
+      data-cksl-image="hero"
     >
+    <button type="button" class="cksl-hero-change-btn" title="Change Hero Landscape Photo">
+      <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/></svg>
+      <span>Change Header Image</span>
+    </button>
   </div>
 
   <!-- Parallax Layer 2: Subtle Traditional Korean Window Lattice (Changhosal) Geometry -->
