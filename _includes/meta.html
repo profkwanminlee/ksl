@@ -27,3 +27,35 @@
 
 <!-- Stylesheet -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<!-- Dynamic Theme Overrides (Editable via _data/theme.yml or Sveltia CMS) -->
+{% if site.data.theme %}
+<style>
+  :root {
+    {% if site.data.theme.colors.primary_red %}--color-red: {{ site.data.theme.colors.primary_red }};{% endif %}
+    {% if site.data.theme.colors.primary_red_hover %}--color-red-hover: {{ site.data.theme.colors.primary_red_hover }};{% endif %}
+    {% if site.data.theme.colors.accent_gold %}--color-yellow-gold: {{ site.data.theme.colors.accent_gold }};{% endif %}
+    {% if site.data.theme.colors.accent_gold_soft %}--color-yellow-gold-soft: {{ site.data.theme.colors.accent_gold_soft }};{% endif %}
+    {% if site.data.theme.colors.brown_deep %}--color-brown-deep: {{ site.data.theme.colors.brown_deep }};{% endif %}
+    {% if site.data.theme.colors.canvas_bg %}--color-canvas: {{ site.data.theme.colors.canvas_bg }};{% endif %}
+    {% if site.data.theme.colors.surface_card %}--color-surface: {{ site.data.theme.colors.surface_card }};{% endif %}
+    {% if site.data.theme.colors.surface_warm %}--color-surface-warm: {{ site.data.theme.colors.surface_warm }};{% endif %}
+    {% if site.data.theme.colors.ink_primary %}--color-ink: {{ site.data.theme.colors.ink_primary }};{% endif %}
+    {% if site.data.theme.colors.ink_muted %}--color-ink-muted: {{ site.data.theme.colors.ink_muted }};{% endif %}
+    {% if site.data.theme.colors.border_color %}--color-border: {{ site.data.theme.colors.border_color }};{% endif %}
+    {% if site.data.theme.typography.base_font_size %}font-size: {{ site.data.theme.typography.base_font_size }};{% endif %}
+  }
+  {% if site.data.theme.ornaments.show_hero_roof_accent == false %}
+  .korean-roof-accent { display: none !important; }
+  {% endif %}
+  {% if site.data.theme.ornaments.show_flower_dividers == false %}
+  .korean-divider { display: none !important; }
+  {% endif %}
+  {% if site.data.theme.ornaments.show_title_underlines == false %}
+  .korean-title-underline { display: none !important; }
+  {% endif %}
+  {% if site.data.theme.ornaments.show_hero_lattice_pattern == false %}
+  .hero-lattice-layer { display: none !important; }
+  {% endif %}
+</style>
+{% endif %}

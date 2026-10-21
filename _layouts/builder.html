@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<article class="page-article">
+  <!-- Page Hero Banner with Reused Korea Image and Custom Crop -->
+  {% include hero-banner.html %}
+
+  <!-- Page Body -->
+  <div class="page-container container">
+    <div class="page-layout">
+      <!-- Main Content Area -->
+      <div class="page-content-wrapper">
+        {% if page.sections and page.sections.size > 0 %}
+          {% for block in page.sections %}
+            {% include blocks/{{ block.type }}.html block=block %}
+          {% endfor %}
+        {% endif %}
+
+        {% if content and content != "" and content != "\n" %}
+        <div class="markdown-body">
+          {{ content }}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,52 @@
+{% assign b = include.block %}
+<div class="block-callout-box" style="margin: 28px 0;">
+  {% if b.style == "mission" %}
+    <div class="mission-card" style="margin: 0;">
+      {% if b.number %}
+      <span class="mission-num">{{ b.number }}</span>
+      {% endif %}
+      <div class="mission-text">
+        {% if b.title %}<h4>{{ b.title }}</h4>{% endif %}
+        {% if b.content %}<p>{{ b.content }}</p>{% endif %}
+      </div>
+    </div>
+
+  {% elsif b.style == "context" %}
+    <div class="institutional-context-card" style="margin: 0;">
+      <div class="context-card-content">
+        {% if b.title %}<h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: var(--color-ink);">{{ b.title }}</h3>{% endif %}
+        <div class="markdown-body">
+          {{ b.content | markdownify }}
+        </div>
+        {% if b.button_url %}
+        <div class="context-card-footer" style="margin-top: 16px;">
+          <a href="{{ b.button_url | relative_url }}" class="theme-detail-link">
+            {{ b.button_label | default: "Learn More &rarr;" }}
+          </a>
+        </div>
+        {% endif %}
+      </div>
+      {% if b.include_pavilion != false %}
+        {% include korean-pavilion.html %}
+      {% endif %}
+    </div>
+
+  {% else %}
+    <!-- Default Lead Box Style -->
+    <div class="overview-lead-box" style="margin: 0;">
+      {% if b.title %}
+      <h4 style="font-size: 1.15rem; font-weight: 700; color: var(--color-ink); margin-bottom: 8px;">{{ b.title }}</h4>
+      {% endif %}
+      <div class="markdown-body">
+        {{ b.content | markdownify }}
+      </div>
+      {% if b.button_url %}
+      <div style="margin-top: 14px;">
+        <a href="{{ b.button_url | relative_url }}" class="theme-detail-link">
+          {{ b.button_label | default: "Learn More &rarr;" }}
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

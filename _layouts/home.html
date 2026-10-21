@@ -153,7 +153,8 @@ layout: default
       </div>
 
       <div class="themes-grid">
-        {% for theme in site.data.research_themes %}
+        {% assign research_themes = site.data.research_themes.themes | default: site.data.research_themes %}
+        {% for theme in research_themes %}
         <article class="theme-card">
           <div class="theme-card-header">
             <div class="theme-num-box">

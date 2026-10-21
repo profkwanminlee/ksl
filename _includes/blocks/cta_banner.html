@@ -1,0 +1,25 @@
+{% assign b = include.block %}
+<div class="cta-banner-box" style="margin: 36px 0;">
+  {% if b.kicker or b.hangul %}
+  <div class="kicker-group">
+    {% if b.kicker %}<span class="cta-kicker">{{ b.kicker }}</span>{% endif %}
+    {% if b.hangul %}<span class="kicker-hangul">{{ b.hangul }}</span>{% endif %}
+  </div>
+  {% endif %}
+
+  {% if b.title %}
+  <h3 class="cta-title">{{ b.title }}</h3>
+  {% endif %}
+
+  {% if b.desc %}
+  <p class="cta-desc">{{ b.desc }}</p>
+  {% endif %}
+
+  {% if b.button_url %}
+  <div style="margin-top: 18px;">
+    <a href="{{ b.button_url | relative_url }}" class="btn btn-primary">
+      {{ b.button_label | default: "Get in Touch &rarr;" }}
+    </a>
+  </div>
+  {% endif %}
+</div>

@@ -1,0 +1,28 @@
+{% assign b = include.block %}
+<section class="block-section block-text{% if b.custom_class %} {{ b.custom_class }}{% endif %}" style="margin: 28px 0;">
+  {% if b.kicker or b.hangul %}
+  <div class="kicker-group">
+    {% if b.kicker %}<span class="section-kicker">{{ b.kicker }}</span>{% endif %}
+    {% if b.hangul %}<span class="kicker-hangul">{{ b.hangul }}</span>{% endif %}
+  </div>
+  {% endif %}
+
+  {% if b.heading %}
+  <h2 class="section-title" style="margin-top: 6px; margin-bottom: 8px;">{{ b.heading }}</h2>
+  {% if b.show_underline != false %}
+    {% include korean-title-underline.html %}
+  {% endif %}
+  {% endif %}
+
+  {% if b.lead %}
+  <div class="overview-lead-box" style="margin: 18px 0 20px;">
+    <p class="overview-lead-text">{{ b.lead }}</p>
+  </div>
+  {% endif %}
+
+  {% if b.content %}
+  <div class="block-body markdown-body" style="margin-top: 14px;">
+    {{ b.content | markdownify }}
+  </div>
+  {% endif %}
+</section>

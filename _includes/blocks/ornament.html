@@ -1,0 +1,19 @@
+{% assign b = include.block %}
+<div class="block-ornament block-ornament-{{ b.style | default: 'flower_divider' }}" style="margin: 32px 0;">
+  {% case b.style %}
+    {% when "hanok_roof" %}
+      <div style="display: flex; justify-content: center; margin: 16px 0;">
+        {% include korean-hero-accent.html %}
+      </div>
+    {% when "title_underline" %}
+      <div style="margin: 14px 0;">
+        {% include korean-title-underline.html %}
+      </div>
+    {% when "pavilion" %}
+      <div style="display: flex; justify-content: center; margin: 24px 0;">
+        {% include korean-pavilion.html %}
+      </div>
+    {% else %}
+      {% include korean-divider.html %}
+  {% endcase %}
+</div>

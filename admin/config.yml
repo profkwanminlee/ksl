@@ -1,0 +1,288 @@
+# ==============================================================================
+# Sveltia CMS Configuration for Contemporary Korean Studies Lab (CKSL)
+# GitHub-backed, browser-based CMS with modular page builder and theme controls
+# ==============================================================================
+
+backend:
+  name: github
+  repo: profkwanminlee/cksl
+  branch: main
+
+# Local development backend support
+local_backend: true
+
+# Media Uploads
+media_folder: images/uploads
+public_folder: /images/uploads
+
+# Site Display
+site_url: https://profkwanminlee.github.io/cksl/
+logo_url: https://profkwanminlee.github.io/cksl/images/ntu.png
+
+collections:
+  # --------------------------------------------------------------------------
+  # 1. Modular Pages Collection (_pages/*.md)
+  # --------------------------------------------------------------------------
+  - name: pages
+    label: "Pages"
+    label_singular: "Page"
+    folder: "_pages"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "{{permalink}}"
+    summary: "{{title}} ({{permalink}})"
+    fields:
+      - { label: "Page Title", name: "title", widget: "string" }
+      - { label: "Permalink URL", name: "permalink", widget: "string", hint: "e.g., /initiatives/ or /fellows/" }
+      - { label: "Page Layout", name: "layout", widget: "select", options: ["page", "builder", "default"], default: "page" }
+      - { label: "Hero Kicker Tag", name: "hero_tag", widget: "string", required: false, default: "CKSL Academic Initiative" }
+      - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string", required: false }
+      - { label: "SEO Meta Description", name: "description", widget: "text", required: false }
+
+      # Modular Drag-and-Drop Page Builder Sections
+      - label: "Modular Content Sections / Blocks"
+        name: "sections"
+        widget: "list"
+        required: false
+        summary: "{{fields.type}}: {{fields.heading || fields.title || fields.kicker || 'Section'}}"
+        types:
+          # Block 1: Rich Text Section
+          - label: "Rich Text Section"
+            name: "text_block"
+            widget: "object"
+            fields:
+              - { label: "Kicker (English)", name: "kicker", widget: "string", required: false }
+              - { label: "Kicker (Hangul)", name: "hangul", widget: "string", required: false }
+              - { label: "Section Heading", name: "heading", widget: "string", required: false }
+              - { label: "Show Korean Title Underline", name: "show_underline", widget: "boolean", default: true }
+              - { label: "Lead / Highlight Intro Paragraph", name: "lead", widget: "text", required: false }
+              - { label: "Body Text (Markdown)", name: "content", widget: "markdown", required: false }
+
+          # Block 2: Card Grid / Boxes
+          - label: "Card Grid / Box Layout"
+            name: "card_grid"
+            widget: "object"
+            fields:
+              - { label: "Kicker (English)", name: "kicker", widget: "string", required: false }
+              - { label: "Kicker (Hangul)", name: "hangul", widget: "string", required: false }
+              - { label: "Grid Heading", name: "heading", widget: "string", required: false }
+              - { label: "Show Underline", name: "show_underline", widget: "boolean", default: false }
+              - { label: "Grid Description", name: "description", widget: "text", required: false }
+              - label: "Desktop Columns"
+                name: "columns"
+                widget: "select"
+                options: ["1", "2", "3"]
+                default: "3"
+              - label: "Cards / Boxes"
+                name: "cards"
+                widget: "list"
+                fields:
+                  - { label: "Badge Tag", name: "badge", widget: "string", required: false, hint: "e.g. Active Initiative, Comparative Study" }
+                  - { label: "Dates / Session", name: "dates", widget: "string", required: false, hint: "e.g. 2026 – 2028" }
+                  - { label: "Card Title", name: "title", widget: "string" }
+                  - { label: "Metadata Line (Author / Sponsor / Speaker)", name: "meta", widget: "string", required: false }
+                  - { label: "Description", name: "desc", widget: "text" }
+                  - { label: "Link URL", name: "link", widget: "string", required: false }
+                  - { label: "Link Button Label", name: "link_label", widget: "string", required: false, default: "Learn More →" }
+
+          # Block 3: Korean Heritage Ornament
+          - label: "Korean Heritage Ornament"
+            name: "ornament"
+            widget: "object"
+            fields:
+              - label: "Ornament Style"
+                name: "style"
+                widget: "select"
+                options:
+                  - { label: "5-Petal Maehwa Flower & Vine Divider (Section Separator)", value: "flower_divider" }
+                  - { label: "Architectural Hanok Roof Crest (Flared Cheoma Eaves)", value: "hanok_roof" }
+                  - { label: "Dancheong Title Underline (Centred Blossom)", value: "title_underline" }
+                  - { label: "Traditional Hanok Palace Pavilion Badge", value: "pavilion" }
+                default: "flower_divider"
+
+          # Block 4: Callout / Notice Box
+          - label: "Callout / Notice Box"
+            name: "callout_box"
+            widget: "object"
+            fields:
+              - label: "Box Style"
+                name: "style"
+                widget: "select"
+                options:
+                  - { label: "Academic Lead Box (Warm Canvas with Red Accent)", value: "lead" }
+                  - { label: "Institutional Context Box (with Hanok Pavilion)", value: "context" }
+                  - { label: "Numbered Mission Card", value: "mission" }
+                default: "lead"
+              - { label: "Number Badge (if Mission style)", name: "number", widget: "string", required: false, hint: "e.g. 01, 02" }
+              - { label: "Box Heading", name: "title", widget: "string", required: false }
+              - { label: "Content (Markdown)", name: "content", widget: "markdown" }
+              - { label: "Include Hanok Pavilion Illustration", name: "include_pavilion", widget: "boolean", default: true }
+              - { label: "Button URL", name: "button_url", widget: "string", required: false }
+              - { label: "Button Label", name: "button_label", widget: "string", required: false, default: "Learn More →" }
+
+          # Block 5: Action CTA Banner
+          - label: "Action CTA Banner"
+            name: "cta_banner"
+            widget: "object"
+            fields:
+              - { label: "Kicker (English)", name: "kicker", widget: "string", required: false, default: "Collaboration & Exchange" }
+              - { label: "Kicker (Hangul)", name: "hangul", widget: "string", required: false, default: "협력 안내" }
+              - { label: "Banner Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Button Label", name: "button_label", widget: "string", default: "Submit an Inquiry →" }
+              - { label: "Button Link URL", name: "button_url", widget: "string", default: "/contact/" }
+
+          # Block 6: Image / Media Block
+          - label: "Image / Media Figure"
+            name: "media_block"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string", required: false }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+
+          # Block 7: Lab Director Card
+          - label: "Lab Director Profile Card"
+            name: "director_card"
+            widget: "object"
+            fields:
+              - { label: "Embed Full Director Profile", name: "embed_director", widget: "boolean", default: true }
+
+      # Freeform Markdown Body (for traditional markdown writing)
+      - { label: "Additional Freeform Markdown Body", name: "body", widget: "markdown", required: false }
+
+  # --------------------------------------------------------------------------
+  # 2. Design Tokens & Theme Settings (_data/theme.yml)
+  # --------------------------------------------------------------------------
+  - name: theme
+    label: "Theme & Design"
+    files:
+      - file: "_data/theme.yml"
+        label: "Colors, Fonts & Ornaments"
+        name: "theme_settings"
+        fields:
+          # Colors
+          - label: "Color Palette"
+            name: "colors"
+            widget: "object"
+            fields:
+              - { label: "Primary Heritage Red (Dancheong Vermilion)", name: "primary_red", widget: "color", default: "#A62B2B" }
+              - { label: "Primary Red (Hover State)", name: "primary_red_hover", widget: "color", default: "#8E2222" }
+              - { label: "Accent Gold (Imperial Golden Yellow)", name: "accent_gold", widget: "color", default: "#E5B842" }
+              - { label: "Soft Gold Accent", name: "accent_gold_soft", widget: "color", default: "#F3D580" }
+              - { label: "Deep Earthen Brown (Hanok Timber)", name: "brown_deep", widget: "color", default: "#4A2E1B" }
+              - { label: "Background Canvas (Warm Ivory)", name: "canvas_bg", widget: "color", default: "#FAF8F5" }
+              - { label: "Surface Card Background", name: "surface_card", widget: "color", default: "#FFFFFF" }
+              - { label: "Surface Warm Accent", name: "surface_warm", widget: "color", default: "#F4EFEA" }
+              - { label: "Primary Ink (Dark Charcoal)", name: "ink_primary", widget: "color", default: "#141517" }
+              - { label: "Muted Text Ink", name: "ink_muted", widget: "color", default: "#474D54" }
+              - { label: "Border Color", name: "border_color", widget: "color", default: "#E2DDD6" }
+
+          # Typography
+          - label: "Typography"
+            name: "typography"
+            widget: "object"
+            fields:
+              - label: "Base Font Size"
+                name: "base_font_size"
+                widget: "select"
+                options:
+                  - { label: "Compact (15px)", value: "15px" }
+                  - { label: "Standard Academic (16px)", value: "16px" }
+                  - { label: "Generous (17px)", value: "17px" }
+                  - { label: "Prominent (18px)", value: "18px" }
+                default: "16px"
+              - { label: "Font Family", name: "font_family", widget: "string", default: "'Plus Jakarta Sans', -apple-system, sans-serif" }
+
+          # Korean Ornaments Visibility
+          - label: "Korean Heritage Motifs"
+            name: "ornaments"
+            widget: "object"
+            fields:
+              - { label: "Show Hanok Roof Crest Under Hero Headlines", name: "show_hero_roof_accent", widget: "boolean", default: true }
+              - { label: "Show 5-Petal Maehwa Flower Section Dividers", name: "show_flower_dividers", widget: "boolean", default: true }
+              - { label: "Show Korean Blossom Title Underlines", name: "show_title_underlines", widget: "boolean", default: true }
+              - { label: "Show Changhosal Window Lattice Background in Hero", name: "show_hero_lattice_pattern", widget: "boolean", default: true }
+
+          # Visual Effects
+          - label: "Visual Effects"
+            name: "effects"
+            widget: "object"
+            fields:
+              - { label: "Enable Hero Smooth Parallax", name: "enable_parallax", widget: "boolean", default: true }
+              - { label: "Hero Dark Contrast Scrim Opacity (0.0 to 1.0)", name: "hero_scrim_opacity", widget: "number", value_type: "float", min: 0.2, max: 0.9, step: 0.05, default: 0.52 }
+
+  # --------------------------------------------------------------------------
+  # 3. Navigation Menu (_data/navigation.yml)
+  # --------------------------------------------------------------------------
+  - name: navigation
+    label: "Navigation"
+    files:
+      - file: "_data/navigation.yml"
+        label: "Main Navbar Links"
+        name: "main_navigation"
+        fields:
+          - label: "Navigation Menu Entries (Drag to Reorder)"
+            name: "main"
+            widget: "list"
+            fields:
+              - { label: "Menu Title", name: "title", widget: "string" }
+              - { label: "Target URL", name: "url", widget: "string" }
+
+  # --------------------------------------------------------------------------
+  # 4. Lab Directorate & Leadership (_data/director.yml)
+  # --------------------------------------------------------------------------
+  - name: director
+    label: "Directorate & Profile"
+    files:
+      - file: "_data/director.yml"
+        label: "Prof. Kwan Min Lee Profile"
+        name: "director_profile"
+        fields:
+          - { label: "Full Name", name: "name", widget: "string" }
+          - { label: "Korean Name (with Hanja)", name: "korean_name", widget: "string" }
+          - { label: "Hangul Name", name: "korean_hangul", widget: "string" }
+          - { label: "Role Title", name: "role", widget: "string" }
+          - { label: "Endowed Chair Title", name: "endowed_title", widget: "string" }
+          - { label: "Primary Affiliation", name: "primary_affiliation", widget: "string" }
+          - { label: "Secondary Joint Affiliation", name: "secondary_affiliation", widget: "string" }
+          - { label: "Director Portrait Photo", name: "portrait", widget: "image" }
+          - { label: "Official Email", name: "email", widget: "string" }
+          - { label: "General Secretariat Email", name: "general_enquiries_email", widget: "string" }
+          - { label: "Telephone", name: "telephone", widget: "string" }
+          - { label: "Office Campus Location", name: "office_location", widget: "string" }
+          - { label: "Physical Mailing Address", name: "mailing_address", widget: "text" }
+          - label: "Biography Paragraphs"
+            name: "bio_paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: "Director External Links"
+            name: "links"
+            widget: "list"
+            fields:
+              - { label: "Link Title", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+
+  # --------------------------------------------------------------------------
+  # 5. Research Themes (_data/research_themes.yml)
+  # --------------------------------------------------------------------------
+  - name: research_themes
+    label: "Research Themes"
+    files:
+      - file: "_data/research_themes.yml"
+        label: "Core Themes"
+        name: "themes_list"
+        fields:
+          - label: "Research Themes List"
+            name: "themes"
+            widget: "list"
+            fields:
+              - { label: "Identifier (Anchor ID)", name: "id", widget: "string" }
+              - { label: "Theme Number", name: "number", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Focus Bullet Points"
+                name: "focus_points"
+                widget: "list"
+                field: { label: "Focus Point", name: "point", widget: "string" }

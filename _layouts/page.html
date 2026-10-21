@@ -11,9 +11,17 @@ layout: default
     <div class="page-layout">
       <!-- Main Editorial Content Area -->
       <div class="page-content-wrapper">
+        {% if page.sections and page.sections.size > 0 %}
+          {% for block in page.sections %}
+            {% include blocks/{{ block.type }}.html block=block %}
+          {% endfor %}
+        {% endif %}
+
+        {% if content and content != "" and content != "\n" %}
         <div class="markdown-body">
           {{ content }}
         </div>
+        {% endif %}
       </div>
     </div>
   </div>

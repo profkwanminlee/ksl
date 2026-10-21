@@ -1,0 +1,45 @@
+# ==============================================================================
+# Contemporary Korean Studies Lab (CKSL) — Theme & Styling Settings
+# Non-technical editors can change colors, typography, and ornaments here or via Sveltia CMS
+# ==============================================================================
+
+colors:
+  # Primary Dancheong Vermilion (Korean heritage red)
+  primary_red: "#A62B2B"
+  primary_red_hover: "#8E2222"
+  # Dancheong & Imperial Gold (Lighter warm golden yellow)
+  accent_gold: "#E5B842"
+  accent_gold_soft: "#F3D580"
+  # Traditional Korean Hanok Earthen Timber Brown
+  brown_deep: "#4A2E1B"
+  brown_light: "#7D5233"
+  # Background Canvas & Surfaces (Zero Gloss)
+  canvas_bg: "#FAF8F5"
+  surface_card: "#FFFFFF"
+  surface_warm: "#F4EFEA"
+  # Typography Inks
+  ink_primary: "#141517"
+  ink_muted: "#474D54"
+  border_color: "#E2DDD6"
+
+typography:
+  # Base body font size (Standard: 16px, Compact: 15px, Large: 17px, Prominent: 18px)
+  base_font_size: "16px"
+  # Universal Font Family
+  font_family: "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif"
+
+ornaments:
+  # Architectural Hanok Roof Crest (Cheoma with Maehwa blossom) under page hero headlines
+  show_hero_roof_accent: true
+  # Traditional Maehwa Plum Blossom & Vine Dividers between major page sections
+  show_flower_dividers: true
+  # Maehwa Blossom & Tapered Dancheong line underlines under section titles (H2)
+  show_title_underlines: true
+  # Subtle Korean Window Lattice (Changhosal) geometric pattern overlay in hero banners
+  show_hero_lattice_pattern: true
+
+effects:
+  # Parallax depth on hero banners (true = subtle smooth motion, false = static)
+  enable_parallax: true
+  # Hero dark contrast scrim opacity (0.35 to 0.75)
+  hero_scrim_opacity: 0.52
