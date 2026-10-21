@@ -4,19 +4,24 @@
   {% include meta.html %}
 </head>
 <body class="site-body">
-  <!-- Skip to Main Content for Accessibility -->
-  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <!-- Viewport and Frame Wrapper for Word/WordPress-like Dynamic Canvas Resizing -->
+  <div id="cksl-canvas-viewport">
+    <div id="cksl-page-frame">
+      <!-- Skip to Main Content for Accessibility -->
+      <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-  <!-- Global Header & 7-Item Navigation -->
-  {% include header.html %}
+      <!-- Global Header & 7-Item Navigation -->
+      {% include header.html %}
 
-  <!-- Main Landmark -->
-  <main id="main-content" class="main-content" role="main">
-    {{ content }}
-  </main>
+      <!-- Main Landmark -->
+      <main id="main-content" class="main-content" role="main">
+        {{ content }}
+      </main>
 
-  <!-- Global Academic Footer -->
-  {% include footer.html %}
+      <!-- Global Academic Footer -->
+      {% include footer.html %}
+    </div>
+  </div>
 
   <!-- Parallax and UI Interaction Script -->
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>

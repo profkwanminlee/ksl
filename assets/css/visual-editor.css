@@ -1,156 +1,83 @@
 /* ==============================================================================
-   Contemporary Korean Studies Lab (CKSL) — On-Page Visual Editor Styles
-   Zero-code, 100% visual on-page WYSIWYG editor for non-technical editors
+   Contemporary Korean Studies Lab (CKSL) — Studio Site Editor Styles
+   Word-meets-WordPress interface with dynamic canvas resizing,
+   floating context inspector, and responsive device framing.
    ============================================================================== */
 
-/* Fixed Top Visual Editor Bar */
-#cksl-editor-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999999;
-  height: 56px;
-  background: rgba(20, 21, 23, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 2px solid var(--color-red, #A62B2B);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  color: #FAF8F5;
-  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-  font-size: 14px;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+:root {
+  --cksl-ribbon-height: 94px;
+  --cksl-sidebar-width: 260px;
 }
 
-#cksl-editor-bar.hidden {
-  transform: translateY(-100%);
+/* ==============================================================================
+   1. Dynamic Canvas & Resizing Viewport
+   ============================================================================== */
+
+/* In normal browsing mode: standard transparent pass-through */
+#cksl-canvas-viewport {
+  position: static;
+  width: 100%;
 }
 
-/* Offset body when editor bar is visible */
+#cksl-page-frame {
+  width: 100%;
+}
+
+/* In Editor Mode: website resizes cleanly below ribbon & beside sidebar */
 body.cksl-editor-active {
-  padding-top: 56px !important;
+  overflow: hidden !important;
+  height: 100vh !important;
 }
 
-/* Left Brand Badge */
-.cksl-bar-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+body.cksl-editor-active #cksl-canvas-viewport {
+  position: fixed;
+  top: var(--cksl-ribbon-height);
+  left: var(--cksl-sidebar-width);
+  width: calc(100vw - var(--cksl-sidebar-width));
+  height: calc(100vh - var(--cksl-ribbon-height));
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #E8E3DC;
+  transition: top 0.22s ease, left 0.22s ease, width 0.22s ease, height 0.22s ease;
+  z-index: 10;
 }
 
-.cksl-bar-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: -0.01em;
-  color: #FAF8F5;
+/* Device Mode 1: Desktop (Full 100%) */
+#cksl-canvas-viewport.device-desktop #cksl-page-frame {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  min-height: 100%;
+  background: var(--color-canvas, #FAF8F5);
 }
 
-.cksl-bar-logo .badge-dot {
-  width: 9px;
-  height: 9px;
-  background: var(--color-yellow-gold, #E5B842);
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(229, 184, 66, 0.7);
+/* Device Mode 2: Laptop (1024px) */
+#cksl-canvas-viewport.device-laptop #cksl-page-frame {
+  max-width: 1024px;
+  margin: 28px auto;
+  min-height: calc(100% - 56px);
+  background: var(--color-canvas, #FAF8F5);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.18);
+  border-radius: 8px;
+  border: 1px solid #D1D5DB;
+  overflow: hidden;
 }
 
-.cksl-bar-page-name {
-  padding: 4px 10px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  font-size: 0.8rem;
-  color: #E2DDD6;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+/* Device Mode 3: Mobile Phone (375px) */
+#cksl-canvas-viewport.device-phone #cksl-page-frame {
+  max-width: 375px;
+  margin: 28px auto;
+  background: var(--color-canvas, #FAF8F5);
+  box-shadow: 0 18px 58px rgba(0, 0, 0, 0.32);
+  border-radius: 36px;
+  border: 10px solid #141517;
+  overflow: hidden;
+  min-height: 720px;
 }
 
-/* Center Controls */
-.cksl-bar-center {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.cksl-tool-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #FAF8F5;
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-  font-family: inherit;
-}
-
-.cksl-tool-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-}
-
-.cksl-tool-btn.active {
-  background: var(--color-red, #A62B2B);
-  border-color: var(--color-red, #A62B2B);
-  color: #FFFFFF;
-}
-
-/* Right Actions */
-.cksl-bar-right {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.cksl-btn-publish {
-  background: linear-gradient(135deg, var(--color-red, #A62B2B), #8E2222);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #FFFFFF;
-  font-weight: 700;
-  padding: 7px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  box-shadow: 0 2px 8px rgba(166, 43, 43, 0.4);
-  font-family: inherit;
-  font-size: 0.84rem;
-  transition: all 0.2s ease;
-}
-
-.cksl-btn-publish:hover {
-  filter: brightness(1.1);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(166, 43, 43, 0.6);
-}
-
-.cksl-btn-close {
-  background: transparent;
-  border: none;
-  color: #A0A5AA;
-  cursor: pointer;
-  padding: 6px;
-  font-size: 1.1rem;
-  line-height: 1;
-  border-radius: 4px;
-  transition: color 0.2s ease;
-}
-
-.cksl-btn-close:hover {
-  color: #FFFFFF;
-}
-
-/* Discreet Floating "Edit Mode" launcher at bottom corner */
+/* ==============================================================================
+   2. Discreet Floating Launcher
+   ============================================================================== */
 #cksl-editor-launcher {
   position: fixed;
   bottom: 24px;
@@ -159,148 +86,598 @@ body.cksl-editor-active {
   background: #141517;
   color: #FFFFFF;
   border: 1px solid var(--color-red, #A62B2B);
-  border-radius: 28px;
-  padding: 10px 18px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+  padding: 8px 16px;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 0.84rem;
+  font-weight: 600;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-#cksl-editor-launcher:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 24px rgba(166, 43, 43, 0.4);
-  background: var(--color-red, #A62B2B);
-}
-
-#cksl-editor-launcher .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--color-yellow-gold, #E5B842);
-}
-
-/* Visual Outline on Editable Elements */
-body.cksl-editor-active [data-cksl-editable] {
-  outline: 1.5px dashed transparent;
-  outline-offset: 4px;
-  border-radius: 4px;
-  transition: outline-color 0.2s ease, background-color 0.2s ease;
-  cursor: text;
-}
-
-body.cksl-editor-active [data-cksl-editable]:hover {
-  outline-color: var(--color-red, #A62B2B);
-  background-color: rgba(166, 43, 43, 0.04);
-}
-
-body.cksl-editor-active [data-cksl-editable]:focus {
-  outline: 2px solid var(--color-red, #A62B2B);
-  background-color: rgba(166, 43, 43, 0.06);
-}
-
-/* Block Action Controls Overlay */
-.cksl-block-wrapper {
-  position: relative;
-  transition: box-shadow 0.2s ease;
-}
-
-body.cksl-editor-active .cksl-block-wrapper:hover {
-  box-shadow: 0 0 0 2px var(--color-red, #A62B2B);
-  border-radius: 8px;
-}
-
-.cksl-block-controls {
-  position: absolute;
-  top: -14px;
-  right: 14px;
-  z-index: 1000;
-  display: none;
-  background: #141517;
-  border: 1px solid var(--color-red, #A62B2B);
-  border-radius: 20px;
-  padding: 2px 6px;
-  gap: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-body.cksl-editor-active .cksl-block-wrapper:hover .cksl-block-controls {
-  display: flex;
-  align-items: center;
-}
-
-.cksl-block-btn {
-  background: transparent;
-  border: none;
-  color: #E2DDD6;
-  font-size: 0.76rem;
-  padding: 4px 7px;
-  border-radius: 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.15s ease;
-}
-
-.cksl-block-btn:hover {
-  background: var(--color-red, #A62B2B);
-  color: #FFFFFF;
-}
-
-/* Insert Block Divider Bar between sections */
-.cksl-insert-divider {
-  display: none;
-  position: relative;
-  height: 28px;
-  align-items: center;
-  justify-content: center;
-  margin: 10px 0;
-}
-
-body.cksl-editor-active .cksl-insert-divider {
-  display: flex;
-}
-
-.cksl-insert-divider::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: dashed 1px var(--color-border, #E2DDD6);
-  opacity: 0.5;
-}
-
-.cksl-insert-btn {
-  position: relative;
-  z-index: 2;
-  background: #FAF8F5;
-  border: 1px solid var(--color-red, #A62B2B);
-  color: var(--color-red, #A62B2B);
-  border-radius: 14px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 3px 12px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
   transition: all 0.2s ease;
 }
 
-.cksl-insert-btn:hover {
+#cksl-editor-launcher:hover {
   background: var(--color-red, #A62B2B);
-  color: #FFFFFF;
-  transform: scale(1.04);
+  transform: translateY(-2px);
 }
 
-/* Modal Panels (Theme, Typography, Ornaments, Add Block, GitHub Publish) */
+/* ==============================================================================
+   3. Top Ribbon (Microsoft Word Style)
+   ============================================================================== */
+#cksl-ribbon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--cksl-ribbon-height);
+  background: #141517;
+  border-bottom: 2px solid var(--color-red, #A62B2B);
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  color: #FAF8F5;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: height 0.22s ease;
+}
+
+#cksl-ribbon.collapsed {
+  height: 42px;
+}
+
+#cksl-ribbon.hidden {
+  display: none;
+}
+
+.cksl-ribbon-top-bar {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.cksl-ribbon-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ribbon-brand-mark {
+  background: var(--color-red, #A62B2B);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.76rem;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.ribbon-brand-title {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #FAF8F5;
+}
+
+.ribbon-page-badge {
+  background: rgba(255, 255, 255, 0.1);
+  color: #E2DDD6;
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cksl-ribbon-tabs {
+  display: flex;
+  gap: 2px;
+  height: 100%;
+}
+
+.cksl-ribbon-tab {
+  background: transparent;
+  border: none;
+  color: #9CA3AF;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0 14px;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.cksl-ribbon-tab:hover {
+  color: #FAF8F5;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cksl-ribbon-tab.active {
+  color: #FFFFFF;
+  border-bottom-color: var(--color-yellow-gold, #E5B842);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cksl-ribbon-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cksl-ribbon-icon-btn {
+  background: transparent;
+  border: none;
+  color: #9CA3AF;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.cksl-ribbon-icon-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cksl-ribbon-exit-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #FAF8F5;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.cksl-ribbon-exit-btn:hover {
+  background: var(--color-red, #A62B2B);
+  border-color: var(--color-red, #A62B2B);
+}
+
+/* Ribbon Shelf Content */
+.cksl-ribbon-shelf {
+  height: 52px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  background: #1A1D20;
+  overflow-x: auto;
+}
+
+#cksl-ribbon.collapsed .cksl-ribbon-shelf {
+  display: none;
+}
+
+.cksl-shelf-pane {
+  display: none;
+  align-items: center;
+  gap: 16px;
+  height: 100%;
+}
+
+.cksl-shelf-pane.active {
+  display: flex;
+}
+
+.cksl-tool-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cksl-tool-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6B7280;
+  font-weight: 700;
+}
+
+.cksl-tool-separator {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 4px;
+}
+
+.cksl-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cksl-shelf-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #E2DDD6;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.cksl-shelf-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #FFFFFF;
+}
+
+.cksl-shelf-btn.active {
+  background: var(--color-red, #A62B2B);
+  border-color: var(--color-red, #A62B2B);
+  color: #FFFFFF;
+}
+
+.cksl-select {
+  background: #141517;
+  color: #FAF8F5;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-family: inherit;
+}
+
+.cksl-palette-strip-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cksl-swatch-pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #E2DDD6;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.cksl-swatch-pill:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.cksl-swatch-pill.active {
+  border-color: var(--color-yellow-gold, #E5B842);
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+.swatch-color {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.cksl-btn-primary-action {
+  background: var(--color-red, #A62B2B);
+  border: 1px solid var(--color-red, #A62B2B);
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  box-shadow: 0 2px 8px rgba(166, 43, 43, 0.4);
+  transition: all 0.15s ease;
+}
+
+.cksl-btn-primary-action:hover {
+  background: #8E2222;
+}
+
+/* ==============================================================================
+   4. Left Sidebar (WordPress / Word Navigation Pane)
+   ============================================================================== */
+#cksl-sidebar {
+  position: fixed;
+  top: var(--cksl-ribbon-height);
+  left: 0;
+  bottom: 0;
+  width: var(--cksl-sidebar-width);
+  background: #181B1E;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  color: #E2DDD6;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: width 0.22s ease, transform 0.22s ease;
+}
+
+#cksl-sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+#cksl-sidebar.hidden {
+  display: none;
+}
+
+.cksl-sidebar-header {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-title {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: block;
+}
+
+.sidebar-count {
+  font-size: 0.72rem;
+  color: #9CA3AF;
+}
+
+.cksl-sidebar-collapse-btn {
+  background: transparent;
+  border: none;
+  color: #9CA3AF;
+  cursor: pointer;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+  border-radius: 3px;
+}
+
+.cksl-sidebar-collapse-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cksl-sidebar-tree {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cksl-tree-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: #CBD5E1;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.cksl-tree-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+}
+
+.cksl-tree-item.selected {
+  background: rgba(166, 43, 43, 0.25);
+  border-left: 3px solid var(--color-red, #A62B2B);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.cksl-tree-item-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 170px;
+}
+
+.cksl-tree-item-actions {
+  display: flex;
+  gap: 2px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.cksl-tree-item:hover .cksl-tree-item-actions {
+  opacity: 1;
+}
+
+.cksl-tree-action-btn {
+  background: transparent;
+  border: none;
+  color: #9CA3AF;
+  font-size: 0.7rem;
+  padding: 2px 4px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.cksl-tree-action-btn:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.cksl-sidebar-footer {
+  padding: 10px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cksl-sidebar-add-btn {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  color: #E2DDD6;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.cksl-sidebar-add-btn:hover {
+  border-color: var(--color-red, #A62B2B);
+  color: var(--color-red, #A62B2B);
+  background: rgba(166, 43, 43, 0.05);
+}
+
+/* ==============================================================================
+   5. Floating Context Inspector (Word-like Floating Window on Selection)
+   ============================================================================== */
+#cksl-floating-inspector {
+  position: absolute;
+  z-index: 1000000;
+  background: #141517;
+  border: 1px solid #374151;
+  border-top: 2px solid var(--color-red, #A62B2B);
+  border-radius: 8px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  color: #FAF8F5;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 220px;
+  max-width: 420px;
+  animation: inspectorFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#cksl-floating-inspector.hidden {
+  display: none !important;
+}
+
+@keyframes inspectorFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.inspector-handle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 4px;
+}
+
+.inspector-badge {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: var(--color-yellow-gold, #E5B842);
+}
+
+.inspector-drag-cue {
+  color: #6B7280;
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+.inspector-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.inspector-btn-group {
+  display: inline-flex;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.inspector-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FAF8F5;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.12s ease;
+}
+
+.inspector-btn:last-child {
+  border-right: none;
+}
+
+.inspector-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.inspector-btn.active {
+  background: var(--color-red, #A62B2B);
+  color: #FFFFFF;
+}
+
+.inspector-color-input {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.inspector-label {
+  font-size: 0.72rem;
+  color: #9CA3AF;
+  margin-right: 2px;
+}
+
+/* ==============================================================================
+   6. Visual Selection & Highlight Effects
+   ============================================================================== */
+body.cksl-editor-active [data-cksl-selected="true"] {
+  outline: 2px solid var(--color-red, #A62B2B) !important;
+  outline-offset: 2px;
+}
+
+body.cksl-editor-active [data-cksl-editable="true"]:hover {
+  outline: 1.5px dashed var(--color-red, #A62B2B);
+  outline-offset: 2px;
+  cursor: text;
+}
+
+/* ==============================================================================
+   7. Modals: Authentic Landscapes, Heritage Motifs, GitHub Publish
+   ============================================================================== */
 .cksl-modal-overlay {
   position: fixed;
   inset: 0;
@@ -313,7 +690,7 @@ body.cksl-editor-active .cksl-insert-divider {
   padding: 20px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.22s ease;
 }
 
 .cksl-modal-overlay.open {
@@ -325,24 +702,17 @@ body.cksl-editor-active .cksl-insert-divider {
   background: #FFFFFF;
   color: #141517;
   width: 100%;
-  max-width: 580px;
-  border-radius: 12px;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
   border-top: 4px solid var(--color-red, #A62B2B);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   max-height: 90vh;
-  animation: ckslModalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes ckslModalPop {
-  from { transform: scale(0.95); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
 }
 
 .cksl-modal-header {
-  padding: 18px 24px;
+  padding: 16px 20px;
   border-bottom: 1px solid #E2DDD6;
   display: flex;
   align-items: center;
@@ -350,291 +720,127 @@ body.cksl-editor-active .cksl-insert-divider {
 }
 
 .cksl-modal-title {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
+  margin: 0;
   color: #141517;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 .cksl-modal-close {
   background: transparent;
   border: none;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #6B7280;
   cursor: pointer;
-  line-height: 1;
 }
 
 .cksl-modal-body {
-  padding: 24px;
+  padding: 20px;
   overflow-y: auto;
 }
 
 .cksl-modal-footer {
-  padding: 16px 24px;
+  padding: 14px 20px;
   background: #F9FAFB;
   border-top: 1px solid #E2DDD6;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 10px;
 }
 
-/* Palette Swatch Cards */
-.cksl-palette-grid {
+/* Landscapes Gallery Grid */
+.cksl-landscapes-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
 
-.cksl-palette-card {
+.cksl-landscape-card {
   border: 2px solid #E2DDD6;
-  border-radius: 10px;
-  padding: 14px;
+  border-radius: 8px;
+  overflow: hidden;
   cursor: pointer;
   transition: all 0.2s ease;
   background: #FAF8F5;
 }
 
-.cksl-palette-card:hover {
+.cksl-landscape-card:hover {
+  border-color: var(--color-red, #A62B2B);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.cksl-landscape-card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  display: block;
+}
+
+.landscape-card-info {
+  padding: 8px 10px;
+}
+
+.landscape-card-info strong {
+  display: block;
+  font-size: 0.82rem;
+  color: #141517;
+}
+
+.landscape-card-info span {
+  font-size: 0.72rem;
+  color: #6B7280;
+}
+
+/* Motifs Catalog Grid */
+.cksl-motifs-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.cksl-motif-option-card {
+  border: 1.5px solid #E2DDD6;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  background: #FAF8F5;
+  transition: all 0.18s ease;
+  text-align: center;
+}
+
+.cksl-motif-option-card:hover {
   border-color: var(--color-red, #A62B2B);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-.cksl-palette-card.selected {
-  border-color: var(--color-red, #A62B2B);
-  background: #FFFFFF;
-  box-shadow: 0 0 0 1px var(--color-red, #A62B2B), 0 6px 18px rgba(166, 43, 43, 0.15);
-}
-
-.cksl-palette-name {
-  font-weight: 700;
-  font-size: 0.92rem;
-  margin-bottom: 4px;
-  color: #141517;
-}
-
-.cksl-palette-desc {
-  font-size: 0.78rem;
-  color: #6B7280;
-  margin-bottom: 10px;
-}
-
-.cksl-swatch-strip {
-  display: flex;
-  height: 22px;
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.cksl-swatch-strip span {
-  flex: 1;
-}
-
-/* Typography Size Selector */
-.cksl-type-options {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.cksl-type-btn {
-  border: 2px solid #E2DDD6;
-  background: #FFFFFF;
-  padding: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  text-align: left;
-  transition: all 0.2s ease;
-}
-
-.cksl-type-btn:hover {
-  border-color: var(--color-red, #A62B2B);
-}
-
-.cksl-type-btn.selected {
-  border-color: var(--color-red, #A62B2B);
-  background: rgba(166, 43, 43, 0.04);
-}
-
-.cksl-type-label {
-  font-weight: 700;
-  font-size: 0.95rem;
-  display: block;
-}
-
-.cksl-type-sub {
-  font-size: 0.8rem;
-  color: #6B7280;
-}
-
-/* Ornaments Toggle List */
-.cksl-ornament-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.cksl-ornament-item {
+.motif-preview {
+  margin-bottom: 8px;
+  height: 48px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 14px;
-  border: 1px solid #E2DDD6;
-  border-radius: 8px;
-  background: #FAF8F5;
+  justify-content: center;
 }
 
-.cksl-ornament-info h4 {
-  margin: 0 0 2px 0;
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: #141517;
-}
-
-.cksl-ornament-info p {
-  margin: 0;
-  font-size: 0.78rem;
-  color: #6B7280;
-}
-
-/* Switch Toggle */
-.cksl-switch {
-  position: relative;
-  display: inline-block;
-  width: 44px;
-  height: 24px;
-}
-
-.cksl-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.cksl-slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #D1D5DB;
-  transition: .3s;
-  border-radius: 24px;
-}
-
-.cksl-slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: .3s;
-  border-radius: 50%;
-}
-
-.cksl-switch input:checked + .cksl-slider {
-  background-color: var(--color-red, #A62B2B);
-}
-
-.cksl-switch input:checked + .cksl-slider:before {
-  transform: translateX(20px);
-}
-
-/* Add Block Cards */
-.cksl-blocks-catalog {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-}
-
-.cksl-block-card {
-  border: 1.5px solid #E2DDD6;
-  border-radius: 10px;
-  padding: 14px;
-  cursor: pointer;
-  background: #FFFFFF;
-  text-align: left;
-  transition: all 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.cksl-block-card:hover {
-  border-color: var(--color-red, #A62B2B);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-
-.cksl-block-card-icon {
-  font-size: 1.4rem;
-}
-
-.cksl-block-card-title {
-  font-weight: 700;
-  font-size: 0.92rem;
-  color: #141517;
-}
-
-.cksl-block-card-desc {
-  font-size: 0.78rem;
-  color: #6B7280;
-  line-height: 1.35;
-}
-
-/* GitHub Publish Modal */
-.cksl-input-group {
-  margin-bottom: 16px;
-}
-
-.cksl-input-group label {
+.cksl-motif-option-card strong {
   display: block;
-  font-weight: 700;
   font-size: 0.86rem;
-  margin-bottom: 6px;
   color: #141517;
 }
 
-.cksl-input-text {
-  width: 100%;
-  padding: 10px 14px;
-  border: 1px solid #D1D5DB;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-family: inherit;
-  box-sizing: border-box;
-}
-
-.cksl-input-text:focus {
-  outline: none;
-  border-color: var(--color-red, #A62B2B);
-  box-shadow: 0 0 0 3px rgba(166, 43, 43, 0.15);
-}
-
-.cksl-token-hint {
-  font-size: 0.78rem;
+.cksl-motif-option-card span {
+  font-size: 0.74rem;
   color: #6B7280;
-  margin-top: 6px;
-  line-height: 1.4;
 }
 
-.cksl-token-hint a {
-  color: var(--color-red, #A62B2B);
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-/* Status Banner in Publish Modal */
+/* Status Banner */
 .cksl-status-banner {
-  padding: 12px 16px;
+  padding: 10px 14px;
   border-radius: 6px;
-  font-size: 0.88rem;
-  margin-bottom: 16px;
+  font-size: 0.86rem;
+  margin-bottom: 14px;
   display: none;
 }
 

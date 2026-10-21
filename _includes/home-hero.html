@@ -1,0 +1,59 @@
+<!-- Homepage Hero Banner with Dynamic Customization & Parallax -->
+<section class="home-hero parallax-wrapper" aria-label="Contemporary Korean Studies Lab Hero" data-cksl-block="hero">
+  <!-- Parallax Layer 1: Background Image with Stable Framing -->
+  <div class="hero-layer hero-bg-layer" data-speed="0.15">
+    <img 
+      src="{{ page.hero_image | default: '/images/korea1.jpg' | relative_url }}" 
+      alt="{{ page.title | default: site.title }} banner" 
+      class="hero-img home-hero-img"
+      fetchpriority="high"
+      loading="eager"
+      style="object-position: {{ page.hero_crop | default: 'center 32%' }};"
+      data-cksl-image="hero"
+    >
+  </div>
+
+  <!-- Parallax Layer 2: Subtle Traditional Korean Window Lattice (Changhosal) Geometry -->
+  <div class="hero-layer hero-lattice-layer" data-speed="-0.08" aria-hidden="true">
+    <svg class="lattice-pattern-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="homeLatticePattern" width="60" height="60" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="60" height="60" fill="none" stroke="rgba(224, 169, 56, 0.10)" stroke-width="0.8"/>
+          <path d="M0 30H60 M30 0V60" stroke="rgba(224, 169, 56, 0.06)" stroke-width="0.6"/>
+          <rect x="15" y="15" width="30" height="30" fill="none" stroke="rgba(166, 43, 43, 0.08)" stroke-width="0.7"/>
+          <circle cx="30" cy="30" r="3" fill="none" stroke="rgba(78, 52, 46, 0.12)" stroke-width="0.7"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#homeLatticePattern)"/>
+    </svg>
+  </div>
+
+  <!-- Solid Non-Gloss Scrim for Pristine Contrast -->
+  <div class="hero-scrim home-hero-scrim" aria-hidden="true"></div>
+
+  <!-- Foreground Content -->
+  <div class="hero-content-layer container">
+    <div class="home-hero-text">
+      <h1 class="home-hero-title" data-cksl-editable="true" data-field="title">
+        {{ page.hero_title | default: "Contemporary Korean<br>Studies Lab" }}
+      </h1>
+
+      <!-- Architectural Hanok Roof Crest & Maehwa Blossom Ornament Under Headline -->
+      {% include korean-hero-accent.html %}
+
+      <p class="home-hero-subtitle" data-cksl-editable="true" data-field="hero_subtitle">
+        {{ page.hero_subtitle | default: "An interdisciplinary research initiative advancing scholarship, dialogue, and exchange on contemporary Korea in Singapore and Southeast Asia." }}
+      </p>
+
+      <div class="home-hero-actions">
+        <a href="{{ '/about/' | relative_url }}" class="btn btn-primary" data-cksl-editable="true" data-field="btn_primary">
+          About the Lab
+          <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <a href="{{ '/research/' | relative_url }}" class="btn btn-secondary" data-cksl-editable="true" data-field="btn_secondary">
+          Explore Research Themes
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
