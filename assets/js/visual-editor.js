@@ -25,130 +25,231 @@
   // 10 Authentic Korean Vector SVGs (Zero Emojis!)
   const MOTIF_SVGS = {
     maehwa_blossom: `
-      <svg viewBox="0 0 100 100" fill="none" class="cksl-svg-motif" style="width: 48px; height: 48px;" aria-label="Maehwa Plum Blossom">
-        <circle cx="50" cy="24" r="14" fill="var(--color-red, #A62B2B)"/>
-        <circle cx="74" cy="42" r="14" fill="var(--color-red, #A62B2B)"/>
-        <circle cx="65" cy="72" r="14" fill="var(--color-red, #A62B2B)"/>
-        <circle cx="35" cy="72" r="14" fill="var(--color-red, #A62B2B)"/>
-        <circle cx="26" cy="42" r="14" fill="var(--color-red, #A62B2B)"/>
-        <circle cx="50" cy="50" r="10" fill="#8E2222"/>
-        <path d="M50 50L50 32M50 50L67 38M50 50L61 65M50 50L39 65M50 50L33 38" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.2" stroke-linecap="round"/>
-        <circle cx="50" cy="30" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
-        <circle cx="69" cy="36" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
-        <circle cx="63" cy="67" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
-        <circle cx="37" cy="67" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
-        <circle cx="31" cy="36" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
-        <circle cx="50" cy="50" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
+      <svg viewBox="0 0 120 120" fill="none" class="cksl-svg-motif" style="width: 54px; height: auto;" aria-label="Maehwa Plum Blossom">
+        <circle cx="60" cy="28" r="20" fill="var(--color-red, #A62B2B)"/>
+        <circle cx="90" cy="50" r="20" fill="var(--color-red, #A62B2B)"/>
+        <circle cx="79" cy="87" r="20" fill="var(--color-red, #A62B2B)"/>
+        <circle cx="41" cy="87" r="20" fill="var(--color-red, #A62B2B)"/>
+        <circle cx="30" cy="50" r="20" fill="var(--color-red, #A62B2B)"/>
+        <circle cx="60" cy="28" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none" opacity="0.85"/>
+        <circle cx="90" cy="50" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none" opacity="0.85"/>
+        <circle cx="79" cy="87" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none" opacity="0.85"/>
+        <circle cx="41" cy="87" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none" opacity="0.85"/>
+        <circle cx="30" cy="50" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none" opacity="0.85"/>
+        <circle cx="60" cy="60" r="14" fill="#801E1E"/>
+        <circle cx="60" cy="60" r="9" fill="var(--color-red, #A62B2B)"/>
+        <path d="M60 60L60 35M60 60L75 40M60 60L83 52M60 60L80 69M60 60L72 80M60 60L60 84M60 60L48 80M60 60L40 69M60 60L37 52M60 60L45 40" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.6" stroke-linecap="round"/>
+        <circle cx="60" cy="33" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="76" cy="38" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="85" cy="51" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="82" cy="71" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="73" cy="82" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="60" cy="86" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="47" cy="82" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="38" cy="71" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="35" cy="51" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="44" cy="38" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="60" cy="60" r="4.5" fill="var(--color-yellow-gold, #E5B842)"/>
       </svg>
     `,
     flower_divider: `
-      <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin: 32px 0; width: 100%;">
-        <svg viewBox="0 0 360 36" fill="none" class="cksl-svg-motif" style="width: 100%; max-width: 440px; height: auto;">
-          <line x1="10" y1="18" x2="120" y2="18" stroke="var(--color-border, #E2DDD6)" stroke-width="1.2"/>
-          <path d="M120 18C132 18 138 12 144 14C150 16 156 22 164 18" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
-          <circle cx="144" cy="13" r="2" fill="var(--color-yellow-gold, #E5B842)"/>
-          <g transform="translate(180, 18) scale(0.24) translate(-50, -50)">
-            <circle cx="50" cy="24" r="14" fill="var(--color-red, #A62B2B)"/>
-            <circle cx="74" cy="42" r="14" fill="var(--color-red, #A62B2B)"/>
-            <circle cx="65" cy="72" r="14" fill="var(--color-red, #A62B2B)"/>
-            <circle cx="35" cy="72" r="14" fill="var(--color-red, #A62B2B)"/>
-            <circle cx="26" cy="42" r="14" fill="var(--color-red, #A62B2B)"/>
-            <circle cx="50" cy="50" r="9" fill="#8E2222"/>
-            <path d="M50 50L50 32M50 50L67 38M50 50L61 65M50 50L39 65M50 50L33 38" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.2" stroke-linecap="round"/>
-            <circle cx="50" cy="30" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
-            <circle cx="69" cy="36" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
-            <circle cx="63" cy="67" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
-            <circle cx="37" cy="67" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
-            <circle cx="31" cy="36" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
-            <circle cx="50" cy="50" r="4" fill="var(--color-yellow-gold, #E5B842)"/>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin: 36px 0; width: 100%;">
+        <svg viewBox="0 0 540 44" fill="none" class="cksl-svg-motif" style="width: 100%; max-width: 520px; height: auto;" preserveAspectRatio="xMidYMid meet">
+          <line x1="10" y1="22" x2="160" y2="22" stroke="var(--color-border, #E2DDD6)" stroke-width="1.2"/>
+          <path d="M160 22C175 22 182 14 190 16C198 18 204 28 216 22C222 19 226 15 234 18" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="190" cy="14" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+          <circle cx="216" cy="24" r="2" fill="var(--color-red, #A62B2B)"/>
+          <circle cx="234" cy="16" r="2.2" fill="var(--color-yellow-gold, #E5B842)"/>
+          <g transform="translate(270, 22) scale(0.28) translate(-60, -60)">
+            <circle cx="60" cy="28" r="20" fill="var(--color-red, #A62B2B)"/>
+            <circle cx="90" cy="50" r="20" fill="var(--color-red, #A62B2B)"/>
+            <circle cx="79" cy="87" r="20" fill="var(--color-red, #A62B2B)"/>
+            <circle cx="41" cy="87" r="20" fill="var(--color-red, #A62B2B)"/>
+            <circle cx="30" cy="50" r="20" fill="var(--color-red, #A62B2B)"/>
+            <circle cx="60" cy="28" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" fill="none"/>
+            <circle cx="90" cy="50" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" fill="none"/>
+            <circle cx="79" cy="87" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" fill="none"/>
+            <circle cx="41" cy="87" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" fill="none"/>
+            <circle cx="30" cy="50" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" fill="none"/>
+            <circle cx="60" cy="60" r="13" fill="#801E1E"/>
+            <path d="M60 60L60 36M60 60L75 42M60 60L81 53M60 60L78 69M60 60L71 79M60 60L60 83M60 60L49 79M60 60L42 69M60 60L39 53M60 60L45 42" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="60" cy="34" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+            <circle cx="77" cy="40" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+            <circle cx="83" cy="52" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+            <circle cx="79" cy="71" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+            <circle cx="72" cy="81" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+            <circle cx="60" cy="85" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+            <circle cx="48" cy="81" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+            <circle cx="41" cy="71" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+            <circle cx="37" cy="52" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+            <circle cx="43" cy="40" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+            <circle cx="60" cy="60" r="5" fill="var(--color-yellow-gold, #E5B842)"/>
           </g>
-          <path d="M196 18C204 22 210 16 216 14C222 12 228 18 240 18" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
-          <circle cx="216" cy="13" r="2" fill="var(--color-yellow-gold, #E5B842)"/>
-          <line x1="240" y1="18" x2="350" y2="18" stroke="var(--color-border, #E2DDD6)" stroke-width="1.2"/>
+          <path d="M306 18C314 15 318 19 324 22C336 28 342 18 350 16C358 14 365 22 380 22" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="306" cy="16" r="2.2" fill="var(--color-yellow-gold, #E5B842)"/>
+          <circle cx="324" cy="24" r="2" fill="var(--color-red, #A62B2B)"/>
+          <circle cx="350" cy="14" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+          <line x1="380" y1="22" x2="530" y2="22" stroke="var(--color-border, #E2DDD6)" stroke-width="1.2"/>
         </svg>
       </div>
     `,
     hanok_roof: `
-      <svg viewBox="0 0 240 32" fill="none" class="cksl-svg-motif" style="width: 180px; height: auto;" aria-label="Hanok Cheoma Eaves">
-        <path d="M8 26C54 13 86 8 120 8C154 8 186 13 232 26" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="3" stroke-linecap="round"/>
-        <path d="M24 28C62 17 90 12 120 12C150 12 178 17 216 28" stroke="var(--color-red, #A62B2B)" stroke-width="1.5" stroke-linecap="round" opacity="0.9"/>
-        <circle cx="120" cy="8" r="6" fill="var(--color-red, #A62B2B)"/>
-        <circle cx="120" cy="8" r="3" fill="var(--color-yellow-gold, #E5B842)"/>
-        <circle cx="120" cy="8" r="1.2" fill="var(--color-brown-deep, #4A2E1B)"/>
+      <svg viewBox="0 0 280 40" fill="none" class="cksl-svg-motif" style="width: 200px; height: auto;" aria-label="Hanok Cheoma Eaves">
+        <path d="M10 32C65 14 105 8 140 8C175 8 215 14 270 32" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M28 35C75 19 108 14 140 14C172 14 205 19 252 35" stroke="var(--color-red, #A62B2B)" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+        <circle cx="140" cy="8" r="7" fill="var(--color-red, #A62B2B)"/>
+        <circle cx="140" cy="8" r="4" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="140" cy="8" r="1.5" fill="var(--color-brown-deep, #4A2E1B)"/>
+        <circle cx="20" cy="30" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="260" cy="30" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
       </svg>
     `,
     title_underline: `
-      <svg viewBox="0 0 120 12" fill="none" class="cksl-svg-motif" style="width: 110px; height: 12px;">
-        <line x1="0" y1="6" x2="48" y2="6" stroke="var(--color-red, #A62B2B)" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="56" cy="6" r="4.5" fill="var(--color-red, #A62B2B)"/>
-        <circle cx="56" cy="6" r="2" fill="var(--color-yellow-gold, #E5B842)"/>
-        <line x1="64" y1="6" x2="88" y2="6" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="94" cy="6" r="1.5" fill="var(--color-yellow-gold, #E5B842)"/>
+      <svg viewBox="0 0 160 16" fill="none" class="cksl-svg-motif" style="width: 140px; height: 16px;">
+        <line x1="2" y1="8" x2="68" y2="8" stroke="var(--color-red, #A62B2B)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="78" cy="8" r="5.5" fill="var(--color-red, #A62B2B)"/>
+        <circle cx="78" cy="8" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="78" cy="8" r="1.2" fill="#801E1E"/>
+        <line x1="88" y1="8" x2="124" y2="8" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="132" cy="8" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="142" cy="8" r="1.5" fill="var(--color-red, #A62B2B)"/>
       </svg>
     `,
     cloud_unmun: `
-      <svg viewBox="0 0 180 50" fill="none" class="cksl-svg-motif" style="width: 140px; height: auto;" aria-label="Auspicious Cloud Unmun">
-        <path d="M24 38C14 38 6 32 10 22C14 12 28 10 34 16C40 8 56 6 66 14C74 6 90 8 96 16C104 10 118 14 120 24C126 24 132 28 130 34C128 40 120 40 114 40L24 40Z" stroke="var(--color-red, #A62B2B)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <line x1="126" y1="26" x2="158" y2="26" stroke="var(--color-red, #A62B2B)" stroke-width="2" stroke-linecap="round"/>
-        <line x1="134" y1="34" x2="168" y2="34" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="174" cy="26" r="2.5" fill="var(--color-red, #A62B2B)"/>
-        <circle cx="178" cy="34" r="3" fill="var(--color-yellow-gold, #E5B842)"/>
-        <path d="M38 28C44 24 52 24 58 28" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
-        <path d="M74 24C80 20 88 20 94 24" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
+      <svg viewBox="0 0 220 90" fill="none" class="cksl-svg-motif" style="width: 160px; height: auto;" aria-label="Auspicious Cloud Unmun">
+        <path d="M30 65C18 65 8 55 10 42C12 28 28 22 40 28C46 14 66 10 82 18C92 8 114 8 126 18C138 10 156 14 162 26C174 24 186 32 184 44C182 54 170 60 158 60L130 60C140 54 142 42 134 34C126 26 112 28 106 36C100 28 86 28 80 34C74 26 60 28 54 36C48 30 38 34 36 42C34 50 42 56 50 56L50 65L30 65Z" fill="var(--color-red, #A62B2B)" opacity="0.12"/>
+        <path d="M30 65C18 65 8 55 10 42C12 28 28 22 40 28C46 14 66 10 82 18C92 8 114 8 126 18C138 10 156 14 162 26C174 24 186 32 184 44C182 54 170 60 158 60" stroke="var(--color-red, #A62B2B)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M48 42C44 34 54 28 62 34C70 40 68 50 58 52" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M78 36C74 28 86 22 94 28C102 34 100 46 88 48" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M118 34C114 26 128 22 136 28C144 34 140 46 128 48" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M168 46C182 46 195 40 206 42" stroke="var(--color-red, #A62B2B)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="214" cy="42" r="3" fill="var(--color-red, #A62B2B)"/>
+        <path d="M158 58C174 58 188 64 200 62" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="208" cy="62" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
       </svg>
     `,
     pavilion: `
-      <div style="display: inline-flex; align-items: center; justify-content: center; width: 68px; height: 68px; background: rgba(166, 43, 43, 0.05); border: 1.5px solid var(--color-border, #E2DDD6); border-radius: 12px; padding: 8px;">
-        <svg viewBox="0 0 54 54" fill="none" class="cksl-svg-motif" style="width: 50px; height: 50px;" aria-label="Hanok Palace Pavilion">
-          <path d="M5 24C16 17 23 13 27 13C31 13 38 17 49 24" stroke="var(--color-red, #A62B2B)" stroke-width="3" stroke-linecap="round"/>
-          <path d="M12 23L16 16H38L42 23" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
-          <line x1="16" y1="24" x2="16" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2" stroke-linecap="round"/>
-          <line x1="23" y1="24" x2="23" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2" stroke-linecap="round"/>
-          <line x1="31" y1="24" x2="31" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2" stroke-linecap="round"/>
-          <line x1="38" y1="24" x2="38" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2" stroke-linecap="round"/>
-          <line x1="9" y1="40" x2="45" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2.8" stroke-linecap="round"/>
-          <circle cx="27" cy="10" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+      <div style="display: inline-flex; align-items: center; justify-content: center; width: 84px; height: 84px; background: rgba(166, 43, 43, 0.05); border: 1.5px solid var(--color-border, #E2DDD6); border-radius: 12px; padding: 6px;">
+        <svg viewBox="0 0 80 80" fill="none" class="cksl-svg-motif" style="width: 72px; height: 72px;" aria-label="Hanok Palace Pavilion">
+          <circle cx="40" cy="14" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
+          <path d="M8 32C24 23 33 18 40 18C47 18 56 23 72 32L65 37H15L8 32Z" fill="var(--color-red, #A62B2B)"/>
+          <path d="M8 32C24 23 33 18 40 18C47 18 56 23 72 32" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="22" y1="37" x2="22" y2="42" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2"/>
+          <line x1="34" y1="37" x2="34" y2="42" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2"/>
+          <line x1="46" y1="37" x2="46" y2="42" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2"/>
+          <line x1="58" y1="37" x2="58" y2="42" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2"/>
+          <line x1="16" y1="42" x2="64" y2="42" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.5"/>
+          <line x1="22" y1="42" x2="22" y2="62" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="3" stroke-linecap="round"/>
+          <line x1="34" y1="42" x2="34" y2="62" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2.8" stroke-linecap="round"/>
+          <line x1="46" y1="42" x2="46" y2="62" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2.8" stroke-linecap="round"/>
+          <line x1="58" y1="42" x2="58" y2="62" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="3" stroke-linecap="round"/>
+          <rect x="12" y="62" width="56" height="5" fill="#C5BAAF" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="1.5" rx="1"/>
+          <rect x="8" y="67" width="64" height="5" fill="#8C827A" rx="1"/>
         </svg>
       </div>
     `,
     dancheong_corner: `
-      <svg viewBox="0 0 50 50" fill="none" class="cksl-svg-motif" style="width: 44px; height: 44px;" aria-label="Dancheong Corner Fret">
-        <path d="M3 47V8C3 5.2 5.2 3 8 3H47" stroke="var(--color-red, #A62B2B)" stroke-width="3.5" stroke-linecap="round"/>
-        <path d="M11 43V14C11 12.3 12.3 11 14 11H43" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
-        <path d="M19 39V22H36" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" stroke-linecap="round"/>
-        <rect x="22" y="25" width="8" height="8" fill="var(--color-yellow-gold, #E5B842)"/>
+      <svg viewBox="0 0 60 60" fill="none" class="cksl-svg-motif" style="width: 52px; height: 52px;" aria-label="Dancheong Meander Corner Fret">
+        <path d="M4 56V8C4 5.8 5.8 4 8 4H56" stroke="var(--color-red, #A62B2B)" stroke-width="3.5" stroke-linecap="square"/>
+        <path d="M12 56V12H56" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.5" stroke-linecap="square"/>
+        <path d="M20 56V20H46V36H32V28H40" stroke="var(--color-red, #A62B2B)" stroke-width="2.5" stroke-linecap="square"/>
+        <rect x="25" y="42" width="7" height="7" fill="var(--color-yellow-gold, #E5B842)"/>
       </svg>
     `,
     korean_fan: `
-      <svg viewBox="0 0 90 70" fill="none" class="cksl-svg-motif" style="width: 72px; height: auto;" aria-label="Korean Folding Fan Buchae">
-        <path d="M10 42C18 20 40 10 45 10C50 10 72 20 80 42L45 54L10 42Z" fill="rgba(166, 43, 43, 0.12)" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" stroke-linejoin="round"/>
-        <line x1="45" y1="54" x2="16" y2="38" stroke="var(--color-red, #A62B2B)" stroke-width="1.4"/>
-        <line x1="45" y1="54" x2="28" y2="26" stroke="var(--color-red, #A62B2B)" stroke-width="1.4"/>
-        <line x1="45" y1="54" x2="45" y2="12" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.6"/>
-        <line x1="45" y1="54" x2="62" y2="26" stroke="var(--color-red, #A62B2B)" stroke-width="1.4"/>
-        <line x1="45" y1="54" x2="74" y2="38" stroke="var(--color-red, #A62B2B)" stroke-width="1.4"/>
-        <circle cx="45" cy="54" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
-        <line x1="45" y1="57.5" x2="45" y2="68" stroke="var(--color-red, #A62B2B)" stroke-width="1.6" stroke-linecap="round"/>
+      <svg viewBox="0 0 140 100" fill="none" class="cksl-svg-motif" style="width: 110px; height: auto;" aria-label="Traditional Korean Folding Fan">
+        <path d="M14 62C26 30 64 16 70 16C76 16 114 30 126 62L70 80L14 62Z" fill="var(--color-red, #A62B2B)" opacity="0.15"/>
+        <path d="M14 62C26 30 64 16 70 16C76 16 114 30 126 62" stroke="var(--color-red, #A62B2B)" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="70" y1="80" x2="16" y2="60" stroke="var(--color-red, #A62B2B)" stroke-width="1.8"/>
+        <line x1="70" y1="80" x2="30" y2="44" stroke="var(--color-red, #A62B2B)" stroke-width="1.6"/>
+        <line x1="70" y1="80" x2="48" y2="28" stroke="var(--color-red, #A62B2B)" stroke-width="1.6"/>
+        <line x1="70" y1="80" x2="70" y2="18" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2"/>
+        <line x1="70" y1="80" x2="92" y2="28" stroke="var(--color-red, #A62B2B)" stroke-width="1.6"/>
+        <line x1="70" y1="80" x2="110" y2="44" stroke="var(--color-red, #A62B2B)" stroke-width="1.6"/>
+        <line x1="70" y1="80" x2="124" y2="60" stroke="var(--color-red, #A62B2B)" stroke-width="1.8"/>
+        <path d="M22 55Q44 42 70 42Q96 42 118 55" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" stroke-dasharray="3 3"/>
+        <circle cx="70" cy="80" r="4.5" fill="var(--color-yellow-gold, #E5B842)"/>
+        <circle cx="70" cy="80" r="2" fill="#801E1E"/>
+        <line x1="70" y1="84.5" x2="70" y2="92" stroke="var(--color-red, #A62B2B)" stroke-width="2"/>
+        <circle cx="70" cy="94" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+        <path d="M67 96L65 106M70 96L70 107M73 96L75 106" stroke="var(--color-red, #A62B2B)" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
     `,
     lotus_blossom: `
-      <svg viewBox="0 0 70 70" fill="none" class="cksl-svg-motif" style="width: 56px; height: 56px;" aria-label="Royal Lotus Medallion">
-        <circle cx="35" cy="35" r="32" stroke="var(--color-border, #E2DDD6)" stroke-width="1.5"/>
-        <circle cx="35" cy="35" r="26" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-dasharray="2.5 3"/>
-        <path d="M35 12C32 22 35 29 35 35C35 29 38 22 35 12Z" fill="var(--color-red, #A62B2B)"/>
-        <path d="M35 58C32 48 35 41 35 35C35 41 38 48 35 58Z" fill="var(--color-red, #A62B2B)"/>
-        <path d="M12 35C22 32 29 35 35 35C29 35 22 38 12 35Z" fill="var(--color-red, #A62B2B)"/>
-        <path d="M58 35C48 32 41 35 35 35C41 35 48 38 58 35Z" fill="var(--color-red, #A62B2B)"/>
-        <circle cx="23" cy="23" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.8"/>
-        <circle cx="47" cy="23" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.8"/>
-        <circle cx="23" cy="47" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.8"/>
-        <circle cx="47" cy="47" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.8"/>
-        <circle cx="35" cy="35" r="5" fill="var(--color-yellow-gold, #E5B842)"/>
+      <svg viewBox="0 0 100 100" fill="none" class="cksl-svg-motif" style="width: 72px; height: 72px;" aria-label="Seigaiha Wave Medallion">
+        <circle cx="50" cy="50" r="47" stroke="var(--color-border, #E2DDD6)" stroke-width="2"/>
+        <circle cx="50" cy="50" r="44" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8"/>
+        <g>
+          <circle cx="50" cy="20" r="18" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+          <circle cx="50" cy="20" r="12" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.5" fill="none"/>
+          <circle cx="50" cy="20" r="6" stroke="var(--color-red, #A62B2B)" stroke-width="1.5" fill="none"/>
+          <circle cx="20" cy="45" r="18" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+          <circle cx="20" cy="45" r="12" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.5" fill="none"/>
+          <circle cx="20" cy="45" r="6" stroke="var(--color-red, #A62B2B)" stroke-width="1.5" fill="none"/>
+          <circle cx="80" cy="45" r="18" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+          <circle cx="80" cy="45" r="12" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.5" fill="none"/>
+          <circle cx="80" cy="45" r="6" stroke="var(--color-red, #A62B2B)" stroke-width="1.5" fill="none"/>
+          <circle cx="50" cy="70" r="18" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+          <circle cx="50" cy="70" r="12" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.5" fill="none"/>
+          <circle cx="50" cy="70" r="6" stroke="var(--color-red, #A62B2B)" stroke-width="1.5" fill="none"/>
+        </g>
       </svg>
     `,
     korean_seal: `
-      <div style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 2.5px solid var(--color-red, #A62B2B); border-radius: 4px; background: rgba(166, 43, 43, 0.05); font-family: 'Noto Serif KR', serif; font-size: 0.82rem; font-weight: 700; color: var(--color-red, #A62B2B); letter-spacing: 0.04em; text-align: center; line-height: 1.15; box-shadow: inset 0 0 0 1px rgba(166, 43, 43, 0.2);">
+      <div style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border: 2.5px solid var(--color-red, #A62B2B); border-radius: 4px; background: rgba(166, 43, 43, 0.06); font-family: 'Noto Serif KR', serif; font-size: 0.86rem; font-weight: 700; color: var(--color-red, #A62B2B); letter-spacing: 0.05em; text-align: center; line-height: 1.15; box-shadow: inset 0 0 0 1.5px rgba(166, 43, 43, 0.25), 0 2px 6px rgba(166, 43, 43, 0.15);">
         한국<br>학연
+      </div>
+    `,
+    cloud_bars: `
+      <div style="display: flex; justify-content: center; margin: 16px 0; width: 100%;">
+        <svg viewBox="0 0 160 50" fill="none" class="cksl-svg-motif" style="width: 140px; height: auto;" aria-label="Horizontal Stylized Clouds">
+          <rect x="20" y="8" width="110" height="12" rx="6" fill="var(--color-red, #A62B2B)"/>
+          <rect x="50" y="8" width="50" height="12" rx="6" fill="var(--color-yellow-gold, #E5B842)"/>
+          <circle cx="14" cy="14" r="4.5" fill="var(--color-red, #A62B2B)"/>
+          <circle cx="140" cy="14" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
+          <rect x="35" y="28" width="95" height="12" rx="6" fill="var(--color-red, #A62B2B)"/>
+          <rect x="65" y="28" width="40" height="12" rx="6" fill="var(--color-yellow-gold, #E5B842)"/>
+          <circle cx="24" cy="34" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
+          <circle cx="142" cy="34" r="5" fill="var(--color-red, #A62B2B)"/>
+          <circle cx="152" cy="34" r="2.5" fill="var(--color-red, #A62B2B)"/>
+        </svg>
+      </div>
+    `,
+    palace_lantern: `
+      <div style="display: inline-flex; justify-content: center; margin: 12px 0;">
+        <svg viewBox="0 0 70 120" fill="none" class="cksl-svg-motif" style="width: 50px; height: auto;" aria-label="Joseon Silk Lantern">
+          <circle cx="35" cy="10" r="5" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" fill="none"/>
+          <line x1="35" y1="15" x2="35" y2="24" stroke="var(--color-red, #A62B2B)" stroke-width="2"/>
+          <rect x="22" y="24" width="26" height="5" rx="2" fill="var(--color-red, #A62B2B)"/>
+          <ellipse cx="35" cy="56" rx="26" ry="28" fill="var(--color-red, #A62B2B)" opacity="0.15"/>
+          <ellipse cx="35" cy="56" rx="26" ry="28" stroke="var(--color-red, #A62B2B)" stroke-width="2.5"/>
+          <path d="M35 28C22 36 22 76 35 84" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" fill="none"/>
+          <path d="M35 28C48 36 48 76 35 84" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" fill="none"/>
+          <line x1="35" y1="28" x2="35" y2="84" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2"/>
+          <ellipse cx="35" cy="56" rx="26" ry="12" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" stroke-dasharray="3 3"/>
+          <rect x="22" y="84" width="26" height="5" rx="2" fill="var(--color-red, #A62B2B)"/>
+          <circle cx="35" cy="94" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
+          <circle cx="35" cy="102" r="2.8" fill="var(--color-red, #A62B2B)"/>
+          <path d="M31 106L30 118M35 106L35 119M39 106L40 118" stroke="var(--color-red, #A62B2B)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+    `,
+    shippo_lattice: `
+      <div style="display: flex; justify-content: center; margin: 18px 0;">
+        <svg viewBox="0 0 100 100" fill="none" class="cksl-svg-motif" style="width: 72px; height: auto;" aria-label="Shippo Lattice Medallion">
+          <circle cx="50" cy="50" r="48" stroke="var(--color-border, #E2DDD6)" stroke-width="2"/>
+          <circle cx="50" cy="50" r="45" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2"/>
+          <circle cx="50" cy="50" r="24" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+          <circle cx="26" cy="50" r="24" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+          <circle cx="74" cy="50" r="24" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+          <circle cx="50" cy="26" r="24" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+          <circle cx="50" cy="74" r="24" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+          <circle cx="26" cy="26" r="24" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none"/>
+          <circle cx="74" cy="26" r="24" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none"/>
+          <circle cx="26" cy="74" r="24" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none"/>
+          <circle cx="74" cy="74" r="24" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none"/>
+          <circle cx="50" cy="50" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
+        </svg>
       </div>
     `
   };
@@ -309,12 +410,101 @@
     const badge = document.getElementById('cksl-draft-session-badge');
     if (badge) {
       if (isDraft) {
-        badge.innerHTML = `🌿 Draft Session (${branch}) &mdash; Main is safe`;
+        badge.innerHTML = `<span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:#10B981; margin-right:6px;"></span>Draft Session (${branch}) &mdash; Main is safe`;
         badge.style.background = 'rgba(16, 185, 129, 0.15)';
         badge.style.color = '#34D399';
         badge.style.borderColor = 'rgba(16, 185, 129, 0.35)';
       } else {
         badge.innerHTML = `Branch: ${branch}`;
+      }
+    }
+  }
+
+  // Save current page changes into draft-session markdown file via background service
+  async function saveCurrentPageDraft() {
+    const saveBtn = document.getElementById('cksl-btn-save-draft');
+    const origHtml = saveBtn ? saveBtn.innerHTML : '';
+    if (saveBtn) {
+      saveBtn.disabled = true;
+      saveBtn.innerHTML = `<span>Saving...</span>`;
+    }
+
+    try {
+      // 1. Gather hero fields if present on this page
+      const heroData = {};
+      const heroTitleEl = document.querySelector('.hero-title') || document.querySelector('.home-hero-title');
+      if (heroTitleEl) heroData.title = heroTitleEl.innerText.trim();
+
+      const heroKickerEl = document.querySelector('.hero-kicker') || document.querySelector('.hero-tag') || document.querySelector('.home-hero-tag');
+      if (heroKickerEl) heroData.kicker = heroKickerEl.innerText.trim();
+
+      const heroSubEl = document.querySelector('.hero-subtitle') || document.querySelector('.home-hero-lead');
+      if (heroSubEl) heroData.subtitle = heroSubEl.innerText.trim();
+
+      const heroImgEl = document.querySelector('.home-hero-img') || document.querySelector('.hero-img');
+      if (heroImgEl) {
+        let src = heroImgEl.getAttribute('src') || heroImgEl.src;
+        if (src.includes('/images/')) {
+          src = '/images/' + src.split('/images/')[1];
+        }
+        heroData.image = src;
+        heroData.crop = heroImgEl.style.objectPosition || 'center 32%';
+      }
+
+      // 2. Gather main content HTML
+      const mainEl = document.getElementById('main-content') || document.querySelector('main');
+      let contentHtml = '';
+      if (mainEl) {
+        const clone = mainEl.cloneNode(true);
+        // Clean clone of all editor artifacts
+        clone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+        clone.querySelectorAll('[data-cksl-editable]').forEach(el => el.removeAttribute('data-cksl-editable'));
+        clone.querySelectorAll('[spellcheck]').forEach(el => el.removeAttribute('spellcheck'));
+        clone.querySelectorAll('[data-cksl-box-selected]').forEach(el => el.removeAttribute('data-cksl-box-selected'));
+        clone.querySelectorAll('.cksl-resize-handle').forEach(el => el.remove());
+        clone.querySelectorAll('.cksl-motif-toolbar').forEach(el => el.remove());
+        clone.querySelectorAll('.cksl-box-toolbar').forEach(el => el.remove());
+        clone.querySelectorAll('#cksl-bounding-box').forEach(el => el.remove());
+        clone.querySelectorAll('.inspector-drag-cue').forEach(el => el.remove());
+
+        contentHtml = clone.innerHTML;
+      }
+
+      const res = await fetch(`${API_BASE}/api/page/save`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          pageUrl: window.location.pathname,
+          contentHtml,
+          heroData
+        })
+      });
+
+      const data = await res.json();
+      if (data.success) {
+        if (saveBtn) {
+          saveBtn.innerHTML = `<span>Saved to Draft!</span>`;
+          saveBtn.style.background = '#059669';
+          setTimeout(() => {
+            saveBtn.innerHTML = origHtml;
+            saveBtn.style.background = '';
+            saveBtn.disabled = false;
+          }, 2400);
+        }
+        updateDraftBadge('draft-session', true);
+      } else {
+        alert('Save notice: ' + (data.error || 'Failed to save to draft'));
+        if (saveBtn) {
+          saveBtn.innerHTML = origHtml;
+          saveBtn.disabled = false;
+        }
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Could not connect to editor background service. Please ensure the local service is running on port 4005.');
+      if (saveBtn) {
+        saveBtn.innerHTML = origHtml;
+        saveBtn.disabled = false;
       }
     }
   }
@@ -358,6 +548,8 @@
   }
 
   // 3. Word-Style Floating Selection Mini-Toolbar (Per-word/per-character formatting)
+  let savedSelectionRange = null;
+
   function setupTextSelectionToolbar() {
     const toolbar = document.getElementById('cksl-text-selection-toolbar');
     if (!toolbar) return;
@@ -365,54 +557,233 @@
     // Track selection changes across the document
     document.addEventListener('selectionchange', handleSelectionChange);
 
-    // Prevent button clicks from collapsing the text selection
-    toolbar.querySelectorAll('button, select, input').forEach(ctrl => {
+    // Also update position when viewport scrolls
+    const viewport = document.getElementById('cksl-canvas-viewport');
+    if (viewport) {
+      viewport.addEventListener('scroll', () => {
+        if (!toolbar.classList.contains('hidden') && savedSelectionRange) {
+          positionSelectionToolbar(savedSelectionRange);
+        }
+        if (activeBox) {
+          positionInspector(activeBox);
+        }
+      }, { passive: true });
+    }
+
+    // Prevent button/select/input clicks from collapsing the text selection
+    toolbar.querySelectorAll('button, select, input, span').forEach(ctrl => {
       ctrl.addEventListener('mousedown', (e) => {
         e.preventDefault();
       });
     });
 
-    // Formatting action buttons
+    // Font Family dropdown
+    const fontSelect = document.getElementById('cksl-sel-font-family');
+    if (fontSelect) {
+      fontSelect.addEventListener('change', (e) => {
+        applySelectionFontFamily(e.target.value);
+      });
+    }
+
+    // Font Size dropdown
+    const sizeSelect = document.getElementById('cksl-sel-font-size');
+    if (sizeSelect) {
+      sizeSelect.addEventListener('change', (e) => {
+        applySelectionFontSize(e.target.value);
+      });
+    }
+
+    // Color picker
+    const colorPicker = document.getElementById('cksl-sel-color-picker');
+    if (colorPicker) {
+      colorPicker.addEventListener('input', (e) => {
+        restoreSelection();
+        document.execCommand('foreColor', false, e.target.value);
+        const sel = window.getSelection();
+        if (sel && sel.rangeCount > 0) {
+          savedSelectionRange = sel.getRangeAt(0).cloneRange();
+        }
+      });
+    }
+
+    // Formatting action buttons on floating bubble
     toolbar.querySelectorAll('[data-cmd]').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        restoreSelection();
+
         const cmd = btn.getAttribute('data-cmd');
-        document.execCommand(cmd, false, null);
+        const val = btn.getAttribute('data-val') || null;
+        const step = btn.getAttribute('data-step');
+
+        if (cmd === 'fontSizeStep') {
+          adjustSelectionFontSize(parseInt(step, 10) || 2);
+        } else if (cmd === 'foreColor') {
+          document.execCommand('foreColor', false, val);
+        } else if (cmd === 'hiliteColor') {
+          document.execCommand('hiliteColor', false, val);
+        } else if (cmd === 'formatBlock') {
+          document.execCommand('formatBlock', false, val);
+        } else {
+          document.execCommand(cmd, false, val);
+        }
+
+        // Re-save range and reposition toolbar without hiding it
+        const sel = window.getSelection();
+        if (sel && sel.rangeCount > 0) {
+          savedSelectionRange = sel.getRangeAt(0).cloneRange();
+          positionSelectionToolbar(savedSelectionRange);
+        }
         updateSelectionToolbarState();
       });
     });
 
-    // Font Size select
-    const sizeSel = document.getElementById('cksl-sel-font-size');
-    if (sizeSel) {
-      sizeSel.addEventListener('change', () => {
-        if (!sizeSel.value) return;
-        applySelectionStyle('fontSize', sizeSel.value);
-        sizeSel.value = '';
-      });
-    }
-
-    // Color pickers
-    const foreColorInput = document.getElementById('cksl-sel-color');
-    if (foreColorInput) {
-      foreColorInput.addEventListener('input', (e) => {
-        document.execCommand('foreColor', false, e.target.value);
-      });
-    }
-
-    const hiliteColorInput = document.getElementById('cksl-sel-bg-color');
-    if (hiliteColorInput) {
-      hiliteColorInput.addEventListener('input', (e) => {
-        document.execCommand('hiliteColor', false, e.target.value);
-      });
-    }
-
     // Link insertion
     const linkBtn = document.getElementById('cksl-sel-btn-link');
     if (linkBtn) {
-      linkBtn.addEventListener('click', () => {
+      linkBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        restoreSelection();
         const url = prompt('Enter link URL (e.g. /about/ or https://example.com):', 'https://');
-        if (url) document.execCommand('createLink', false, url);
+        if (url) {
+          document.execCommand('createLink', false, url);
+        }
       });
+    }
+
+    // Word Ribbon Document Shelf Buttons (#pane-document)
+    const docPane = document.getElementById('pane-document');
+    if (docPane) {
+      docPane.querySelectorAll('button, input').forEach(ctrl => {
+        ctrl.addEventListener('mousedown', (e) => {
+          e.preventDefault();
+        });
+      });
+
+      docPane.querySelectorAll('[data-doc-cmd]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          restoreSelection();
+
+          const cmd = btn.getAttribute('data-doc-cmd');
+          const val = btn.getAttribute('data-val') || null;
+          const step = btn.getAttribute('data-step');
+
+          if (cmd === 'fontSizeStep') {
+            adjustSelectionFontSize(parseInt(step, 10) || 2);
+          } else if (cmd === 'fontFamily') {
+            applySelectionFontFamily(val);
+          } else if (cmd === 'foreColor') {
+            document.execCommand('foreColor', false, val);
+          } else if (cmd === 'formatBlock') {
+            document.execCommand('formatBlock', false, val);
+          } else {
+            document.execCommand(cmd, false, val);
+          }
+        });
+      });
+
+      const ribbonColorPicker = document.getElementById('cksl-ribbon-color-picker');
+      if (ribbonColorPicker) {
+        ribbonColorPicker.addEventListener('input', (e) => {
+          restoreSelection();
+          document.execCommand('foreColor', false, e.target.value);
+        });
+      }
+
+      const ribbonLinkBtn = document.getElementById('cksl-ribbon-btn-link');
+      if (ribbonLinkBtn) {
+        ribbonLinkBtn.addEventListener('click', () => {
+          restoreSelection();
+          const url = prompt('Enter link URL (e.g. /about/ or https://example.com):', 'https://');
+          if (url) document.execCommand('createLink', false, url);
+        });
+      }
+    }
+  }
+
+  function restoreSelection() {
+    if (!savedSelectionRange) return false;
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(savedSelectionRange);
+    return true;
+  }
+
+  function applySelectionFontFamily(fontFamily) {
+    if (!fontFamily) return;
+    restoreSelection();
+    const sel = window.getSelection();
+    if (!sel || !sel.rangeCount || sel.isCollapsed) return;
+
+    const range = sel.getRangeAt(0);
+    const span = document.createElement('span');
+    span.style.fontFamily = fontFamily;
+    try {
+      span.appendChild(range.extractContents());
+      range.insertNode(span);
+      const newRange = document.createRange();
+      newRange.selectNodeContents(span);
+      sel.removeAllRanges();
+      sel.addRange(newRange);
+      savedSelectionRange = newRange.cloneRange();
+      positionSelectionToolbar(newRange);
+    } catch (e) {
+      document.execCommand('fontName', false, fontFamily);
+    }
+  }
+
+  function applySelectionFontSize(sizePx) {
+    if (!sizePx) return;
+    restoreSelection();
+    const sel = window.getSelection();
+    if (!sel || !sel.rangeCount || sel.isCollapsed) return;
+
+    const range = sel.getRangeAt(0);
+    const span = document.createElement('span');
+    span.style.fontSize = sizePx;
+    try {
+      span.appendChild(range.extractContents());
+      range.insertNode(span);
+      const newRange = document.createRange();
+      newRange.selectNodeContents(span);
+      sel.removeAllRanges();
+      sel.addRange(newRange);
+      savedSelectionRange = newRange.cloneRange();
+      positionSelectionToolbar(newRange);
+    } catch (e) {
+      document.execCommand('fontSize', false, '3');
+    }
+  }
+
+  function adjustSelectionFontSize(deltaPx) {
+    restoreSelection();
+    const sel = window.getSelection();
+    if (!sel || !sel.rangeCount || sel.isCollapsed) return;
+
+    const range = sel.getRangeAt(0);
+    const parent = range.commonAncestorContainer.nodeType === 1 
+      ? range.commonAncestorContainer 
+      : range.commonAncestorContainer.parentElement;
+
+    const curSize = parseInt(window.getComputedStyle(parent).fontSize, 10) || 16;
+    const newSize = Math.max(10, Math.min(96, curSize + deltaPx));
+
+    const span = document.createElement('span');
+    span.style.fontSize = `${newSize}px`;
+    try {
+      span.appendChild(range.extractContents());
+      range.insertNode(span);
+      const newRange = document.createRange();
+      newRange.selectNodeContents(span);
+      sel.removeAllRanges();
+      sel.addRange(newRange);
+      savedSelectionRange = newRange.cloneRange();
+      positionSelectionToolbar(newRange);
+    } catch (e) {
+      document.execCommand('fontSize', false, deltaPx > 0 ? '4' : '2');
     }
   }
 
@@ -421,6 +792,11 @@
 
     const toolbar = document.getElementById('cksl-text-selection-toolbar');
     if (!toolbar) return;
+
+    // If active element is inside the toolbar, don't hide
+    if (document.activeElement && document.activeElement.closest('#cksl-text-selection-toolbar')) {
+      return;
+    }
 
     const sel = window.getSelection();
     if (!sel || sel.isCollapsed || sel.rangeCount === 0) {
@@ -443,7 +819,15 @@
       return;
     }
 
-    // Position floating toolbar right above the selected range
+    savedSelectionRange = range.cloneRange();
+    positionSelectionToolbar(range);
+    updateSelectionToolbarState();
+  }
+
+  function positionSelectionToolbar(range) {
+    const toolbar = document.getElementById('cksl-text-selection-toolbar');
+    if (!toolbar || !range) return;
+
     const rect = range.getBoundingClientRect();
     if (rect.width === 0 && rect.height === 0) {
       hideTextSelectionToolbar();
@@ -451,40 +835,27 @@
     }
 
     toolbar.classList.remove('hidden');
-    const tbWidth = toolbar.offsetWidth || 340;
+    const tbWidth = toolbar.offsetWidth || 440;
     const tbHeight = toolbar.offsetHeight || 38;
 
+    const sidebar = document.getElementById('cksl-sidebar');
+    const sidebarOffset = (sidebar && !sidebar.classList.contains('hidden')) ? (sidebar.offsetWidth || 260) : 0;
+
     let left = rect.left + (rect.width / 2) - (tbWidth / 2);
-    let top = rect.top - tbHeight - 8;
+    let top = rect.top - tbHeight - 10;
 
-    // Bounds checking
-    if (left < 10) left = 10;
-    if (left + tbWidth > window.innerWidth - 10) left = window.innerWidth - tbWidth - 10;
-    if (top < 10) top = rect.bottom + 8; // flip below if offscreen top
+    // Bounds checking inside viewport and avoiding sidebar collision
+    if (left < sidebarOffset + 12) left = sidebarOffset + 12;
+    if (left + tbWidth > window.innerWidth - 12) left = window.innerWidth - tbWidth - 12;
+    if (top < 110) top = rect.bottom + 12; // flip below if ribbon is overhead
 
-    toolbar.style.left = `${left + window.scrollX}px`;
-    toolbar.style.top = `${top + window.scrollY}px`;
+    toolbar.style.left = `${left}px`;
+    toolbar.style.top = `${top}px`;
   }
 
   function hideTextSelectionToolbar() {
     const toolbar = document.getElementById('cksl-text-selection-toolbar');
     if (toolbar) toolbar.classList.add('hidden');
-  }
-
-  function applySelectionStyle(styleProp, styleVal) {
-    const sel = window.getSelection();
-    if (!sel.rangeCount) return;
-    const range = sel.getRangeAt(0);
-    const span = document.createElement('span');
-    span.style[styleProp] = styleVal;
-    try {
-      span.appendChild(range.extractContents());
-      range.insertNode(span);
-      sel.removeAllRanges();
-      const newRange = document.createRange();
-      newRange.selectNodeContents(span);
-      sel.addRange(newRange);
-    } catch (e) {}
   }
 
   function updateSelectionToolbarState() {
@@ -578,13 +949,25 @@
       });
     }
 
+    // Save draft
+    const saveBtn = document.getElementById('cksl-btn-save-draft');
+    if (saveBtn) saveBtn.addEventListener('click', saveCurrentPageDraft);
+
     // Merge & Publish
-    const pubBtn = document.getElementById('cksl-btn-publish-open');
+    const pubBtn = document.getElementById('cksl-btn-publish-draft') || document.getElementById('cksl-btn-publish-open');
     if (pubBtn) pubBtn.addEventListener('click', mergeAndPublishDraft);
 
     // Discard Draft
     const discardBtn = document.getElementById('cksl-btn-discard-draft');
     if (discardBtn) discardBtn.addEventListener('click', discardDraftSession);
+
+    // Quick Insert Motifs in shelf 3
+    document.querySelectorAll('[data-insert-motif]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const motif = btn.getAttribute('data-insert-motif');
+        insertMotifWidget(motif);
+      });
+    });
   }
 
   function toggleRibbon() {
@@ -619,6 +1002,7 @@
         tab.classList.add('active');
         const pane = document.getElementById(`cksl-sidepane-${tabKey}`);
         if (pane) pane.classList.add('active');
+        if (tabKey === 'motifs') scanPageMotifs();
       });
     });
 
@@ -643,6 +1027,9 @@
 
     const sideDelPage = document.getElementById('cksl-side-btn-delete-page');
     if (sideDelPage) sideDelPage.addEventListener('click', deleteCurrentPage);
+
+    // Initial scan of motifs
+    scanPageMotifs();
   }
 
   function toggleSidebar() {
@@ -657,6 +1044,29 @@
     const countBadge = document.getElementById('cksl-sections-count');
     if (!list) return;
     list.innerHTML = '';
+
+    // Top Navigation Item in outline
+    const navItem = document.createElement('div');
+    navItem.className = 'cksl-tree-item cksl-tree-navbar';
+    navItem.style.cssText = 'border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 6px; margin-bottom: 6px; background: rgba(255,255,255,0.03);';
+    navItem.innerHTML = `
+      <span class="cksl-tree-item-title" style="font-weight: 700; color: #FAF8F5;">Top Navigation Bar</span>
+      <div class="cksl-tree-item-actions">
+        <button type="button" class="cksl-tree-action-btn" id="cksl-outline-edit-nav-btn" title="Edit Navbar Links" style="font-size: 0.72rem; padding: 2px 7px; color: var(--color-yellow-gold, #E5B842); border-color: rgba(229,184,66,0.3);">Edit</button>
+      </div>
+    `;
+    navItem.querySelector('#cksl-outline-edit-nav-btn').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openNavigationManager();
+    });
+    navItem.addEventListener('click', () => {
+      const navbar = document.querySelector('.navbar');
+      if (navbar) {
+        navbar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        selectBox(navbar);
+      }
+    });
+    list.appendChild(navItem);
 
     const sections = document.querySelectorAll('#cksl-page-frame section, #cksl-page-frame .block-section, #cksl-page-frame .page-content-wrapper > *');
     let validCount = 0;
@@ -718,49 +1128,211 @@
     });
 
     if (countBadge) countBadge.textContent = `${validCount} sections`;
+    scanPageMotifs();
+  }
+
+  // Scan and populate the Motifs On This Page list in the sidebar
+  function scanPageMotifs() {
+    const container = document.getElementById('cksl-page-motifs-list');
+    const countBadge = document.getElementById('cksl-page-motifs-count');
+    if (!container) return;
+
+    const motifEls = Array.from(document.querySelectorAll('#cksl-page-frame .korean-roof-accent, #cksl-page-frame .korean-divider, #cksl-page-frame .korean-title-underline, #cksl-page-frame .korean-pavilion-badge, #cksl-page-frame .korean-motif-render, #cksl-page-frame .cksl-motif-widget, #cksl-page-frame [data-cksl-motif], #cksl-page-frame [data-motif]'));
+
+    if (countBadge) {
+      countBadge.textContent = `${motifEls.length} placed`;
+    }
+
+    container.innerHTML = '';
+
+    if (motifEls.length === 0) {
+      container.innerHTML = `
+        <div style="font-size: 0.78rem; color: #9CA3AF; padding: 12px 6px; text-align: center;">
+          No motifs placed yet.<br>Click "+ Add" below to insert one.
+        </div>
+      `;
+      return;
+    }
+
+    motifEls.forEach((el, idx) => {
+      el.setAttribute('data-cksl-box', 'motif');
+      if (!el.id) el.id = `cksl-motif-el-${idx + 1}`;
+
+      let name = 'Korean Motif';
+      const cls = (typeof el.className === 'string' ? el.className : (el.className?.baseVal || el.getAttribute('class') || '')).toLowerCase();
+      const dataMotif = el.getAttribute('data-motif') || el.getAttribute('data-cksl-motif');
+
+      if (dataMotif) {
+        name = dataMotif.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      } else if (cls.includes('roof')) {
+        name = 'Hanok Roof Eaves';
+      } else if (cls.includes('divider')) {
+        name = 'Plum Blossom Divider';
+      } else if (cls.includes('underline')) {
+        name = 'Title Underline';
+      } else if (cls.includes('pavilion')) {
+        name = 'Palace Pavilion';
+      } else if (cls.includes('blossom') || cls.includes('maehwa')) {
+        name = 'Plum Blossom';
+      } else if (cls.includes('fan')) {
+        name = 'Folding Fan';
+      } else if (cls.includes('wave')) {
+        name = 'Wave Medallion';
+      } else if (cls.includes('cloud')) {
+        name = 'Auspicious Cloud';
+      } else if (cls.includes('lantern')) {
+        name = 'Palace Lantern';
+      } else if (cls.includes('shippo')) {
+        name = 'Shippo Lattice';
+      } else if (cls.includes('seal')) {
+        name = 'Scholar Stamp';
+      } else if (cls.includes('corner')) {
+        name = 'Corner Fret';
+      }
+
+      const row = document.createElement('div');
+      row.className = 'cksl-page-motif-row';
+      row.innerHTML = `
+        <div class="cksl-page-motif-meta" title="Click to jump to motif on canvas">
+          <span class="cksl-page-motif-thumb">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" style="color: var(--color-red, #A62B2B);">
+              <circle cx="10" cy="10" r="7"/>
+            </svg>
+          </span>
+          <span class="cksl-page-motif-name">${name}</span>
+        </div>
+        <div class="cksl-page-motif-actions">
+          <button type="button" class="cksl-motif-act-btn" data-act="jump" title="Scroll to &amp; select">Jump</button>
+          <button type="button" class="cksl-motif-act-btn" data-act="up" title="Move up">▲</button>
+          <button type="button" class="cksl-motif-act-btn" data-act="down" title="Move down">▼</button>
+          <button type="button" class="cksl-motif-act-btn cksl-motif-act-del" data-act="del" title="Delete motif">✕</button>
+        </div>
+      `;
+
+      row.querySelector('.cksl-page-motif-meta').addEventListener('click', () => {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        selectBox(el);
+      });
+      row.querySelector('[data-act="jump"]').addEventListener('click', () => {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        selectBox(el);
+      });
+
+      row.querySelector('[data-act="up"]').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const prev = el.previousElementSibling;
+        if (prev) {
+          el.parentNode.insertBefore(el, prev);
+          scanPageMotifs();
+          selectBox(el);
+        }
+      });
+
+      row.querySelector('[data-act="down"]').addEventListener('click', (e) => {
+        e.stopPropagation();
+        const next = el.nextElementSibling;
+        if (next) {
+          el.parentNode.insertBefore(next, el);
+          scanPageMotifs();
+          selectBox(el);
+        }
+      });
+
+      row.querySelector('[data-act="del"]').addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (confirm(`Remove this ${name} motif?`)) {
+          el.remove();
+          hideInspector();
+          activeBox = null;
+          scanPageMotifs();
+        }
+      });
+
+      container.appendChild(row);
+    });
   }
 
   // 6. Figma / Canva Card & Box Controls (Selection, Resize Handles, Duplicate, Copy/Paste)
   function selectBox(box) {
     document.querySelectorAll('[data-cksl-box-selected]').forEach(el => el.removeAttribute('data-cksl-box-selected'));
-    document.querySelectorAll('.cksl-resize-handle').forEach(h => h.remove());
+    document.querySelectorAll('.cksl-resize-handle, .cksl-box-type-tag').forEach(h => h.remove());
 
     if (!box) {
       activeBox = null;
+      hideInspector();
       return;
     }
 
     activeBox = box;
     box.setAttribute('data-cksl-box-selected', 'true');
 
-    // Add Figma-style bottom-right resize handle
-    const handle = document.createElement('div');
-    handle.className = 'cksl-resize-handle cksl-handle-se';
-    handle.title = 'Drag to resize box width & padding';
-    box.appendChild(handle);
+    // Determine type label
+    let typeName = 'BOX';
+    const isNavbar = box.classList.contains('navbar') || box.closest('.navbar');
+    const isMotif = box.classList.contains('korean-motif-render') || 
+                    box.classList.contains('cksl-motif-widget') || 
+                    box.classList.contains('korean-roof-accent') || 
+                    box.classList.contains('korean-pavilion-badge') || 
+                    box.classList.contains('korean-title-underline') || 
+                    box.classList.contains('korean-divider') || 
+                    box.hasAttribute('data-cksl-motif') || 
+                    box.hasAttribute('data-motif') || 
+                    box.getAttribute('data-cksl-box') === 'motif';
 
-    setupResizeHandle(handle, box);
+    if (isNavbar) typeName = 'NAVBAR';
+    else if (isMotif) typeName = 'HERITAGE MOTIF';
+    else if (box.classList.contains('project-card') || box.classList.contains('mission-card') || box.classList.contains('overview-lead-box') || box.classList.contains('callout-box') || box.classList.contains('cta-banner-box')) typeName = 'CARD';
+    else if (box.tagName.toLowerCase() === 'section' || box.classList.contains('block-section')) typeName = 'SECTION';
+
+    const tag = document.createElement('div');
+    tag.className = 'cksl-box-type-tag';
+    tag.textContent = typeName;
+    box.appendChild(tag);
+
+    // Multi-directional Figma resize handles
+    ['nw', 'ne', 'sw', 'se', 'e', 's'].forEach(dir => {
+      const handle = document.createElement('div');
+      handle.className = `cksl-resize-handle cksl-handle-${dir}`;
+      handle.setAttribute('data-dir', dir);
+      box.appendChild(handle);
+      setupResizeHandle(handle, box, dir);
+    });
+
     renderInspectorForBox(box);
   }
 
-  function setupResizeHandle(handle, box) {
+  function setupResizeHandle(handle, box, dir) {
     let isResizing = false;
-    let startX, startW;
+    let startX, startY, startW, startH;
 
     handle.addEventListener('mousedown', (e) => {
       e.stopPropagation();
       e.preventDefault();
       isResizing = true;
       startX = e.clientX;
+      startY = e.clientY;
       startW = box.offsetWidth;
+      startH = box.offsetHeight;
 
       const onMouseMove = (moveEv) => {
         if (!isResizing) return;
         const dx = moveEv.clientX - startX;
-        const newW = Math.max(260, startW + dx);
-        box.style.maxWidth = `${newW}px`;
-        box.style.width = '100%';
-        box.style.margin = '0 auto';
+        const dy = moveEv.clientY - startY;
+
+        if (dir === 'se' || dir === 'e') {
+          const newW = Math.max(160, startW + dx);
+          box.style.maxWidth = `${newW}px`;
+          box.style.width = '100%';
+        } else if (dir === 'sw') {
+          const newW = Math.max(160, startW - dx);
+          box.style.maxWidth = `${newW}px`;
+          box.style.width = '100%';
+        }
+        if (dir === 'se' || dir === 's' || dir === 'sw') {
+          const newH = Math.max(30, startH + dy);
+          box.style.minHeight = `${newH}px`;
+        }
+        positionInspector(box);
       };
 
       const onMouseUp = () => {
@@ -801,10 +1373,38 @@
         const temp = document.createElement('div');
         temp.innerHTML = copiedBoxHtml;
         const clone = temp.firstElementChild;
+        clone.removeAttribute('data-cksl-box-selected');
+        clone.querySelectorAll('.cksl-resize-handle, .cksl-box-type-tag').forEach(h => h.remove());
         activeBox.parentNode.insertBefore(clone, activeBox.nextSibling);
         makeContentEditable();
         selectBox(clone);
         buildSidebarOutline();
+        return;
+      }
+
+      // Move Up: Alt+ArrowUp
+      if (e.altKey && e.key === 'ArrowUp' && activeBox) {
+        e.preventDefault();
+        const prev = activeBox.previousElementSibling;
+        if (prev && prev.parentNode === activeBox.parentNode) {
+          activeBox.parentNode.insertBefore(activeBox, prev);
+          positionInspector(activeBox);
+          scanPageMotifs();
+          buildSidebarOutline();
+        }
+        return;
+      }
+
+      // Move Down: Alt+ArrowDown
+      if (e.altKey && e.key === 'ArrowDown' && activeBox) {
+        e.preventDefault();
+        const next = activeBox.nextElementSibling;
+        if (next && next.parentNode === activeBox.parentNode) {
+          activeBox.parentNode.insertBefore(next, activeBox);
+          positionInspector(activeBox);
+          scanPageMotifs();
+          buildSidebarOutline();
+        }
         return;
       }
 
@@ -820,7 +1420,7 @@
     if (!box) return;
     const clone = box.cloneNode(true);
     clone.removeAttribute('data-cksl-box-selected');
-    clone.querySelectorAll('.cksl-resize-handle').forEach(h => h.remove());
+    clone.querySelectorAll('.cksl-resize-handle, .cksl-box-type-tag').forEach(h => h.remove());
     box.parentNode.insertBefore(clone, box.nextSibling);
     makeContentEditable();
     selectBox(clone);
@@ -847,6 +1447,8 @@
     const widget = document.createElement('div');
     widget.className = 'cksl-motif-widget block-section';
     widget.setAttribute('data-motif', motifKey);
+    widget.setAttribute('data-cksl-motif', motifKey);
+    widget.setAttribute('data-cksl-box', 'motif');
     widget.setAttribute('tabindex', '0');
     widget.style.textAlign = 'center';
     widget.style.width = '100%';
@@ -870,8 +1472,14 @@
     `;
 
     bindMotifWidgetEvents(widget);
-    container.appendChild(widget);
+    if (activeBox && activeBox.parentNode && activeBox !== container) {
+      activeBox.parentNode.insertBefore(widget, activeBox.nextSibling);
+    } else {
+      container.appendChild(widget);
+    }
+    scanPageMotifs();
     buildSidebarOutline();
+    selectBox(widget);
     widget.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
@@ -1259,7 +1867,127 @@
     container.innerHTML = '';
     inspector.classList.remove('hidden');
 
-    typeBadge.textContent = 'Box / Card';
+    const isNavbar = box.classList.contains('navbar') || box.closest('.navbar');
+    const isMotif = box.classList.contains('korean-motif-render') || 
+                    box.classList.contains('cksl-motif-widget') || 
+                    box.classList.contains('korean-roof-accent') || 
+                    box.classList.contains('korean-pavilion-badge') || 
+                    box.classList.contains('korean-title-underline') || 
+                    box.classList.contains('korean-divider') || 
+                    box.classList.contains('korean-pavilion-wrap') || 
+                    box.classList.contains('title-underline-svg') || 
+                    box.hasAttribute('data-cksl-motif') || 
+                    box.hasAttribute('data-motif') || 
+                    box.getAttribute('data-cksl-box') === 'motif';
+
+    if (isNavbar) {
+      typeBadge.textContent = 'Top Navigation Bar';
+      container.innerHTML = `
+        <div class="inspector-btn-group" style="width: 100%; justify-content: space-between; gap: 6px;">
+          <button type="button" class="inspector-btn" id="cksl-insp-nav-edit" style="color: var(--color-yellow-gold, #E5B842); font-weight: 700;">Edit Navbar Links</button>
+          <button type="button" class="inspector-btn" id="cksl-insp-nav-addpage">+ Add Page</button>
+          <button type="button" class="inspector-btn" id="cksl-insp-nav-close" style="color: #9CA3AF;">Done</button>
+        </div>
+      `;
+      container.querySelector('#cksl-insp-nav-edit').onclick = (e) => {
+        e.stopPropagation();
+        openNavigationManager();
+      };
+      container.querySelector('#cksl-insp-nav-addpage').onclick = (e) => {
+        e.stopPropagation();
+        openModal('cksl-modal-new-page');
+      };
+      container.querySelector('#cksl-insp-nav-close').onclick = (e) => {
+        e.stopPropagation();
+        hideInspector();
+      };
+      positionInspector(box);
+      return;
+    }
+
+    if (isMotif) {
+      typeBadge.textContent = 'Heritage Motif';
+      container.innerHTML = `
+        <span class="inspector-label">Size:</span>
+        <div class="inspector-btn-group">
+          <button type="button" class="inspector-btn" data-mact="scale-minus" title="Smaller">-</button>
+          <button type="button" class="inspector-btn" data-mact="scale-plus" title="Larger">+</button>
+        </div>
+        <span class="inspector-label">Color:</span>
+        <div class="inspector-btn-group">
+          <button type="button" class="inspector-btn" data-mact="col-red" style="background:#A62B2B; width:16px; height:16px; min-width:16px; border-radius:50%; padding:0; border:1px solid #fff;" title="Vermilion"></button>
+          <button type="button" class="inspector-btn" data-mact="col-gold" style="background:#E5B842; width:16px; height:16px; min-width:16px; border-radius:50%; padding:0; border:1px solid #fff;" title="Gold"></button>
+          <button type="button" class="inspector-btn" data-mact="col-dark" style="background:#141517; width:16px; height:16px; min-width:16px; border-radius:50%; padding:0; border:1px solid #fff;" title="Ink"></button>
+          <input type="color" id="cksl-insp-motif-color" title="Custom Motif Color" value="#A62B2B" style="width:20px; height:20px; border:none; padding:0; border-radius:50%; cursor:pointer; background:none;">
+        </div>
+        <div class="inspector-btn-group">
+          <button type="button" class="inspector-btn" data-mact="up" title="Move Up">▲</button>
+          <button type="button" class="inspector-btn" data-mact="down" title="Move Down">▼</button>
+          <button type="button" class="inspector-btn" data-mact="clone" title="Duplicate (Cmd+D)">⧉</button>
+          <button type="button" class="inspector-btn" data-mact="del" title="Delete Motif" style="color: #EF4444;">✕</button>
+        </div>
+      `;
+
+      const motifColorInput = container.querySelector('#cksl-insp-motif-color');
+      if (motifColorInput) {
+        motifColorInput.addEventListener('input', (e) => {
+          applyMotifColor(box, e.target.value);
+        });
+      }
+
+      container.querySelectorAll('[data-mact]').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const act = btn.getAttribute('data-mact');
+          const svgEl = box.querySelector('svg');
+
+          if (act === 'up') {
+            const prev = box.previousElementSibling;
+            if (prev) {
+              box.parentNode.insertBefore(box, prev);
+              scanPageMotifs();
+              positionInspector(box);
+            }
+          } else if (act === 'down') {
+            const next = box.nextElementSibling;
+            if (next) {
+              box.parentNode.insertBefore(next, box);
+              scanPageMotifs();
+              positionInspector(box);
+            }
+          } else if (act === 'scale-plus' && svgEl) {
+            const curW = parseInt(svgEl.style.width || svgEl.getAttribute('width') || 60);
+            svgEl.style.width = `${Math.min(480, curW + 16)}px`;
+            positionInspector(box);
+          } else if (act === 'scale-minus' && svgEl) {
+            const curW = parseInt(svgEl.style.width || svgEl.getAttribute('width') || 60);
+            svgEl.style.width = `${Math.max(20, curW - 16)}px`;
+            positionInspector(box);
+          } else if (act === 'col-red') {
+            applyMotifColor(box, '#A62B2B');
+          } else if (act === 'col-gold') {
+            applyMotifColor(box, '#E5B842');
+          } else if (act === 'col-dark') {
+            applyMotifColor(box, '#141517');
+          } else if (act === 'clone') {
+            duplicateBox(box);
+            scanPageMotifs();
+          } else if (act === 'del') {
+            if (confirm('Delete this Korean heritage motif?')) {
+              box.remove();
+              hideInspector();
+              activeBox = null;
+              scanPageMotifs();
+            }
+          }
+        });
+      });
+
+      positionInspector(box);
+      return;
+    }
+
+    typeBadge.textContent = 'Card / Box';
     container.innerHTML = `
       <span class="inspector-label">Padding:</span>
       <div class="inspector-btn-group">
@@ -1270,6 +1998,7 @@
         <button type="button" class="inspector-btn" data-bact="bg-white" title="White">White</button>
         <button type="button" class="inspector-btn" data-bact="bg-warm" title="Warm Stone">Warm</button>
         <button type="button" class="inspector-btn" data-bact="bg-dark" title="Dark Ink">Dark</button>
+        <input type="color" id="cksl-box-bg-picker" title="Custom Background Color" value="#FFFFFF" style="width:22px; height:22px; border:none; padding:0; border-radius:4px; cursor:pointer; background:none;">
       </div>
       <div class="inspector-btn-group">
         <button type="button" class="inspector-btn" data-bact="round-sm" title="Subtle Radius">▢</button>
@@ -1282,6 +2011,13 @@
         <button type="button" class="inspector-btn" data-bact="del" title="Delete Box" style="color: #EF4444;">✕</button>
       </div>
     `;
+
+    const bgPicker = container.querySelector('#cksl-box-bg-picker');
+    if (bgPicker) {
+      bgPicker.addEventListener('input', (e) => {
+        box.style.background = e.target.value;
+      });
+    }
 
     container.querySelectorAll('[data-bact]').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1322,19 +2058,36 @@
     positionInspector(box);
   }
 
+  function applyMotifColor(container, colorHex) {
+    container.querySelectorAll('svg path, svg circle, svg rect, svg line').forEach(shape => {
+      const fill = shape.getAttribute('fill');
+      if (fill && fill !== 'none' && !fill.includes('url')) {
+        shape.style.fill = colorHex;
+      }
+      const stroke = shape.getAttribute('stroke');
+      if (stroke && stroke !== 'none') {
+        shape.style.stroke = colorHex;
+      }
+    });
+  }
+
   function positionInspector(el) {
     const inspector = document.getElementById('cksl-floating-inspector');
     if (!inspector || !el) return;
+
+    const sidebar = document.getElementById('cksl-sidebar');
+    const sidebarOffset = (sidebar && !sidebar.classList.contains('hidden')) ? (sidebar.offsetWidth || 260) : 0;
 
     const rect = el.getBoundingClientRect();
     let left = rect.left + 16;
     let top = rect.top - 54;
 
-    if (top < 100) top = rect.bottom + 12;
-    if (left + 380 > window.innerWidth) left = window.innerWidth - 390;
+    if (top < 110) top = rect.bottom + 12;
+    if (left < sidebarOffset + 12) left = sidebarOffset + 12;
+    if (left + 380 > window.innerWidth - 12) left = window.innerWidth - 392;
 
-    inspector.style.left = `${Math.max(16, left)}px`;
-    inspector.style.top = `${Math.max(80, top)}px`;
+    inspector.style.left = `${left}px`;
+    inspector.style.top = `${Math.max(90, top)}px`;
   }
 
   function hideInspector() {
@@ -1386,7 +2139,7 @@
       return;
     }
 
-    const box = e.target.closest('.project-card, .mission-card, .overview-lead-box, .callout-box, .cta-banner-box, .block-section, .cksl-motif-widget, figure');
+    const box = e.target.closest('.navbar, .korean-motif-render, .korean-roof-accent, .korean-pavilion-badge, .korean-title-underline, .korean-divider, [data-cksl-motif], [data-motif], [data-cksl-box], .project-card, .mission-card, .overview-lead-box, .callout-box, .cta-banner-box, .block-section, .cksl-motif-widget, figure, .event-card, .person-card, .publication-item');
     if (box) {
       selectBox(box);
     }

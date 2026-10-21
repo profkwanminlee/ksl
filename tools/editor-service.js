@@ -156,6 +156,117 @@ const server = http.createServer(async (req, res) => {
       }
     }
 
+    // Helper to resolve page slug from URL considering baseurl /cksl/
+    function extractPageSlug(urlStr) {
+      let clean = (urlStr || '').replace(/^\/+|\/+$/g, '').toLowerCase();
+      if (clean.startsWith('cksl/')) {
+        clean = clean.replace(/^cksl\//, '');
+      } else if (clean === 'cksl') {
+        clean = '';
+      }
+      if (!clean || clean === 'index.html' || clean === 'index') {
+        return 'home';
+      }
+      return clean;
+    }
+
+    // 4b. Save Edited Page Content (HTML & Frontmatter)
+    if (req.method === 'POST' && url.pathname === '/api/page/save') {
+      const body = await parseBody(req);
+      const { pageUrl, contentHtml, heroData } = body;
+
+      if (!pageUrl) {
+        return sendJson(res, 400, { error: 'pageUrl is required.' });
+      }
+
+      // Resolve target file path
+      const cleanSlug = extractPageSlug(pageUrl);
+
+      let filePath = path.join(REPO_ROOT, '_pages', `${cleanSlug}.md`);
+      if (!fs.existsSync(filePath)) {
+        // Fallback check in root
+        const rootPath = path.join(REPO_ROOT, `${cleanSlug}.md`);
+        if (fs.existsSync(rootPath)) {
+          filePath = rootPath;
+        } else {
+          // Default to _pages
+          filePath = path.join(REPO_ROOT, '_pages', `${cleanSlug}.md`);
+        }
+      }
+
+      if (!fs.existsSync(filePath)) {
+        return sendJson(res, 404, { error: `File not found for slug: ${cleanSlug}` });
+      }
+
+      let fileRaw = fs.readFileSync(filePath, 'utf-8');
+      let frontmatter = '';
+      let bodyContent = fileRaw;
+
+      // Extract existing YAML frontmatter
+      const fmMatch = fileRaw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+      if (fmMatch) {
+        frontmatter = fmMatch[1];
+        bodyContent = fmMatch[2];
+      }
+
+      // Update frontmatter if heroData provided
+      if (heroData && frontmatter) {
+        if (heroData.title) {
+          if (/^hero_title:/m.test(frontmatter)) {
+            frontmatter = frontmatter.replace(/^hero_title:.*$/m, `hero_title: "${heroData.title.replace(/"/g, '\\"')}"`);
+          } else {
+            frontmatter += `\nhero_title: "${heroData.title.replace(/"/g, '\\"')}"`;
+          }
+        }
+        if (heroData.subtitle) {
+          if (/^hero_subtitle:/m.test(frontmatter)) {
+            frontmatter = frontmatter.replace(/^hero_subtitle:.*$/m, `hero_subtitle: "${heroData.subtitle.replace(/"/g, '\\"')}"`);
+          } else {
+            frontmatter += `\nhero_subtitle: "${heroData.subtitle.replace(/"/g, '\\"')}"`;
+          }
+        }
+        if (heroData.image) {
+          if (/^hero_image:/m.test(frontmatter)) {
+            frontmatter = frontmatter.replace(/^hero_image:.*$/m, `hero_image: "${heroData.image}"`);
+          } else {
+            frontmatter += `\nhero_image: "${heroData.image}"`;
+          }
+        }
+        if (heroData.crop) {
+          if (/^hero_crop:/m.test(frontmatter)) {
+            frontmatter = frontmatter.replace(/^hero_crop:.*$/m, `hero_crop: "${heroData.crop}"`);
+          } else {
+            frontmatter += `\nhero_crop: "${heroData.crop}"`;
+          }
+        }
+      }
+
+      // Clean contentHtml: remove editor-specific attributes, toolbars, and bounding boxes
+      let cleaned = contentHtml || bodyContent;
+      cleaned = cleaned.replace(/\s*contenteditable="[^"]*"/gi, '');
+      cleaned = cleaned.replace(/\s*data-cksl-editable="[^"]*"/gi, '');
+      cleaned = cleaned.replace(/\s*spellcheck="[^"]*"/gi, '');
+      cleaned = cleaned.replace(/\s*class="([^"]*)\bcksl-box-selected\b([^"]*)"/gi, 'class="$1$2"');
+      cleaned = cleaned.replace(/\s*class="([^"]*)\bcksl-box-hover\b([^"]*)"/gi, 'class="$1$2"');
+      cleaned = cleaned.replace(/\s*class="([^"]*)\bcksl-motif-selected\b([^"]*)"/gi, 'class="$1$2"');
+      // Remove any lingering toolbar or bounding box elements
+      cleaned = cleaned.replace(/<div class="cksl-box-toolbar"[\s\S]*?<\/div>/gi, '');
+      cleaned = cleaned.replace(/<div class="cksl-motif-toolbar"[\s\S]*?<\/div>/gi, '');
+      cleaned = cleaned.replace(/<div id="cksl-bounding-box"[\s\S]*?<\/div>/gi, '');
+      cleaned = cleaned.replace(/<span class="inspector-drag-cue"[\s\S]*?<\/span>/gi, '');
+      cleaned = cleaned.replace(/class="\s*"/gi, ''); // remove empty classes
+
+      // Assemble final file content
+      const finalContent = `---\n${frontmatter.trim()}\n---\n\n${cleaned.trim()}\n`;
+      fs.writeFileSync(filePath, finalContent, 'utf-8');
+
+      return sendJson(res, 200, {
+        success: true,
+        message: `Successfully saved ${path.basename(filePath)} to draft session.`,
+        filePath: `_pages/${cleanSlug}.md`
+      });
+    }
+
     // 5. Create New Page File in _pages/
     if (req.method === 'POST' && url.pathname === '/api/page/create') {
       const body = await parseBody(req);
@@ -226,11 +337,11 @@ kicker: "${(kicker || 'CKSL Academic Initiative').replace(/"/g, '\\"')}"
       const body = await parseBody(req);
       const { url: pageUrl } = body;
 
-      if (!pageUrl || pageUrl === '/' || pageUrl === '/index.html') {
+      const cleanSlug = extractPageSlug(pageUrl);
+      if (!cleanSlug || cleanSlug === 'home') {
         return sendJson(res, 400, { error: 'Cannot delete the Home page.' });
       }
 
-      const cleanSlug = pageUrl.replace(/^\/+|\/+$/g, '').toLowerCase();
       const filePath = path.join(REPO_ROOT, '_pages', `${cleanSlug}.md`);
 
       if (fs.existsSync(filePath)) {

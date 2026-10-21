@@ -27,6 +27,8 @@
 body.cksl-editor-active {
   overflow: hidden !important;
   height: 100vh !important;
+  padding-top: 0 !important;
+  margin: 0 !important;
 }
 
 body.cksl-editor-active #cksl-canvas-viewport {
@@ -60,7 +62,7 @@ body.cksl-editor-active #cksl-canvas-viewport {
   box-shadow: 0 14px 44px rgba(0, 0, 0, 0.18);
   border-radius: 8px;
   border: 1px solid #D1D5DB;
-  overflow: hidden;
+  overflow: clip;
 }
 
 /* Device Mode 3: Mobile Phone (375px) */
@@ -71,9 +73,10 @@ body.cksl-editor-active #cksl-canvas-viewport {
   box-shadow: 0 18px 58px rgba(0, 0, 0, 0.32);
   border-radius: 36px;
   border: 10px solid #141517;
-  overflow: hidden;
+  overflow: clip;
   min-height: 720px;
 }
+
 
 /* ==============================================================================
    2. Discreet Floating Launcher
@@ -210,6 +213,66 @@ body.cksl-editor-active #cksl-canvas-viewport {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.cksl-ribbon-btn-save {
+  background: #10B981;
+  border: 1px solid #059669;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s ease;
+}
+
+.cksl-ribbon-btn-save:hover {
+  background: #059669;
+}
+
+.cksl-ribbon-btn-publish {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #34D399;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.15s ease;
+}
+
+.cksl-ribbon-btn-publish:hover {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: #34D399;
+}
+
+.cksl-ribbon-btn-discard {
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #F87171;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s ease;
+}
+
+.cksl-ribbon-btn-discard:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: #EF4444;
 }
 
 .cksl-ribbon-icon-btn {
@@ -555,7 +618,7 @@ body.cksl-editor-active #cksl-canvas-viewport {
    5. Floating Context Inspector (Word-like Floating Window on Selection)
    ============================================================================== */
 #cksl-floating-inspector {
-  position: absolute;
+  position: fixed !important;
   z-index: 1000000;
   background: #141517;
   border: 1px solid #374151;
@@ -881,7 +944,7 @@ body.cksl-editor-active .navbar {
    9. Word-Style Floating Selection Mini-Toolbar
    ============================================================================== */
 #cksl-text-selection-toolbar {
-  position: absolute;
+  position: fixed !important;
   z-index: 1000002;
   background: #141517;
   border: 1px solid #374151;
@@ -940,7 +1003,8 @@ body.cksl-editor-active .navbar {
   margin: 0 2px;
 }
 
-.selection-select {
+.selection-select,
+.selection-tool-select {
   background: #1F2428;
   color: #FAF8F5;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -949,6 +1013,18 @@ body.cksl-editor-active .navbar {
   padding: 3px 6px;
   font-family: inherit;
   cursor: pointer;
+  height: 26px;
+  line-height: 20px;
+}
+
+.selection-size-select {
+  width: 58px;
+}
+
+.selection-tool-select:hover,
+.selection-tool-select:focus {
+  border-color: var(--color-yellow-gold, #E5B842);
+  outline: none;
 }
 
 .selection-color-input {
@@ -959,6 +1035,123 @@ body.cksl-editor-active .navbar {
   border-radius: 4px;
   background: transparent;
   cursor: pointer;
+}
+
+.selection-swatch {
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+.selection-swatch:hover {
+  transform: scale(1.2);
+  border-color: #FFFFFF !important;
+}
+
+.cksl-swatch-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.cksl-swatch-box:hover {
+  transform: scale(1.15);
+  border-color: #FFFFFF;
+}
+
+/* Page Motifs List in Sidebar */
+.cksl-page-motifs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.cksl-page-motif-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  color: #FAF8F5;
+  transition: all 0.12s ease;
+}
+
+.cksl-page-motif-row:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.cksl-page-motif-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.cksl-page-motif-thumb {
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cksl-page-motif-thumb svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.cksl-page-motif-name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cksl-page-motif-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cksl-motif-act-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #D1D5DB;
+  font-size: 0.7rem;
+  padding: 2px 5px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.cksl-motif-act-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+}
+
+.cksl-motif-act-del {
+  color: #F87171 !important;
+}
+
+.cksl-motif-act-del:hover {
+  background: rgba(239, 68, 68, 0.2) !important;
+  color: #EF4444 !important;
 }
 
 /* ==============================================================================
@@ -1305,25 +1498,65 @@ body.cksl-editor-active .cksl-hero-change-btn {
 /* ==============================================================================
    14. Figma / Canva Box Controls & Handles
    ============================================================================== */
-body.cksl-editor-active [data-cksl-box-selected="true"] {
-  outline: 2px solid var(--color-red, #A62B2B) !important;
+body.cksl-editor-active .navbar:hover,
+body.cksl-editor-active [data-cksl-box]:hover,
+body.cksl-editor-active .korean-roof-accent:hover,
+body.cksl-editor-active .korean-pavilion-badge:hover,
+body.cksl-editor-active .korean-title-underline:hover,
+body.cksl-editor-active .korean-divider:hover,
+body.cksl-editor-active .cksl-motif-widget:hover,
+body.cksl-editor-active .project-card:hover,
+body.cksl-editor-active .mission-card:hover,
+body.cksl-editor-active .overview-lead-box:hover,
+body.cksl-editor-active .callout-box:hover,
+body.cksl-editor-active .cta-banner-box:hover,
+body.cksl-editor-active .block-section:hover {
+  outline: 1.5px dashed rgba(37, 99, 235, 0.45) !important;
   outline-offset: 3px;
-  position: relative;
+  cursor: pointer;
+}
+
+body.cksl-editor-active [data-cksl-box-selected="true"] {
+  outline: 2px solid #2563EB !important;
+  outline-offset: 3px;
+  position: relative !important;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2), 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cksl-box-type-tag {
+  position: absolute;
+  top: -24px;
+  left: -2px;
+  background: #2563EB;
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px 3px 0 0;
+  pointer-events: none;
+  z-index: 10000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .cksl-resize-handle {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   background: #FFFFFF;
-  border: 2px solid var(--color-red, #A62B2B);
+  border: 2px solid #2563EB;
   border-radius: 2px;
-  z-index: 1000;
+  z-index: 10001;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
 
-.cksl-handle-se {
-  right: -5px;
-  bottom: -5px;
-  cursor: nwse-resize;
-}
+.cksl-handle-nw { top: -6px; left: -6px; cursor: nwse-resize; }
+.cksl-handle-ne { top: -6px; right: -6px; cursor: nesw-resize; }
+.cksl-handle-sw { bottom: -6px; left: -6px; cursor: nesw-resize; }
+.cksl-handle-se { bottom: -6px; right: -6px; cursor: nwse-resize; }
+.cksl-handle-e  { top: calc(50% - 5px); right: -6px; cursor: ew-resize; }
+.cksl-handle-s  { bottom: -6px; left: calc(50% - 5px); cursor: ns-resize; }
+
 

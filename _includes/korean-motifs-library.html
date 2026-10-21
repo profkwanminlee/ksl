@@ -1,192 +1,330 @@
 <!-- ==============================================================================
      Contemporary Korean Studies Lab (CKSL) — Authentic Korean Heritage Vector Motifs
-     Meticulously drawn from traditional Joseon architectural patterns, Dancheong,
-     Maehwa plum blossoms, Unmun cloud scrolls, and Hanok timber fretwork.
-     Strictly pure SVG vector graphics — 100% resolution-independent, zero emojis.
+     Meticulously drawn from historical Joseon visual references (v1.png and v2.png):
+     - Traditional Dancheong Meander Frets (구름번개문)
+     - 5-Petal Maehwa Plum Blossoms with Dual-Contour Petals & Stamens (매화문)
+     - Flowing Auspicious Cloud Swirls & Floating Vapor Pearls (운문 / 구름문)
+     - Traditional Korean Folding Fans with Norigae Tassels (합죽선 / 부채)
+     - Joseon Silk Lanterns with Suspension Beads & Fringe (청사초롱)
+     - Concentric Wave Scale Medallions (청해파문)
+     - Royal Lotus Petal Medallions (연화문)
+     - Traditional Hanok Palace Pavilion (팔작지붕 누각)
+     Strictly pure, crisp SVG vector graphics — 100% resolution-independent, zero emojis.
      ============================================================================== -->
 
-<!-- Motif 1: Maehwa Plum Blossom (5-Petal Joseon Blossom with Radiating Pistils & Stamens) -->
+<!-- Motif 1: Maehwa Plum Blossom (Authentic Dual-Line Petals with 10 Radiating Stamens) -->
 {% if include.motif == 'maehwa_blossom' %}
 <div class="korean-motif-render korean-motif-blossom" style="display: inline-flex; align-items: center; justify-content: center;">
-  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '44px' }}; height: auto;" aria-label="Maehwa Plum Blossom">
-    <!-- 5 Rounded Plum Petals -->
-    <path d="M50 32C42 16 58 8 68 18C76 26 62 38 50 42Z" fill="var(--color-red, #A62B2B)"/>
-    <path d="M62 44C78 36 86 52 76 62C68 70 56 56 52 48Z" fill="var(--color-red, #A62B2B)"/>
-    <path d="M58 56C66 72 50 80 40 70C32 62 46 50 50 48Z" fill="var(--color-red, #A62B2B)"/>
-    <path d="M42 54C26 62 18 46 28 36C36 28 48 42 46 48Z" fill="var(--color-red, #A62B2B)"/>
-    <path d="M44 38C36 22 52 14 62 24C68 30 54 44 48 40Z" fill="var(--color-red, #A62B2B)"/>
-    <!-- Outer Overlapping Petals for Richness -->
-    <circle cx="50" cy="24" r="14" fill="var(--color-red, #A62B2B)"/>
-    <circle cx="74" cy="42" r="14" fill="var(--color-red, #A62B2B)"/>
-    <circle cx="65" cy="72" r="14" fill="var(--color-red, #A62B2B)"/>
-    <circle cx="35" cy="72" r="14" fill="var(--color-red, #A62B2B)"/>
-    <circle cx="26" cy="42" r="14" fill="var(--color-red, #A62B2B)"/>
-    <!-- Center Floral Receptacle -->
-    <circle cx="50" cy="50" r="10" fill="#8E2222"/>
-    <!-- Radiating Stamen Lines & Golden Anther Dots -->
-    <path d="M50 50L50 32M50 50L67 38M50 50L61 65M50 50L39 65M50 50L33 38" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
-    <circle cx="50" cy="30" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
-    <circle cx="69" cy="36" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
-    <circle cx="63" cy="67" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
-    <circle cx="37" cy="67" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
-    <circle cx="31" cy="36" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
-    <!-- Core Center Dot -->
-    <circle cx="50" cy="50" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
+  <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '48px' }}; height: auto;" aria-label="Maehwa Plum Blossom">
+    <!-- 5 Solid Vermilion Petals with Organic Overlap -->
+    <circle cx="60" cy="28" r="20" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="90" cy="50" r="20" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="79" cy="87" r="20" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="41" cy="87" r="20" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="30" cy="50" r="20" fill="var(--color-red, #A62B2B)"/>
+    <!-- Inner Delicate Petal Contours (Traditional Dancheong Double Line) -->
+    <circle cx="60" cy="28" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none" opacity="0.85"/>
+    <circle cx="90" cy="50" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none" opacity="0.85"/>
+    <circle cx="79" cy="87" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none" opacity="0.85"/>
+    <circle cx="41" cy="87" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none" opacity="0.85"/>
+    <circle cx="30" cy="50" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none" opacity="0.85"/>
+    <!-- Central Receptacle -->
+    <circle cx="60" cy="60" r="14" fill="#801E1E"/>
+    <circle cx="60" cy="60" r="9" fill="var(--color-red, #A62B2B)"/>
+    <!-- 10 Radiating Stamen Filaments with Golden Anther Buds -->
+    <path d="M60 60L60 35M60 60L75 40M60 60L83 52M60 60L80 69M60 60L72 80M60 60L60 84M60 60L48 80M60 60L40 69M60 60L37 52M60 60L45 40" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="60" cy="33" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="76" cy="38" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="85" cy="51" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="82" cy="71" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="73" cy="82" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="60" cy="86" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="47" cy="82" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="38" cy="71" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="35" cy="51" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="44" cy="38" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+    <!-- Central Pistil Core -->
+    <circle cx="60" cy="60" r="4.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="60" cy="60" r="2" fill="#801E1E"/>
   </svg>
 </div>
 
-<!-- Motif 2: Maehwa Plum Blossom & Vine Divider (Complete Vector Section Divider) -->
+<!-- Motif 2: Maehwa Plum Blossom Divider (with Tangcho Vine Runners from v1.png) -->
 {% elsif include.motif == 'flower_divider' %}
-<div class="korean-motif-render korean-motif-divider" style="display: flex; align-items: center; justify-content: center; gap: 16px; margin: 32px 0; width: 100%;">
-  <svg viewBox="0 0 360 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 480px; height: auto;" preserveAspectRatio="xMidYMid meet">
-    <!-- Left Tapered Line & Vegetative Vine Runners -->
-    <line x1="10" y1="18" x2="120" y2="18" stroke="var(--color-border, #E2DDD6)" stroke-width="1.2"/>
-    <path d="M120 18C132 18 138 12 144 14C150 16 156 22 164 18" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
-    <circle cx="144" cy="13" r="2" fill="var(--color-yellow-gold, #E5B842)"/>
+<div class="korean-motif-render korean-motif-divider" style="display: flex; align-items: center; justify-content: center; gap: 16px; margin: 36px 0; width: 100%;">
+  <svg viewBox="0 0 540 44" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 520px; height: auto;" preserveAspectRatio="xMidYMid meet">
+    <!-- Left Hairline -->
+    <line x1="10" y1="22" x2="160" y2="22" stroke="var(--color-border, #E2DDD6)" stroke-width="1.2"/>
+    <!-- Left Tangcho Vine Runner (Curling Scroll & Foliate Dots) -->
+    <path d="M160 22C175 22 182 14 190 16C198 18 204 28 216 22C222 19 226 15 234 18" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="190" cy="14" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="216" cy="24" r="2" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="234" cy="16" r="2.2" fill="var(--color-yellow-gold, #E5B842)"/>
 
-    <!-- Center Maehwa Blossom Medallion -->
-    <g transform="translate(180, 18) scale(0.24) translate(-50, -50)">
-      <circle cx="50" cy="24" r="14" fill="var(--color-red, #A62B2B)"/>
-      <circle cx="74" cy="42" r="14" fill="var(--color-red, #A62B2B)"/>
-      <circle cx="65" cy="72" r="14" fill="var(--color-red, #A62B2B)"/>
-      <circle cx="35" cy="72" r="14" fill="var(--color-red, #A62B2B)"/>
-      <circle cx="26" cy="42" r="14" fill="var(--color-red, #A62B2B)"/>
-      <circle cx="50" cy="50" r="9" fill="#8E2222"/>
-      <path d="M50 50L50 32M50 50L67 38M50 50L61 65M50 50L39 65M50 50L33 38" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.2" stroke-linecap="round"/>
-      <circle cx="50" cy="30" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
-      <circle cx="69" cy="36" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
-      <circle cx="63" cy="67" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
-      <circle cx="37" cy="67" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
-      <circle cx="31" cy="36" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
-      <circle cx="50" cy="50" r="4" fill="var(--color-yellow-gold, #E5B842)"/>
+    <!-- Center Maehwa Blossom Medallion (Scalable Vector from v1.png) -->
+    <g transform="translate(270, 22) scale(0.28) translate(-60, -60)">
+      <circle cx="60" cy="28" r="20" fill="var(--color-red, #A62B2B)"/>
+      <circle cx="90" cy="50" r="20" fill="var(--color-red, #A62B2B)"/>
+      <circle cx="79" cy="87" r="20" fill="var(--color-red, #A62B2B)"/>
+      <circle cx="41" cy="87" r="20" fill="var(--color-red, #A62B2B)"/>
+      <circle cx="30" cy="50" r="20" fill="var(--color-red, #A62B2B)"/>
+      <circle cx="60" cy="28" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" fill="none"/>
+      <circle cx="90" cy="50" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" fill="none"/>
+      <circle cx="79" cy="87" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" fill="none"/>
+      <circle cx="41" cy="87" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" fill="none"/>
+      <circle cx="30" cy="50" r="14" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" fill="none"/>
+      <circle cx="60" cy="60" r="13" fill="#801E1E"/>
+      <path d="M60 60L60 36M60 60L75 42M60 60L81 53M60 60L78 69M60 60L71 79M60 60L60 83M60 60L49 79M60 60L42 69M60 60L39 53M60 60L45 42" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="60" cy="34" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="77" cy="40" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="83" cy="52" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="79" cy="71" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="72" cy="81" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="60" cy="85" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="48" cy="81" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="41" cy="71" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="37" cy="52" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="43" cy="40" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
+      <circle cx="60" cy="60" r="5" fill="var(--color-yellow-gold, #E5B842)"/>
     </g>
 
-    <!-- Right Tapered Line & Vegetative Vine Runners -->
-    <path d="M196 18C204 22 210 16 216 14C222 12 228 18 240 18" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
-    <circle cx="216" cy="13" r="2" fill="var(--color-yellow-gold, #E5B842)"/>
-    <line x1="240" y1="18" x2="350" y2="18" stroke="var(--color-border, #E2DDD6)" stroke-width="1.2"/>
+    <!-- Right Tangcho Vine Runner -->
+    <path d="M306 18C314 15 318 19 324 22C336 28 342 18 350 16C358 14 365 22 380 22" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="306" cy="16" r="2.2" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="324" cy="24" r="2" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="350" cy="14" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <!-- Right Hairline -->
+    <line x1="380" y1="22" x2="530" y2="22" stroke="var(--color-border, #E2DDD6)" stroke-width="1.2"/>
   </svg>
 </div>
 
-<!-- Motif 3: Architectural Hanok Cheoma Roof Crest -->
+<!-- Motif 3: Architectural Hanok Cheoma Roof Crest (from v1.png & v2.png) -->
 {% elsif include.motif == 'hanok_roof' %}
 <div class="korean-motif-render korean-motif-roof" style="display: flex; justify-content: center; margin: 20px 0;">
-  <svg viewBox="0 0 240 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '180px' }}; height: auto;">
-    <!-- Flared Cheoma Eave Line (Imperial Gold) -->
-    <path d="M8 26C54 13 86 8 120 8C154 8 186 13 232 26" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="3" stroke-linecap="round"/>
-    <!-- Secondary Dancheong Vermilion Line -->
-    <path d="M24 28C62 17 90 12 120 12C150 12 178 17 216 28" stroke="var(--color-red, #A62B2B)" stroke-width="1.5" stroke-linecap="round" opacity="0.9"/>
-    <!-- Central Ridge Medallion Blossom -->
-    <circle cx="120" cy="8" r="6" fill="var(--color-red, #A62B2B)"/>
-    <circle cx="120" cy="8" r="3" fill="var(--color-yellow-gold, #E5B842)"/>
-    <circle cx="120" cy="8" r="1.2" fill="var(--color-brown-deep, #4A2E1B)"/>
+  <svg viewBox="0 0 280 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '200px' }}; height: auto;" aria-label="Hanok Cheoma Eaves">
+    <!-- Flared Cheoma Ridge Line with Upturned Corners -->
+    <path d="M10 32C65 14 105 8 140 8C175 8 215 14 270 32" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Sub-Eave Dancheong Vermilion Line -->
+    <path d="M28 35C75 19 108 14 140 14C172 14 205 19 252 35" stroke="var(--color-red, #A62B2B)" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+    <!-- Ridge Crest Medallion with Plum Blossom Core -->
+    <circle cx="140" cy="8" r="7" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="140" cy="8" r="4" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="140" cy="8" r="1.5" fill="var(--color-brown-deep, #4A2E1B)"/>
+    <!-- Flanking Ridge Finials -->
+    <circle cx="20" cy="30" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="260" cy="30" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
   </svg>
 </div>
 
-<!-- Motif 4: Dancheong Title Underline (Tapered Vermilion with Blossom Node) -->
+<!-- Motif 4: Dancheong Title Underline (Tapered Vermilion Bar with Blossom Accent) -->
 {% elsif include.motif == 'title_underline' %}
 <div class="korean-motif-render korean-motif-underline" style="display: flex; align-items: center; gap: 8px; margin: 8px 0 16px;">
-  <svg viewBox="0 0 120 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 110px; height: 12px;">
-    <line x1="0" y1="6" x2="48" y2="6" stroke="var(--color-red, #A62B2B)" stroke-width="2.5" stroke-linecap="round"/>
-    <circle cx="56" cy="6" r="4.5" fill="var(--color-red, #A62B2B)"/>
-    <circle cx="56" cy="6" r="2" fill="var(--color-yellow-gold, #E5B842)"/>
-    <line x1="64" y1="6" x2="88" y2="6" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
-    <circle cx="94" cy="6" r="1.5" fill="var(--color-yellow-gold, #E5B842)"/>
+  <svg viewBox="0 0 160 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 140px; height: 16px;">
+    <!-- Vermilion Main Line with Rounded Cap -->
+    <line x1="2" y1="8" x2="68" y2="8" stroke="var(--color-red, #A62B2B)" stroke-width="3" stroke-linecap="round"/>
+    <!-- Central Blossom Medallion Node -->
+    <circle cx="78" cy="8" r="5.5" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="78" cy="8" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="78" cy="8" r="1.2" fill="#801E1E"/>
+    <!-- Accent Gold Line with Terminal Pearl -->
+    <line x1="88" y1="8" x2="124" y2="8" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="132" cy="8" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="142" cy="8" r="1.5" fill="var(--color-red, #A62B2B)"/>
   </svg>
 </div>
 
-<!-- Motif 5: Auspicious Joseon Cloud Scroll (Unmun - 구름문 from v1.png) -->
+<!-- Motif 5: Auspicious Joseon Cloud Swirl (Unmun - 구름문 directly from v1.png middle left) -->
 {% elsif include.motif == 'cloud_unmun' %}
 <div class="korean-motif-render korean-motif-cloud" style="display: flex; justify-content: center; margin: 18px 0;">
-  <svg viewBox="0 0 180 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '140px' }}; height: auto;">
-    <!-- Multi-tier Cloud Scroll Body -->
-    <path d="M24 38C14 38 6 32 10 22C14 12 28 10 34 16C40 8 56 6 66 14C74 6 90 8 96 16C104 10 118 14 120 24C126 24 132 28 130 34C128 40 120 40 114 40L24 40Z" stroke="var(--color-red, #A62B2B)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <!-- Trailing Horizontal Vapor Ribbons -->
-    <line x1="126" y1="26" x2="158" y2="26" stroke="var(--color-red, #A62B2B)" stroke-width="2" stroke-linecap="round"/>
-    <line x1="134" y1="34" x2="168" y2="34" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
-    <!-- Floating Vapor Pearls -->
-    <circle cx="174" cy="26" r="2.5" fill="var(--color-red, #A62B2B)"/>
-    <circle cx="178" cy="34" r="3" fill="var(--color-yellow-gold, #E5B842)"/>
-    <!-- Internal Cloud Spiral -->
-    <path d="M38 28C44 24 52 24 58 28" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
-    <path d="M74 24C80 20 88 20 94 24" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-linecap="round"/>
+  <svg viewBox="0 0 220 90" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '170px' }}; height: auto;" aria-label="Auspicious Cloud Unmun">
+    <!-- Traditional Curling Cloud Swirl with Triple Billows and Inward Spiral -->
+    <path d="M30 65C18 65 8 55 10 42C12 28 28 22 40 28C46 14 66 10 82 18C92 8 114 8 126 18C138 10 156 14 162 26C174 24 186 32 184 44C182 54 170 60 158 60L130 60C140 54 142 42 134 34C126 26 112 28 106 36C100 28 86 28 80 34C74 26 60 28 54 36C48 30 38 34 36 42C34 50 42 56 50 56L50 65L30 65Z" fill="var(--color-red, #A62B2B)" opacity="0.12"/>
+    <!-- Primary Outline Path (Pure Joseon Cloud Contour from v1.png) -->
+    <path d="M30 65C18 65 8 55 10 42C12 28 28 22 40 28C46 14 66 10 82 18C92 8 114 8 126 18C138 10 156 14 162 26C174 24 186 32 184 44C182 54 170 60 158 60" stroke="var(--color-red, #A62B2B)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Inward Billow Spirals -->
+    <path d="M48 42C44 34 54 28 62 34C70 40 68 50 58 52" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M78 36C74 28 86 22 94 28C102 34 100 46 88 48" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M118 34C114 26 128 22 136 28C144 34 140 46 128 48" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Trailing Vapor Streamers & Pearls -->
+    <path d="M168 46C182 46 195 40 206 42" stroke="var(--color-red, #A62B2B)" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="214" cy="42" r="3" fill="var(--color-red, #A62B2B)"/>
+    <path d="M158 58C174 58 188 64 200 62" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="208" cy="62" r="3.2" fill="var(--color-yellow-gold, #E5B842)"/>
   </svg>
 </div>
 
-<!-- Motif 6: Traditional Hanok Palace Pavilion (from v2.png) -->
+<!-- Motif 6: Traditional Hanok Palace Pavilion (정자 / 누각 from v2.png top row) -->
 {% elsif include.motif == 'pavilion' %}
-<div class="korean-motif-render korean-motif-pavilion" style="display: inline-flex; align-items: center; justify-content: center; width: 68px; height: 68px; background: rgba(166, 43, 43, 0.05); border: 1.5px solid var(--color-border, #E2DDD6); border-radius: 12px; padding: 8px;">
-  <svg viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 50px; height: 50px;">
-    <!-- Flared Pavilion Roof -->
-    <path d="M5 24C16 17 23 13 27 13C31 13 38 17 49 24" stroke="var(--color-red, #A62B2B)" stroke-width="3" stroke-linecap="round"/>
-    <path d="M12 23L16 16H38L42 23" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
+<div class="korean-motif-render korean-motif-pavilion" style="display: inline-flex; align-items: center; justify-content: center; width: 84px; height: 84px; background: rgba(166, 43, 43, 0.05); border: 1.5px solid var(--color-border, #E2DDD6); border-radius: 12px; padding: 6px;">
+  <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 72px; height: 72px;" aria-label="Hanok Palace Pavilion">
+    <!-- Roof Peak Finial Jewel -->
+    <circle cx="40" cy="14" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <!-- Tier 1: Swept Flared Eave Roof (Cheoma) -->
+    <path d="M8 32C24 23 33 18 40 18C47 18 56 23 72 32L65 37H15L8 32Z" fill="var(--color-red, #A62B2B)"/>
+    <!-- Gold Under-Eave Trim -->
+    <path d="M8 32C24 23 33 18 40 18C47 18 56 23 72 32" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Timber Bracket Rafters (Gongpo / 포작) -->
+    <line x1="22" y1="37" x2="22" y2="42" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2"/>
+    <line x1="34" y1="37" x2="34" y2="42" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2"/>
+    <line x1="46" y1="37" x2="46" y2="42" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2"/>
+    <line x1="58" y1="37" x2="58" y2="42" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2"/>
+    <line x1="16" y1="42" x2="64" y2="42" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.5"/>
     <!-- 4 Main Timber Columns -->
-    <line x1="16" y1="24" x2="16" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2" stroke-linecap="round"/>
-    <line x1="23" y1="24" x2="23" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2" stroke-linecap="round"/>
-    <line x1="31" y1="24" x2="31" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2" stroke-linecap="round"/>
-    <line x1="38" y1="24" x2="38" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2" stroke-linecap="round"/>
-    <!-- Stone Base Plinth -->
-    <line x1="9" y1="40" x2="45" y2="40" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2.8" stroke-linecap="round"/>
-    <!-- Roof Peak Finial -->
-    <circle cx="27" cy="10" r="2.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <line x1="22" y1="42" x2="22" y2="62" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="3" stroke-linecap="round"/>
+    <line x1="34" y1="42" x2="34" y2="62" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2.8" stroke-linecap="round"/>
+    <line x1="46" y1="42" x2="46" y2="62" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="2.8" stroke-linecap="round"/>
+    <line x1="58" y1="42" x2="58" y2="62" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="3" stroke-linecap="round"/>
+    <!-- Stone Base Plinth Terrace (기단) -->
+    <rect x="12" y="62" width="56" height="5" fill="#C5BAAF" stroke="var(--color-brown-deep, #4A2E1B)" stroke-width="1.5" rx="1"/>
+    <rect x="8" y="67" width="64" height="5" fill="#8C827A" rx="1"/>
   </svg>
 </div>
 
-<!-- Motif 7: Dancheong Corner Fret Bracket (from v1.png top row) -->
+<!-- Motif 7: Authentic Dancheong Meander Corner Fret (구름번개문 from v1.png top left) -->
 {% elsif include.motif == 'dancheong_corner' %}
 <div class="korean-motif-render korean-motif-corner" style="display: inline-block;">
-  <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 44px; height: 44px;">
-    <!-- Outer Corner Border -->
-    <path d="M3 47V8C3 5.2 5.2 3 8 3H47" stroke="var(--color-red, #A62B2B)" stroke-width="3.5" stroke-linecap="round"/>
-    <!-- Interlocking L-Fret Steps -->
-    <path d="M11 43V14C11 12.3 12.3 11 14 11H43" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" stroke-linecap="round"/>
-    <path d="M19 39V22H36" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" stroke-linecap="round"/>
-    <rect x="22" y="25" width="8" height="8" fill="var(--color-yellow-gold, #E5B842)"/>
+  <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 52px; height: 52px;" aria-label="Dancheong Meander Corner Fret">
+    <!-- Outer Parallel Key L-Bracket -->
+    <path d="M4 56V8C4 5.8 5.8 4 8 4H56" stroke="var(--color-red, #A62B2B)" stroke-width="3.5" stroke-linecap="square"/>
+    <path d="M12 56V12H56" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2.5" stroke-linecap="square"/>
+    <!-- Stepped Interlocking Key Labyrinth -->
+    <path d="M20 56V20H46V36H32V28H40" stroke="var(--color-red, #A62B2B)" stroke-width="2.5" stroke-linecap="square"/>
+    <!-- Accent Core Dot -->
+    <rect x="25" y="42" width="7" height="7" fill="var(--color-yellow-gold, #E5B842)"/>
   </svg>
 </div>
 
-<!-- Motif 8: Traditional Korean Folding Fan (Buchae - 합죽선 from v1.png & v2.png) -->
+<!-- Motif 8: Traditional Korean Folding Fan (Buchae / 합죽선 from v1.png bottom right) -->
 {% elsif include.motif == 'korean_fan' %}
 <div class="korean-motif-render korean-motif-fan" style="display: flex; justify-content: center; margin: 18px 0;">
-  <svg viewBox="0 0 90 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 72px; height: auto;">
-    <!-- Arched Fan Body with Radiating Ribs -->
-    <path d="M10 42C18 20 40 10 45 10C50 10 72 20 80 42L45 54L10 42Z" fill="rgba(166, 43, 43, 0.12)" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" stroke-linejoin="round"/>
-    <!-- Bamboo Ribs -->
-    <line x1="45" y1="54" x2="16" y2="38" stroke="var(--color-red, #A62B2B)" stroke-width="1.4"/>
-    <line x1="45" y1="54" x2="28" y2="26" stroke="var(--color-red, #A62B2B)" stroke-width="1.4"/>
-    <line x1="45" y1="54" x2="45" y2="12" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.6"/>
-    <line x1="45" y1="54" x2="62" y2="26" stroke="var(--color-red, #A62B2B)" stroke-width="1.4"/>
-    <line x1="45" y1="54" x2="74" y2="38" stroke="var(--color-red, #A62B2B)" stroke-width="1.4"/>
-    <!-- Pivot Ring & Hanging Norigae Tassel -->
-    <circle cx="45" cy="54" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
-    <line x1="45" y1="57.5" x2="45" y2="68" stroke="var(--color-red, #A62B2B)" stroke-width="1.6" stroke-linecap="round"/>
+  <svg viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 110px; height: auto;" aria-label="Traditional Korean Folding Fan">
+    <!-- Arched Pleated Fan Canopy with Gradient Wash -->
+    <path d="M14 62C26 30 64 16 70 16C76 16 114 30 126 62L70 80L14 62Z" fill="var(--color-red, #A62B2B)" opacity="0.15"/>
+    <path d="M14 62C26 30 64 16 70 16C76 16 114 30 126 62" stroke="var(--color-red, #A62B2B)" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Radiating Bamboo Spokes (합죽살) -->
+    <line x1="70" y1="80" x2="16" y2="60" stroke="var(--color-red, #A62B2B)" stroke-width="1.8"/>
+    <line x1="70" y1="80" x2="30" y2="44" stroke="var(--color-red, #A62B2B)" stroke-width="1.6"/>
+    <line x1="70" y1="80" x2="48" y2="28" stroke="var(--color-red, #A62B2B)" stroke-width="1.6"/>
+    <line x1="70" y1="80" x2="70" y2="18" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2"/>
+    <line x1="70" y1="80" x2="92" y2="28" stroke="var(--color-red, #A62B2B)" stroke-width="1.6"/>
+    <line x1="70" y1="80" x2="110" y2="44" stroke="var(--color-red, #A62B2B)" stroke-width="1.6"/>
+    <line x1="70" y1="80" x2="124" y2="60" stroke="var(--color-red, #A62B2B)" stroke-width="1.8"/>
+    <!-- Scalloped Rib Arcs -->
+    <path d="M22 55Q44 42 70 42Q96 42 118 55" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" stroke-dasharray="3 3"/>
+    <!-- Pivot Ring & Hanging Norigae Tassel with Beads -->
+    <circle cx="70" cy="80" r="4.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="70" cy="80" r="2" fill="#801E1E"/>
+    <line x1="70" y1="84.5" x2="70" y2="92" stroke="var(--color-red, #A62B2B)" stroke-width="2"/>
+    <circle cx="70" cy="94" r="2.8" fill="var(--color-yellow-gold, #E5B842)"/>
+    <path d="M67 96L65 106M70 96L70 107M73 96L75 106" stroke="var(--color-red, #A62B2B)" stroke-width="1.5" stroke-linecap="round"/>
   </svg>
 </div>
 
-<!-- Motif 9: Royal Lotus Medallion (Yeonhwamun - 연화문) -->
-{% elsif include.motif == 'lotus_blossom' %}
-<div class="korean-motif-render korean-motif-lotus" style="display: flex; justify-content: center; margin: 18px 0;">
-  <svg viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 56px; height: 56px;">
+<!-- Motif 9: Seigaiha Concentric Wave Scale Medallion (청해파문 from v1.png bottom row) -->
+{% elsif include.motif == 'lotus_blossom' or include.motif == 'seigaiha_wave' %}
+<div class="korean-motif-render korean-motif-wave" style="display: flex; justify-content: center; margin: 18px 0;">
+  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 72px; height: 72px;" aria-label="Seigaiha Wave Medallion">
+    <clipPath id="circleClip">
+      <circle cx="50" cy="50" r="46"/>
+    </clipPath>
     <!-- Circular Framed Medallion -->
-    <circle cx="35" cy="35" r="32" stroke="var(--color-border, #E2DDD6)" stroke-width="1.5"/>
-    <circle cx="35" cy="35" r="26" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" stroke-dasharray="2.5 3"/>
-    <!-- 4 Cardinal Lotus Petals -->
-    <path d="M35 12C32 22 35 29 35 35C35 29 38 22 35 12Z" fill="var(--color-red, #A62B2B)"/>
-    <path d="M35 58C32 48 35 41 35 35C35 41 38 48 35 58Z" fill="var(--color-red, #A62B2B)"/>
-    <path d="M12 35C22 32 29 35 35 35C29 35 22 38 12 35Z" fill="var(--color-red, #A62B2B)"/>
-    <path d="M58 35C48 32 41 35 35 35C41 35 48 38 58 35Z" fill="var(--color-red, #A62B2B)"/>
-    <!-- 4 Diagonal Small Petals -->
-    <circle cx="23" cy="23" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.8"/>
-    <circle cx="47" cy="23" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.8"/>
-    <circle cx="23" cy="47" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.8"/>
-    <circle cx="47" cy="47" r="4.5" fill="var(--color-red, #A62B2B)" opacity="0.8"/>
-    <circle cx="35" cy="35" r="5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="50" cy="50" r="47" stroke="var(--color-border, #E2DDD6)" stroke-width="2"/>
+    <circle cx="50" cy="50" r="44" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8"/>
+    <!-- Concentric Nested Wave Arcs (청해파 패턴) -->
+    <g clip-path="url(#circleClip)">
+      <!-- Tier 1 -->
+      <circle cx="50" cy="20" r="18" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+      <circle cx="50" cy="20" r="12" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.5" fill="none"/>
+      <circle cx="50" cy="20" r="6" stroke="var(--color-red, #A62B2B)" stroke-width="1.5" fill="none"/>
+      <!-- Tier 2 Staggered -->
+      <circle cx="20" cy="45" r="18" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+      <circle cx="20" cy="45" r="12" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.5" fill="none"/>
+      <circle cx="20" cy="45" r="6" stroke="var(--color-red, #A62B2B)" stroke-width="1.5" fill="none"/>
+
+      <circle cx="80" cy="45" r="18" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+      <circle cx="80" cy="45" r="12" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.5" fill="none"/>
+      <circle cx="80" cy="45" r="6" stroke="var(--color-red, #A62B2B)" stroke-width="1.5" fill="none"/>
+      <!-- Tier 3 Center -->
+      <circle cx="50" cy="70" r="18" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+      <circle cx="50" cy="70" r="12" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.5" fill="none"/>
+      <circle cx="50" cy="70" r="6" stroke="var(--color-red, #A62B2B)" stroke-width="1.5" fill="none"/>
+      <!-- Bottom Row -->
+      <circle cx="20" cy="95" r="18" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+      <circle cx="80" cy="95" r="18" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+    </g>
   </svg>
 </div>
 
 <!-- Motif 10: Traditional Scholar Red Seal (Dojang / Injang - 도장) -->
 {% elsif include.motif == 'korean_seal' %}
-<div class="korean-motif-render korean-motif-seal" style="display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 2.5px solid var(--color-red, #A62B2B); border-radius: 4px; background: rgba(166, 43, 43, 0.05); font-family: 'Noto Serif KR', serif; font-size: 0.82rem; font-weight: 700; color: var(--color-red, #A62B2B); letter-spacing: 0.04em; text-align: center; line-height: 1.15; box-shadow: inset 0 0 0 1px rgba(166, 43, 43, 0.2);">
+<div class="korean-motif-render korean-motif-seal" style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border: 2.5px solid var(--color-red, #A62B2B); border-radius: 4px; background: rgba(166, 43, 43, 0.06); font-family: 'Noto Serif KR', serif; font-size: 0.86rem; font-weight: 700; color: var(--color-red, #A62B2B); letter-spacing: 0.05em; text-align: center; line-height: 1.15; box-shadow: inset 0 0 0 1.5px rgba(166, 43, 43, 0.25), 0 2px 6px rgba(166, 43, 43, 0.15);">
   한국<br>학연
 </div>
+
+<!-- Motif 11: Horizontal Stylized Cloud Bars with Floating Vapor Pearls (from v1.png row 3 center) -->
+{% elsif include.motif == 'cloud_bars' %}
+<div class="korean-motif-render korean-motif-cloudbars" style="display: flex; justify-content: center; margin: 16px 0;">
+  <svg viewBox="0 0 160 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '140px' }}; height: auto;" aria-label="Horizontal Stylized Clouds">
+    <!-- Upper Cloud Bar -->
+    <rect x="20" y="8" width="110" height="12" rx="6" fill="var(--color-red, #A62B2B)"/>
+    <rect x="50" y="8" width="50" height="12" rx="6" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="14" cy="14" r="4.5" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="140" cy="14" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <!-- Lower Cloud Bar -->
+    <rect x="35" y="28" width="95" height="12" rx="6" fill="var(--color-red, #A62B2B)"/>
+    <rect x="65" y="28" width="40" height="12" rx="6" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="24" cy="34" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="142" cy="34" r="5" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="152" cy="34" r="2.5" fill="var(--color-red, #A62B2B)"/>
+  </svg>
+</div>
+
+<!-- Motif 12: Joseon Silk Palace Lantern (Cheongsachorong 청사초롱 from v1.png right column) -->
+{% elsif include.motif == 'palace_lantern' %}
+<div class="korean-motif-render korean-motif-lantern" style="display: inline-flex; justify-content: center; margin: 12px 0;">
+  <svg viewBox="0 0 70 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '50px' }}; height: auto;" aria-label="Joseon Silk Lantern">
+    <!-- Top Suspension Ring -->
+    <circle cx="35" cy="10" r="5" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2" fill="none"/>
+    <line x1="35" y1="15" x2="35" y2="24" stroke="var(--color-red, #A62B2B)" stroke-width="2"/>
+    <rect x="22" y="24" width="26" height="5" rx="2" fill="var(--color-red, #A62B2B)"/>
+    <!-- Lantern Body Oval -->
+    <ellipse cx="35" cy="56" rx="26" ry="28" fill="var(--color-red, #A62B2B)" opacity="0.15"/>
+    <ellipse cx="35" cy="56" rx="26" ry="28" stroke="var(--color-red, #A62B2B)" stroke-width="2.5"/>
+    <!-- Vertical Rib Arcs -->
+    <path d="M35 28C22 36 22 76 35 84" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" fill="none"/>
+    <path d="M35 28C48 36 48 76 35 84" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.8" fill="none"/>
+    <line x1="35" y1="28" x2="35" y2="84" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2"/>
+    <ellipse cx="35" cy="56" rx="26" ry="12" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" stroke-dasharray="3 3"/>
+    <!-- Bottom Rim & Hanging Norigae Beads & Fringe Tassel -->
+    <rect x="22" y="84" width="26" height="5" rx="2" fill="var(--color-red, #A62B2B)"/>
+    <circle cx="35" cy="94" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    <circle cx="35" cy="102" r="2.8" fill="var(--color-red, #A62B2B)"/>
+    <path d="M31 106L30 118M35 106L35 119M39 106L40 118" stroke="var(--color-red, #A62B2B)" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</div>
+
+<!-- Motif 13: Overlapping Shippo Lattice Medallion (칠보문 격자 from v1.png bottom row left) -->
+{% elsif include.motif == 'shippo_lattice' %}
+<div class="korean-motif-render korean-motif-shippo" style="display: flex; justify-content: center; margin: 18px 0;">
+  <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: {{ include.width | default: '72px' }}; height: auto;" aria-label="Shippo Lattice Medallion">
+    <clipPath id="shippoClip">
+      <circle cx="50" cy="50" r="46"/>
+    </clipPath>
+    <circle cx="50" cy="50" r="48" stroke="var(--color-border, #E2DDD6)" stroke-width="2"/>
+    <circle cx="50" cy="50" r="45" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="2"/>
+    <g clip-path="url(#shippoClip)">
+      <circle cx="50" cy="50" r="24" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+      <circle cx="26" cy="50" r="24" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+      <circle cx="74" cy="50" r="24" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+      <circle cx="50" cy="26" r="24" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+      <circle cx="50" cy="74" r="24" stroke="var(--color-red, #A62B2B)" stroke-width="1.8" fill="none"/>
+      <circle cx="26" cy="26" r="24" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none"/>
+      <circle cx="74" cy="26" r="24" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none"/>
+      <circle cx="26" cy="74" r="24" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none"/>
+      <circle cx="74" cy="74" r="24" stroke="var(--color-yellow-gold, #E5B842)" stroke-width="1.4" fill="none"/>
+      <circle cx="50" cy="50" r="3.5" fill="var(--color-yellow-gold, #E5B842)"/>
+    </g>
+  </svg>
+</div>
 {% endif %}
+

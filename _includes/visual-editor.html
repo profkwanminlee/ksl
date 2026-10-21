@@ -30,15 +30,37 @@
 
     <!-- Ribbon Tabs -->
     <nav class="cksl-ribbon-tabs" role="tablist">
-      <button type="button" class="cksl-ribbon-tab active" data-tab="pages">Pages &amp; Navigation</button>
-      <button type="button" class="cksl-ribbon-tab" data-tab="insert">Insert</button>
+      <button type="button" class="cksl-ribbon-tab active" data-tab="document">Document &amp; Text</button>
+      <button type="button" class="cksl-ribbon-tab" data-tab="insert">Insert Blocks</button>
+      <button type="button" class="cksl-ribbon-tab" data-tab="motifs">Heritage Motifs</button>
+      <button type="button" class="cksl-ribbon-tab" data-tab="pages">Pages &amp; Nav</button>
       <button type="button" class="cksl-ribbon-tab" data-tab="design">Theme &amp; Style</button>
       <button type="button" class="cksl-ribbon-tab" data-tab="view">Device Layout</button>
-      <button type="button" class="cksl-ribbon-tab" data-tab="publish">Draft &amp; Publish</button>
     </nav>
 
-    <!-- Ribbon Right: Minimize & Exit -->
+    <!-- Ribbon Right: Save, Publish, Discard, Minimize & Exit -->
     <div class="cksl-ribbon-actions">
+      <!-- Save to Draft Session Button -->
+      <button type="button" class="cksl-ribbon-btn-save" id="cksl-btn-save-draft" title="Save current changes to draft session file">
+        <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13">
+          <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293z"/>
+        </svg>
+        <span>Save Changes</span>
+      </button>
+
+      <!-- Merge & Publish to Main Button -->
+      <button type="button" class="cksl-ribbon-btn-publish" id="cksl-btn-publish-draft" title="Merge draft session into main git branch">
+        <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span>Publish to Main</span>
+      </button>
+
+      <!-- Discard Draft Button -->
+      <button type="button" class="cksl-ribbon-btn-discard" id="cksl-btn-discard-draft" title="Discard draft session and restore clean main branch">
+        <span>Discard</span>
+      </button>
+
       <button type="button" class="cksl-ribbon-icon-btn" id="cksl-btn-toggle-ribbon" title="Minimize / Expand Ribbon">
         <svg id="cksl-ribbon-chevron" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
           <path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"/>
@@ -50,8 +72,128 @@
 
   <!-- Ribbon Shelf (Panes) -->
   <div class="cksl-ribbon-shelf" id="cksl-ribbon-shelf">
-    <!-- Shelf 1: Pages & Navigation -->
-    <div class="cksl-shelf-pane active" id="pane-pages">
+    <!-- Shelf 1: Document & Text (Word-Style Formatting) -->
+    <div class="cksl-shelf-pane active" id="pane-document">
+      <div class="cksl-tool-group">
+        <label class="cksl-tool-label">Heading Style</label>
+        <div class="cksl-btn-row">
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="formatBlock" data-val="h1" title="Heading 1">H1</button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="formatBlock" data-val="h2" title="Heading 2">H2</button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="formatBlock" data-val="h3" title="Heading 3">H3</button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="formatBlock" data-val="p" title="Normal Paragraph">P</button>
+        </div>
+      </div>
+
+      <div class="cksl-tool-separator"></div>
+
+      <div class="cksl-tool-group">
+        <label class="cksl-tool-label">Font &amp; Size</label>
+        <div class="cksl-btn-row">
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="fontFamily" data-val="'Noto Serif KR', serif" title="Serif Korean Font">Serif</button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="fontFamily" data-val="'Plus Jakarta Sans', sans-serif" title="Modern Sans Font">Sans</button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="fontSizeStep" data-step="-2" title="Decrease Font Size">A-</button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="fontSizeStep" data-step="+2" title="Increase Font Size">A+</button>
+        </div>
+      </div>
+
+      <div class="cksl-tool-separator"></div>
+
+      <div class="cksl-tool-group">
+        <label class="cksl-tool-label">Emphasis</label>
+        <div class="cksl-btn-row">
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="bold" title="Bold (Cmd+B)"><strong>B</strong></button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="italic" title="Italic (Cmd+I)"><em>I</em></button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="underline" title="Underline (Cmd+U)"><span style="text-decoration: underline;">U</span></button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="strikeThrough" title="Strikethrough"><s>S</s></button>
+        </div>
+      </div>
+
+      <div class="cksl-tool-separator"></div>
+
+      <div class="cksl-tool-group">
+        <label class="cksl-tool-label">Text Color</label>
+        <div class="cksl-btn-row">
+          <button type="button" class="cksl-swatch-box" data-doc-cmd="foreColor" data-val="#A62B2B" title="Vermilion Red" style="background: #A62B2B;"></button>
+          <button type="button" class="cksl-swatch-box" data-doc-cmd="foreColor" data-val="#E5B842" title="Golden Yellow" style="background: #E5B842;"></button>
+          <button type="button" class="cksl-swatch-box" data-doc-cmd="foreColor" data-val="#141517" title="Ink Black" style="background: #141517;"></button>
+          <button type="button" class="cksl-swatch-box" data-doc-cmd="foreColor" data-val="#474D54" title="Charcoal Slate" style="background: #474D54;"></button>
+          <input type="color" id="cksl-ribbon-color-picker" class="cksl-inline-color" title="Custom Color" value="#A62B2B">
+        </div>
+      </div>
+
+      <div class="cksl-tool-separator"></div>
+
+      <div class="cksl-tool-group">
+        <label class="cksl-tool-label">Alignment &amp; Lists</label>
+        <div class="cksl-btn-row">
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="justifyLeft" title="Align Left">Left</button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="justifyCenter" title="Align Center">Center</button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="justifyRight" title="Align Right">Right</button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="insertUnorderedList" title="Bullet List">• List</button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="insertOrderedList" title="Numbered List">1. List</button>
+          <button type="button" class="cksl-shelf-btn" id="cksl-ribbon-btn-link" title="Insert Link">Link</button>
+          <button type="button" class="cksl-shelf-btn" data-doc-cmd="removeFormat" title="Clear Formatting">Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shelf 2: Insert Blocks -->
+    <div class="cksl-shelf-pane" id="pane-insert">
+      <div class="cksl-tool-group">
+        <label class="cksl-tool-label">Layout Blocks</label>
+        <div class="cksl-btn-row">
+          <button type="button" class="cksl-shelf-btn" data-insert="text"><span>Heading &amp; Text</span></button>
+          <button type="button" class="cksl-shelf-btn" data-insert="cards"><span>3-Column Cards</span></button>
+          <button type="button" class="cksl-shelf-btn" data-insert="callout"><span>Context Box</span></button>
+          <button type="button" class="cksl-shelf-btn" data-insert="cta"><span>Action Banner</span></button>
+        </div>
+      </div>
+
+      <div class="cksl-tool-separator"></div>
+
+      <div class="cksl-tool-group">
+        <label class="cksl-tool-label">Media &amp; Elements</label>
+        <div class="cksl-btn-row">
+          <button type="button" class="cksl-shelf-btn" id="cksl-btn-insert-body-img">
+            <span>Insert Image with Caption</span>
+          </button>
+          <button type="button" class="cksl-shelf-btn" id="cksl-btn-open-gallery">
+            <span>Korean Landscapes</span>
+          </button>
+          <button type="button" class="cksl-shelf-btn" id="cksl-btn-open-motifs">
+            <span>Heritage Motifs (13 SVGs)</span>
+          </button>
+          <button type="button" class="cksl-shelf-btn" data-insert="divider">
+            <span>Plum Blossom Divider</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shelf 3: Heritage Motifs Palette -->
+    <div class="cksl-shelf-pane" id="pane-motifs">
+      <div class="cksl-tool-group">
+        <label class="cksl-tool-label">Quick Insert Korean Vector Motifs (from v1.png &amp; v2.png)</label>
+        <div class="cksl-btn-row" style="flex-wrap: wrap; gap: 6px;">
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="maehwa_blossom">Plum Blossom</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="flower_divider">Divider</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="hanok_roof">Hanok Eaves</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="title_underline">Title Underline</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="cloud_unmun">Cloud Scroll</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="cloud_bars">Cloud Bars</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="palace_lantern">Silk Lantern</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="korean_fan">Folding Fan</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="seigaiha_wave">Wave Medallion</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="shippo_lattice">Lattice Medallion</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="pavilion">Palace Pavilion</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="dancheong_corner">Corner Fret</button>
+          <button type="button" class="cksl-shelf-btn" data-insert-motif="korean_seal">Scholar Seal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shelf 4: Pages & Navigation -->
+    <div class="cksl-shelf-pane" id="pane-pages">
       <div class="cksl-tool-group">
         <label class="cksl-tool-label">Active Page</label>
         <select id="cksl-page-selector" class="cksl-select">
@@ -70,7 +212,7 @@
       <div class="cksl-tool-separator"></div>
 
       <div class="cksl-tool-group">
-        <label class="cksl-tool-label">Page Structure</label>
+        <label class="cksl-tool-label">Page Actions</label>
         <div class="cksl-btn-row">
           <button type="button" class="cksl-shelf-btn" id="cksl-btn-new-page">
             <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd"/></svg>
@@ -87,40 +229,7 @@
       </div>
     </div>
 
-    <!-- Shelf 2: Insert -->
-    <div class="cksl-shelf-pane" id="pane-insert">
-      <div class="cksl-tool-group">
-        <label class="cksl-tool-label">Text &amp; Layout Blocks</label>
-        <div class="cksl-btn-row">
-          <button type="button" class="cksl-shelf-btn" data-insert="text"><span>Heading &amp; Text</span></button>
-          <button type="button" class="cksl-shelf-btn" data-insert="cards"><span>3-Column Cards</span></button>
-          <button type="button" class="cksl-shelf-btn" data-insert="callout"><span>Context Box</span></button>
-          <button type="button" class="cksl-shelf-btn" data-insert="cta"><span>Action Banner</span></button>
-        </div>
-      </div>
-
-      <div class="cksl-tool-separator"></div>
-
-      <div class="cksl-tool-group">
-        <label class="cksl-tool-label">Images &amp; Korean Motifs</label>
-        <div class="cksl-btn-row">
-          <button type="button" class="cksl-shelf-btn" id="cksl-btn-insert-body-img">
-            <span>Insert Image</span>
-          </button>
-          <button type="button" class="cksl-shelf-btn" id="cksl-btn-open-gallery">
-            <span>Korean Landscapes</span>
-          </button>
-          <button type="button" class="cksl-shelf-btn" id="cksl-btn-open-motifs">
-            <span>Korean Vector SVGs</span>
-          </button>
-          <button type="button" class="cksl-shelf-btn" data-insert="divider">
-            <span>Section Divider</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Shelf 3: Theme & Style -->
+    <!-- Shelf 5: Theme & Style -->
     <div class="cksl-shelf-pane" id="pane-design">
       <div class="cksl-tool-group">
         <label class="cksl-tool-label">Curated Color Palettes</label>
@@ -161,7 +270,7 @@
       </div>
     </div>
 
-    <!-- Shelf 4: Device Layout -->
+    <!-- Shelf 6: Device Layout -->
     <div class="cksl-shelf-pane" id="pane-view">
       <div class="cksl-tool-group">
         <label class="cksl-tool-label">Responsive Screen Framing</label>
@@ -189,25 +298,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Shelf 5: Draft Session & Publish -->
-    <div class="cksl-shelf-pane" id="pane-publish">
-      <div class="cksl-tool-group">
-        <label class="cksl-tool-label">Staging Draft Session</label>
-        <div class="cksl-btn-row">
-          <button type="button" class="cksl-btn-primary-action" id="cksl-btn-publish-open">
-            <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
-            <span>Merge &amp; Publish to Main</span>
-          </button>
-          <button type="button" class="cksl-shelf-btn" id="cksl-btn-export-file">
-            <span>Download Backup</span>
-          </button>
-          <button type="button" class="cksl-shelf-btn" id="cksl-btn-discard-draft" style="color: #F87171;">
-            <span>Discard Draft</span>
-          </button>
-        </div>
-      </div>
-    </div>
   </div>
 </header>
 
@@ -221,7 +311,7 @@
       <button type="button" class="cksl-side-tab" data-sidetab="motifs" title="Korean Heritage Motifs Library">Motifs</button>
       <button type="button" class="cksl-side-tab" data-sidetab="pages" title="Pages &amp; Navigation">Pages</button>
     </div>
-    <button type="button" class="cksl-sidebar-collapse-btn" id="cksl-btn-collapse-sidebar" title="Collapse Sidebar">◀</button>
+    <button type="button" class="cksl-sidebar-collapse-btn" id="cksl-btn-collapse-sidebar" title="Collapse Sidebar">&lt;</button>
   </div>
 
   <!-- Pane 1: Structure Outline -->
@@ -236,20 +326,30 @@
     </div>
   </div>
 
-  <!-- Pane 2: Authentic Korean Motifs Library -->
+  <!-- Pane 2: Authentic Korean Motifs (Current On Page + 13 Vector SVGs) -->
   <div class="cksl-side-pane" id="cksl-sidepane-motifs">
-    <div class="cksl-sidepane-subhead">
-      <span class="sidebar-title">Heritage Motifs</span>
-      <span class="sidebar-count">10 Authentic SVGs</span>
+    <!-- Live list of motifs currently on this page -->
+    <div class="cksl-sidepane-subhead" style="border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 8px;">
+      <span class="sidebar-title">Motifs on This Page</span>
+      <span class="sidebar-count" id="cksl-page-motifs-count">0 placed</span>
+    </div>
+    <div id="cksl-page-motifs-list" class="cksl-page-motifs-container">
+      <!-- Populated dynamically via JS -->
+    </div>
+
+    <!-- 13 Authentic Heritage Motifs Library -->
+    <div class="cksl-sidepane-subhead" style="margin-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px;">
+      <span class="sidebar-title">Heritage Motifs Library</span>
+      <span class="sidebar-count">13 Authentic SVGs</span>
     </div>
     <div class="cksl-side-motifs-list">
       <div class="cksl-side-motif-card" data-motif="maehwa_blossom">
         <div class="side-motif-svg">{% include korean-motifs-library.html motif="maehwa_blossom" width="36px" %}</div>
         <div class="side-motif-info">
           <strong>Maehwa Plum Blossom</strong>
-          <span>5-Petal Joseon blossom &amp; stamens</span>
+          <span>5-Petal Joseon blossom with stamens</span>
         </div>
-        <button type="button" class="side-motif-insert-btn" title="Insert at end of page">+ Add</button>
+        <button type="button" class="side-motif-insert-btn" title="Insert motif">+ Add</button>
       </div>
 
       <div class="cksl-side-motif-card" data-motif="flower_divider">
@@ -258,7 +358,7 @@
           <strong>Plum Blossom Divider</strong>
           <span>Section divider with vine runners</span>
         </div>
-        <button type="button" class="side-motif-insert-btn" title="Insert at end of page">+ Add</button>
+        <button type="button" class="side-motif-insert-btn" title="Insert motif">+ Add</button>
       </div>
 
       <div class="cksl-side-motif-card" data-motif="hanok_roof">
@@ -267,43 +367,43 @@
           <strong>Hanok Cheoma Eaves</strong>
           <span>Curved architectural roofline</span>
         </div>
-        <button type="button" class="side-motif-insert-btn" title="Insert at end of page">+ Add</button>
+        <button type="button" class="side-motif-insert-btn" title="Insert motif">+ Add</button>
       </div>
 
       <div class="cksl-side-motif-card" data-motif="title_underline">
         <div class="side-motif-svg">{% include korean-motifs-library.html motif="title_underline" %}</div>
         <div class="side-motif-info">
           <strong>Dancheong Underline</strong>
-          <span>Tapered vermilion bar &amp; node</span>
+          <span>Tapered vermilion bar &amp; blossom node</span>
         </div>
-        <button type="button" class="side-motif-insert-btn" title="Insert at end of page">+ Add</button>
+        <button type="button" class="side-motif-insert-btn" title="Insert motif">+ Add</button>
       </div>
 
       <div class="cksl-side-motif-card" data-motif="cloud_unmun">
         <div class="side-motif-svg">{% include korean-motifs-library.html motif="cloud_unmun" width="70px" %}</div>
         <div class="side-motif-info">
           <strong>Auspicious Cloud (Unmun)</strong>
-          <span>Joseon cloud scroll</span>
+          <span>Joseon curling cloud with vapor pearls</span>
         </div>
-        <button type="button" class="side-motif-insert-btn" title="Insert at end of page">+ Add</button>
+        <button type="button" class="side-motif-insert-btn" title="Insert motif">+ Add</button>
       </div>
 
-      <div class="cksl-side-motif-card" data-motif="pavilion">
-        <div class="side-motif-svg">{% include korean-motifs-library.html motif="pavilion" %}</div>
+      <div class="cksl-side-motif-card" data-motif="cloud_bars">
+        <div class="side-motif-svg">{% include korean-motifs-library.html motif="cloud_bars" width="70px" %}</div>
         <div class="side-motif-info">
-          <strong>Hanok Palace Pavilion</strong>
-          <span>Joseon timber pavilion illustration</span>
+          <strong>Horizontal Cloud Bars</strong>
+          <span>Stepped clouds with floating pearls</span>
         </div>
-        <button type="button" class="side-motif-insert-btn" title="Insert at end of page">+ Add</button>
+        <button type="button" class="side-motif-insert-btn" title="Insert motif">+ Add</button>
       </div>
 
-      <div class="cksl-side-motif-card" data-motif="dancheong_corner">
-        <div class="side-motif-svg">{% include korean-motifs-library.html motif="dancheong_corner" %}</div>
+      <div class="cksl-side-motif-card" data-motif="palace_lantern">
+        <div class="side-motif-svg">{% include korean-motifs-library.html motif="palace_lantern" width="30px" %}</div>
         <div class="side-motif-info">
-          <strong>Corner Fret Bracket</strong>
-          <span>Dancheong interlocking fret</span>
+          <strong>Silk Palace Lantern</strong>
+          <span>Cheongsachorong with fringe tassel</span>
         </div>
-        <button type="button" class="side-motif-insert-btn" title="Insert at end of page">+ Add</button>
+        <button type="button" class="side-motif-insert-btn" title="Insert motif">+ Add</button>
       </div>
 
       <div class="cksl-side-motif-card" data-motif="korean_fan">
@@ -312,16 +412,43 @@
           <strong>Korean Folding Fan</strong>
           <span>Buchae with Norigae tassel</span>
         </div>
-        <button type="button" class="side-motif-insert-btn" title="Insert at end of page">+ Add</button>
+        <button type="button" class="side-motif-insert-btn" title="Insert motif">+ Add</button>
       </div>
 
-      <div class="cksl-side-motif-card" data-motif="lotus_blossom">
-        <div class="side-motif-svg">{% include korean-motifs-library.html motif="lotus_blossom" width="40px" %}</div>
+      <div class="cksl-side-motif-card" data-motif="seigaiha_wave">
+        <div class="side-motif-svg">{% include korean-motifs-library.html motif="seigaiha_wave" width="40px" %}</div>
         <div class="side-motif-info">
-          <strong>Royal Lotus Medallion</strong>
-          <span>Concentric lotus emblem</span>
+          <strong>Concentric Wave Medallion</strong>
+          <span>Seigaiha wave scale medallion</span>
         </div>
-        <button type="button" class="side-motif-insert-btn" title="Insert at end of page">+ Add</button>
+        <button type="button" class="side-motif-insert-btn" title="Insert motif">+ Add</button>
+      </div>
+
+      <div class="cksl-side-motif-card" data-motif="shippo_lattice">
+        <div class="side-motif-svg">{% include korean-motifs-library.html motif="shippo_lattice" width="40px" %}</div>
+        <div class="side-motif-info">
+          <strong>Shippo Lattice Medallion</strong>
+          <span>Overlapping circular petal lattice</span>
+        </div>
+        <button type="button" class="side-motif-insert-btn" title="Insert motif">+ Add</button>
+      </div>
+
+      <div class="cksl-side-motif-card" data-motif="pavilion">
+        <div class="side-motif-svg">{% include korean-motifs-library.html motif="pavilion" %}</div>
+        <div class="side-motif-info">
+          <strong>Hanok Palace Pavilion</strong>
+          <span>Joseon timber pavilion illustration</span>
+        </div>
+        <button type="button" class="side-motif-insert-btn" title="Insert motif">+ Add</button>
+      </div>
+
+      <div class="cksl-side-motif-card" data-motif="dancheong_corner">
+        <div class="side-motif-svg">{% include korean-motifs-library.html motif="dancheong_corner" %}</div>
+        <div class="side-motif-info">
+          <strong>Corner Fret Bracket</strong>
+          <span>Dancheong interlocking fret</span>
+        </div>
+        <button type="button" class="side-motif-insert-btn" title="Insert motif">+ Add</button>
       </div>
 
       <div class="cksl-side-motif-card" data-motif="korean_seal">
@@ -330,7 +457,7 @@
           <strong>Scholar Stamp Seal</strong>
           <span>Cinnabar square seal badge</span>
         </div>
-        <button type="button" class="side-motif-insert-btn" title="Insert at end of page">+ Add</button>
+        <button type="button" class="side-motif-insert-btn" title="Insert motif">+ Add</button>
       </div>
     </div>
   </div>
@@ -394,14 +521,16 @@
      3. Word-Style Text Selection Floating Bubble (Appears on Selected Words/Chars)
      ============================================================================ -->
 <div id="cksl-text-selection-toolbar" class="hidden" role="toolbar" aria-label="Word Formatting Toolbar">
-  <button type="button" class="selection-tool-btn" data-cmd="bold" title="Bold (Cmd+B)"><strong>B</strong></button>
-  <button type="button" class="selection-tool-btn" data-cmd="italic" title="Italic (Cmd+I)"><em>I</em></button>
-  <button type="button" class="selection-tool-btn" data-cmd="underline" title="Underline (Cmd+U)"><span style="text-decoration: underline;">U</span></button>
-  <button type="button" class="selection-tool-btn" data-cmd="strikeThrough" title="Strikethrough"><s>S</s></button>
+  <!-- Font Family Selector -->
+  <select id="cksl-sel-font-family" class="selection-tool-select" title="Change Font Family">
+    <option value="'Plus Jakarta Sans', sans-serif">Sans (Modern)</option>
+    <option value="'Noto Serif KR', serif">Serif (Heritage)</option>
+    <option value="'Noto Sans KR', sans-serif">Korean Sans</option>
+    <option value="Georgia, serif">Classic Serif</option>
+  </select>
 
-  <span class="selection-divider"></span>
-
-  <select id="cksl-sel-font-size" class="selection-select" title="Font Size">
+  <!-- Font Size Selector & Steppers -->
+  <select id="cksl-sel-font-size" class="selection-tool-select selection-size-select" title="Font Size">
     <option value="">Size</option>
     <option value="12px">12px</option>
     <option value="14px">14px</option>
@@ -409,21 +538,55 @@
     <option value="18px">18px</option>
     <option value="20px">20px</option>
     <option value="24px">24px</option>
+    <option value="28px">28px</option>
     <option value="32px">32px</option>
+    <option value="40px">40px</option>
+    <option value="48px">48px</option>
+    <option value="60px">60px</option>
   </select>
+  <button type="button" class="selection-tool-btn" data-cmd="fontSizeStep" data-step="-2" title="Smaller (A-)">A-</button>
+  <button type="button" class="selection-tool-btn" data-cmd="fontSizeStep" data-step="+2" title="Larger (A+)">A+</button>
 
   <span class="selection-divider"></span>
 
-  <input type="color" id="cksl-sel-color" class="selection-color-input" title="Text Color" value="#A62B2B">
-  <input type="color" id="cksl-sel-bg-color" class="selection-color-input" title="Text Highlight" value="#F3D580">
+  <!-- Inline emphasis buttons -->
+  <button type="button" class="selection-tool-btn" data-cmd="bold" title="Bold (Cmd+B)"><strong>B</strong></button>
+  <button type="button" class="selection-tool-btn" data-cmd="italic" title="Italic (Cmd+I)"><em>I</em></button>
+  <button type="button" class="selection-tool-btn" data-cmd="underline" title="Underline (Cmd+U)"><span style="text-decoration: underline;">U</span></button>
+  <button type="button" class="selection-tool-btn" data-cmd="strikeThrough" title="Strikethrough"><s>S</s></button>
 
   <span class="selection-divider"></span>
 
+  <!-- Text Colors -->
+  <button type="button" class="selection-tool-btn selection-swatch" data-cmd="foreColor" data-val="#A62B2B" title="Vermilion Red" style="background: #A62B2B;"></button>
+  <button type="button" class="selection-tool-btn selection-swatch" data-cmd="foreColor" data-val="#E5B842" title="Golden Yellow" style="background: #E5B842;"></button>
+  <button type="button" class="selection-tool-btn selection-swatch" data-cmd="foreColor" data-val="#141517" title="Ink Black" style="background: #141517;"></button>
+  <button type="button" class="selection-tool-btn selection-swatch" data-cmd="foreColor" data-val="#FFFFFF" title="White" style="background: #FFFFFF; border: 1px solid #CBD5E1;"></button>
+  <input type="color" id="cksl-sel-color-picker" class="selection-color-input" title="Custom Text Color" value="#A62B2B">
+
+  <span class="selection-divider"></span>
+
+  <!-- Highlight Swatches -->
+  <button type="button" class="selection-tool-btn selection-swatch" data-cmd="hiliteColor" data-val="#FEF3C7" title="Yellow Highlight" style="background: #FEF3C7; border: 1px solid #D97706;"></button>
+  <button type="button" class="selection-tool-btn selection-swatch" data-cmd="hiliteColor" data-val="#FEE2E2" title="Pink Highlight" style="background: #FEE2E2; border: 1px solid #DC2626;"></button>
+
+  <span class="selection-divider"></span>
+
+  <!-- Block types -->
+  <button type="button" class="selection-tool-btn" data-cmd="formatBlock" data-val="h1" title="Heading 1">H1</button>
+  <button type="button" class="selection-tool-btn" data-cmd="formatBlock" data-val="h2" title="Heading 2">H2</button>
+  <button type="button" class="selection-tool-btn" data-cmd="formatBlock" data-val="h3" title="Heading 3">H3</button>
+  <button type="button" class="selection-tool-btn" data-cmd="formatBlock" data-val="p" title="Paragraph">P</button>
+
+  <span class="selection-divider"></span>
+
+  <!-- Lists & Links -->
   <button type="button" class="selection-tool-btn" data-cmd="insertUnorderedList" title="Bulleted List">• List</button>
   <button type="button" class="selection-tool-btn" data-cmd="insertOrderedList" title="Numbered List">1. List</button>
   <button type="button" class="selection-tool-btn" id="cksl-sel-btn-link" title="Insert Link">Link</button>
   <button type="button" class="selection-tool-btn" data-cmd="removeFormat" title="Clear Formatting">Clear</button>
 </div>
+
 
 <!-- ============================================================================
      4. Figma/Canva-Style Floating Element Inspector (Boxes, Cards, Images, Motifs)
