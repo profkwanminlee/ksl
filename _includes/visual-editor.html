@@ -1,0 +1,301 @@
+<!-- ==============================================================================
+     Contemporary Korean Studies Lab (CKSL) — On-Page Visual Editor Component
+     Zero-code, 100% visual WYSIWYG editor for Prof. Kwan Min Lee & editors
+     ============================================================================== -->
+
+<link rel="stylesheet" href="{{ '/assets/css/visual-editor.css' | relative_url }}">
+
+<!-- Floating Discreet Launcher (Visible at bottom right when editor is inactive) -->
+<button type="button" id="cksl-editor-launcher" aria-label="Open Visual Site Editor">
+  <span class="dot"></span>
+  <span>✏️ Visual Editor</span>
+</button>
+
+<!-- Fixed Top Visual Editor Bar -->
+<header id="cksl-editor-bar" class="hidden" role="toolbar" aria-label="CKSL Visual Editor Toolbar">
+  <!-- Left Brand Info -->
+  <div class="cksl-bar-brand">
+    <div class="cksl-bar-logo">
+      <span class="badge-dot"></span>
+      <span>CKSL Visual Editor</span>
+    </div>
+    <span class="cksl-bar-page-name">{{ page.title | default: "Home" }}</span>
+  </div>
+
+  <!-- Center Visual Design Controls -->
+  <div class="cksl-bar-center">
+    <button type="button" class="cksl-tool-btn" id="cksl-btn-theme" title="Change Color Palette">
+      <span>🎨</span>
+      <span>Palette</span>
+    </button>
+    <button type="button" class="cksl-tool-btn" id="cksl-btn-type" title="Adjust Text Sizing">
+      <span>🔤</span>
+      <span>Font Size</span>
+    </button>
+    <button type="button" class="cksl-tool-btn" id="cksl-btn-ornaments" title="Toggle Korean Heritage Designs">
+      <span>🪷</span>
+      <span>Heritage Motifs</span>
+    </button>
+    <button type="button" class="cksl-tool-btn" id="cksl-btn-add-block" title="Insert a New Visual Block">
+      <span>➕</span>
+      <span>Add Section</span>
+    </button>
+  </div>
+
+  <!-- Right Actions -->
+  <div class="cksl-bar-right">
+    <button type="button" class="cksl-btn-publish" id="cksl-btn-publish" title="Save & Publish to Live Site">
+      <span>🚀</span>
+      <span>Publish Changes</span>
+    </button>
+    <button type="button" class="cksl-btn-close" id="cksl-btn-close-bar" title="Exit Editor Mode">✕</button>
+  </div>
+</header>
+
+<!-- Modal 1: Visual Theme & Color Palette Swatches -->
+<div class="cksl-modal-overlay" id="cksl-modal-theme" role="dialog" aria-modal="true" aria-labelledby="theme-modal-title">
+  <div class="cksl-modal-card">
+    <div class="cksl-modal-header">
+      <h3 class="cksl-modal-title" id="theme-modal-title">🎨 Curated Visual Color Palettes</h3>
+      <button type="button" class="cksl-modal-close" aria-label="Close modal">✕</button>
+    </div>
+    <div class="cksl-modal-body">
+      <p style="font-size: 0.88rem; color: #474D54; margin-top: 0; margin-bottom: 18px;">
+        Click any palette to transform the entire website live. Zero code or hex numbers required.
+      </p>
+      <div class="cksl-palette-grid">
+        <!-- Palette 1 -->
+        <div class="cksl-palette-card selected" data-palette="dancheong">
+          <div class="cksl-palette-name">Heritage Dancheong</div>
+          <div class="cksl-palette-desc">Vermilion Red &amp; Imperial Warm Gold</div>
+          <div class="cksl-swatch-strip">
+            <span style="background: #A62B2B;"></span>
+            <span style="background: #E5B842;"></span>
+            <span style="background: #4A2E1B;"></span>
+            <span style="background: #FAF8F5;"></span>
+          </div>
+        </div>
+        <!-- Palette 2 -->
+        <div class="cksl-palette-card" data-palette="joseon">
+          <div class="cksl-palette-name">Royal Joseon Blue</div>
+          <div class="cksl-palette-desc">Deep Indigo &amp; Luminous Gold</div>
+          <div class="cksl-swatch-strip">
+            <span style="background: #1B365D;"></span>
+            <span style="background: #D4AF37;"></span>
+            <span style="background: #2C3E50;"></span>
+            <span style="background: #F7F9FB;"></span>
+          </div>
+        </div>
+        <!-- Palette 3 -->
+        <div class="cksl-palette-card" data-palette="hanok">
+          <div class="cksl-palette-name">Hanok Scholar Timber</div>
+          <div class="cksl-palette-desc">Warm Earthen Cedar &amp; Amber</div>
+          <div class="cksl-swatch-strip">
+            <span style="background: #7B3F00;"></span>
+            <span style="background: #C68A4C;"></span>
+            <span style="background: #3D2314;"></span>
+            <span style="background: #FAF7F2;"></span>
+          </div>
+        </div>
+        <!-- Palette 4 -->
+        <div class="cksl-palette-card" data-palette="midnight">
+          <div class="cksl-palette-name">Contemporary Midnight</div>
+          <div class="cksl-palette-desc">Obsidian Slate &amp; Crimson Accent</div>
+          <div class="cksl-swatch-strip">
+            <span style="background: #C53030;"></span>
+            <span style="background: #D69E2E;"></span>
+            <span style="background: #1A202C;"></span>
+            <span style="background: #F8FAFC;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cksl-modal-footer">
+      <button type="button" class="btn btn-primary cksl-modal-close" style="padding: 6px 18px; font-size: 0.85rem;">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2: Typography & Sizing -->
+<div class="cksl-modal-overlay" id="cksl-modal-type" role="dialog" aria-modal="true" aria-labelledby="type-modal-title">
+  <div class="cksl-modal-card">
+    <div class="cksl-modal-header">
+      <h3 class="cksl-modal-title" id="type-modal-title">🔤 Base Font Size</h3>
+      <button type="button" class="cksl-modal-close" aria-label="Close modal">✕</button>
+    </div>
+    <div class="cksl-modal-body">
+      <p style="font-size: 0.88rem; color: #474D54; margin-top: 0; margin-bottom: 18px;">
+        Scale body readability across the lab website:
+      </p>
+      <div class="cksl-type-options">
+        <button type="button" class="cksl-type-btn" data-size="15px">
+          <span class="cksl-type-label">Compact (15px)</span>
+          <span class="cksl-type-sub">Dense academic journal layout</span>
+        </button>
+        <button type="button" class="cksl-type-btn selected" data-size="16px">
+          <span class="cksl-type-label">Standard (16px)</span>
+          <span class="cksl-type-sub">Standard modern editorial balance</span>
+        </button>
+        <button type="button" class="cksl-type-btn" data-size="17px">
+          <span class="cksl-type-label">Generous (17px)</span>
+          <span class="cksl-type-sub">Comfortable large reading format</span>
+        </button>
+        <button type="button" class="cksl-type-btn" data-size="18px">
+          <span class="cksl-type-label">Prominent (18px)</span>
+          <span class="cksl-type-sub">Maximum readability &amp; prominence</span>
+        </button>
+      </div>
+    </div>
+    <div class="cksl-modal-footer">
+      <button type="button" class="btn btn-primary cksl-modal-close" style="padding: 6px 18px; font-size: 0.85rem;">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3: Korean Heritage Motifs & Ornaments -->
+<div class="cksl-modal-overlay" id="cksl-modal-ornaments" role="dialog" aria-modal="true" aria-labelledby="ornaments-modal-title">
+  <div class="cksl-modal-card">
+    <div class="cksl-modal-header">
+      <h3 class="cksl-modal-title" id="ornaments-modal-title">🪷 Korean Heritage Motifs</h3>
+      <button type="button" class="cksl-modal-close" aria-label="Close modal">✕</button>
+    </div>
+    <div class="cksl-modal-body">
+      <div class="cksl-ornament-list">
+        <div class="cksl-ornament-item">
+          <div class="cksl-ornament-info">
+            <h4>🏛️ Hanok Roof Crest (Cheoma)</h4>
+            <p>Curved architectural roofline with plum blossom accent under hero headlines</p>
+          </div>
+          <label class="cksl-switch">
+            <input type="checkbox" class="cksl-ornament-switch" data-ornament="roof" checked>
+            <span class="cksl-slider"></span>
+          </label>
+        </div>
+        <div class="cksl-ornament-item">
+          <div class="cksl-ornament-info">
+            <h4>🌸 Maehwa Plum Blossom Dividers</h4>
+            <p>5-Petal blossom and curling vine lines separating major page sections</p>
+          </div>
+          <label class="cksl-switch">
+            <input type="checkbox" class="cksl-ornament-switch" data-ornament="flowers" checked>
+            <span class="cksl-slider"></span>
+          </label>
+        </div>
+        <div class="cksl-ornament-item">
+          <div class="cksl-ornament-info">
+            <h4>✒️ Dancheong Title Underlines</h4>
+            <p>Blossom accent with tapered red lines under all section titles</p>
+          </div>
+          <label class="cksl-switch">
+            <input type="checkbox" class="cksl-ornament-switch" data-ornament="underlines" checked>
+            <span class="cksl-slider"></span>
+          </label>
+        </div>
+        <div class="cksl-ornament-item">
+          <div class="cksl-ornament-info">
+            <h4>🪟 Changhosal Window Lattice Pattern</h4>
+            <p>Geometric traditional paper window grid in hero headers</p>
+          </div>
+          <label class="cksl-switch">
+            <input type="checkbox" class="cksl-ornament-switch" data-ornament="lattice" checked>
+            <span class="cksl-slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="cksl-modal-footer">
+      <button type="button" class="btn btn-primary cksl-modal-close" style="padding: 6px 18px; font-size: 0.85rem;">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4: Insert Visual Section Block -->
+<div class="cksl-modal-overlay" id="cksl-modal-blocks" role="dialog" aria-modal="true" aria-labelledby="blocks-modal-title">
+  <div class="cksl-modal-card">
+    <div class="cksl-modal-header">
+      <h3 class="cksl-modal-title" id="blocks-modal-title">➕ Add New Visual Section</h3>
+      <button type="button" class="cksl-modal-close" aria-label="Close modal">✕</button>
+    </div>
+    <div class="cksl-modal-body">
+      <p style="font-size: 0.88rem; color: #474D54; margin-top: 0; margin-bottom: 18px;">
+        Choose a pre-styled block to insert into the page. You can click any text inside it to edit immediately.
+      </p>
+      <div class="cksl-blocks-catalog">
+        <div class="cksl-block-card" data-block-type="text_block">
+          <span class="cksl-block-card-icon">📝</span>
+          <span class="cksl-block-card-title">Editorial Text Block</span>
+          <span class="cksl-block-card-desc">Kickers, heading, highlight lead paragraph, and body text.</span>
+        </div>
+        <div class="cksl-block-card" data-block-type="card_grid">
+          <span class="cksl-block-card-icon">🗂️</span>
+          <span class="cksl-block-card-title">3-Column Card Grid</span>
+          <span class="cksl-block-card-desc">Project initiatives, grants, or symposia with badges &amp; dates.</span>
+        </div>
+        <div class="cksl-block-card" data-block-type="callout_box">
+          <span class="cksl-block-card-icon">🏛️</span>
+          <span class="cksl-block-card-title">Context Notice Box</span>
+          <span class="cksl-block-card-desc">Warm canvas box with Dancheong accent and call-to-action button.</span>
+        </div>
+        <div class="cksl-block-card" data-block-type="cta_banner">
+          <span class="cksl-block-card-icon">📢</span>
+          <span class="cksl-block-card-title">Inquiry Action Banner</span>
+          <span class="cksl-block-card-desc">Full-width collaboration card with centered title and inquiry button.</span>
+        </div>
+        <div class="cksl-block-card" data-block-type="flower_divider">
+          <span class="cksl-block-card-icon">🌸</span>
+          <span class="cksl-block-card-title">Flower Vine Divider</span>
+          <span class="cksl-block-card-desc">Maehwa 5-petal plum blossom and vine section separator.</span>
+        </div>
+        <div class="cksl-block-card" data-block-type="hanok_roof">
+          <span class="cksl-block-card-icon">🏛️</span>
+          <span class="cksl-block-card-title">Hanok Roof Crest</span>
+          <span class="cksl-block-card-desc">Architectural flared Cheoma eaves accent line.</span>
+        </div>
+      </div>
+    </div>
+    <div class="cksl-modal-footer">
+      <button type="button" class="btn btn-secondary cksl-modal-close" style="padding: 6px 18px; font-size: 0.85rem;">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 5: One-Click Publish to GitHub -->
+<div class="cksl-modal-overlay" id="cksl-modal-publish" role="dialog" aria-modal="true" aria-labelledby="publish-modal-title">
+  <div class="cksl-modal-card">
+    <div class="cksl-modal-header">
+      <h3 class="cksl-modal-title" id="publish-modal-title">🚀 Save &amp; Publish to Live Website</h3>
+      <button type="button" class="cksl-modal-close" aria-label="Close modal">✕</button>
+    </div>
+    <div class="cksl-modal-body">
+      <!-- Live feedback banner -->
+      <div id="cksl-publish-status" class="cksl-status-banner"></div>
+
+      <div class="cksl-input-group">
+        <label for="cksl-gh-token">GitHub Personal Access Token</label>
+        <div style="display: flex; gap: 8px;">
+          <input type="password" id="cksl-gh-token" class="cksl-input-text" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+          <button type="button" id="cksl-btn-save-token" class="btn btn-secondary" style="padding: 8px 14px; font-size: 0.82rem; white-space: nowrap;">Remember</button>
+        </div>
+        <div class="cksl-token-hint">
+          Saved privately in your browser. Required once to allow saving directly to repository <code>profkwanminlee/cksl</code>.
+          <br>
+          <a href="https://github.com/settings/tokens/new?scopes=repo&description=CKSL+Visual+Editor" target="_blank" rel="noopener">Generate a token with <code>repo</code> permissions on GitHub →</a>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px; padding: 14px; background: #FAF8F5; border: 1px solid #E2DDD6; border-radius: 8px; font-size: 0.82rem; color: #474D54; line-height: 1.45;">
+        <strong>How publishing works:</strong>
+        <ul style="margin: 6px 0 0 16px; padding: 0;">
+          <li>Your visual edits (colors, text, ornaments, sections) are committed directly to the GitHub repository.</li>
+          <li>GitHub Pages automatically detects the commit and deploys the updated live site in approximately 30 seconds.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cksl-modal-footer">
+      <button type="button" class="btn btn-secondary" id="cksl-btn-download" style="padding: 8px 16px; font-size: 0.85rem;" title="Download theme.yml backup">⬇️ Download Backup</button>
+      <button type="button" class="btn btn-primary" id="cksl-btn-do-publish" style="padding: 8px 20px; font-size: 0.85rem;">Publish to Live Site 🚀</button>
+    </div>
+  </div>
+</div>
+
+<script src="{{ '/assets/js/visual-editor.js' | relative_url }}" defer></script>

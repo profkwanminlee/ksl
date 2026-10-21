@@ -1,0 +1,660 @@
+/* ==============================================================================
+   Contemporary Korean Studies Lab (CKSL) — On-Page Visual Editor Styles
+   Zero-code, 100% visual on-page WYSIWYG editor for non-technical editors
+   ============================================================================== */
+
+/* Fixed Top Visual Editor Bar */
+#cksl-editor-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999;
+  height: 56px;
+  background: rgba(20, 21, 23, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--color-red, #A62B2B);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: #FAF8F5;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 14px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#cksl-editor-bar.hidden {
+  transform: translateY(-100%);
+}
+
+/* Offset body when editor bar is visible */
+body.cksl-editor-active {
+  padding-top: 56px !important;
+}
+
+/* Left Brand Badge */
+.cksl-bar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cksl-bar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  color: #FAF8F5;
+}
+
+.cksl-bar-logo .badge-dot {
+  width: 9px;
+  height: 9px;
+  background: var(--color-yellow-gold, #E5B842);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(229, 184, 66, 0.7);
+}
+
+.cksl-bar-page-name {
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #E2DDD6;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Center Controls */
+.cksl-bar-center {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cksl-tool-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #FAF8F5;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.cksl-tool-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.cksl-tool-btn.active {
+  background: var(--color-red, #A62B2B);
+  border-color: var(--color-red, #A62B2B);
+  color: #FFFFFF;
+}
+
+/* Right Actions */
+.cksl-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cksl-btn-publish {
+  background: linear-gradient(135deg, var(--color-red, #A62B2B), #8E2222);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 7px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  box-shadow: 0 2px 8px rgba(166, 43, 43, 0.4);
+  font-family: inherit;
+  font-size: 0.84rem;
+  transition: all 0.2s ease;
+}
+
+.cksl-btn-publish:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(166, 43, 43, 0.6);
+}
+
+.cksl-btn-close {
+  background: transparent;
+  border: none;
+  color: #A0A5AA;
+  cursor: pointer;
+  padding: 6px;
+  font-size: 1.1rem;
+  line-height: 1;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+
+.cksl-btn-close:hover {
+  color: #FFFFFF;
+}
+
+/* Discreet Floating "Edit Mode" launcher at bottom corner */
+#cksl-editor-launcher {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99999;
+  background: #141517;
+  color: #FFFFFF;
+  border: 1px solid var(--color-red, #A62B2B);
+  border-radius: 28px;
+  padding: 10px 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#cksl-editor-launcher:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 24px rgba(166, 43, 43, 0.4);
+  background: var(--color-red, #A62B2B);
+}
+
+#cksl-editor-launcher .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-yellow-gold, #E5B842);
+}
+
+/* Visual Outline on Editable Elements */
+body.cksl-editor-active [data-cksl-editable] {
+  outline: 1.5px dashed transparent;
+  outline-offset: 4px;
+  border-radius: 4px;
+  transition: outline-color 0.2s ease, background-color 0.2s ease;
+  cursor: text;
+}
+
+body.cksl-editor-active [data-cksl-editable]:hover {
+  outline-color: var(--color-red, #A62B2B);
+  background-color: rgba(166, 43, 43, 0.04);
+}
+
+body.cksl-editor-active [data-cksl-editable]:focus {
+  outline: 2px solid var(--color-red, #A62B2B);
+  background-color: rgba(166, 43, 43, 0.06);
+}
+
+/* Block Action Controls Overlay */
+.cksl-block-wrapper {
+  position: relative;
+  transition: box-shadow 0.2s ease;
+}
+
+body.cksl-editor-active .cksl-block-wrapper:hover {
+  box-shadow: 0 0 0 2px var(--color-red, #A62B2B);
+  border-radius: 8px;
+}
+
+.cksl-block-controls {
+  position: absolute;
+  top: -14px;
+  right: 14px;
+  z-index: 1000;
+  display: none;
+  background: #141517;
+  border: 1px solid var(--color-red, #A62B2B);
+  border-radius: 20px;
+  padding: 2px 6px;
+  gap: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.cksl-editor-active .cksl-block-wrapper:hover .cksl-block-controls {
+  display: flex;
+  align-items: center;
+}
+
+.cksl-block-btn {
+  background: transparent;
+  border: none;
+  color: #E2DDD6;
+  font-size: 0.76rem;
+  padding: 4px 7px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.cksl-block-btn:hover {
+  background: var(--color-red, #A62B2B);
+  color: #FFFFFF;
+}
+
+/* Insert Block Divider Bar between sections */
+.cksl-insert-divider {
+  display: none;
+  position: relative;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+body.cksl-editor-active .cksl-insert-divider {
+  display: flex;
+}
+
+.cksl-insert-divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: dashed 1px var(--color-border, #E2DDD6);
+  opacity: 0.5;
+}
+
+.cksl-insert-btn {
+  position: relative;
+  z-index: 2;
+  background: #FAF8F5;
+  border: 1px solid var(--color-red, #A62B2B);
+  color: var(--color-red, #A62B2B);
+  border-radius: 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.cksl-insert-btn:hover {
+  background: var(--color-red, #A62B2B);
+  color: #FFFFFF;
+  transform: scale(1.04);
+}
+
+/* Modal Panels (Theme, Typography, Ornaments, Add Block, GitHub Publish) */
+.cksl-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000000;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.cksl-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cksl-modal-card {
+  background: #FFFFFF;
+  color: #141517;
+  width: 100%;
+  max-width: 580px;
+  border-radius: 12px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.3);
+  border-top: 4px solid var(--color-red, #A62B2B);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  animation: ckslModalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes ckslModalPop {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.cksl-modal-header {
+  padding: 18px 24px;
+  border-bottom: 1px solid #E2DDD6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cksl-modal-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #141517;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cksl-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  color: #6B7280;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.cksl-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.cksl-modal-footer {
+  padding: 16px 24px;
+  background: #F9FAFB;
+  border-top: 1px solid #E2DDD6;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Palette Swatch Cards */
+.cksl-palette-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.cksl-palette-card {
+  border: 2px solid #E2DDD6;
+  border-radius: 10px;
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #FAF8F5;
+}
+
+.cksl-palette-card:hover {
+  border-color: var(--color-red, #A62B2B);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.cksl-palette-card.selected {
+  border-color: var(--color-red, #A62B2B);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 1px var(--color-red, #A62B2B), 0 6px 18px rgba(166, 43, 43, 0.15);
+}
+
+.cksl-palette-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 4px;
+  color: #141517;
+}
+
+.cksl-palette-desc {
+  font-size: 0.78rem;
+  color: #6B7280;
+  margin-bottom: 10px;
+}
+
+.cksl-swatch-strip {
+  display: flex;
+  height: 22px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cksl-swatch-strip span {
+  flex: 1;
+}
+
+/* Typography Size Selector */
+.cksl-type-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.cksl-type-btn {
+  border: 2px solid #E2DDD6;
+  background: #FFFFFF;
+  padding: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.cksl-type-btn:hover {
+  border-color: var(--color-red, #A62B2B);
+}
+
+.cksl-type-btn.selected {
+  border-color: var(--color-red, #A62B2B);
+  background: rgba(166, 43, 43, 0.04);
+}
+
+.cksl-type-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.cksl-type-sub {
+  font-size: 0.8rem;
+  color: #6B7280;
+}
+
+/* Ornaments Toggle List */
+.cksl-ornament-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cksl-ornament-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  border: 1px solid #E2DDD6;
+  border-radius: 8px;
+  background: #FAF8F5;
+}
+
+.cksl-ornament-info h4 {
+  margin: 0 0 2px 0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #141517;
+}
+
+.cksl-ornament-info p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #6B7280;
+}
+
+/* Switch Toggle */
+.cksl-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.cksl-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cksl-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #D1D5DB;
+  transition: .3s;
+  border-radius: 24px;
+}
+
+.cksl-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+.cksl-switch input:checked + .cksl-slider {
+  background-color: var(--color-red, #A62B2B);
+}
+
+.cksl-switch input:checked + .cksl-slider:before {
+  transform: translateX(20px);
+}
+
+/* Add Block Cards */
+.cksl-blocks-catalog {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.cksl-block-card {
+  border: 1.5px solid #E2DDD6;
+  border-radius: 10px;
+  padding: 14px;
+  cursor: pointer;
+  background: #FFFFFF;
+  text-align: left;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cksl-block-card:hover {
+  border-color: var(--color-red, #A62B2B);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.cksl-block-card-icon {
+  font-size: 1.4rem;
+}
+
+.cksl-block-card-title {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #141517;
+}
+
+.cksl-block-card-desc {
+  font-size: 0.78rem;
+  color: #6B7280;
+  line-height: 1.35;
+}
+
+/* GitHub Publish Modal */
+.cksl-input-group {
+  margin-bottom: 16px;
+}
+
+.cksl-input-group label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.86rem;
+  margin-bottom: 6px;
+  color: #141517;
+}
+
+.cksl-input-text {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #D1D5DB;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.cksl-input-text:focus {
+  outline: none;
+  border-color: var(--color-red, #A62B2B);
+  box-shadow: 0 0 0 3px rgba(166, 43, 43, 0.15);
+}
+
+.cksl-token-hint {
+  font-size: 0.78rem;
+  color: #6B7280;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.cksl-token-hint a {
+  color: var(--color-red, #A62B2B);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Status Banner in Publish Modal */
+.cksl-status-banner {
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.cksl-status-banner.success {
+  display: block;
+  background: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+}
+
+.cksl-status-banner.error {
+  display: block;
+  background: #FEF2F2;
+  color: #991B1B;
+  border: 1px solid #FECACA;
+}
+
+.cksl-status-banner.loading {
+  display: block;
+  background: #EFF6FF;
+  color: #1E40AF;
+  border: 1px solid #BFDBFE;
+}
