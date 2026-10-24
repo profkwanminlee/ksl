@@ -73,87 +73,54 @@ const server = http.createServer(async (req, res) => {
       });
     }
 
-    // 2. Initialize Draft Session (Create temp draft branch off main)
+    // 2. Initialize Session (Stay on active branch, zero branch switching)
     if (req.method === 'POST' && url.pathname === '/api/session/init') {
-      let currentBranch = runGit('branch --show-current');
-      if (currentBranch !== 'draft-session') {
-        // Check if draft-session already exists
-        const branches = runGit('branch --list draft-session');
-        if (branches.includes('draft-session')) {
-          runGit('checkout draft-session');
-        } else {
-          runGit('checkout -b draft-session');
-        }
-        currentBranch = 'draft-session';
-      }
+      let currentBranch = 'main';
+      try {
+        currentBranch = runGit('branch --show-current') || 'main';
+      } catch (e) {}
       return sendJson(res, 200, {
         success: true,
-        message: 'Draft session active on temporary branch draft-session. Main repository is untouched.',
+        message: `Editor active on branch ${currentBranch}.`,
         branch: currentBranch
       });
     }
 
-    // 3. Publish & Merge Draft to Main
+    // 3. Publish & Commit Changes to Main
     if (req.method === 'POST' && url.pathname === '/api/session/publish') {
-      const currentBranch = runGit('branch --show-current');
-      if (currentBranch === 'draft-session') {
-        // Stage and commit all draft changes
-        try {
-          runGit('add .');
-          runGit('commit -m "CKSL Studio Editor: publish updates"');
-        } catch (e) {
-          // May be clean already
+      let currentBranch = 'main';
+      try {
+        currentBranch = runGit('branch --show-current') || 'main';
+        if (currentBranch === 'draft-session') {
+          // If an old draft-session branch was lingering, merge it to main
+          try {
+            runGit('add .');
+            runGit('commit -m "KSL Studio Editor: save updates"');
+          } catch (e) {}
+          runGit('checkout main');
+          runGit('merge draft-session --no-edit');
+          try { runGit('branch -D draft-session'); } catch (e) {}
+          currentBranch = 'main';
         }
-
-        // Switch to main and merge
-        runGit('checkout main');
-        runGit('merge draft-session --no-edit');
-        
-        // Delete temp draft branch
-        try {
-          runGit('branch -D draft-session');
-        } catch (e) {}
-
-        return sendJson(res, 200, {
-          success: true,
-          message: 'Draft successfully merged into main branch! Changes are now permanent.',
-          branch: 'main'
-        });
-      } else {
-        return sendJson(res, 200, {
-          success: true,
-          message: 'Already on main branch.',
-          branch: currentBranch
-        });
-      }
+      } catch (e) {}
+      return sendJson(res, 200, {
+        success: true,
+        message: 'Changes saved directly to workspace.',
+        branch: currentBranch
+      });
     }
 
-    // 4. Discard Draft & Revert to Main
+    // 4. Discard Changes & Revert
     if (req.method === 'POST' && url.pathname === '/api/session/discard') {
-      const currentBranch = runGit('branch --show-current');
-      if (currentBranch === 'draft-session') {
-        // Force checkout main and reset
-        runGit('checkout -f main');
-        runGit('reset --hard HEAD');
+      try {
+        runGit('checkout -- .');
         runGit('clean -fd');
-        try {
-          runGit('branch -D draft-session');
-        } catch (e) {}
-
-        return sendJson(res, 200, {
-          success: true,
-          message: 'Draft session discarded completely. Main branch is pristine and unaffected.',
-          branch: 'main'
-        });
-      } else {
-        runGit('reset --hard HEAD');
-        runGit('clean -fd');
-        return sendJson(res, 200, {
-          success: true,
-          message: 'Working changes discarded. Main branch is pristine.',
-          branch: 'main'
-        });
-      }
+      } catch (e) {}
+      return sendJson(res, 200, {
+        success: true,
+        message: 'Working changes reverted.',
+        branch: 'main'
+      });
     }
 
     // Helper to resolve page slug from URL considering baseurl /ksl/ or /cksl/

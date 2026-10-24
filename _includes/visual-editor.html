@@ -22,10 +22,9 @@
   <!-- Ribbon Bar (Logo, Tabs, Draft Status & Window Controls) -->
   <div class="cksl-ribbon-top-bar">
     <div class="cksl-ribbon-brand">
-      <span class="ribbon-brand-mark">CKSL</span>
+      <span class="ribbon-brand-mark">KSL</span>
       <span class="ribbon-brand-title">Studio</span>
       <span class="ribbon-page-badge" id="cksl-current-page-tag">{{ page.title | default: "Home" }}</span>
-      <span class="ribbon-draft-dot" id="cksl-draft-session-badge" title="Draft Session Active (Main is safe)"></span>
     </div>
 
     <!-- Quick Device Canvas Toggle in Top Bar (Canva/Figma/Webflow style) -->
@@ -60,27 +59,22 @@
       <button type="button" class="cksl-ribbon-tab" data-tab="view">Device Layout</button>
     </nav>
 
-    <!-- Ribbon Right: Save, Publish, Discard, Minimize & Exit -->
+    <!-- Ribbon Right: Save, Publish, Minimize & Exit -->
     <div class="cksl-ribbon-actions">
-      <!-- Save to Draft Session Button -->
-      <button type="button" class="cksl-ribbon-btn-save" id="cksl-btn-save-draft" title="Save current changes to draft session file">
+      <!-- Save Button -->
+      <button type="button" class="cksl-ribbon-btn-save" id="cksl-btn-save-draft" title="Save changes directly to page markdown file">
         <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13">
           <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293z"/>
         </svg>
-        <span>Save Changes</span>
+        <span>Save</span>
       </button>
 
-      <!-- Merge & Publish to Main Button -->
-      <button type="button" class="cksl-ribbon-btn-publish" id="cksl-btn-publish-draft" title="Merge draft session into main git branch">
+      <!-- Publish to GitHub Button -->
+      <button type="button" class="cksl-ribbon-btn-publish" id="cksl-btn-publish-draft" title="Publish changes to GitHub">
         <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13">
           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
         </svg>
-        <span>Publish to Main</span>
-      </button>
-
-      <!-- Discard Draft Button -->
-      <button type="button" class="cksl-ribbon-btn-discard" id="cksl-btn-discard-draft" title="Discard draft session and restore clean main branch">
-        <span>Discard</span>
+        <span>Publish</span>
       </button>
 
       <button type="button" class="cksl-ribbon-icon-btn" id="cksl-btn-toggle-ribbon" title="Minimize / Expand Ribbon">

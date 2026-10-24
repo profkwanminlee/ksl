@@ -448,28 +448,14 @@
       const res = await fetch(`${API_BASE}/api/session/init`, { method: 'POST' });
       if (res.ok) {
         isBridgeConnected = true;
-        const data = await res.json();
-        updateDraftBadge(data.branch, true);
       }
     } catch (e) {
-      // Offline / GitHub Pages fallback
-      updateDraftBadge('draft-session', true);
+      isBridgeConnected = false;
     }
   }
 
   function updateDraftBadge(branch, isDraft) {
-    const badge = document.getElementById('cksl-draft-session-badge');
-    if (badge) {
-      badge.className = 'ribbon-draft-dot';
-      badge.innerHTML = '';
-      if (isDraft) {
-        badge.style.background = '#10B981';
-        badge.title = `Draft Session (${branch}) — Main is safe`;
-      } else {
-        badge.style.background = '#9CA3AF';
-        badge.title = `Branch: ${branch}`;
-      }
-    }
+    // Zero-overhead: no branch badge needed on ribbon
   }
 
   // Save current page changes into draft-session markdown file via background service
