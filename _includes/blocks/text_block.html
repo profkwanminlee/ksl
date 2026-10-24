@@ -1,9 +1,8 @@
 {% assign b = include.block %}
 <section class="block-section block-text{% if b.custom_class %} {{ b.custom_class }}{% endif %}" style="margin: 28px 0;">
-  {% if b.kicker or b.hangul %}
+  {% if b.kicker %}
   <div class="kicker-group">
-    {% if b.kicker %}<span class="section-kicker">{{ b.kicker }}</span>{% endif %}
-    {% if b.hangul %}<span class="kicker-hangul">{{ b.hangul }}</span>{% endif %}
+    <span class="section-kicker">{{ b.kicker }}</span>
   </div>
   {% endif %}
 

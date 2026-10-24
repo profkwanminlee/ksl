@@ -1,5 +1,5 @@
 # ==============================================================================
-# Sveltia CMS Configuration for Contemporary Korean Studies Lab (CKSL)
+# Sveltia CMS Configuration for Korean Studies Lab (KSL)
 # GitHub-backed, browser-based CMS with modular page builder and theme controls
 # ==============================================================================
 
@@ -126,7 +126,6 @@ collections:
             widget: "object"
             fields:
               - { label: "Kicker (English)", name: "kicker", widget: "string", required: false, default: "Collaboration & Exchange" }
-              - { label: "Kicker (Hangul)", name: "hangul", widget: "string", required: false, default: "협력 안내" }
               - { label: "Banner Title", name: "title", widget: "string" }
               - { label: "Description", name: "desc", widget: "text" }
               - { label: "Button Label", name: "button_label", widget: "string", default: "Submit an Inquiry →" }

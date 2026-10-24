@@ -2,10 +2,9 @@
 {% assign cols = b.columns | default: 3 %}
 
 <section class="block-section block-card-grid" style="margin: 32px 0;">
-  {% if b.kicker or b.hangul %}
+  {% if b.kicker %}
   <div class="kicker-group">
-    {% if b.kicker %}<span class="section-kicker">{{ b.kicker }}</span>{% endif %}
-    {% if b.hangul %}<span class="kicker-hangul">{{ b.hangul }}</span>{% endif %}
+    <span class="section-kicker">{{ b.kicker }}</span>
   </div>
   {% endif %}
 

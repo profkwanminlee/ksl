@@ -4,12 +4,11 @@ title: "About the Lab"
 permalink: /about/
 hero_tag: "Institutional Profile"
 hero_subtitle: "An interdisciplinary research initiative based at Nanyang Technological University, Singapore."
-description: "Overview, mission, and research focus of the Contemporary Korean Studies Lab (CKSL) at Nanyang Technological University, Singapore."
+description: "Overview, mission, and research focus of the Korean Studies Lab (KSL) at Nanyang Technological University, Singapore."
 ---
 
 <div class="kicker-group">
   <span class="section-kicker">Academic Initiative</span>
-  <span class="kicker-hangul">연구소 소개</span>
 </div>
 
 ## Institutional Overview
@@ -17,7 +16,7 @@ description: "Overview, mission, and research focus of the Contemporary Korean S
 
 <div class="overview-lead-box">
   <p class="overview-lead-text">
-    <strong>Contemporary Korean Studies Lab (CKSL)</strong> is an interdisciplinary research initiative based at Nanyang Technological University, Singapore. As one of the first initiatives of its kind in Southeast Asia, the Lab supports empirical research, academic publications, and public programs on contemporary Korea and its growing connections with Singapore and the ASEAN region.
+    <strong>Korean Studies Lab (KSL)</strong> is an interdisciplinary research initiative based at Nanyang Technological University, Singapore. As one of the first initiatives of its kind in Southeast Asia, the Lab supports empirical research, academic publications, and public programs on contemporary Korea and its growing connections with Singapore and the ASEAN region.
   </p>
 </div>
 
@@ -34,13 +33,12 @@ Through symposia, research colloquia, visiting fellowships, and joint publicatio
 
 <div class="kicker-group">
   <span class="section-kicker">Guiding Mandates</span>
-  <span class="kicker-hangul">핵심 사명</span>
 </div>
 
 ## Mission & Objectives
 {% include korean-title-underline.html %}
 
-The Contemporary Korean Studies Lab is guided by three core institutional pillars:
+The Korean Studies Lab is guided by three core institutional pillars:
 
 <div class="mission-grid" style="margin: 24px 0 32px;">
   <div class="mission-card">
@@ -72,7 +70,6 @@ The Contemporary Korean Studies Lab is guided by three core institutional pillar
 
 <div class="kicker-group">
   <span class="section-kicker">Scholarly Inquiry</span>
-  <span class="kicker-hangul">연구 분야</span>
 </div>
 
 ## Three Core Research Focus Areas
@@ -93,7 +90,6 @@ Historically and in the contemporary era, the movement of people, ideas, and ins
 
 <div class="kicker-group">
   <span class="section-kicker">Academic Home</span>
-  <span class="kicker-hangul">기관 배경</span>
 </div>
 
 ## Institutional Context & Leadership
@@ -102,7 +98,7 @@ Historically and in the contemporary era, the movement of people, ideas, and ins
 <div class="institutional-context-card">
   <div class="context-card-content">
     <p>
-      The Contemporary Korean Studies Lab is housed within the <strong>Wee Kim Wee School of Communication and Information (WKWSCI)</strong> at <strong>Nanyang Technological University, Singapore (NTU Singapore)</strong>.
+      The Korean Studies Lab is housed within the <strong>Wee Kim Wee School of Communication and Information (WKWSCI)</strong> at <strong>Nanyang Technological University, Singapore (NTU Singapore)</strong>.
     </p>
     <p>
       Established in connection with the <strong>Korea Foundation Endowed Chair in Contemporary Korean Society and New Media</strong>, the Lab operates as an open, collaborative academic space linking researchers across NTU’s College of Humanities, Arts, and Social Sciences (CoHASS), the College of Computing and Data Science, and international partner universities across South Korea, Southeast Asia, and North America.
@@ -113,5 +109,4 @@ Historically and in the contemporary era, the movement of people, ideas, and ins
       </a>
     </div>
   </div>
-  {% include korean-pavilion.html %}
 </div>

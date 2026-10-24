@@ -1,25 +1,22 @@
 # ==============================================================================
-# Contemporary Korean Studies Lab (CKSL) — Lab Directorate & Leadership Data
+# Korean Studies Lab (KSL) — Lab Directorate & Leadership Data
 # Editable via Sveltia CMS or directly in this file
 # ==============================================================================
 
 name: "Prof. Kwan Min Lee"
-korean_name: "이관민 (李寬敏)"
-korean_hangul: "이관민"
-role: "Director, Contemporary Korean Studies Lab"
+role: "Director, Korean Studies Lab"
 endowed_title: "Korea Foundation Endowed Chair Professor in Contemporary Korean Society & New Media"
 primary_affiliation: "Wee Kim Wee School of Communication and Information (WKWSCI), NTU Singapore"
 secondary_affiliation: "Joint Professor, College of Computing and Data Science & Nanyang Business School"
 
 portrait: "/images/profkwanportrait.jpeg"
-email: "kwanminlee@ntu.edu.sg"
 general_enquiries_email: "ksl-enquiries@ntu.edu.sg"
 telephone: "(+65) 6790 4602"
 office_location: "WKWSCI Academic Complex, NTU Main Campus"
 mailing_address: "Wee Kim Wee School of Communication and Information, Nanyang Technological University, 31 Nanyang Link, Singapore 637718"
 
 bio_paragraphs:
-  - "<strong>Kwan Min Lee (Ph.D., Stanford University)</strong> is the inaugural Korea Foundation Endowed Chair Professor at Nanyang Technological University, Singapore. An elected Fellow of the International Communication Association (ICA), Prof. Lee directs the Contemporary Korean Studies Lab (CKSL), the Human-AI Interaction Lab (HAIL), and the UX Lab at NTU."
+  - "<strong>Kwan Min Lee (Ph.D., Stanford University)</strong> is the inaugural Korea Foundation Endowed Chair Professor at Nanyang Technological University, Singapore. An elected Fellow of the International Communication Association (ICA), Prof. Lee directs the Korean Studies Lab (KSL), the Human-AI Interaction Lab (HAIL), and the UX Lab at NTU."
   - "Previously, Lee served as Vice President and Director of User Experience (UX) at Samsung Electronics, where he founded Samsung’s Creative Lab (C-Lab) and led UX innovation for the Visual Display Division. Prior to Samsung and NTU, he was a tenured professor at the Annenberg School for Communication at the University of Southern California (USC) and founding director of the Interaction Science Research Center at Sungkyunkwan University (SKKU). His research focuses on the intersection of new media technologies, human-technology interaction, Korean digital innovation, and contemporary cultural diffusion."
 
 links:

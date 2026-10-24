@@ -4,18 +4,17 @@ title: "Research Themes & Projects"
 permalink: /research/
 hero_tag: "Inquiry & Initiatives"
 hero_subtitle: "Three core themes framing the study of contemporary Korea and Southeast Asia."
-description: "Research themes, methodologies, and active scholarly initiatives of the Contemporary Korean Studies Lab at NTU Singapore."
+description: "Research themes, methodologies, and active scholarly initiatives of the Korean Studies Lab at NTU Singapore."
 ---
 
 <div class="kicker-group">
   <span class="section-kicker">Inquiry Framework</span>
-  <span class="kicker-hangul">연구 체계</span>
 </div>
 
 ## Core Research Themes
 {% include korean-title-underline.html %}
 
-The Contemporary Korean Studies Lab organizes its scholarly inquiry around three core interdisciplinary themes. Rather than treating Korea in isolation, our research investigates the dynamic interactions, technological systems, and transnational flows connecting Korea with Singapore and Southeast Asia.
+The Korean Studies Lab organizes its scholarly inquiry around three core interdisciplinary themes. Rather than treating Korea in isolation, our research investigates the dynamic interactions, technological systems, and transnational flows connecting Korea with Singapore and Southeast Asia.
 
 <div class="themes-detailed-list" style="margin-top: 28px;">
   <!-- Theme 1 -->
@@ -86,7 +85,6 @@ The Contemporary Korean Studies Lab organizes its scholarly inquiry around three
 
 <div class="kicker-group">
   <span class="section-kicker">Active Initiatives</span>
-  <span class="kicker-hangul">연구 프로젝트</span>
 </div>
 
 ## Research Projects &amp; Grants
@@ -125,7 +123,7 @@ The Lab conducts research supported by university competitive funds, internation
       <span class="project-dates">2026 – Ongoing</span>
     </div>
     <h3 class="project-title">ASEAN-Korea Transnational Knowledge &amp; Policy Network</h3>
-    <p class="project-pi"><strong>Coordinating Lead:</strong> Contemporary Korean Studies Lab Directorate</p>
+    <p class="project-pi"><strong>Coordinating Lead:</strong> Korean Studies Lab Directorate</p>
     <p class="project-desc">
       A sustained academic initiative co-convening annual working colloquia, policy research briefings, and visiting scholar exchanges connecting leading Korean studies programs and social science faculties across Southeast Asia.
     </p>
@@ -135,7 +133,6 @@ The Lab conducts research supported by university competitive funds, internation
 <div class="cta-banner-box" style="margin-top: 36px;">
   <div class="kicker-group">
     <span class="cta-kicker">Research Collaboration</span>
-    <span class="kicker-hangul">공동 연구 제안</span>
   </div>
   <h3 class="cta-title">Proposing Collaborative Research</h3>
   <p class="cta-desc">

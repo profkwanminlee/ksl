@@ -1,9 +1,8 @@
 {% assign b = include.block %}
 <div class="cta-banner-box" style="margin: 36px 0;">
-  {% if b.kicker or b.hangul %}
+  {% if b.kicker %}
   <div class="kicker-group">
-    {% if b.kicker %}<span class="cta-kicker">{{ b.kicker }}</span>{% endif %}
-    {% if b.hangul %}<span class="kicker-hangul">{{ b.hangul }}</span>{% endif %}
+    <span class="cta-kicker">{{ b.kicker }}</span>
   </div>
   {% endif %}
 

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Contemporary Korean Studies Lab (CKSL) — Main Design System
+   Korean Studies Lab (KSL) — Main Design System
    Nanyang Technological University, Singapore
    Aesthetic: Plus Jakarta Sans for ALL text, zero gloss/sheen, NTU brand integration,
    unboxed hamburger menu, stable hero crops, and authentic Korean heritage details.
@@ -550,17 +550,18 @@ a:hover {
   margin-bottom: 14px;
 }
 
-/* Hanok Roof Crest & Maehwa Blossom Ornament Under Headline */
+/* Clean Normal Underline Under Headline */
 .korean-roof-accent {
-  margin: 10px 0 20px 0;
+  margin: 12px 0 20px 0;
   display: flex;
   align-items: center;
 }
-.hero-accent-svg {
+.hero-normal-underline {
   display: block;
-  max-width: 220px;
-  height: auto;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+  width: 54px;
+  height: 3px;
+  background-color: var(--color-yellow-gold);
+  border-radius: 2px;
 }
 
 .hero-subtitle {
@@ -684,43 +685,32 @@ a:hover {
 }
 
 .korean-title-underline {
-  margin: 6px 0 18px 0;
+  margin: 8px 0 18px 0;
   display: flex;
   align-items: center;
 }
 .section-header-centered .korean-title-underline {
   justify-content: center;
 }
-.title-underline-svg {
+.title-underline-normal {
   display: block;
-  max-width: 140px;
-  height: auto;
+  width: 48px;
+  height: 2.5px;
+  background-color: var(--color-red);
+  border-radius: 1px;
 }
 
-/* Plum Blossom Maehwa & Flower Vein Divider */
+/* Normal Content Separator Line Divider */
 .korean-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 48px auto;
-  max-width: 520px;
-  gap: 16px;
+  display: block;
+  margin: 44px auto;
+  max-width: 100%;
 }
-.divider-line {
-  flex-grow: 1;
+.section-divider-line {
+  border: 0;
   height: 1px;
   background-color: var(--color-border);
-}
-.divider-emblem {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.maehwa-svg {
-  display: block;
-  max-width: 200px;
-  height: auto;
+  margin: 0;
 }
 
 /* --------------------------------------------------------------------------

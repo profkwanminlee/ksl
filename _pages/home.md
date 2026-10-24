@@ -3,11 +3,11 @@ layout: home
 title: "Home"
 permalink: /
 hero_tag: "Nanyang Technological University, Singapore"
-hero_title: "Contemporary Korean<br>Studies Lab"
+hero_title: "Korean Studies Lab"
 hero_subtitle: "An interdisciplinary research initiative advancing scholarship, dialogue, and exchange on contemporary Korea in Singapore and Southeast Asia."
 hero_image: "/images/korea1.jpg"
 hero_crop: "center 32%"
-description: "Contemporary Korean Studies Lab (CKSL) is an interdisciplinary research initiative based at Nanyang Technological University, Singapore, supporting research, publications, and public programs on contemporary Korea."
+description: "Korean Studies Lab (KSL) is an interdisciplinary research initiative based at Nanyang Technological University, Singapore, supporting research, publications, and public programs on contemporary Korea."
 ---
 
 <!-- Editorial Overview Section -->
@@ -19,15 +19,13 @@ description: "Contemporary Korean Studies Lab (CKSL) is an interdisciplinary res
           <div class="overview-header-text">
             <div class="kicker-group">
               <span class="section-kicker" data-cksl-editable="true">Academic Initiative</span>
-              <span class="kicker-hangul" data-cksl-editable="true">현대한국학연구소</span>
             </div>
             <h2 class="section-title" data-cksl-editable="true">A Hub for Contemporary Korean Studies in Southeast Asia</h2>
             {% include korean-title-underline.html %}
           </div>
-          {% include korean-pavilion.html %}
         </div>
         <p class="overview-lead-text" data-cksl-editable="true">
-          Contemporary Korean Studies Lab is an interdisciplinary research initiative based at Nanyang Technological University, Singapore. As one of the first initiatives of its kind in Southeast Asia, the Lab supports research, publications, and public programs on contemporary Korea.
+          Korean Studies Lab is an interdisciplinary research initiative based at Nanyang Technological University, Singapore. As one of the first initiatives of its kind in Southeast Asia, the Lab supports research, publications, and public programs on contemporary Korea.
         </p>
       </div>
 
@@ -44,7 +42,7 @@ description: "Contemporary Korean Studies Lab (CKSL) is an interdisciplinary res
       </div>
     </div>
 
-    <!-- Korean Divider -->
+    <!-- Divider -->
     {% include korean-divider.html %}
 
     <!-- Mission Pillars -->
@@ -88,7 +86,6 @@ description: "Contemporary Korean Studies Lab (CKSL) is an interdisciplinary res
       <div>
         <div class="kicker-group">
           <span class="section-kicker" data-cksl-editable="true">Inquiry &amp; Scholarship</span>
-          <span class="kicker-hangul" data-cksl-editable="true">연구 분야</span>
         </div>
         <h2 class="section-title" data-cksl-editable="true">Three Core Research Themes</h2>
         {% include korean-title-underline.html %}
@@ -126,13 +123,12 @@ description: "Contemporary Korean Studies Lab (CKSL) is an interdisciplinary res
   </div>
 </section>
 
-<!-- Editorial Pathways: Publications, Events, News & People -->
+<!-- Editorial Pathways: Publications, News & Events, & People -->
 <section class="section section-pathways" data-cksl-block="pathways">
   <div class="container">
     <div class="section-header-centered">
       <div class="kicker-group">
         <span class="section-kicker" data-cksl-editable="true">Lab Pathways</span>
-        <span class="kicker-hangul" data-cksl-editable="true">학술 및 커뮤니티</span>
       </div>
       <h2 class="section-title" data-cksl-editable="true">Scholarship, Programs &amp; Community</h2>
       {% include korean-title-underline.html %}
@@ -157,39 +153,39 @@ description: "Contemporary Korean Studies Lab (CKSL) is an interdisciplinary res
         </a>
       </div>
 
-      <!-- Pathway 2: Programs & Events -->
+      <!-- Pathway 2: News & Events -->
       <div class="pathway-card" data-cksl-box="card">
         <div class="pathway-card-header">
           <span class="pathway-tag" data-cksl-editable="true">Engagement</span>
-          <h3 class="pathway-title" data-cksl-editable="true">Programs &amp; Events</h3>
+          <h3 class="pathway-title" data-cksl-editable="true">News &amp; Events</h3>
         </div>
         <p class="pathway-desc" data-cksl-editable="true">
-          Public symposia, research colloquia, and international seminars connecting scholars and cultural practitioners across Asia.
+          Academic symposia, research collaborations, announcements, and international seminars connecting scholars across Asia.
         </p>
         <div class="pathway-preview-item">
-          <span class="pathway-preview-meta" data-cksl-editable="true">18 Nov 2026 &bull; Hybrid Symposium</span>
-          <p class="pathway-preview-title" data-cksl-editable="true">Korea-Southeast Asia Transnational Connectivity: Media &amp; Society</p>
+          <span class="pathway-preview-meta" data-cksl-editable="true">Jan 2027 &bull; Upcoming Symposium</span>
+          <p class="pathway-preview-title" data-cksl-editable="true">Korean Studies and Digital Regionalism</p>
         </div>
-        <a href="{{ '/programs-events/' | relative_url }}" class="pathway-link" data-cksl-editable="true">
-          Explore Programs &amp; Events &rarr;
+        <a href="{{ '/events/' | relative_url }}" class="pathway-link" data-cksl-editable="true">
+          Explore News &amp; Events &rarr;
         </a>
       </div>
 
-      <!-- Pathway 3: News & Announcements -->
+      <!-- Pathway 3: Research Focus -->
       <div class="pathway-card" data-cksl-box="card">
         <div class="pathway-card-header">
-          <span class="pathway-tag" data-cksl-editable="true">Notices</span>
-          <h3 class="pathway-title" data-cksl-editable="true">News &amp; Opportunities</h3>
+          <span class="pathway-tag" data-cksl-editable="true">Inquiry</span>
+          <h3 class="pathway-title" data-cksl-editable="true">Research Themes</h3>
         </div>
         <p class="pathway-desc" data-cksl-editable="true">
-          Academic opportunities, calls for papers, visiting scholar appointments, and news from KSL research initiatives.
+          Three interdisciplinary research pillars investigating IT innovation, contemporary culture &amp; Hallyu, and regional exchange.
         </p>
         <div class="pathway-preview-item">
-          <span class="pathway-preview-meta" data-cksl-editable="true">Oct 2026 &bull; Visiting Fellowship</span>
-          <p class="pathway-preview-title" data-cksl-editable="true">Inaugural Call for Visiting Research Fellows in Contemporary Korean Studies</p>
+          <span class="pathway-preview-meta" data-cksl-editable="true">Core Focus 01</span>
+          <p class="pathway-preview-title" data-cksl-editable="true">Korea's IT Innovation and Digital Society</p>
         </div>
-        <a href="{{ '/news/' | relative_url }}" class="pathway-link" data-cksl-editable="true">
-          Read News &rarr;
+        <a href="{{ '/research/' | relative_url }}" class="pathway-link" data-cksl-editable="true">
+          Explore Research &rarr;
         </a>
       </div>
 
@@ -207,7 +203,7 @@ description: "Contemporary Korean Studies Lab (CKSL) is an interdisciplinary res
           </div>
         </div>
         <p class="pathway-desc" data-cksl-editable="true">
-          Directed by Prof. Kwan Min Lee (Korea Foundation Endowed Chair Professor), supported by affiliate faculty and researchers.
+          Directed by Prof. Kwan Min Lee (Korea Foundation Endowed Chair Professor), supported by affiliate faculty and scholars.
         </p>
         <a href="{{ '/people/' | relative_url }}" class="pathway-link" data-cksl-editable="true">
           Meet the Community &rarr;
@@ -224,11 +220,10 @@ description: "Contemporary Korean Studies Lab (CKSL) is an interdisciplinary res
       <div class="cta-banner-content">
         <div class="kicker-group">
           <span class="cta-kicker" data-cksl-editable="true">Regional Collaboration</span>
-          <span class="kicker-hangul" data-cksl-editable="true">학술 교류 협력</span>
         </div>
         <h2 class="cta-title" data-cksl-editable="true">Fostering Academic, Cultural &amp; Policy Partnerships</h2>
         <p class="cta-desc" data-cksl-editable="true">
-          The Contemporary Korean Studies Lab welcomes proposals for collaborative research projects, visiting scholar visits, joint symposiums, and cultural or policy dialogues from institutions across Singapore, Korea, and Southeast Asia.
+          The Korean Studies Lab welcomes proposals for collaborative research projects, visiting scholar visits, joint symposiums, and cultural or policy dialogues from institutions across Singapore, Korea, and Southeast Asia.
         </p>
         <div class="cta-actions">
           <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary" data-cksl-editable="true">

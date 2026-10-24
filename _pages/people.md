@@ -4,42 +4,36 @@ title: "People & Leadership"
 permalink: /people/
 hero_tag: "Faculty & Community"
 hero_subtitle: "The scholars, fellows, and researchers driving Korean studies at NTU."
-description: "Leadership, affiliate faculty, and researchers of the Contemporary Korean Studies Lab at NTU Singapore."
+description: "Leadership, affiliate faculty, and researchers of the Korean Studies Lab at NTU Singapore."
 ---
 
 <div class="kicker-group">
   <span class="section-kicker">Lab Directorate</span>
-  <span class="kicker-hangul">연구소장 소개</span>
 </div>
 
 ## Leadership
 {% include korean-title-underline.html %}
 
-The Contemporary Korean Studies Lab is directed by the **Korea Foundation Endowed Chair Professor** in Contemporary Korean Society and New Media at Nanyang Technological University, Singapore.
+The Korean Studies Lab is directed by the **Korea Foundation Endowed Chair Professor** in Contemporary Korean Society and New Media at Nanyang Technological University, Singapore.
 
 <div class="people-card director-card" style="margin-top: 24px;">
   <div class="people-card-header">
     <div class="people-photo-frame">
-      <img src="{{ '/images/profkwanportrait.jpeg' | relative_url }}" alt="Prof. Kwan Min Lee, Director of Contemporary Korean Studies Lab" class="people-photo">
+      <img src="{{ '/images/profkwanportrait.jpeg' | relative_url }}" alt="Prof. Kwan Min Lee, Director of Korean Studies Lab" class="people-photo">
     </div>
     <div class="people-info">
       <div class="people-title-row">
         <h3 class="people-name">Prof. Kwan Min Lee</h3>
-        <span class="korean-name">이관민 (李寬敏)</span>
       </div>
-      <p class="people-role">Director, Contemporary Korean Studies Lab</p>
+      <p class="people-role">Director, Korean Studies Lab</p>
       <p class="people-title">Korea Foundation Endowed Chair Professor in Contemporary Korean Society &amp; New Media</p>
       <p class="people-affiliation">Wee Kim Wee School of Communication and Information (WKWSCI), NTU Singapore</p>
       <p class="people-subaffiliation">Joint Professor, College of Computing and Data Science &amp; Nanyang Business School</p>
-      <p class="people-email-row">
-        <span class="email-label">Official Email:</span> 
-        <a href="mailto:kwanminlee@ntu.edu.sg" class="people-email-link">kwanminlee@ntu.edu.sg</a>
-      </p>
     </div>
   </div>
   <div class="people-bio">
     <p>
-      <strong>Kwan Min Lee (Ph.D., Stanford University)</strong> is the inaugural Korea Foundation Endowed Chair Professor at Nanyang Technological University, Singapore. An elected Fellow of the International Communication Association (ICA), Prof. Lee directs the Contemporary Korean Studies Lab (CKSL), the <a href="https://profkwanminlee.github.io/hail/" target="_blank" rel="noopener">Human-AI Interaction Lab (HAIL)</a>, and the UX Lab at NTU.
+      <strong>Kwan Min Lee (Ph.D., Stanford University)</strong> is the inaugural Korea Foundation Endowed Chair Professor at Nanyang Technological University, Singapore. An elected Fellow of the International Communication Association (ICA), Prof. Lee directs the Korean Studies Lab (KSL), the <a href="https://profkwanminlee.github.io/hail/" target="_blank" rel="noopener">Human-AI Interaction Lab (HAIL)</a>, and the UX Lab at NTU.
     </p>
     <p>
       Previously, Lee served as Vice President and Director of User Experience (UX) at Samsung Electronics, where he founded Samsung’s Creative Lab (C-Lab) and led UX innovation for the Visual Display Division. Prior to Samsung and NTU, he was a tenured professor at the Annenberg School for Communication at the University of Southern California (USC) and founding director of the Interaction Science Research Center at Sungkyunkwan University (SKKU). His research focuses on the intersection of new media technologies, human-technology interaction, Korean digital innovation, and contemporary cultural diffusion.
@@ -59,7 +53,6 @@ The Contemporary Korean Studies Lab is directed by the **Korea Foundation Endowe
 
 <div class="kicker-group">
   <span class="section-kicker">Faculty Network</span>
-  <span class="kicker-hangul">참여 교수진</span>
 </div>
 
 ## Affiliate Faculty &amp; Collaborating Scholars
@@ -67,49 +60,47 @@ The Contemporary Korean Studies Lab is directed by the **Korea Foundation Endowe
 
 The Lab draws on multidisciplinary expertise across NTU’s schools, institutes, and collaborating university consortia across East and Southeast Asia.
 
-<div class="people-grid-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 22px; margin: 24px 0 32px;">
-  <div class="people-card">
+<div class="scholars-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 24px; margin: 28px 0 36px;">
+  <!-- Scholar 1: Janghyo Park -->
+  <div class="people-card scholar-card">
     <div class="people-card-header">
+      <div class="people-photo-frame">
+        <img src="{{ '/images/people/janghyo-park.jpg' | relative_url }}" alt="Janghyo Park" class="people-photo">
+      </div>
       <div class="people-info">
-        <h4 class="people-name" style="font-size: 1.2rem;">Media &amp; Cultural Studies Faculty</h4>
-        <p class="people-role">Affiliated Research Cluster</p>
-        <p class="people-affiliation">Wee Kim Wee School of Communication and Information, NTU</p>
+        <h3 class="people-name">Janghyo Park</h3>
+        <p class="people-role">Research Professor</p>
+        <p class="people-affiliation">K-Inclusive Society Institute | Kyungpook National University</p>
       </div>
     </div>
     <div class="people-bio">
-      <p>
-        Faculty specialists in transnational screen culture, Korean popular media circulation, digital platform governance, and Southeast Asian reception studies.
-      </p>
+      <h4 class="scholar-research-heading" style="font-size: 0.95rem; font-weight: 700; color: var(--color-ink); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Research</h4>
+      <ul class="scholar-research-list" style="margin: 0; padding-left: 18px; color: var(--color-ink-light); line-height: 1.6;">
+        <li>Othering and Belonging in East Asia: Korea, Hallyu, and Cultural Boundaries on Digital Platforms</li>
+        <li>Making &ldquo;K&rdquo; Legible / KBS WORLD on Global Platforms / The 2026 #SEAblings Controversy</li>
+      </ul>
     </div>
   </div>
 
-  <div class="people-card">
+  <!-- Scholar 2: Inyong Park -->
+  <div class="people-card scholar-card">
     <div class="people-card-header">
+      <div class="people-photo-frame">
+        <img src="{{ '/images/people/inyong-park.jpg' | relative_url }}" alt="Inyong Park" class="people-photo">
+      </div>
       <div class="people-info">
-        <h4 class="people-name" style="font-size: 1.2rem;">Asian Studies &amp; Social Sciences Faculty</h4>
-        <p class="people-role">Affiliated Research Cluster</p>
-        <p class="people-affiliation">School of Social Sciences &amp; CoHASS, NTU</p>
+        <h3 class="people-name">Inyong Park</h3>
+        <p class="people-role">Assistant Professor</p>
+        <p class="people-affiliation">Major in Applied AI Content | Seoul Women's University</p>
       </div>
     </div>
     <div class="people-bio">
-      <p>
-        Researchers in historical sociology, East Asian political economy, regional migration, and multilateral Korea-ASEAN diplomatic partnerships.
-      </p>
-    </div>
-  </div>
-
-  <div class="people-card">
-    <div class="people-card-header">
-      <div class="people-info">
-        <h4 class="people-name" style="font-size: 1.2rem;">Technology, AI &amp; Society Faculty</h4>
-        <p class="people-role">Affiliated Research Cluster</p>
-        <p class="people-affiliation">College of Computing and Data Science &amp; HAIL Lab, NTU</p>
-      </div>
-    </div>
-    <div class="people-bio">
-      <p>
-        Computer scientists and behavioral researchers examining algorithmic interaction, social presence, smart cities, and AI systems in Korean and Asian urban centers.
-      </p>
+      <h4 class="scholar-research-heading" style="font-size: 0.95rem; font-weight: 700; color: var(--color-ink); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Research</h4>
+      <ul class="scholar-research-list" style="margin: 0; padding-left: 18px; color: var(--color-ink-light); line-height: 1.6;">
+        <li>The Impact of &lsquo;K-Pop Demon Hunters&rsquo; on Interest in Korean Culture and Visits to the National Museum of Korea</li>
+        <li>A Comparative Study of K-pop Idol Perceptions among Gen Z in Korea and the United States</li>
+        <li>User Perceptions and Experiences of Virtual Humans in Digital Cultural Content</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -118,7 +109,6 @@ The Lab draws on multidisciplinary expertise across NTU’s schools, institutes,
 
 <div class="kicker-group">
   <span class="section-kicker">Research Community</span>
-  <span class="kicker-hangul">연구원 및 펠로우</span>
 </div>
 
 ## Researchers &amp; Visiting Fellows
@@ -155,7 +145,6 @@ The KSL research community brings together visiting scholars, postdoctoral fello
 <div class="cta-banner-box" style="margin-top: 36px;">
   <div class="kicker-group">
     <span class="cta-kicker">Academic Opportunities</span>
-    <span class="kicker-hangul">참여 및 협력 안내</span>
   </div>
   <h3 class="cta-title">Visiting Fellowships &amp; Student Inquiries</h3>
   <p class="cta-desc">

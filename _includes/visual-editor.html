@@ -1,5 +1,5 @@
 <!-- ==============================================================================
-     Contemporary Korean Studies Lab (CKSL) — Studio Site Editor Component
+     Korean Studies Lab (KSL) — Studio Site Editor Component
      Word × WordPress × Figma in-browser visual editing workspace.
      Zero emojis, 100% authentic vector SVGs, per-word selection formatting,
      authentic Korean landscape gallery, and draft session staging.
@@ -238,8 +238,7 @@
           <option value="{{ '/research/' | relative_url }}">Research (/research/)</option>
           <option value="{{ '/publications/' | relative_url }}">Publications (/publications/)</option>
           <option value="{{ '/people/' | relative_url }}">People (/people/)</option>
-          <option value="{{ '/programs-events/' | relative_url }}">Programs &amp; Events (/programs-events/)</option>
-          <option value="{{ '/news/' | relative_url }}">News (/news/)</option>
+          <option value="{{ '/events/' | relative_url }}">News &amp; Events (/events/)</option>
           <option value="{{ '/contact/' | relative_url }}">Contact (/contact/)</option>
           <option value="{{ '/builder-demo/' | relative_url }}">Builder Showcase (/builder-demo/)</option>
         </select>
@@ -545,13 +544,9 @@
         <span class="page-item-title">People</span>
         <span class="page-item-path">/people/</span>
       </a>
-      <a href="{{ '/programs-events/' | relative_url }}?edit=true" class="cksl-side-page-item{% if page.url == '/programs-events/' %} active{% endif %}">
-        <span class="page-item-title">Programs &amp; Events</span>
-        <span class="page-item-path">/programs-events/</span>
-      </a>
-      <a href="{{ '/news/' | relative_url }}?edit=true" class="cksl-side-page-item{% if page.url == '/news/' %} active{% endif %}">
-        <span class="page-item-title">News</span>
-        <span class="page-item-path">/news/</span>
+      <a href="{{ '/events/' | relative_url }}?edit=true" class="cksl-side-page-item{% if page.url == '/events/' %} active{% endif %}">
+        <span class="page-item-title">News &amp; Events</span>
+        <span class="page-item-path">/events/</span>
       </a>
       <a href="{{ '/contact/' | relative_url }}?edit=true" class="cksl-side-page-item{% if page.url == '/contact/' %} active{% endif %}">
         <span class="page-item-title">Contact</span>

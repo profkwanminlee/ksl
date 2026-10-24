@@ -1,4 +1,4 @@
-# Contemporary Korean Studies Lab (CKSL)
+# Korean Studies Lab (KSL)
 **Nanyang Technological University, Singapore**
 
 An interdisciplinary research initiative based at Nanyang Technological University, Singapore, advancing scholarship, dialogue, and exchange on contemporary Korea in Singapore and Southeast Asia.
@@ -59,7 +59,7 @@ The website incorporates the approved institutional identity and overview:
   2. **Contemporary Korean Culture and the Korean Wave** (Transnational circulation, creative industries, and cultural translation across Singapore and Southeast Asia)
   3. **Human and Cultural Exchange between Korea and Southeast Asia** (Educational mobility, academic networks, and institutional partnerships)
 - **Leadership**:
-  - Directed by **Prof. Kwan Min Lee (이관민, Ph.D., Stanford)**, inaugural Korea Foundation Endowed Chair Professor in Contemporary Korean Society and New Media at the Wee Kim Wee School of Communication and Information (WKWSCI), NTU Singapore.
+  - Directed by **Prof. Kwan Min Lee (Ph.D., Stanford)**, inaugural Korea Foundation Endowed Chair Professor in Contemporary Korean Society and New Media at the Wee Kim Wee School of Communication and Information (WKWSCI), NTU Singapore.
 
 ---
 

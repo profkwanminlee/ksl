@@ -4,18 +4,17 @@ title: "News & Opportunities"
 permalink: /news/
 hero_tag: "Updates & Notices"
 hero_subtitle: "Institutional announcements, research milestones, and academic opportunities."
-description: "Latest news, institutional announcements, and academic opportunities at the Contemporary Korean Studies Lab, NTU Singapore."
+description: "Latest news, institutional announcements, and academic opportunities at the Korean Studies Lab, NTU Singapore."
 ---
 
 <div class="kicker-group">
   <span class="section-kicker">Lab Updates</span>
-  <span class="kicker-hangul">연구소 소식</span>
 </div>
 
 ## Announcements &amp; Dispatches
 {% include korean-title-underline.html %}
 
-Official announcements, research developments, media appearances, and academic milestones from the Contemporary Korean Studies Lab at Nanyang Technological University, Singapore.
+Official announcements, research developments, media appearances, and academic milestones from the Korean Studies Lab at Nanyang Technological University, Singapore. For symposia, research collaborations, and events, please explore our [News &amp; Events]({{ '/events/' | relative_url }}) schedule.
 
 <div class="news-list" style="margin-top: 24px;">
   <!-- News Item 1 -->
@@ -24,9 +23,9 @@ Official announcements, research developments, media appearances, and academic m
       <span class="news-date">October 2026</span>
       <span class="news-category">Institutional Launch</span>
     </div>
-    <h3 class="news-headline">Contemporary Korean Studies Lab (CKSL) Inaugurated at NTU Singapore</h3>
+    <h3 class="news-headline">Korean Studies Lab (KSL) Inaugurated at NTU Singapore</h3>
     <p class="news-summary">
-      The Contemporary Korean Studies Lab has been officially inaugurated at the Wee Kim Wee School of Communication and Information (WKWSCI) at Nanyang Technological University, Singapore. Directed by Prof. Kwan Min Lee, the Korea Foundation Endowed Chair Professor in Contemporary Korean Society and New Media, the Lab establishes a dedicated academic hub for researching contemporary Korea and its growing connections with Singapore and the ASEAN region.
+      The Korean Studies Lab has been officially inaugurated at the Wee Kim Wee School of Communication and Information (WKWSCI) at Nanyang Technological University, Singapore. Directed by Prof. Kwan Min Lee, the Korea Foundation Endowed Chair Professor in Contemporary Korean Society and New Media, the Lab establishes a dedicated academic hub for researching contemporary Korea and its growing connections with Singapore and the ASEAN region.
     </p>
   </article>
 
@@ -59,7 +58,6 @@ Official announcements, research developments, media appearances, and academic m
 
 <div class="kicker-group">
   <span class="section-kicker">Academic Fellowships</span>
-  <span class="kicker-hangul">펠로우십 및 채용 공고</span>
 </div>
 
 ## Opportunities &amp; Fellowships
@@ -93,15 +91,15 @@ The Lab periodically offers visiting scholar residencies, postdoctoral research 
         <span class="project-badge" style="margin-bottom: 8px;">Funded Postdoctoral Position</span>
         <h4 class="people-name" style="font-size: 1.2rem;">Postdoctoral Fellow in Korean Digital Society</h4>
         <p class="people-role">Recruitment Cycle 2026</p>
-        <p class="people-affiliation">Contemporary Korean Studies Lab &amp; <a href="https://profkwanminlee.github.io/hail/" target="_blank" rel="noopener">HAIL</a>, NTU</p>
+        <p class="people-affiliation">Korean Studies Lab &amp; <a href="https://profkwanminlee.github.io/hail/" target="_blank" rel="noopener">HAIL</a>, NTU</p>
       </div>
     </div>
     <div class="people-bio">
       <p>
-        Funded postdoctoral appointment focusing on human-AI interaction, algorithmic systems, and comparative digital culture between South Korea and Southeast Asia. Candidates should possess a Ph.D. in communication, media studies, or related social sciences.
+        Postdoctoral scholarship investigating user experience, synthetic media adoption, and cognitive presence in Korean and Singaporean digital networks.
       </p>
       <a href="{{ '/contact/' | relative_url }}" class="theme-detail-link" style="margin-top: 10px; display: inline-block;">
-        Submit CV and Expression of Interest &rarr;
+        Inquire for Position Details &rarr;
       </a>
     </div>
   </div>
@@ -109,14 +107,13 @@ The Lab periodically offers visiting scholar residencies, postdoctoral research 
 
 <div class="cta-banner-box" style="margin-top: 36px;">
   <div class="kicker-group">
-    <span class="cta-kicker">Stay Connected</span>
-    <span class="kicker-hangul">뉴스레터 및 공지 신청</span>
+    <span class="cta-kicker">Connect with KSL</span>
   </div>
-  <h3 class="cta-title">Subscribe to KSL Research Bulletins</h3>
+  <h3 class="cta-title">Receive Notices &amp; Event Dispatches</h3>
   <p class="cta-desc">
-    Receive timely notices on newly published working papers, seminar dates, visiting fellow deadlines, and symposium keynote announcements.
+    Subscribe to receive periodic updates on symposium dates, lecture broadcasts, working paper preprints, and academic fellowship calls.
   </p>
   <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">
-    Contact Secretariat &amp; Register &rarr;
+    Contact &amp; Join Mailing List &rarr;
   </a>
 </div>

@@ -4,18 +4,17 @@ title: "Contact & Collaboration"
 permalink: /contact/
 hero_tag: "Connect & Engage"
 hero_subtitle: "Institutional address, general enquiries, and collaboration proposals."
-description: "Contact information and collaboration enquiries for the Contemporary Korean Studies Lab (CKSL) at NTU Singapore."
+description: "Contact information and collaboration enquiries for the Korean Studies Lab (KSL) at NTU Singapore."
 ---
 
 <div class="kicker-group">
   <span class="section-kicker">Lab Inquiries</span>
-  <span class="kicker-hangul">연락처 및 위치 안내</span>
 </div>
 
 ## Contact Information
 {% include korean-title-underline.html %}
 
-The Contemporary Korean Studies Lab is located at the Wee Kim Wee School of Communication and Information at Nanyang Technological University, Singapore.
+The Korean Studies Lab is located at the Wee Kim Wee School of Communication and Information at Nanyang Technological University, Singapore.
 
 <div class="contact-grid" style="margin: 24px 0 32px;">
   <div class="contact-card">
@@ -23,7 +22,7 @@ The Contemporary Korean Studies Lab is located at the Wee Kim Wee School of Comm
     <div class="contact-card-body">
       <h3 class="contact-title">Mailing &amp; Physical Address</h3>
       <address class="contact-details">
-        <strong>Contemporary Korean Studies Lab (CKSL)</strong><br>
+        <strong>Korean Studies Lab (KSL)</strong><br>
         Wee Kim Wee School of Communication and Information<br>
         Nanyang Technological University, Singapore<br>
         31 Nanyang Link, Singapore 637718<br>
@@ -39,12 +38,11 @@ The Contemporary Korean Studies Lab is located at the Wee Kim Wee School of Comm
       <div class="contact-details">
         <span class="detail-label">Director:</span><br>
         <strong>Prof. Kwan Min Lee</strong><br>
-        Korea Foundation Endowed Chair Professor<br>
-        <span class="detail-label">Email:</span> <a href="mailto:kwanminlee@ntu.edu.sg" class="people-email-link">kwanminlee@ntu.edu.sg</a>
+        Korea Foundation Endowed Chair Professor
       </div>
       <div class="contact-details" style="margin-top: 14px; padding-top: 10px; border-top: 1px dashed var(--color-border);">
         <span class="detail-label">General Secretariat:</span><br>
-        <a href="mailto:kwanminlee@ntu.edu.sg" class="people-email-link">ksl-enquiries@ntu.edu.sg</a><br>
+        <a href="mailto:ksl-enquiries@ntu.edu.sg" class="people-email-link">ksl-enquiries@ntu.edu.sg</a><br>
         <span class="detail-label">Telephone:</span> (+65) 6790 4602
       </div>
     </div>
@@ -55,13 +53,12 @@ The Contemporary Korean Studies Lab is located at the Wee Kim Wee School of Comm
 
 <div class="kicker-group">
   <span class="section-kicker">Regional Partnerships</span>
-  <span class="kicker-hangul">연구 및 학술 교류 협력</span>
 </div>
 
 ## Collaboration Proposals
 {% include korean-title-underline.html %}
 
-The Contemporary Korean Studies Lab actively cultivates international and regional partnerships. We warmly welcome proposals from:
+The Korean Studies Lab actively cultivates international and regional partnerships. We warmly welcome proposals from:
 
 - **Academic Institutions &amp; University Centers:** Collaborative research projects, joint grant applications, faculty and student exchanges, and co-sponsored seminars or conferences.
 - **Cultural Foundations &amp; Creative Organizations:** Inquiries concerning cultural diplomacy, Korean Wave exhibitions, creative media roundtables, and public dialogues.
@@ -79,6 +76,6 @@ The Contemporary Korean Studies Lab actively cultivates international and region
     <li><strong>Anticipated Timeline &amp; Objectives</strong></li>
   </ol>
   <p class="body-para" style="margin-top: 12px; margin-bottom: 0;">
-    Proposals and exploratory inquiries may be addressed directly to Prof. Kwan Min Lee at <a href="mailto:kwanminlee@ntu.edu.sg" class="theme-detail-link"><strong>kwanminlee@ntu.edu.sg</strong></a>.
+    Proposals and exploratory inquiries may be addressed to the Lab Secretariat at <a href="mailto:ksl-enquiries@ntu.edu.sg" class="theme-detail-link"><strong>ksl-enquiries@ntu.edu.sg</strong></a>, or for program proposal co-sponsorship, to <a href="mailto:jimin.lee@ntu.edu.sg?subject=Program%20Proposal%20-%20Korean%20Studies%20Lab" class="theme-detail-link"><strong>jimin.lee@ntu.edu.sg</strong></a>.
   </p>
 </div>

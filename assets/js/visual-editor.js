@@ -196,8 +196,8 @@
       </svg>
     `,
     korean_seal: `
-      <div style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border: 2.5px solid var(--color-red, #A62B2B); border-radius: 4px; background: rgba(166, 43, 43, 0.06); font-family: 'Noto Serif KR', serif; font-size: 0.86rem; font-weight: 700; color: var(--color-red, #A62B2B); letter-spacing: 0.05em; text-align: center; line-height: 1.15; box-shadow: inset 0 0 0 1.5px rgba(166, 43, 43, 0.25), 0 2px 6px rgba(166, 43, 43, 0.15);">
-        한국<br>학연
+      <div style="display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border: 2.5px solid var(--color-red, #A62B2B); border-radius: 4px; background: rgba(166, 43, 43, 0.06); font-family: var(--font-primary, sans-serif); font-size: 0.86rem; font-weight: 800; color: var(--color-red, #A62B2B); letter-spacing: 0.05em; text-align: center; line-height: 1.15; box-shadow: inset 0 0 0 1.5px rgba(166, 43, 43, 0.25), 0 2px 6px rgba(166, 43, 43, 0.15);">
+        KSL
       </div>
     `,
     cloud_bars: `
@@ -1910,8 +1910,7 @@
         { title: 'Research', url: '/research/' },
         { title: 'Publications', url: '/publications/' },
         { title: 'People', url: '/people/' },
-        { title: 'Programs & Events', url: '/programs-events/' },
-        { title: 'News', url: '/news/' },
+        { title: 'News & Events', url: '/events/' },
         { title: 'Contact', url: '/contact/' }
       );
     }

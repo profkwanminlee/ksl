@@ -4,24 +4,17 @@
 <div class="people-card director-card" style="margin: 28px 0 32px;">
   <div class="people-card-header">
     <div class="people-photo-frame">
-      <img src="{{ d.portrait | default: '/images/profkwanportrait.jpeg' | relative_url }}" alt="{{ d.name }}, Director of Contemporary Korean Studies Lab" class="people-photo">
+      <img src="{{ d.portrait | default: '/images/profkwanportrait.jpeg' | relative_url }}" alt="{{ d.name }}, Director of Korean Studies Lab" class="people-photo">
     </div>
     <div class="people-info">
       <div class="people-title-row">
         <h3 class="people-name">{{ d.name }}</h3>
-        {% if d.korean_name %}<span class="korean-name">{{ d.korean_name }}</span>{% endif %}
       </div>
       <p class="people-role">{{ d.role }}</p>
       <p class="people-title">{{ d.endowed_title }}</p>
       <p class="people-affiliation">{{ d.primary_affiliation }}</p>
       {% if d.secondary_affiliation %}
       <p class="people-subaffiliation">{{ d.secondary_affiliation }}</p>
-      {% endif %}
-      {% if d.email %}
-      <p class="people-email-row">
-        <span class="email-label">Official Email:</span> 
-        <a href="mailto:{{ d.email }}" class="people-email-link">{{ d.email }}</a>
-      </p>
       {% endif %}
     </div>
   </div>

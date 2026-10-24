@@ -1,5 +1,5 @@
-# Main Navigation Links for Contemporary Korean Studies Lab (CKSL)
-# Order: About, Research, Publications, People, Programs & Events, News, Contact
+# Main Navigation Links for Korean Studies Lab (KSL)
+# Order: About, Research, Publications, People, News & Events, Contact
 
 main:
   - title: "About"
@@ -10,9 +10,7 @@ main:
     url: "/publications/"
   - title: "People"
     url: "/people/"
-  - title: "Programs & Events"
-    url: "/programs-events/"
-  - title: "News"
-    url: "/news/"
+  - title: "News & Events"
+    url: "/events/"
   - title: "Contact"
     url: "/contact/"
