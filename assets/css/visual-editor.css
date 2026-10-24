@@ -458,7 +458,7 @@ body.cksl-editor-active #cksl-canvas-viewport {
   font-size: 0.84rem;
   font-weight: 600;
   cursor: pointer;
-  display: inline-flex;
+  display: none; /* Hidden by default; only shown in local development or with ?edit=true */
   align-items: center;
   gap: 8px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);

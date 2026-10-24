@@ -298,8 +298,17 @@
     const savedFont = localStorage.getItem('cksl_font_size');
     if (savedFont) applyFontSize(savedFont, false);
 
-    if (hasEditParam || storedState === 'true') {
+    const isLocalhost = window.location.hostname === 'localhost' ||
+                        window.location.hostname === '127.0.0.1' ||
+                        window.location.hostname === '';
+
+    if (hasEditParam || (isLocalhost && storedState === 'true')) {
       enableEditor();
+    } else {
+      const launcher = document.getElementById('cksl-editor-launcher');
+      if (launcher && (isLocalhost || hasEditParam)) {
+        launcher.style.display = 'inline-flex';
+      }
     }
 
     // Attach launcher
@@ -369,7 +378,14 @@
     hideTextSelectionToolbar();
 
     const launcher = document.getElementById('cksl-editor-launcher');
-    if (launcher) launcher.style.display = 'inline-flex';
+    if (launcher) {
+      const isLocalhost = window.location.hostname === 'localhost' ||
+                          window.location.hostname === '127.0.0.1' ||
+                          window.location.hostname === '';
+      const urlParams = new URLSearchParams(window.location.search);
+      const hasEditParam = urlParams.has('edit') || window.location.hash === '#edit';
+      launcher.style.display = (isLocalhost || hasEditParam) ? 'inline-flex' : 'none';
+    }
 
     removeContentEditable();
     closeAllModals();
