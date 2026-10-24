@@ -31,7 +31,7 @@ description: "Korean Studies Lab (KSL) is an interdisciplinary research initiati
 
       <div class="overview-body-col">
         <p class="body-para">
-          The Lab’s current research focuses on three main areas: <strong>Korea’s IT innovation and digital society</strong>; <strong>contemporary Korean culture and the Korean Wave</strong>; and <strong>human and cultural exchange between Korea and Southeast Asia</strong>. Building on existing research and ongoing collaborations, the Lab examines how Korea is interpreted, translated, and discussed in different cultural, social, and political contexts.
+          The Lab’s current research focuses on three main areas: <strong>contemporary Korean culture and the Korean Wave</strong>; <strong>human and cultural exchange between Korea and Southeast Asia</strong>; and <strong>Korea’s IT innovation and digital society</strong>. Building on existing research and ongoing collaborations, the Lab examines how Korea is interpreted, translated, and discussed in different cultural, social, and political contexts.
         </p>
         <p class="body-para">
           Focusing on contemporary Korean culture and its circulation across Singapore and Southeast Asia, the Lab pays particular attention to the ways digital infrastructures, digital media, and technological systems shape cultural exchange and transformation across the region.
