@@ -4,41 +4,29 @@
   {% include meta.html %}
 </head>
 <body class="site-body">
-  <!-- Skip to Main Content for Accessibility -->
-  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <!-- Dynamic Canvas Viewport & Page Frame for Studio Editor -->
+  <div id="cksl-canvas-viewport" class="device-desktop">
+    <div id="cksl-page-frame">
+      <!-- Skip to Main Content for Accessibility -->
+      <a href="#main-content" class="skip-to-content">Skip to main content</a>
 
-  <!-- Global Header & 7-Item Navigation -->
-  {% include header.html %}
+      <!-- Global Header & Navigation -->
+      {% include header.html %}
 
-  <!-- Main Landmark -->
-  <main id="main-content" class="main-content" role="main">
-    {{ content }}
-  </main>
+      <!-- Main Landmark -->
+      <main id="main-content" class="main-content" role="main">
+        {{ content }}
+      </main>
 
-  <!-- Global Academic Footer -->
-  {% include footer.html %}
+      <!-- Global Academic Footer -->
+      {% include footer.html %}
+    </div>
+  </div>
 
   <!-- Parallax and UI Interaction Script -->
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
 
-  <!-- On-Page Visual WYSIWYG Editor (Only rendered when ?edit=true is present) -->
-  <div id="cksl-editor-root" style="display: none;">
-    {% include visual-editor.html %}
-  </div>
-  <script>
-    (function() {
-      try {
-        var params = new URLSearchParams(window.location.search);
-        if (params.get('edit') === 'true' || window.location.hash === '#edit') {
-          var root = document.getElementById('cksl-editor-root');
-          if (root) root.style.display = 'block';
-        } else {
-          localStorage.removeItem('cksl_editor_active');
-          var root = document.getElementById('cksl-editor-root');
-          if (root) root.remove();
-        }
-      } catch(e) {}
-    })();
-  </script>
+  <!-- Studio Visual WYSIWYG Editor Component -->
+  {% include visual-editor.html %}
 </body>
 </html>

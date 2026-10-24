@@ -231,7 +231,7 @@ koreanstudieslab/
 │   ├── meta.html                  # SEO, viewport, fonts, and OpenGraph tags
 │   └── visual-editor.html         # Studio Editor markup (guarded in hidden root)
 ├── _layouts/
-│   ├── default.html               # Base layout with clean semantic HTML structure
+│   ├── default.html               # Base layout with #cksl-canvas-viewport & #cksl-page-frame
 │   └── page.html                  # Subpage layout (expanded 100% width container)
 ├── _pages/
 │   ├── 404.md                     # Not found page
@@ -252,7 +252,7 @@ koreanstudieslab/
 │   │   └── visual-editor.css      # Editor HUD, ribbon, inspector, and device canvas styles
 │   └── js/
 │       ├── main.js                # Parallax effects, mobile navigation toggle
-│       └── visual-editor.js       # Complete Studio Editor engine (guarded by ?edit=true)
+│       └── visual-editor.js       # Complete Studio Editor engine with clean normal/edit lifecycle
 ├── images/
 │   ├── events/
 │   │   ├── kabs-group.jpg         # KABS & WKWSCI exchange group photo (optimized 460KB)

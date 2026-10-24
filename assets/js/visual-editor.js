@@ -290,26 +290,26 @@
   function init() {
     const urlParams = new URLSearchParams(window.location.search);
     const hasEditParam = urlParams.get('edit') === 'true' || window.location.hash === '#edit';
+    const isLocalhost = window.location.hostname === 'localhost' ||
+                        window.location.hostname === '127.0.0.1' ||
+                        window.location.hostname === '';
 
-    // If NOT explicitly in edit mode via ?edit=true, do NOTHING
-    if (!hasEditParam) {
-      localStorage.removeItem('cksl_editor_active');
-      return;
-    }
-
-    // Restore saved palette and font
+    // Restore saved palette and font if present
     const savedPal = localStorage.getItem('cksl_palette');
     if (savedPal && PALETTES[savedPal]) applyPalette(savedPal, false);
     const savedFont = localStorage.getItem('cksl_font_size');
     if (savedFont) applyFontSize(savedFont, false);
 
-    enableEditor();
-
-    // Attach launcher
+    // Attach launcher button listener
     const launcher = document.getElementById('cksl-editor-launcher');
-    if (launcher) launcher.addEventListener('click', enableEditor);
+    if (launcher) {
+      launcher.style.display = (isLocalhost || hasEditParam) ? 'inline-flex' : 'none';
+      launcher.addEventListener('click', () => {
+        enableEditor();
+      });
+    }
 
-    // Keyboard shortcut: Alt + E
+    // Keyboard shortcut: Alt + E or Ctrl + Shift + E to toggle editor anytime
     document.addEventListener('keydown', function (e) {
       if ((e.altKey && e.key.toLowerCase() === 'e') || (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'e')) {
         e.preventDefault();
@@ -317,6 +317,7 @@
       }
     });
 
+    // Wire up all editor controls
     setupRibbon();
     setupSidebar();
     setupTextSelectionToolbar();
@@ -326,9 +327,16 @@
     setupBoxHotkeys();
     setupReplaceMotifModal();
     setupReplaceImageModal();
-    setupDragAndDrop();
     checkBridgeStatus();
     window.addEventListener('resize', fitCanvasToScreen);
+
+    // Check if edit mode should be auto-enabled on page load
+    const storedActive = localStorage.getItem('cksl_editor_active');
+    if (hasEditParam || (isLocalhost && storedActive === 'true')) {
+      enableEditor();
+    } else {
+      disableEditor();
+    }
   }
 
   // 1. Enable / Disable Editor
@@ -350,6 +358,7 @@
     buildSidebarOutline();
     scanPageMotifs();
     setupDragAndDrop();
+    fitCanvasToScreen();
     localStorage.setItem('cksl_editor_active', 'true');
 
     // Initialize git draft staging session
@@ -370,6 +379,30 @@
     if (inspector) inspector.classList.add('hidden');
 
     hideTextSelectionToolbar();
+
+    // Clean up all edit handles and box selection states
+    document.querySelectorAll('.cksl-drag-handle').forEach(el => el.remove());
+    document.querySelectorAll('[data-cksl-box-selected]').forEach(el => {
+      el.removeAttribute('data-cksl-box-selected');
+    });
+    activeBox = null;
+    activeElement = null;
+
+    // Reset device canvas to desktop mode
+    const viewport = document.getElementById('cksl-canvas-viewport');
+    if (viewport) {
+      viewport.className = 'device-desktop';
+      viewport.style.transform = '';
+    }
+    const pageFrame = document.getElementById('cksl-page-frame');
+    if (pageFrame) {
+      pageFrame.style.transform = '';
+      pageFrame.style.zoom = '';
+    }
+    currentDevice = 'desktop';
+    document.querySelectorAll('.cksl-device-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-device') === 'desktop');
+    });
 
     const launcher = document.getElementById('cksl-editor-launcher');
     if (launcher) {
