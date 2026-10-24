@@ -5,7 +5,7 @@
 
 backend:
   name: github
-  repo: profkwanminlee/cksl
+  repo: profkwanminlee/ksl
   branch: main
 
 # Local development backend support
@@ -16,8 +16,8 @@ media_folder: images/uploads
 public_folder: /images/uploads
 
 # Site Display
-site_url: https://profkwanminlee.github.io/cksl/
-logo_url: https://profkwanminlee.github.io/cksl/images/ntu.png
+site_url: https://profkwanminlee.github.io/ksl/
+logo_url: https://profkwanminlee.github.io/ksl/images/ntu.png
 
 collections:
   # --------------------------------------------------------------------------

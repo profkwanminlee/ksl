@@ -8,7 +8,7 @@ tagline: "Advancing the study of contemporary Korea in Singapore and Southeast A
 description: "Korean Studies Lab (KSL) is an interdisciplinary research initiative based at Nanyang Technological University, Singapore, supporting research, publications, and public programs on contemporary Korea."
 
 url: "https://profkwanminlee.github.io"
-baseurl: "/cksl"
+baseurl: "/ksl"
 
 markdown: kramdown
 kramdown:

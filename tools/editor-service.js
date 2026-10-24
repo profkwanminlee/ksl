@@ -156,10 +156,14 @@ const server = http.createServer(async (req, res) => {
       }
     }
 
-    // Helper to resolve page slug from URL considering baseurl /cksl/
+    // Helper to resolve page slug from URL considering baseurl /ksl/ or /cksl/
     function extractPageSlug(urlStr) {
       let clean = (urlStr || '').replace(/^\/+|\/+$/g, '').toLowerCase();
-      if (clean.startsWith('cksl/')) {
+      if (clean.startsWith('ksl/')) {
+        clean = clean.replace(/^ksl\//, '');
+      } else if (clean === 'ksl') {
+        clean = '';
+      } else if (clean.startsWith('cksl/')) {
         clean = clean.replace(/^cksl\//, '');
       } else if (clean === 'cksl') {
         clean = '';
