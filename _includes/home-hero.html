@@ -1,5 +1,4 @@
-<!-- Homepage Hero Banner with Dynamic Customization & Parallax -->
-<section class="home-hero parallax-wrapper" aria-label="Korean Studies Lab Hero" data-cksl-block="hero">
+<section class="home-hero parallax-wrapper" aria-label="Korean Studies Lab Hero">
   <!-- Parallax Layer 1: Background Image with Stable Framing -->
   <div class="hero-layer hero-bg-layer" data-speed="0.15">
     <img 
@@ -9,12 +8,7 @@
       fetchpriority="high"
       loading="eager"
       style="object-position: {{ page.hero_crop | default: 'center 32%' }};"
-      data-cksl-image="hero"
     >
-    <button type="button" class="cksl-hero-change-btn" title="Change Hero Landscape Photo">
-      <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/></svg>
-      <span>Change Header Image</span>
-    </button>
   </div>
 
   <!-- Parallax Layer 2: Subtle Traditional Korean Window Lattice (Changhosal) Geometry -->
@@ -38,23 +32,23 @@
   <!-- Foreground Content -->
   <div class="hero-content-layer container">
     <div class="home-hero-text">
-      <h1 class="home-hero-title" data-cksl-editable="true" data-field="title">
+      <h1 class="home-hero-title">
         {{ page.hero_title | default: "Korean Studies Lab" }}
       </h1>
 
-      <!-- Architectural Hanok Roof Crest & Maehwa Blossom Ornament Under Headline -->
+      <!-- Clean Accent Under Headline -->
       {% include korean-hero-accent.html %}
 
-      <p class="home-hero-subtitle" data-cksl-editable="true" data-field="hero_subtitle">
+      <p class="home-hero-subtitle">
         {{ page.hero_subtitle | default: "An interdisciplinary research initiative advancing scholarship, dialogue, and exchange on contemporary Korea in Singapore and Southeast Asia." }}
       </p>
 
       <div class="home-hero-actions">
-        <a href="{{ '/about/' | relative_url }}" class="btn btn-primary" data-cksl-editable="true" data-field="btn_primary">
+        <a href="{{ '/about/' | relative_url }}" class="btn btn-primary">
           About the Lab
           <span class="btn-arrow" aria-hidden="true">&rarr;</span>
         </a>
-        <a href="{{ '/research/' | relative_url }}" class="btn btn-secondary" data-cksl-editable="true" data-field="btn_secondary">
+        <a href="{{ '/research/' | relative_url }}" class="btn btn-secondary">
           Explore Research Themes
         </a>
       </div>

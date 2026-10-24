@@ -81,27 +81,27 @@ The Korean Studies Lab hosts an active schedule of academic programs, internatio
       </p>
 
       <!-- Event Visuals & Photos -->
-      <div class="event-media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 16px;">
-        <figure class="event-media-figure" style="margin: 0; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xs); overflow: hidden;">
+      <div class="event-media-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; align-items: start; margin-top: 16px;">
+        <figure class="event-media-figure" style="margin: 0; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xs); overflow: hidden; height: fit-content; align-self: start;">
           <img 
             src="{{ '/images/events/kabs-keyvisual.jpg' | relative_url }}" 
             alt="Korean Association for Broadcasting &amp; Telecommunication Studies Conference Poster" 
-            style="width: 100%; height: auto; display: block; object-fit: cover;"
+            style="width: 100%; height: auto; display: block;"
             loading="lazy"
           >
-          <figcaption style="padding: 10px 14px; font-size: 0.8rem; color: var(--color-ink-muted); background: var(--color-surface-warm);">
+          <figcaption style="padding: 10px 14px; font-size: 0.8rem; color: var(--color-ink-muted); background: var(--color-surface-warm); border-top: 1px solid var(--color-border);">
             Academic Collaboration Program Poster — Level 4 Conference Room, WKWSCI
           </figcaption>
         </figure>
 
-        <figure class="event-media-figure" style="margin: 0; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xs); overflow: hidden;">
+        <figure class="event-media-figure" style="margin: 0; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xs); overflow: hidden; height: fit-content; align-self: start;">
           <img 
             src="{{ '/images/events/kabs-group.jpg' | relative_url }}" 
             alt="KABS and WKWSCI Researchers &amp; Graduate Students Academic Exchange Group Photo" 
-            style="width: 100%; height: auto; display: block; object-fit: cover;"
+            style="width: 100%; height: auto; display: block;"
             loading="lazy"
           >
-          <figcaption style="padding: 10px 14px; font-size: 0.8rem; color: var(--color-ink-muted); background: var(--color-surface-warm);">
+          <figcaption style="padding: 10px 14px; font-size: 0.8rem; color: var(--color-ink-muted); background: var(--color-surface-warm); border-top: 1px solid var(--color-border);">
             Academic exchange participants: KABS delegation, WKWSCI faculty, researchers, and graduate students
           </figcaption>
         </figure>

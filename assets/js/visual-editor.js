@@ -289,8 +289,13 @@
   // Entry Point
   function init() {
     const urlParams = new URLSearchParams(window.location.search);
-    const hasEditParam = urlParams.has('edit') || window.location.hash === '#edit';
-    const storedState = localStorage.getItem('cksl_editor_active');
+    const hasEditParam = urlParams.get('edit') === 'true' || window.location.hash === '#edit';
+
+    // If NOT explicitly in edit mode via ?edit=true, do NOTHING
+    if (!hasEditParam) {
+      localStorage.removeItem('cksl_editor_active');
+      return;
+    }
 
     // Restore saved palette and font
     const savedPal = localStorage.getItem('cksl_palette');
@@ -298,18 +303,7 @@
     const savedFont = localStorage.getItem('cksl_font_size');
     if (savedFont) applyFontSize(savedFont, false);
 
-    const isLocalhost = window.location.hostname === 'localhost' ||
-                        window.location.hostname === '127.0.0.1' ||
-                        window.location.hostname === '';
-
-    if (hasEditParam || (isLocalhost && storedState === 'true')) {
-      enableEditor();
-    } else {
-      const launcher = document.getElementById('cksl-editor-launcher');
-      if (launcher && (isLocalhost || hasEditParam)) {
-        launcher.style.display = 'inline-flex';
-      }
-    }
+    enableEditor();
 
     // Attach launcher
     const launcher = document.getElementById('cksl-editor-launcher');

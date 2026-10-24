@@ -852,6 +852,7 @@ body.cksl-editor-active #cksl-canvas-viewport {
 
 /* Drag & Drop Visual Indicators */
 .cksl-drag-handle {
+  display: none !important;
   position: absolute;
   top: 6px;
   left: 6px;
@@ -861,7 +862,6 @@ body.cksl-editor-active #cksl-canvas-viewport {
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #9CA3AF;
   border-radius: 4px;
-  display: flex;
   align-items: center;
   justify-content: center;
   font-size: 13px;
@@ -872,12 +872,16 @@ body.cksl-editor-active #cksl-canvas-viewport {
   user-select: none;
 }
 
+body.cksl-editor-active .cksl-drag-handle {
+  display: flex !important;
+}
+
 .cksl-drag-handle:active {
   cursor: grabbing;
 }
 
-[data-cksl-box-selected] > .cksl-drag-handle,
-*:hover > .cksl-drag-handle {
+body.cksl-editor-active [data-cksl-box-selected] > .cksl-drag-handle,
+body.cksl-editor-active *:hover > .cksl-drag-handle {
   opacity: 1;
 }
 
