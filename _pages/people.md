@@ -58,8 +58,8 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
   </div>
 
   <div class="person-list-row">
-    <div class="person-avatar-wrap" style="background-color: var(--color-surface-warm); border: 1.5px dashed var(--color-border);">
-      <span class="person-avatar-initials">ASB</span>
+    <div class="person-avatar-wrap">
+      <img src="{{ '/images/people/ahn-soong-bum.jpg' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
     </div>
     <div class="person-meta-wrap">
       <h3 class="person-name-title">Ahn Soong-bum</h3>
