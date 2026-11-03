@@ -1,0 +1,13 @@
+# Jekyll build outputs
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Large raw source files
+Copy of *.pdf
+ksl_spec_full.txt
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

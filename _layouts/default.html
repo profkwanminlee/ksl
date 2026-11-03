@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include meta.html %}
+</head>
+<body class="site-body">
+  <!-- Dynamic Canvas Viewport & Page Frame for Studio Editor -->
+  <div id="cksl-canvas-viewport" class="device-desktop">
+    <div id="cksl-page-frame">
+      <!-- Skip to Main Content for Accessibility -->
+      <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+      <!-- Global Header & Navigation -->
+      {% include header.html %}
+
+      <!-- Main Landmark -->
+      <main id="main-content" class="main-content" role="main">
+        {{ content }}
+      </main>
+
+      <!-- Global Academic Footer -->
+      {% include footer.html %}
+    </div>
+  </div>
+
+  <!-- Jump to Top Floating Button -->
+  <button type="button" id="jumpToTopBtn" class="jump-to-top-btn" aria-label="Jump to top of page">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- Parallax and UI Interaction Script -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>

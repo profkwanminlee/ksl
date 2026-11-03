@@ -1,0 +1,109 @@
+<header class="navbar" id="siteNavbar" role="banner">
+  <div class="navbar__inner container">
+    <!-- Brand: NTU Logo (Hyperlinked to NTU Homepage) + Divider + Korean Studies Lab -->
+    <div class="navbar__brand-wrapper" style="display: flex; align-items: center;">
+      <a href="https://www.ntu.edu.sg/" target="_blank" rel="noopener noreferrer" class="navbar__logo-link" aria-label="Nanyang Technological University Homepage">
+        <img src="{{ '/images/ntu-logo.png' | relative_url }}" alt="Nanyang Technological University" class="navbar__logo-ntu">
+      </a>
+      <span class="navbar__logo-divider" aria-hidden="true"></span>
+      <a href="{{ '/' | relative_url }}" class="navbar__brand" id="brandHomeLink" aria-label="Korean Studies Lab Home">
+        <img src="{{ '/images/ksl-logo.png' | relative_url }}" alt="Korean Studies Lab" class="navbar__logo-ksl">
+      </a>
+    </div>
+
+    <!-- Primary Navigation -->
+    <nav class="navbar__nav" role="navigation" aria-label="Main Navigation">
+      <ul class="navbar__links">
+        {% for item in site.data.navigation.main %}
+        {% assign is_active = false %}
+        {% if page.url == item.url %}
+          {% assign is_active = true %}
+        {% elsif item.url != '/' and page.url contains item.url %}
+          {% assign is_active = true %}
+        {% endif %}
+        <li class="navbar__item{% if is_active %} active{% endif %}{% if item.children %} has-dropdown{% endif %}">
+          <a href="{{ item.url | relative_url }}" class="navbar__link"{% if is_active %} aria-current="page"{% endif %}>
+            {{ item.title }}
+            {% if item.children %}
+            <svg class="navbar__caret" width="9" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {% endif %}
+          </a>
+          {% if item.children %}
+          <ul class="navbar__dropdown" role="menu" aria-label="{{ item.title }} submenu">
+            {% for child in item.children %}
+            <li class="navbar__dropdown-item" role="none">
+              <a href="{{ child.url | relative_url }}" class="navbar__dropdown-link" role="menuitem">
+                {{ child.title }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+
+      <!-- Unboxed Mobile Hamburger (Modeled on Prof. Kwan Min Lee's Site) -->
+      <button id="mobileNavToggle" class="masthead__toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNavOverlay">
+        <div class="masthead__toggle-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<!-- Mobile Navigation Dropdown Overlay -->
+<div id="mobileNavOverlay" class="mobile-nav-overlay" aria-hidden="true">
+  <div class="mobile-nav-body">
+    <ul class="mobile-nav-list">
+      {% for item in site.data.navigation.main %}
+      {% assign is_active = false %}
+      {% if page.url == item.url %}
+        {% assign is_active = true %}
+      {% elsif item.url != '/' and page.url contains item.url %}
+        {% assign is_active = true %}
+      {% endif %}
+      <li class="mobile-nav-item{% if is_active %} active{% endif %}{% if item.children %} has-mobile-submenu{% endif %}">
+        {% if item.children %}
+        <div class="mobile-nav-row mobile-nav-trigger" role="button" tabindex="0" aria-expanded="false" aria-label="Toggle {{ item.title }} submenus">
+          <span class="mobile-nav-title{% if is_active %} active{% endif %}">{{ item.title }}</span>
+          <span class="mobile-submenu-toggle">
+            <svg class="mobile-caret" width="12" height="8" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </div>
+        <ul class="mobile-submenu" aria-hidden="true">
+          <li class="mobile-submenu-item">
+            <a href="{{ item.url | relative_url }}" class="mobile-submenu-link mobile-submenu-overview">
+              Overview: {{ item.title }} &rarr;
+            </a>
+          </li>
+          {% for child in item.children %}
+          <li class="mobile-submenu-item">
+            <a href="{{ child.url | relative_url }}" class="mobile-submenu-link">
+              {{ child.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <div class="mobile-nav-row">
+          <a href="{{ item.url | relative_url }}" class="mobile-nav-link"{% if is_active %} aria-current="page"{% endif %}>
+            {{ item.title }}
+          </a>
+        </div>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="mobile-nav-footer">
+      <span class="mobile-nav-sub">Wee Kim Wee School of Communication and Information</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+# Main Navigation Links for Korean Studies Lab (KSL)
+# Order: About, Research, Association of Digital Korean Studies, Publications, People, Events & News, Contact
+
+main:
+  - title: "About"
+    url: "/about/"
+  - title: "Research"
+    url: "/research/"
+    children:
+      - title: "Contemporary Korean Culture & Society"
+        url: "/research/#contemporary-korean-culture-society"
+      - title: "Computational Korean Studies"
+        url: "/research/#computational-korean-studies"
+      - title: "Comparative Korean Studies"
+        url: "/research/#comparative-korean-studies"
+  - title: "Association of Digital Korean Studies"
+    url: "/association/"
+  - title: "Publications"
+    url: "/publications/"
+    children:
+      - title: "Books"
+        url: "/publications/#books"
+      - title: "Journal Articles & Conference Presentations"
+        url: "/publications/#journal-articles-conference-presentations"
+      - title: "Keynote Speeches & Invited Talks"
+        url: "/publications/#keynote-speeches-invited-talks"
+      - title: "News Columns & Op-Eds"
+        url: "/publications/#news-columns-op-eds"
+  - title: "People"
+    url: "/people/"
+  - title: "Events & News"
+    url: "/events/"
+  - title: "Contact"
+    url: "/contact/"
