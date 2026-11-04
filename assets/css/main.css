@@ -1379,17 +1379,29 @@ a:hover {
   text-decoration: underline;
 }
 
+.markdown-body .director-name-title a,
+.markdown-body .person-name-title a,
+.director-name-title a,
+.person-name-title a,
 .person-profile-link {
-  color: inherit;
-  text-decoration: none;
+  color: inherit !important;
+  text-decoration: none !important;
   cursor: pointer;
   display: inline-block;
   transition: color 0.2s ease;
 }
+.markdown-body .director-name-title a:hover,
+.markdown-body .director-name-title a:focus-visible,
+.markdown-body .person-name-title a:hover,
+.markdown-body .person-name-title a:focus-visible,
+.director-name-title a:hover,
+.director-name-title a:focus-visible,
+.person-name-title a:hover,
+.person-name-title a:focus-visible,
 .person-profile-link:hover,
 .person-profile-link:focus-visible {
-  color: var(--color-primary);
-  text-decoration: none;
+  color: var(--color-primary) !important;
+  text-decoration: none !important;
 }
 
 .useful-center-link {
