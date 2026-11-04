@@ -11,9 +11,25 @@ description: "Academic conferences, research collaborations, public programs, an
 
 ## Events
 
-<div class="events-list" style="display: flex; flex-direction: column; gap: 2rem; margin: 1.25rem 0 2.5rem 0;">
+<div class="events-list" style="display: flex; flex-direction: column; gap: 2.25rem; margin: 1.25rem 0 2.5rem 0;">
 
-  <!-- Event 1: KABS Event -->
+  <!-- Event 1: Upcoming Symposium (January 2027) -->
+  <div class="event-item">
+    <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap;">
+      <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em;">January 2027 &bull; Upcoming</span>
+      <span style="font-size: 0.88rem; color: var(--color-ink-muted);">&bull; WKWSCI, NTU Singapore</span>
+    </div>
+
+    <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--color-ink); margin: 0 0 0.75rem 0;">
+      Inaugural Symposium: Korean Studies and Digital Regionalism
+    </h3>
+
+    <p style="font-size: 1.02rem; line-height: 1.8; color: var(--color-ink); margin: 0;">
+      Convened by the Korean Studies Lab, this inaugural symposium establishes the collaborative vision of the <strong>Association of Digital Korean Studies</strong> to share research, develop joint projects, and build lasting partnerships across Korea and ASEAN.
+    </p>
+  </div>
+
+  <!-- Event 2: KABS Event (August 2026) -->
   <div class="event-item">
     <div class="event-side-by-side">
       <div class="event-side-by-side__text">
@@ -36,10 +52,10 @@ description: "Academic conferences, research collaborations, public programs, an
           <img 
             src="{{ '/images/events/kabs-group.jpg' | relative_url }}" 
             alt="KABS and WKWSCI Researchers &amp; Graduate Students Academic Exchange Group Photo" 
-            style="width: 100%; height: auto; display: block; border-radius: 14px;"
+            class="event-media-fit"
             loading="lazy"
           >
-          <figcaption style="padding-top: 8px; font-size: 0.84rem; color: var(--color-ink-muted);">
+          <figcaption style="padding-top: 6px; font-size: 0.82rem; color: var(--color-ink-muted);">
             Academic exchange participants: KABS delegation, WKWSCI faculty, researchers, and graduate students
           </figcaption>
         </figure>
@@ -47,42 +63,44 @@ description: "Academic conferences, research collaborations, public programs, an
     </div>
   </div>
 
-  <!-- Event 2: KF President Visit -->
+  <!-- Event 3: KF President Visit (October 2024) -->
   <div class="event-item">
-    <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap;">
-      <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em;">Distinguished Visit</span>
-      <span style="font-size: 0.88rem; color: var(--color-ink-muted);">&bull; WKWSCI, Nanyang Technological University, Singapore</span>
+    <div class="event-side-by-side">
+      <div class="event-side-by-side__text">
+        <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em;">October 2024 &bull; Distinguished Visit</span>
+          <span style="font-size: 0.88rem; color: var(--color-ink-muted);">&bull; WKWSCI, Nanyang Technological University, Singapore</span>
+        </div>
+
+        <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--color-ink); margin: 0 0 0.75rem 0;">
+          Korea Foundation (KF) President Visit &amp; Address
+        </h3>
+
+        <p style="font-size: 1.02rem; line-height: 1.8; color: var(--color-ink); margin-bottom: 0.75rem;">
+          Official visit and keynote address delivered by the President of the Korea Foundation at Nanyang Technological University, addressing Korea-Singapore academic ties and future horizons in global Korean studies.
+        </p>
+
+        <div>
+          <a href="https://www.linkedin.com/posts/leekwanmin_thanks-ambassador-kim-gheewhan-president-ugcPost-7254727236333821953-KmYW/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-size: 0.95rem; font-weight: 600; text-decoration: none;">
+            Watch Address Post on LinkedIn &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="event-side-by-side__image">
+        <figure style="margin: 0;">
+          <div style="position: relative; width: 100%; border-radius: 12px; overflow: hidden; background: #000;">
+            <video controls preload="auto" playsinline src="{{ '/videos/KFpresidentVisit.mp4' | relative_url }}" class="event-media-fit" style="background: #000;">
+              <source src="{{ '/videos/KFpresidentVisit.mp4' | relative_url }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <figcaption style="padding-top: 6px; font-size: 0.82rem; color: var(--color-ink-muted);">
+            Keynote address video: Korea Foundation President visit at NTU WKWSCI
+          </figcaption>
+        </figure>
+      </div>
     </div>
-
-    <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--color-ink); margin: 0 0 0.75rem 0;">
-      Korea Foundation (KF) President Visit &amp; Address
-    </h3>
-
-    <p style="font-size: 1.02rem; line-height: 1.8; color: var(--color-ink); margin-bottom: 1rem;">
-      Official visit and keynote address delivered by the President of the Korea Foundation at Nanyang Technological University, addressing Korea-Singapore academic ties and future horizons in global Korean studies.
-    </p>
-
-    <div>
-      <a href="https://www.linkedin.com/posts/leekwanmin_thanks-ambassador-kim-gheewhan-president-ugcPost-7254727236333821953-KmYW/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-size: 0.98rem; font-weight: 600; text-decoration: none;">
-        Watch Address Video on LinkedIn &rarr;
-      </a>
-    </div>
-  </div>
-
-  <!-- Event 3: Upcoming Symposium -->
-  <div class="event-item">
-    <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap;">
-      <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.05em;">Upcoming</span>
-      <span style="font-size: 0.88rem; color: var(--color-ink-muted); font-weight: 600;">&bull; January 2027 | WKWSCI, NTU Singapore</span>
-    </div>
-
-    <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--color-ink); margin: 0 0 0.75rem 0;">
-      Inaugural Symposium: Korean Studies and Digital Regionalism
-    </h3>
-
-    <p style="font-size: 1.02rem; line-height: 1.8; color: var(--color-ink); margin: 0;">
-      Convened by the Korean Studies Lab, this inaugural symposium establishes the collaborative vision of the <strong>Association of Digital Korean Studies</strong>. Participating institutions include Nanyang Technological University (NTU), National University of Singapore (NUS), the K-Culture Story Content Research Institute, and the Korean Association for Broadcasting &amp; Telecommunication Studies (KABS).
-    </p>
   </div>
 
 </div>

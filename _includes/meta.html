@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:title" content="{% if page.title and page.title != 'Home' %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
 <meta property="og:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 }}">
-<meta property="og:image" content="{{ '/images/korea1.jpg' | relative_url }}">
+<meta property="og:image" content="{{ page.hero_image | default: '/images/hero/home.jpg' | relative_url }}">
 
 <!-- Google Fonts: Plus Jakarta Sans for ALL text + Noto Serif KR / Noto Sans KR for Korean glyphs -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,11 @@
 
 <!-- Preload Hero Assets -->
 <link rel="preload" as="image" href="{{ '/images/ntu-logo.png' | relative_url }}">
-<link rel="preload" as="image" href="{{ '/images/korea1.jpg' | relative_url }}" fetchpriority="high">
+{% if page.hero_image %}
+<link rel="preload" as="image" href="{{ page.hero_image | relative_url }}" fetchpriority="high">
+{% else %}
+<link rel="preload" as="image" href="{{ '/images/hero/home.jpg' | relative_url }}" fetchpriority="high">
+{% endif %}
 
 <!-- Stylesheet -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

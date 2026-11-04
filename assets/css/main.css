@@ -49,7 +49,7 @@
   --color-border-subtle: #ECE6DC;
 
   /* Sizing & Grid */
-  --container-max: 1140px;
+  --container-max: 1320px;
   --header-height: 76px;
   --radius-xs: 3px;
   --radius-sm: 4px;
@@ -247,7 +247,7 @@ a:hover {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 15px;
+  gap: 13px;
 }
 
 .navbar__item {
@@ -255,7 +255,7 @@ a:hover {
 }
 
 .navbar__link {
-  font-size: 0.94rem;
+  font-size: 1.00rem;
   font-weight: 650;
   color: var(--color-ink);
   text-decoration: none;
@@ -475,7 +475,6 @@ a:hover {
   bottom: 0;
   width: 100%;
   height: calc(100vh - var(--header-height));
-  height: calc(100dvh - var(--header-height));
   background-color: rgba(239, 232, 222, 0.94);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
@@ -494,6 +493,11 @@ a:hover {
   visibility: visible;
   pointer-events: auto;
   transition: opacity 0.22s ease, visibility 0s linear 0s;
+}
+@supports (height: 100dvh) {
+  .mobile-nav-overlay {
+    height: calc(100dvh - var(--header-height));
+  }
 }
 
 .mobile-nav-body {
@@ -1375,6 +1379,35 @@ a:hover {
   text-decoration: underline;
 }
 
+.person-profile-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.2s ease;
+}
+.person-profile-link:hover,
+.person-profile-link:focus-visible {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.useful-center-link {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  text-decoration: none;
+  transition: color 0.18s ease;
+  display: inline-block;
+}
+.useful-center-link:hover,
+.useful-center-link:focus-visible {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
 .people-list-container {
   display: flex;
   flex-direction: column;
@@ -1548,7 +1581,6 @@ a:hover {
 .ebook-vol-btn.is-active:hover,
 .ebook-vol-btn.is-active:focus {
   background-color: #1a1c1e !important;
-  background: #1a1c1e !important;
   border-color: #1a1c1e !important;
   color: #ffffff !important;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
@@ -1671,14 +1703,28 @@ a:hover {
    -------------------------------------------------------------------------- */
 .event-side-by-side {
   display: grid;
-  grid-template-columns: 1.25fr 1fr;
-  gap: 24px;
-  align-items: center;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.event-media-fit {
+  width: 100%;
+  max-height: 185px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+video.event-media-fit {
+  object-fit: contain;
+  background: #000000;
 }
 @media (max-width: 768px) {
   .event-side-by-side {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+  .event-media-fit {
+    max-height: 240px;
   }
 }
 
@@ -1693,7 +1739,7 @@ a:hover {
   border: none;
   border-bottom: 1px solid var(--color-border);
   border-radius: 0;
-  padding: 1.15rem 0;
+  padding: 0.85rem 0;
   box-shadow: none;
 }
 .news-entry-card:last-child {
@@ -1703,7 +1749,7 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.45rem;
   font-size: 0.85rem;
   color: var(--color-primary);
   font-weight: 700;
@@ -1714,7 +1760,7 @@ a:hover {
   font-size: 1.18rem;
   font-weight: 700;
   line-height: 1.45;
-  margin: 0 0 0.65rem 0;
+  margin: 0 0 0.45rem 0;
   color: var(--color-ink);
 }
 .news-headline a {
@@ -2361,6 +2407,61 @@ a:hover {
 /* --------------------------------------------------------------------------
    9. Responsive Breakpoints (Laptop, Tablet, Mobile Fixed Concrete Layout)
    -------------------------------------------------------------------------- */
+@media (max-width: 1280px) and (min-width: 1161px) {
+  .navbar__links {
+    gap: 10px;
+  }
+  .navbar__link {
+    font-size: 0.91rem;
+    padding: 5px 1px;
+  }
+  .navbar__brand-text {
+    font-size: 0.95rem;
+  }
+  .navbar__logo-divider {
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 1160px) and (min-width: 1051px) {
+  .navbar__links {
+    gap: 8px;
+  }
+  .navbar__link {
+    font-size: 0.84rem;
+    padding: 4px 1px;
+  }
+  .navbar__logo-ntu {
+    height: 35px;
+  }
+  .navbar__logo-ksl {
+    height: 35px;
+  }
+  .navbar__logo-divider {
+    margin: 0 9px;
+  }
+}
+
+@media (max-width: 1050px) and (min-width: 981px) {
+  .navbar__links {
+    gap: 6px;
+  }
+  .navbar__link {
+    font-size: 0.78rem;
+    padding: 4px 0px;
+  }
+  .navbar__logo-ntu {
+    height: 32px;
+  }
+  .navbar__logo-ksl {
+    height: 32px;
+  }
+  .navbar__logo-divider {
+    height: 22px;
+    margin: 0 8px;
+  }
+}
+
 @media (max-width: 1024px) {
   .overview-grid {
     grid-template-columns: 1fr;
@@ -2378,23 +2479,7 @@ a:hover {
   }
 }
 
-@media (max-width: 1200px) and (min-width: 861px) {
-  .navbar__links {
-    gap: 10px;
-  }
-  .navbar__link {
-    font-size: 0.88rem;
-    padding: 5px 1px;
-  }
-  .navbar__brand-text {
-    font-size: 0.95rem;
-  }
-  .navbar__logo-divider {
-    margin: 0 10px;
-  }
-}
-
-@media (max-width: 860px) {
+@media (max-width: 980px) {
   :root {
     --header-height: 68px;
   }
@@ -2500,7 +2585,6 @@ a:hover {
 .jump-to-top-btn:focus,
 .jump-to-top-btn:active {
   background-color: var(--color-red) !important;
-  background: var(--color-red) !important;
   color: #FFFFFF !important;
   border-color: var(--color-red) !important;
   opacity: 1 !important;

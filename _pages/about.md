@@ -21,11 +21,34 @@ Through symposia, research colloquia, visiting fellowships, and joint publicatio
 
 **Mission:** To build a hub for contemporary Korean studies in Southeast Asia that advances new ways of understanding Korea from the region.
 
-**Objectives:**
-1. **Advance research:** Produce rigorous research on contemporary Korea and its connections with Singapore and Southeast Asia.
-2. **Develop new methods:** Establish digital area studies as a methodological approach within Korean studies.
-3. **Publish and share knowledge:** Disseminate research through academic publications, the Companion E-book Series, and open educational resources.
-4. **Build networks:** Foster lasting academic, cultural, and policy partnerships across Korea and ASEAN, including through the Association of Digital Korean Studies.
+<p style="font-size: 1.05rem; font-weight: 700; color: var(--color-ink); margin: 1.25rem 0 0.5rem 0;">Objectives:</p>
+
+<ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.85rem; margin-top: 0.5rem; margin-bottom: 2rem;">
+  <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+    <span style="color: var(--color-primary); font-weight: 800; font-size: 1.25rem; line-height: 1.3;">&bull;</span>
+    <div style="font-size: 1.02rem; line-height: 1.7; color: var(--color-ink);">
+      <strong>Advance research:</strong> Produce rigorous research on contemporary Korea and its connections with Singapore and Southeast Asia.
+    </div>
+  </li>
+  <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+    <span style="color: var(--color-primary); font-weight: 800; font-size: 1.25rem; line-height: 1.3;">&bull;</span>
+    <div style="font-size: 1.02rem; line-height: 1.7; color: var(--color-ink);">
+      <strong>Develop new methods:</strong> Establish digital area studies as a methodological approach within Korean studies.
+    </div>
+  </li>
+  <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+    <span style="color: var(--color-primary); font-weight: 800; font-size: 1.25rem; line-height: 1.3;">&bull;</span>
+    <div style="font-size: 1.02rem; line-height: 1.7; color: var(--color-ink);">
+      <strong>Publish and share knowledge:</strong> Disseminate research through academic publications, the Companion E-book Series, and open educational resources.
+    </div>
+  </li>
+  <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
+    <span style="color: var(--color-primary); font-weight: 800; font-size: 1.25rem; line-height: 1.3;">&bull;</span>
+    <div style="font-size: 1.02rem; line-height: 1.7; color: var(--color-ink);">
+      <strong>Build networks:</strong> Foster lasting academic, cultural, and policy partnerships across Korea and ASEAN, including through the Association of Digital Korean Studies.
+    </div>
+  </li>
+</ul>
 
 ## Institutional Context & Leadership
 

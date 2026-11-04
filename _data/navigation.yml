@@ -1,5 +1,5 @@
 # Main Navigation Links for Korean Studies Lab (KSL)
-# Order: About, Research, Association of Digital Korean Studies, Publications, People, Events & News, Contact
+# Order: About, Research, Association of Digital Korean Studies, Publications, People, Events & News, Contact, Useful Links
 
 main:
   - title: "About"
@@ -32,3 +32,5 @@ main:
     url: "/events/"
   - title: "Contact"
     url: "/contact/"
+  - title: "Useful Links"
+    url: "/links/"

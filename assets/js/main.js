@@ -15,6 +15,22 @@
   var mobileNavOverlay = document.getElementById('mobileNavOverlay');
 
   if (mobileNavToggle && mobileNavOverlay) {
+    var openMobileNav = function () {
+      mobileNavOverlay.classList.add('is-active');
+      mobileNavToggle.classList.add('is-open');
+      mobileNavOverlay.setAttribute('aria-hidden', 'false');
+      mobileNavToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+
+    var closeMobileNav = function () {
+      mobileNavOverlay.classList.remove('is-active');
+      mobileNavToggle.classList.remove('is-open');
+      mobileNavOverlay.setAttribute('aria-hidden', 'true');
+      mobileNavToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
     mobileNavToggle.addEventListener('click', function (e) {
       e.preventDefault();
       var isOpen = mobileNavOverlay.classList.contains('is-active');
@@ -25,22 +41,6 @@
       }
     });
 
-    function openMobileNav() {
-      mobileNavOverlay.classList.add('is-active');
-      mobileNavToggle.classList.add('is-open');
-      mobileNavOverlay.setAttribute('aria-hidden', 'false');
-      mobileNavToggle.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeMobileNav() {
-      mobileNavOverlay.classList.remove('is-active');
-      mobileNavToggle.classList.remove('is-open');
-      mobileNavOverlay.setAttribute('aria-hidden', 'true');
-      mobileNavToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-
     // Close on clicking any link inside
     var mobileLinks = mobileNavOverlay.querySelectorAll('a');
     mobileLinks.forEach(function (link) {
@@ -50,45 +50,38 @@
     });
 
     // Mobile submenu accordion toggle (clicking menu row opens submenus directly below like a list)
-    var navTriggers = mobileNavOverlay.querySelectorAll('.mobile-nav-trigger');
-    navTriggers.forEach(function (trigger) {
-      function toggleSubmenu(e) {
-        e.preventDefault();
-        var parentItem = trigger.closest('.has-mobile-submenu');
-        if (!parentItem) return;
-        var submenu = parentItem.querySelector('.mobile-submenu');
-        var isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+    var toggleSubmenu = function (e) {
+      e.preventDefault();
+      var trigger = e.currentTarget;
+      var parentItem = trigger.closest('.has-mobile-submenu');
+      if (!parentItem) return;
+      var submenu = parentItem.querySelector('.mobile-submenu');
+      var isExpanded = trigger.getAttribute('aria-expanded') === 'true';
 
-        if (isExpanded) {
-          trigger.setAttribute('aria-expanded', 'false');
-          parentItem.classList.remove('is-open');
-          if (submenu) {
-            submenu.classList.remove('is-open');
-            submenu.setAttribute('aria-hidden', 'true');
-          }
-        } else {
-          trigger.setAttribute('aria-expanded', 'true');
-          parentItem.classList.add('is-open');
-          if (submenu) {
-            submenu.classList.add('is-open');
-            submenu.setAttribute('aria-hidden', 'false');
-          }
+      if (isExpanded) {
+        trigger.setAttribute('aria-expanded', 'false');
+        parentItem.classList.remove('is-open');
+        if (submenu) {
+          submenu.classList.remove('is-open');
+          submenu.setAttribute('aria-hidden', 'true');
+        }
+      } else {
+        trigger.setAttribute('aria-expanded', 'true');
+        parentItem.classList.add('is-open');
+        if (submenu) {
+          submenu.classList.add('is-open');
+          submenu.setAttribute('aria-hidden', 'false');
         }
       }
+    };
 
+    var navTriggers = mobileNavOverlay.querySelectorAll('.mobile-nav-trigger');
+    navTriggers.forEach(function (trigger) {
       trigger.addEventListener('click', toggleSubmenu);
       trigger.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {
           toggleSubmenu(e);
         }
-      });
-    });
-
-    // Close mobile nav when clicking any link
-    var mobileLinks = mobileNavOverlay.querySelectorAll('a');
-    mobileLinks.forEach(function (link) {
-      link.addEventListener('click', function () {
-        closeMobileNav();
       });
     });
 
@@ -102,7 +95,7 @@
 
     // Reset on window resize above mobile breakpoint
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 860 && mobileNavOverlay.classList.contains('is-active')) {
+      if (window.innerWidth > 980 && mobileNavOverlay.classList.contains('is-active')) {
         closeMobileNav();
       }
     }, { passive: true });

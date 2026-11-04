@@ -18,38 +18,26 @@ description: "Research themes, methods, and active projects of the Korean Studie
     We study Korean culture as it is made, shared, and contested today. Our research looks at how Hallyu travels across digital platforms and national borders, and how audiences in Southeast Asia and beyond read, adapt, and sometimes resist it.
   </p>
 
-  <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-ink); text-transform: uppercase; letter-spacing: 0.05em; margin: 1.5rem 0 0.75rem 0;">
+  <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-ink); text-transform: uppercase; letter-spacing: 0.05em; margin: 1.25rem 0 0.5rem 0;">
     Ongoing Projects
   </h3>
 
-  <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 1.1rem; margin-top: 0.75rem;">
+  <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.55rem; margin-top: 0.5rem;">
     <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
       <span style="color: var(--color-primary); font-weight: 800; font-size: 1.25rem; line-height: 1.3;">&bull;</span>
-      <div>
-        <strong style="font-size: 1.08rem; color: var(--color-ink); display: block; margin-bottom: 0.2rem;">Making “K” Legible: KBS WORLD on Global Platforms</strong>
-        <span style="font-size: 0.94rem; color: var(--color-ink-muted);">Investigators: Janghyo Park, Inyong Park</span>
-      </div>
+      <strong style="font-size: 1.04rem; color: var(--color-ink); line-height: 1.5; font-weight: 600;">Making "K" Legible: KBS WORLD on Global Platforms</strong>
     </li>
     <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
       <span style="color: var(--color-primary); font-weight: 800; font-size: 1.25rem; line-height: 1.3;">&bull;</span>
-      <div>
-        <strong style="font-size: 1.08rem; color: var(--color-ink); display: block; margin-bottom: 0.2rem;">Othering and Belonging in East Asia: Korea, Hallyu, and Cultural Boundaries on Digital Platforms</strong>
-        <span style="font-size: 0.94rem; color: var(--color-ink-muted);">Investigator: Janghyo Park</span>
-      </div>
+      <strong style="font-size: 1.04rem; color: var(--color-ink); line-height: 1.5; font-weight: 600;">Othering and Belonging in East Asia: Korea, Hallyu, and Cultural Boundaries on Digital Platforms</strong>
     </li>
     <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
       <span style="color: var(--color-primary); font-weight: 800; font-size: 1.25rem; line-height: 1.3;">&bull;</span>
-      <div>
-        <strong style="font-size: 1.08rem; color: var(--color-ink); display: block; margin-bottom: 0.2rem;">The Impact of K-Pop Demon Hunters on Interest in Korean Culture</strong>
-        <span style="font-size: 0.94rem; color: var(--color-ink-muted);">Investigator: Inyong Park</span>
-      </div>
+      <strong style="font-size: 1.04rem; color: var(--color-ink); line-height: 1.5; font-weight: 600;">The Impact of K-Pop Demon Hunters on Interest in Korean Culture</strong>
     </li>
     <li style="display: flex; align-items: flex-start; gap: 0.75rem;">
       <span style="color: var(--color-primary); font-weight: 800; font-size: 1.25rem; line-height: 1.3;">&bull;</span>
-      <div>
-        <strong style="font-size: 1.08rem; color: var(--color-ink); display: block; margin-bottom: 0.2rem;">User Perceptions of Virtual Humans in Digital Cultural Content</strong>
-        <span style="font-size: 0.94rem; color: var(--color-ink-muted);">Investigator: Inyong Park</span>
-      </div>
+      <strong style="font-size: 1.04rem; color: var(--color-ink); line-height: 1.5; font-weight: 600;">User Perceptions of Virtual Humans in Digital Cultural Content</strong>
     </li>
   </ul>
 </section>

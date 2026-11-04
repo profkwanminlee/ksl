@@ -13,13 +13,6 @@ description: "The Association of Digital Korean Studies brings together scholars
 
 The Association of Digital Korean Studies is a collaborative research community convened by the Korean Studies Lab. It brings together scholars working at the intersection of Korean studies, media, and digital methods to share research, develop joint projects, and build lasting partnerships between Korea and Southeast Asia.
 
-## Founding Partners
-
-* **Nanyang Technological University (NTU Singapore)**
-* **National University of Singapore (NUS)**
-* **The K-Culture Story Content Research Institute**
-* **The Korean Association for Broadcasting &amp; Telecommunication Studies**
-
 ## Upcoming
 
 * **Inaugural Symposium: Korean Studies and Digital Regionalism**  
