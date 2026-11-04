@@ -2,8 +2,8 @@
 layout: page
 title: "Useful Links"
 permalink: /links/
-hero_image: "/images/hero/research.jpg"
-hero_crop: "center 32%"
+hero_image: "/images/hero/links.jpg"
+hero_crop: "center 45%"
 hero_tag: "Global Directory"
 hero_subtitle: "Major university research institutes, regional centres, and scholarly initiatives advancing Korean studies globally."
 description: "Directory of leading international Korean studies centres, university institutes, and research programs."
