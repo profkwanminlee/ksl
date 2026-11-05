@@ -16,10 +16,10 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
     <img src="{{ '/images/profkwanportrait.jpeg' | relative_url }}" alt="Prof. Kwan Min Lee, Director" class="director-avatar-img">
   </div>
   <div class="director-meta-wrap">
-    <h3 class="director-name-title"><a href="https://kwanminlee.com" target="_blank" rel="noopener noreferrer" class="person-profile-link" title="Visit my website!" style="text-decoration: none;">Kwan Min Lee</a></h3>
+    <h3 class="director-name-title"><a href="https://profkwanminlee.github.io" target="_blank" rel="noopener noreferrer" class="person-profile-link" title="Visit my website!" style="text-decoration: none;">Kwan Min Lee</a></h3>
     <p class="director-role-title" style="margin-bottom: 2px;">Director, Korean Studies Lab</p>
     <p class="person-website-wrap" style="margin-bottom: 4px; line-height: 1.3;">
-      <a href="https://kwanminlee.com" target="_blank" rel="noopener noreferrer" class="person-website-link">kwanminlee.com</a>
+      <a href="https://profkwanminlee.github.io" target="_blank" rel="noopener noreferrer" class="person-website-link">kwanminlee.com</a>
     </p>
     <p class="director-affil-text" style="margin-bottom: 0;">
       Korea Foundation Endowed Chair Professor in Contemporary Korean Society &amp; New Media<br>
