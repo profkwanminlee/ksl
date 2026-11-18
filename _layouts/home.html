@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="home-page">
+  <!-- Homepage Hero Banner with Parallax and Background Image -->
+  {% include home-hero.html %}
+
+  <!-- Main Homepage Content Area -->
+  <div class="home-content-area">
+    {% if page.sections and page.sections.size > 0 %}
+      <div class="page-container container">
+        <div class="page-layout">
+          <div class="page-content-wrapper">
+            {% for block in page.sections %}
+              {% include blocks/{{ block.type }}.html block=block %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {{ content }}
+  </div>
+</div>

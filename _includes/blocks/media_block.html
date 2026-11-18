@@ -1,0 +1,13 @@
+{% assign b = include.block %}
+<figure class="block-media" style="margin: 32px 0;">
+  {% if b.image %}
+  <div class="media-frame" style="overflow: hidden; border-radius: var(--radius-xs); border: 1px solid var(--color-border); background-color: var(--color-surface-warm);">
+    <img src="{{ b.image | relative_url }}" alt="{{ b.alt | default: '' }}" style="width: 100%; height: auto; display: block; object-fit: cover;" loading="lazy">
+  </div>
+  {% endif %}
+  {% if b.caption %}
+  <figcaption style="font-size: 0.88rem; color: var(--color-ink-muted); margin-top: 8px; text-align: center; font-style: italic;">
+    {{ b.caption }}
+  </figcaption>
+  {% endif %}
+</figure>

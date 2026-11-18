@@ -1,0 +1,14 @@
+{%- comment -%} Site Studio: prints only the theme values changed in _data/theme.yml (nothing when unchanged). {%- endcomment -%}
+{%- assign studio_theme = site.data.theme.palettes[site.data.theme.active_palette] -%}
+{%- if studio_theme -%}
+{%- if studio_theme.font_url %}
+<link rel="stylesheet" href="{{ studio_theme.font_url }}">
+{%- endif -%}
+{%- if studio_theme.vars %}
+<style id="studio-theme">
+{%- for rule in studio_theme.vars %}
+{{ rule[0] }} { {% for v in rule[1] %}{{ v[0] }}: {{ v[1] }}; {% endfor %}}
+{%- endfor %}
+</style>
+{%- endif -%}
+{%- endif -%}
