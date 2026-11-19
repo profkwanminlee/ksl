@@ -50,7 +50,7 @@ description: "Academic conferences, research collaborations, public programs, an
       <div class="event-side-by-side__image">
         <figure style="margin: 0;">
           <img 
-            src="{{ '/images/events/kabs-group.jpg' | relative_url }}" 
+            src="{{ '/images/events/kabs-group.avif' | relative_url }}" 
             alt="KABS and WKWSCI Researchers &amp; Graduate Students Academic Exchange Group Photo" 
             class="event-media-fit"
             loading="lazy"

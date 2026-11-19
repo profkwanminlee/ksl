@@ -14,12 +14,11 @@ koreanstudieslab/
 ├── _config.yml               # Site metadata, settings, and permalinks
 ├── _data/
 │   ├── navigation.yml        # Navigation links (About, Research, Publications, People, Programs & Events, News, Contact)
-│   └── research_themes.yml   # The three core research themes and focus points
+│   └── theme.yml             # Colour/font themes chosen in Site Studio (empty = the original design)
 ├── _includes/
 │   ├── meta.html             # HTML <head> tags, Google Fonts, and OpenGraph metadata
 │   ├── header.html           # Brand wordmark and accessible responsive navigation bar
 │   ├── hero-banner.html      # Reusable image hero banner with parallax layers and lattice motif
-│   ├── korean-divider.html   # Restrained plum-blossom (Maehwa) line motif divider
 │   └── footer.html           # NTU Singapore institutional attribution, navigation, and contact
 ├── _layouts/
 │   ├── default.html          # Base layout shell
@@ -31,7 +30,7 @@ koreanstudieslab/
 │   ├── publications.md       # Featured Publications and Publication List (/publications/)
 │   ├── people.md             # Leadership, Affiliate Faculty, and Researchers (/people/)
 │   ├── programs-events.md    # Upcoming and Past Events (/programs-events/)
-│   ├── news.md               # Announcements and Academic Opportunities (/news/)
+│   ├── news.md               # Same content as Events & News, served at /news/ (kept in sync by Site Studio)
 │   ├── contact.md            # Location, Enquiries, and Collaboration Proposals (/contact/)
 │   └── 404.md                # Page Not Found fallback (/404.html)
 ├── assets/

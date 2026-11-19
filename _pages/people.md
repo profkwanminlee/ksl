@@ -33,7 +33,7 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
 <div class="people-list-container">
   <div class="person-list-row">
     <div class="person-avatar-wrap">
-      <img src="{{ '/images/people/janghyo-park.jpg' | relative_url }}" alt="Janghyo Park" class="person-avatar-img">
+      <img src="{{ '/images/people/janghyo-park.avif' | relative_url }}" alt="Janghyo Park" class="person-avatar-img">
     </div>
     <div class="person-meta-wrap">
       <h3 class="person-name-title">Janghyo Park</h3>
@@ -46,7 +46,7 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
 
   <div class="person-list-row">
     <div class="person-avatar-wrap">
-      <img src="{{ '/images/people/inyong-park.jpg' | relative_url }}" alt="Inyong Park" class="person-avatar-img">
+      <img src="{{ '/images/people/inyong-park.avif' | relative_url }}" alt="Inyong Park" class="person-avatar-img">
     </div>
     <div class="person-meta-wrap">
       <h3 class="person-name-title">Inyong Park</h3>
@@ -59,7 +59,7 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
 
   <div class="person-list-row">
     <div class="person-avatar-wrap">
-      <img src="{{ '/images/people/ahn-soong-bum.jpg' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
+      <img src="{{ '/images/people/ahn-soong-bum.avif' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
     </div>
     <div class="person-meta-wrap">
       <h3 class="person-name-title">Ahn Soong-bum</h3>
@@ -107,7 +107,7 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
 
   <div class="person-list-row">
     <div class="person-avatar-wrap">
-      <img src="{{ '/images/people/Vernice.jpeg' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
+      <img src="{{ '/images/people/Vernice.avif' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
     </div>
     <div class="person-meta-wrap">
       <h3 class="person-name-title">Vernice Chan Weng Yee</h3>
@@ -120,7 +120,7 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
 
   <div class="person-list-row">
     <div class="person-avatar-wrap">
-      <img src="{{ '/images/people/Alvin.jpeg' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
+      <img src="{{ '/images/people/Alvin.avif' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
     </div>
     <div class="person-meta-wrap">
       <h3 class="person-name-title">Alvin Gunawan<br></h3>
@@ -133,7 +133,7 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
 
   <div class="person-list-row">
     <div class="person-avatar-wrap">
-      <img src="{{ '/images/people/Thao.jpeg' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
+      <img src="{{ '/images/people/Thao.avif' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
     </div>
     <div class="person-meta-wrap">
       <h3 class="person-name-title">Nguyen Le Minh Thao<br></h3>
@@ -146,7 +146,7 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
 
   <div class="person-list-row">
     <div class="person-avatar-wrap">
-      <img src="{{ '/images/people/Krantida-Profile-Photo.jpg.jpeg' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
+      <img src="{{ '/images/people/Krantida-Profile-Photo.jpg.avif' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
     </div>
     <div class="person-meta-wrap">
       <h3 class="person-name-title">Krabil Krantida <br></h3>
@@ -179,7 +179,7 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
 <div class="people-list-container">
   <div class="person-list-row" style="border-bottom: none;">
     <div class="person-avatar-wrap">
-      <img src="{{ '/images/people/manan.jpg' | relative_url }}" alt="Manan Sethia, Web Master" class="person-avatar-img">
+      <img src="{{ '/images/people/manan.avif' | relative_url }}" alt="Manan Sethia, Web Master" class="person-avatar-img">
     </div>
     <div class="person-meta-wrap">
       <h3 class="person-name-title"><a href="https://manansethia.com" target="_blank" rel="noopener noreferrer" class="person-profile-link" title="Visit my website!" style="text-decoration: none;">Manan Sethia</a></h3>

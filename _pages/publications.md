@@ -9,7 +9,7 @@ hero_subtitle: "Books, journal articles, conference presentations, and keynote s
 description: "Academic publications, e-books, conference papers, and news columns of the Korean Studies Lab."
 ---
 
-<section id="books-2" style="margin-bottom: 3.5rem;">
+<section id="books" style="margin-bottom: 3.5rem;">
   <h2 style="font-size: 1.65rem; font-weight: 1000; color: var(--color-ink); margin-bottom: 1.25rem;">
     Books
   </h2>
@@ -58,9 +58,9 @@ description: "Academic publications, e-books, conference papers, and news column
   </ul>
 </section>
 
-<section id="conference-presentations-keynote-speeches" style="margin: 2.25rem 0;">
+<section id="keynote-speeches" style="margin: 2.25rem 0;">
   <h2 style="font-size: 1.65rem; font-weight: 1000; color: var(--color-ink); margin-bottom: 1.25rem;">
-    &nbsp;Keynote Speeches
+    Keynote Speeches
   </h2>
 
   <ul class="pub-bullet-list">
@@ -75,17 +75,10 @@ description: "Academic publications, e-books, conference papers, and news column
   </ul>
 </section>
 
-<section id="conference-presentations-keynote-speeches-4" style="margin: 2.25rem 0;">
+<section id="conference-presentations" style="margin: 2.25rem 0;">
   <h2 style="font-size: 1.65rem; font-weight: 1000; color: var(--color-ink); margin-bottom: 1.25rem;">
-    Conference Presentations<br></h2>
+    Conference Presentations
+  </h2>
 
-  <ul class="pub-bullet-list">
-    <li>Test ....</li>
-  </ul>
-</section>
-
-<section id="conference-presentations-keynote-speeches-2" style="margin: 2.25rem 0;">
-
-  <ul class="pub-bullet-list">
-  </ul>
+  <p>Conference presentations will be added soon.</p>
 </section>
