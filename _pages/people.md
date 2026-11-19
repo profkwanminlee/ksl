@@ -162,7 +162,7 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
       <img src="{{ '/images/people/sil.png' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
     </div>
     <div class="person-meta-wrap">
-      <h3 class="person-name-title">[RA-P]</h3>
+      <h3 class="person-name-title">Research Assistant</h3>
       <p class="person-role-title">Philippines</p>
       <p class="person-affil-text">
         Nanyang Technological University, Singapore
