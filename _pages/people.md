@@ -63,9 +63,9 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
     </div>
     <div class="person-meta-wrap">
       <h3 class="person-name-title">Ahn Soong-bum</h3>
-      <p class="person-role-title">Professor, Director</p>
+      <p class="person-role-title">Professor | Director</p>
       <p class="person-affil-text">
-        K-Culture Story Contents Research Institute | Kyung Hee University
+        Kyung Hee University | K-Culture Story Contents Research Institute
       </p>
     </div>
   </div>
