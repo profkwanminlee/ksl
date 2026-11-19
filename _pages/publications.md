@@ -9,7 +9,7 @@ hero_subtitle: "Books, journal articles, conference presentations, and keynote s
 description: "Academic publications, e-books, conference papers, and news columns of the Korean Studies Lab."
 ---
 
-<section id="books" style="margin-bottom: 3.5rem;">
+<section id="books-2" style="margin-bottom: 3.5rem;">
   <h2 style="font-size: 1.65rem; font-weight: 1000; color: var(--color-ink); margin-bottom: 1.25rem;">
     Books
   </h2>
@@ -60,7 +60,7 @@ description: "Academic publications, e-books, conference papers, and news column
 
 <section id="conference-presentations-keynote-speeches" style="margin: 2.25rem 0;">
   <h2 style="font-size: 1.65rem; font-weight: 1000; color: var(--color-ink); margin-bottom: 1.25rem;">
-    Conference Presentations &amp; Keynote Speeches
+    &nbsp;Keynote Speeches
   </h2>
 
   <ul class="pub-bullet-list">
@@ -72,5 +72,20 @@ description: "Academic publications, e-books, conference papers, and news column
     <li>Keynote Speech. UX Innovation in South Korea’s IT Industry. Korea Foundation Special Lectures on Korea 2019, Burapha University, Thailand. October 11, 2019.</li>
     <li>Keynote Speech. Korean Communication Research and Practice: Looking Back, Looking Forward. Korean Communication Research Conference. July 27, 2017.</li>
     <li>Invited Talk. Strategies for the Development of Korean Serious Games. Korea Serious Game Forum, Ministry of Culture and Tourism, South Korea. December 10, 2008.</li>
+  </ul>
+</section>
+
+<section id="conference-presentations-keynote-speeches-4" style="margin: 2.25rem 0;">
+  <h2 style="font-size: 1.65rem; font-weight: 1000; color: var(--color-ink); margin-bottom: 1.25rem;">
+    Conference Presentations<br></h2>
+
+  <ul class="pub-bullet-list">
+    <li>Test ....</li>
+  </ul>
+</section>
+
+<section id="conference-presentations-keynote-speeches-2" style="margin: 2.25rem 0;">
+
+  <ul class="pub-bullet-list">
   </ul>
 </section>
