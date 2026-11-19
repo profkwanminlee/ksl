@@ -10,7 +10,7 @@ description: "Academic publications, e-books, conference papers, and news column
 ---
 
 <section id="books" style="margin-bottom: 3.5rem;">
-  <h2 style="font-size: 1.65rem; font-weight: 700; color: var(--color-ink); margin-bottom: 1.25rem;">
+  <h2 style="font-size: 1.65rem; font-weight: 1000; color: var(--color-ink); margin-bottom: 1.25rem;">
     Books
   </h2>
 
@@ -44,7 +44,7 @@ description: "Academic publications, e-books, conference papers, and news column
 </section>
 
 <section id="journal-articles" style="margin: 2.25rem 0;">
-  <h2 style="font-size: 1.65rem; font-weight: 700; color: var(--color-ink); margin-bottom: 1.25rem;">
+  <h2 style="font-size: 1.65rem; font-weight: 1000; color: var(--color-ink); margin-bottom: 1.25rem;">
     Journal Articles
   </h2>
 
@@ -59,7 +59,7 @@ description: "Academic publications, e-books, conference papers, and news column
 </section>
 
 <section id="conference-presentations-keynote-speeches" style="margin: 2.25rem 0;">
-  <h2 style="font-size: 1.65rem; font-weight: 700; color: var(--color-ink); margin-bottom: 1.25rem;">
+  <h2 style="font-size: 1.65rem; font-weight: 1000; color: var(--color-ink); margin-bottom: 1.25rem;">
     Conference Presentations &amp; Keynote Speeches
   </h2>
 

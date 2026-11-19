@@ -10,7 +10,7 @@ description: "Research themes, methods, and active projects of the Korean Studie
 ---
 
 <section id="contemporary-korean-culture-society" style="margin-bottom: 2.5rem;">
-  <h2 style="font-size: 1.65rem; font-weight: 700; color: var(--color-ink); margin-bottom: 0.85rem;">
+  <h2 style="font-size: 1.65rem; font-weight: 1000; color: var(--color-ink); margin-bottom: 0.85rem;">
     Contemporary Korean Culture &amp; Society
   </h2>
   
@@ -43,7 +43,7 @@ description: "Research themes, methods, and active projects of the Korean Studie
 </section>
 
 <section id="computational-korean-studies" style="margin-bottom: 2.5rem;">
-  <h2 style="font-size: 1.65rem; font-weight: 700; color: var(--color-ink); margin-bottom: 0.85rem;">
+  <h2 style="font-size: 1.65rem; font-weight: 1000; color: var(--color-ink); margin-bottom: 0.85rem;">
     Computational Korean Studies
   </h2>
   
@@ -53,7 +53,7 @@ description: "Research themes, methods, and active projects of the Korean Studie
 </section>
 
 <section id="comparative-korean-studies" style="margin-bottom: 2.5rem;">
-  <h2 style="font-size: 1.65rem; font-weight: 700; color: var(--color-ink); margin-bottom: 0.85rem;">
+  <h2 style="font-size: 1.65rem; font-weight: 1000; color: var(--color-ink); margin-bottom: 0.85rem;">
     Comparative Korean Studies
   </h2>
   
