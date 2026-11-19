@@ -92,31 +92,85 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
     The Korean Studies Lab collaborates with graduate researchers and research assistants across Southeast Asia:
   </p>
 
+  <div class="person-list-row">
+    <div class="person-avatar-wrap">
+      <img src="{{ '/images/people/sil.png' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
+    </div>
+    <div class="person-meta-wrap">
+      <h3 class="person-name-title">Wayne Aw Tze Ang</h3>
+      <p class="person-role-title">Singapore</p>
+      <p class="person-affil-text">
+        Nanyang Technological University, Singapore
+      </p>
+    </div>
+  </div>
+
+  <div class="person-list-row">
+    <div class="person-avatar-wrap">
+      <img src="{{ '/images/people/Vernice.jpeg' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
+    </div>
+    <div class="person-meta-wrap">
+      <h3 class="person-name-title">Vernice Chan Weng Yee</h3>
+      <p class="person-role-title">Malaysia<br></p>
+      <p class="person-affil-text">
+        Nanyang Technological University, Singapore
+      </p>
+    </div>
+  </div>
+
+  <div class="person-list-row">
+    <div class="person-avatar-wrap">
+      <img src="{{ '/images/people/Alvin.jpeg' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
+    </div>
+    <div class="person-meta-wrap">
+      <h3 class="person-name-title">Alvin Gunawan<br></h3>
+      <p class="person-role-title">Indonesia</p>
+      <p class="person-affil-text">
+        Nanyang Technological University, Singapore
+      </p>
+    </div>
+  </div>
+
+  <div class="person-list-row">
+    <div class="person-avatar-wrap">
+      <img src="{{ '/images/people/Thao.jpeg' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
+    </div>
+    <div class="person-meta-wrap">
+      <h3 class="person-name-title">Nguyen Le Minh Thao<br></h3>
+      <p class="person-role-title">Vietnam</p>
+      <p class="person-affil-text">
+        Nanyang Technological University, Singapore
+      </p>
+    </div>
+  </div>
+
+  <div class="person-list-row">
+    <div class="person-avatar-wrap">
+      <img src="{{ '/images/people/Krantida-Profile-Photo.jpg.jpeg' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
+    </div>
+    <div class="person-meta-wrap">
+      <h3 class="person-name-title">Krabil Krantida <br></h3>
+      <p class="person-role-title">Thailand</p>
+      <p class="person-affil-text">
+        Nanyang Technological University, Singapore
+      </p>
+    </div>
+  </div>
+
+  <div class="person-list-row">
+    <div class="person-avatar-wrap">
+      <img src="{{ '/images/people/sil.png' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
+    </div>
+    <div class="person-meta-wrap">
+      <h3 class="person-name-title">[RA-P]</h3>
+      <p class="person-role-title">Philippines</p>
+      <p class="person-affil-text">
+        Nanyang Technological University, Singapore
+      </p>
+    </div>
+  </div>
+
   <ul class="pub-bullet-list">
-    <li>
-      <strong style="color: var(--color-ink); font-size: 1.02rem;">Singapore:</strong>
-      <span style="color: var(--color-ink-muted); margin-left: 0.4rem;">Graduate &amp; Undergraduate Research Assistants</span>
-    </li>
-    <li>
-      <strong style="color: var(--color-ink); font-size: 1.02rem;">Indonesia:</strong>
-      <span style="color: var(--color-ink-muted); margin-left: 0.4rem;">Regional Research Network</span>
-    </li>
-    <li>
-      <strong style="color: var(--color-ink); font-size: 1.02rem;">Malaysia:</strong>
-      <span style="color: var(--color-ink-muted); margin-left: 0.4rem;">Regional Research Network</span>
-    </li>
-    <li>
-      <strong style="color: var(--color-ink); font-size: 1.02rem;">Vietnam:</strong>
-      <span style="color: var(--color-ink-muted); margin-left: 0.4rem;">Regional Research Network</span>
-    </li>
-    <li>
-      <strong style="color: var(--color-ink); font-size: 1.02rem;">Thailand:</strong>
-      <span style="color: var(--color-ink-muted); margin-left: 0.4rem;">Regional Research Network</span>
-    </li>
-    <li>
-      <strong style="color: var(--color-ink); font-size: 1.02rem;">Philippines:</strong>
-      <span style="color: var(--color-ink-muted); margin-left: 0.4rem;">Regional Research Network</span>
-    </li>
   </ul>
 </div>
 
