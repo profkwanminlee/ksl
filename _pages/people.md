@@ -62,10 +62,10 @@ description: "Leadership, affiliate faculty, visiting fellows, and researchers o
       <img src="{{ '/images/people/ahn-soong-bum.avif' | relative_url }}" alt="Ahn Soong-bum" class="person-avatar-img">
     </div>
     <div class="person-meta-wrap">
-      <h3 class="person-name-title">Ahn Soong-bum</h3>
+      <h3 class="person-name-title">Ahn Soongbeum</h3>
       <p class="person-role-title">Professor | Director</p>
       <p class="person-affil-text">
-        Kyung Hee University | K-Culture Story Contents Research Institute
+        Kyung Hee University | K-Culture and Story Contents Research Institute
       </p>
     </div>
   </div>
